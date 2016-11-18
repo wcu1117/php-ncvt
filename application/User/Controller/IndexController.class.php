@@ -13,12 +13,15 @@ class IndexController extends HomebaseController {
 		$users_model=M("Users");
 
 		$user=$users_model->where(array("id"=>$id))->find();
+        $contact = M("contact");
+        $con = $contact->where(array("user_id"=>$id))->find();
 
 		if(empty($user)){
 			$this->error("查无此人！");
 		}
 		//var_dump($user);
 		$this->assign('user',$user);
+		$this->assign('con',$con);
 		$this->display(":index");
 
     }
@@ -105,10 +108,76 @@ class IndexController extends HomebaseController {
         if($result){
             $this->success("上传头像成功",U("index/index",array('id'=>$id)));
         }else{
-            var_dump($result);
-            //$this->error("上传头像失败");
+            $this->error("上传头像失败");
         }
 
+    }
+
+    //更新学历信息和联系方式
+    function edu_post(){
+        $id = I('get.id');//用户ID
+        $ed = M("education");//实例化表
+
+        //把用户ID插入到信息表去
+        $field = $ed->getField('user_id',true);//取出当前表中的字段
+        //判断是否有相同的字节
+        if($field != null){
+            for($i=0;$i<=count($field);$i++){
+                //echo $field[$i].'for';
+                if($field[$i] == $id)
+                    break;
+                while($i == count($field) || count($field) == 0){
+                    $education['user_id'] = $id;
+                    $ed->add($education);//添加用户ID
+                    break;
+                }
+            }
+        }else{
+            $education['user_id'] = $id;
+            $ed->add($education);//添加用户ID
+        }
+
+
+            $education = I("post.");
+            $result = $ed ->where("user_id={$id}")->save($education);
+        if($result){
+            $this->success("更新成功",U("index/index",array('id'=>$id)),0);
+        }else{
+            //var_dump($education);
+            $this->error("更新失败");
+        }
+
+    }
+
+    function con_post(){
+        $id = I('get.id');//用户ID
+        $ed = M("contact");//实例化表
+
+        //把用户ID插入到信息表去
+        $field = $ed->getField('user_id',true);//取出当前表中的字段
+        //判断是否有相同的字节
+        if($field != null){
+            for($i=0;$i<=count($field);$i++){
+                //echo $field[$i].'for';
+                if($field[$i] == $id)
+                    break;
+                while($i == count($field) || count($field) == 0){
+                    $education['user_id'] = $id;
+                    $ed->add($education);//添加用户ID
+                    break;
+                }
+            }
+        }else{
+            $education['user_id'] = $id;
+            $ed->add($education);//添加用户ID
+        }
+        $education = I("post.");
+        $result = $ed->where("user_id={$id}")->save($education);
+        if($result){
+            $this->success("更新成功",U("index/index",array('id'=>$id)),0);
+        }else{
+            $this->error("更新失败失败");
+        }
     }
 
 

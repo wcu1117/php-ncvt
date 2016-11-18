@@ -204,41 +204,7 @@
             </ul>
         </nav>
         <section class="user-con container-fluid">
-            <aside class="u-side col-md-2">
-                <header>
-                    <h3 class="u-myName">
-                        <img src="{$user.avatar}_100.jpg" alt="" />
-                        <p class="u-name">{$user.user_nicename}</p>
-                    </h3>
-                </header>
-                <hr /> 
-                <section class="u-box">
-                    <h4>基本信息</h4>
-                    <ul>
-                        <li><a href="javasrcpt:;">我的首页</a></li>
-                        <li><a href="u-setInfo.html" class="item">个人信息</a></li>
-                        
-                        <li><a href="u-myMessage.html" class="item">我的消息(<span>0</span>)</a></li>
-                        <li><a href="u-myGuestbook.html" class="item">我的留言板(<span>0</span>)</a></li>
-                    </ul>
-                </section>
-                <section class="u-box">
-                    <h4>我的论坛</h4>
-                    <ul>
-                        <li><a href="u-myForum.html" class="item">我的帖子(<span>0</span>)</a></li>
-                        <li><a href="javasrcpt:;" class="item">我的回复(<span>0</span>)</a></li>
-                        <li><a href="javasrcpt:;" class="item">我的收藏(<span>0</span>)</a></li>
-                    </ul>
-                </section>
-                <section class="u-box">
-                    <h4>我的社团</h4>
-                    <ul>
-                        <li><a href="u-mySt.html" class="item">我加入的(<span>0</span>)</a></li>
-                        <li><a href="javasrcpt:;" class="item">我创建的(<span>0</span>)</a></li>
-                        <li><a href="javasrcpt:;" class="item">待审核的(<span>0</span>)</a></li>
-                    </ul>
-                </section>
-            </aside>
+        <tc_include file="User:menu"/>
             <section class="u-main col-md-10">
                 <nav>
                     <ul class="infoBox-nav nav nav-tabs textalignL" role="tablist">
@@ -503,19 +469,20 @@
                             <!-- /修改头像 -->
 
                     </section>
+                    <!--教育信息-->
                     <section class=" hidden">
                         <h5 class="hidden">教育经历</h5>
                         <div class="con table-responsive">
-                            <form action="" method="get" name="u-setEducation">
-                            <table class="table">
+                            <form action="{:U('Index/edu_post',array('id'=>$user['id']))}" method="post">
+                            <table class="table  js-ajax-form">
                                 <tr>
                                     <td>毕业学校：</td>
-                                    <td><input type="text" name="u-shcool" value="南宁职业技术学院" disabled class="form-control" /></td>
+                                    <td><input type="text" name="shcool" value="南宁职业技术学院" disabled class="form-control" /></td>
                                 </tr>
                                 <tr>
                                     <td>入学年份：</td>
                                     <td>
-                                        <select name="u-startYear" class="form-control">
+                                        <select name="enter" class="form-control">
                                             <option>请选择</option>
                                             <option>2017</option>
                                             <option>2016</option>
@@ -531,16 +498,15 @@
                                 <tr>
                                     <td>学历：</td>
                                     <td>
-                                        <select name="u-shcoolEducation" class="form-control" disabled >
+                                        <select name="level" class="form-control" disabled >
                                             <option checked >大专</option>
-                                            <option>本科</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>专业：</td>
                                     <td>
-                                        <select name="u-college" class="form-control">
+                                        <select name="college" class="form-control">
                                             <option>请选择</option>
                                             <option>艺术工程学院</option>
                                             <option>信息工程学院</option>
@@ -551,7 +517,7 @@
                                             <option>旅游学院</option>
                                         </select>
                                         <span>学院/系 -</span>
-                                        <select name="u-major" class="form-control">
+                                        <select name="major" class="form-control">
                                             <option>请选择</option>
                                             <option>计算机网络</option>
                                             <option>软件开发</option>
@@ -565,7 +531,8 @@
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <label class="btn-group dropup"><input type="submit" name="submit-btn" value="保存" class="btn btn-default" /></label>
+                                        <label class="btn-group dropup"><input type="submit" name="submit-btn"
+                                                                               value="保存" class="btn btn-default js-ajax-submit" /></label>
                                         <label class="btn-group dropup"><input type="reset" name="reset-btn" value="重置" class="btn btn-default" /></label>
                                     </td>
                                 </tr>
@@ -573,31 +540,37 @@
                             </form>
                         </div>
                     </section>
+                    <!--联系方式-->
                     <section class="u-contactAdd hidden">
                         <h5 class="hidden">联系方式</h5>
                         <div class="con table-responsive">
-                            <form accept="" method="post" name="u-contact">
-                                <table class="table">
+                            <form action="{:U('Index/con_post',array('id'=>$user['id']))}" method="post">
+                            <table class="table  js-ajax-form">
+
                                     <tr>
                                         <td>手机号码：</td>
-                                        <td><input type="text" name="u-phone" class="form-control" /></td>
+                                        <td><input type="text" name="number" class="form-control"
+                                                   value="{$con.number}"/></td>
                                     </tr>
                                     <tr>
-                                        <td>微博：</td>
-                                        <td><input type="text" name="u-weibo" class="form-control" /></td>
+                                        <td>新浪微博：</td>
+                                        <td><input type="text" name="weibo" class="form-control"
+                                                   value="{$con.weibo}"/></td>
                                     </tr>
                                     <tr>
                                         <td>Email：</td>
-                                        <td><input type="text" name="u-email" class="form-control" /></td>
+                                        <td><input type="text" name="email" class="form-control"
+                                                   value="{$con.email}"/></td>
                                     </tr>
                                     <tr>
                                         <td>Q Q：</td>
-                                        <td><input type="text" name="u-qq" class="form-control" /></td>
+                                        <td><input type="text" name="qq" class="form-control" value="{$con.qq}"/></td>
                                     </tr>
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <label class="btn-group dropup"><input type="submit" name="submit-btn" value="确定保存" class="btn btn-default" /></label>
+                                            <label class="btn-group dropup"><input type="submit" name="submit-btn"
+                                                                                   value="确定保存" class="btn btn-default js-ajax-submit" /></label>
                                         </td>
                                     </tr>
                                 </table>

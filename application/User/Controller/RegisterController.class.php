@@ -105,6 +105,7 @@ class RegisterController extends HomebaseController {
 //                        $this->success("注册成功，激活后才能使用！",U("user/login/index"));
 //                    }else {
                        $this->success("注册成功！",__ROOT__."/");
+                        //把用户ID写进另外关联的表
 //                    }
 
                 }else{
