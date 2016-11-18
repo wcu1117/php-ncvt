@@ -207,7 +207,7 @@
             <aside class="u-side col-md-2">
                 <header>
                     <h3 class="u-myName">
-                        <img src="images/08_avatar_middle.jpg" alt="" />
+                        <img src="{$user.avatar}_100.jpg" alt="" />
                         <p class="u-name">{$user.user_nicename}</p>
                     </h3>
                 </header>
@@ -480,7 +480,8 @@
                     <section class="u-educationAdd hidden">
                         <h5 class="hidden">上传头像</h5>
                             <!-- 修改头像 -->
-                            <form action="{:U('Index/cropImg')}" method="post" id="pic" class="update-pic js-ajax-forms">
+                            <form action="{:U('Index/cropImg',array('id'=>$user['id']))}" method="post" id="pic"
+                                  class="update-pic js-ajax-forms">
                                 <div class="upload-area">
                                     <input type="file" id="user-pic">
                                     <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>

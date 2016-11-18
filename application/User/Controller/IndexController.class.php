@@ -73,6 +73,8 @@ class IndexController extends HomebaseController {
 
     //裁剪并保存用户头像
     public function cropImg(){
+        //获取用户ID
+        $id = I('get.id');
         //图片裁剪数据
         $params = I('post.');						//裁剪参数
         if(!isset($params) && empty($params)){
@@ -96,7 +98,17 @@ class IndexController extends HomebaseController {
         $Think_img->open($real_path)->thumb(60,60, 1)->save($path.$name.'_60.jpg');
         $Think_img->open($real_path)->thumb(30,30, 1)->save($path.$name.'_30.jpg');
 
-        $this->success("上传头像成功",U("index/index"));
+        //把图像路径存到数据库
+        $user = M('users');
+        $avatar = $path.$name;
+        $result = $user->where(array('id'=>$id))->setField("avatar",$avatar);
+        if($result){
+            $this->success("上传头像成功",U("index/index",array('id'=>$id)));
+        }else{
+            var_dump($result);
+            //$this->error("上传头像失败");
+        }
+
     }
 
 
