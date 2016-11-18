@@ -1,0 +1,16 @@
+  DoctypeNotAllowed = DOCTYPE fica desativado quando o recurso "http://apache.org/xml/features/disallow-doctype-decl" \u00E9 definido como verdadeiro.
+        ContentIllegalInProlog = O conte\u00FAdo n\u00E3o \u00E9 permitido no pr\u00F3logo.
+        ReferenceIllegalInProlog = A refer\u00EAncia n\u00E3o \u00E9 permitida no pr\u00F3logo.
+#
+        ContentIllegalInTrailingMisc=O conte\u00FAdo n\u00E3o \u00E9 permitido na se\u00E7\u00E3o \u00E0 esquerda.
+        ReferenceIllegalInTrailingMisc=A refer\u00EAncia n\u00E3o \u00E9 permitida na se\u00E7\u00E3o \u00E0 esquerda.
+        
+#
+        SDDeclInvalid = O valor da declara\u00E7\u00E3o do documento stand-alone deve ser "sim" ou "n\u00E3o", mas n\u00E3o deve ser "{0}".
+        SDDeclNameInvalid = O nome standalone na declara\u00E7\u00E3o XML pode estar grafado incorretamente.
+#
+        XMLLangInvalid = O valor do atributo xml:lang "{0}" \u00E9 um identificador de idioma inv\u00E1lido.
+#
+        ETagRequired = O tipo de elemento {0}" deve ser encerrado pela tag final correspondente "</{0}>".
+#
+        ElementUnterminated = O tipo de elemento "{0}" deve ser seguido pelas especifica\u

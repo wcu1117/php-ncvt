@@ -1,0 +1,1 @@
+(function(a,b){typeof define==="function"&&define.amd?define([],b):a.Bom=b()})(this,function(){return{query:function(a){a=window.location.search.match(RegExp("(\\?|&)"+a+"=([^&]*)(&|$)"));return!a?"":decodeURIComponent(a[2])},getHash:function(a){a=window.location.hash.match(RegExp("(#|&)"+a+"=([^&]*)(&|$)"));return!a?"":decodeURIComponent(a[2])}}});

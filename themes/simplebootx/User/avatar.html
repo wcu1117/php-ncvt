@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+<title>用户中心|分享大一点的学生们的社团生活</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__TMPL__Public/css/style.css">
+    <link rel="stylesheet" href="__TMPL__Public/css/user.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.Jcrop.min.css" media="all">
+    <link rel="stylesheet" href="__PUBLIC__/js/uploadify-v3.1/uploadify.css" media="all">
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/uploadify-v3.1/jquery.uploadify-3.1.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.Jcrop.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/ThinkBox/jquery.ThinkBox.js"></script>
+    <link rel="stylesheet" href="__PUBLIC__/js/ThinkBox/css/ThinkBox.css" media="all">
+
+
+    <style type="text/css">
+        .main{
+            margin: 0 auto;
+            padding: 15px;
+            width: 750px;
+            font-family: "microsoft yahei";
+            background-color: #F5F5F5;
+        }
+        .cf:before,.cf:after {
+            display: table;
+            content: "";
+            line-height: 0;
+        }
+        .cf:after {
+            clear: both;
+        }
+        .cf {
+            *zoom: 1;
+        }
+        .upload-area {
+            position: relative;
+            float: left;
+            margin-right: 30px;
+            width: 200px;
+            height: 200px;
+            background-color: #F5F5F5;
+            border: 2px solid #E1E1E1;
+        }
+        .upload-area .file-tips {
+            position: absolute;
+            top: 90px;
+            left: 0;
+            padding: 0 15px;
+            width: 170px;
+            line-height: 1.4;
+            font-size: 12px;
+            color: #A8A8A3;
+            text-align: center;
+        }
+        .userup-icon {
+            display: inline-block;
+            margin-right: 3px;
+            width: 16px;
+            height: 16px;
+            vertical-align: -2px;
+            background: url("__TMPL__public/images/userup_icon.png") no-repeat;
+        }
+        .uploadify-button {
+            line-height: 120px!important;
+            text-align: center;
+        }
+        .preview-area {
+            float: left;
+        }
+        .tcrop {
+            clear: right;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .update-pic .crop {
+            background: url("__TMPL__public/images/mystery.png") no-repeat scroll center center #EEEEEE;
+            float: left;
+            margin-bottom: 20px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .crop100 {
+            height: 100px;
+            width: 100px;
+        }
+        .crop60 {
+            height: 60px;
+            margin-left: 20px;
+            width: 60px;
+        }
+        .update-pic .save-pic {
+            clear: left;
+            margin-right: 20px;
+        }
+        .update-pic .uppic-btn {
+            background-color: #348FD4;
+            color: #FFFFFF;
+            display: block;
+            float: left;
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            vertical-align: middle;
+            width: 89px;
+        }
+        .preview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 11;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            background:#fff;
+            display: none;
+        }
+    </style>
+
+</head>
+<body class="container-fluid">
+<header id="site-header" class="container-fluid">
+    <div class="container bgColor-white">
+        <hgroup><a href="index.html"><h1 id="site-log" class="col-md-4 marginTop-20px">高校社团汇</h1></a></hgroup>
+        <div class="hd-right col-md-6 fr pr0">
+            <ul class="info-nav container-fluid">
+                <li class="u-log">
+                    <a href="javasrcpt:;" data-toggle="modal" data-target="#myModal">登录</a>
+                    <!-- 弹出登录框 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">登录框</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form role="form">
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">帐号:</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">密码:</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <button type="submit" class="btn btn-default">点击登录</button>
+                              <span class="marginLeft-10px u-reg">还没有帐号?<a href="javasrcpt:;">点击注册</a></span>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="u-reg"><a href="javasrcpt:;">注册分享社团快乐时光</a></li>
+                <li class="col-md-3 textalignC fr ncvt-box">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                    走进南职<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="http://www.ncvt.net/" target="_blank">学校官网</a></li>
+                        <li><a href="http://www.ncvt.net/jxglxt.htm" target="_blank">教务管理系统</a></li>
+                        <li><a href="http://crp.ncvt.net/login.portal" target="_blank">数字化校园</a></li>
+                        <!-- <li class="divider"></li> -->
+                        <li><a href="http://tsg.ncvt.net/" target="_blank">图书馆</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="search-box container-fluid">
+                <li class="clearfix">
+                    <form action="" method="post">
+                        <input type="text" name="search-con" class="search-con" placeholder="社团\活动\论坛">
+                        <input type="submit" name="search-btn" class="search-btn" value="提交">
+                    </form>
+                </li>
+                <li class="fr"></li>
+            </ul>
+        </div>
+        <div class="hd-left col-md-1 fr marginTop-20px">
+            <a href="http://www.weather.com.cn/weather/101300101.shtml" target="_blank">南宁天气</a>
+        </div>
+    </div>
+
+</header>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>我的个人中心</li>
+            </ul>
+        </nav>
+        <section class="user-con container-fluid">
+            <aside class="u-side col-md-2">
+                <header>
+                    <h3 class="u-myName">
+                        <img src="images/08_avatar_middle.jpg" alt="" />
+                        <p class="u-name">{$user.user_nicename}</p>
+                    </h3>
+                </header>
+                <hr /> 
+                <section class="u-box">
+                    <h4>基本信息</h4>
+                    <ul>
+                        <li><a href="javasrcpt:;">我的首页</a></li>
+                        <li><a href="u-setInfo.html" class="item">个人信息</a></li>
+                        
+                        <li><a href="u-myMessage.html" class="item">我的消息(<span>0</span>)</a></li>
+                        <li><a href="u-myGuestbook.html" class="item">我的留言板(<span>0</span>)</a></li>
+                    </ul>
+                </section>
+                <section class="u-box">
+                    <h4>我的论坛</h4>
+                    <ul>
+                        <li><a href="u-myForum.html" class="item">我的帖子(<span>0</span>)</a></li>
+                        <li><a href="javasrcpt:;" class="item">我的回复(<span>0</span>)</a></li>
+                        <li><a href="javasrcpt:;" class="item">我的收藏(<span>0</span>)</a></li>
+                    </ul>
+                </section>
+                <section class="u-box">
+                    <h4>我的社团</h4>
+                    <ul>
+                        <li><a href="u-mySt.html" class="item">我加入的(<span>0</span>)</a></li>
+                        <li><a href="javasrcpt:;" class="item">我创建的(<span>0</span>)</a></li>
+                        <li><a href="javasrcpt:;" class="item">待审核的(<span>0</span>)</a></li>
+                    </ul>
+                </section>
+            </aside>
+            <section class="u-main col-md-10">
+                <nav>
+                    <ul class="infoBox-nav nav nav-tabs textalignL" role="tablist">
+                        <li role="presentation" class="active"><a href="javasrcpt:0;">基本资料</a></li>
+                        <li role="presentation"><a href="u-setPassw.html">密码修改</a></li>
+                    </ul>
+                </nav>
+                <article class="u-setInfo get-sectionBox">
+                    <header>
+                        <h4 class="hidden">基本资料</h4>
+                        <nav class="u-nav">
+                            <ul id="setInfo-nav" class=" nav nav-pills textalignC" role="tablist">
+                              <li role="presentation"><a href="javasrcpt:0;">基本信息</a></li>
+                              <li role="presentation"><a href="javasrcpt:0;">修改信息</a></li>
+                              <li role="presentation" class="active"><a href="javasrcpt:0;">用户头像</a></li>
+                              <li role="presentation"><a href="javasrcpt:0;">教育经历</a></li>
+                              <li role="presentation"><a href="javasrcpt:0;">联系方式</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <hr />
+                    <!--用户信息-->
+                    <!--编辑信息-->
+                    <!--上传头像-->
+                    <div class="main">
+                        <!-- 修改头像 -->
+                        <form action="{:U('Index/cropImg')}" method="post" id="pic" class="update-pic cf">
+                            <div class="upload-area">
+                                <input type="file" id="user-pic">
+                                <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
+                                <div class="preview hidden" id="preview-hidden"></div>
+                            </div>
+                            <div class="preview-area">
+                                <input type="hidden" id="x" name="x" />
+                                <input type="hidden" id="y" name="y" />
+                                <input type="hidden" id="w" name="w" />
+                                <input type="hidden" id="h" name="h" />
+                                <input type="hidden" id='img_src' name='src'/>
+                                <div class="tcrop">头像预览</div>
+                                <div class="crop crop100"><img id="crop-preview-100" src="" alt=""></div>
+                                <div class="crop crop60"><img id="crop-preview-60" src="" alt=""></div>
+                                <a class="uppic-btn save-pic" href="javascript:;">保存</a>
+                                <a class="uppic-btn reupload-img" href="javascript:$('#user-pic').uploadify('cancel','*');">重新上传</a>
+                            </div>
+                        </form>
+                        <!-- /修改头像 -->
+
+                    </div>
+
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<tc_include file="Public:footer"/>
+<script type="text/javascript">
+    $(function(){
+        //上传头像(uploadify插件)
+        $("#user-pic").uploadify({
+            'queueSizeLimit' : 1,
+            'removeTimeout' : 0.5,
+            'preventCaching' : true,
+            'multi'    : false,
+            'swf' 			: '__ROOT__/Public/js/uploadify-v3.1/uploadify.swf',
+            'uploader' 		: '{:U("Index/uploadImg")}',
+            'buttonText' 	: '<i class="userup-icon"></i>上传头像',
+            'width' 		: '200',
+            'height' 		: '200',
+            'fileTypeExts'	: '*.jpg; *.png; *.gif;',
+            'onUploadSuccess' : function(file, data, response){
+                //调试语句
+                console.log(data);
+
+                var data = $.parseJSON(data);
+                if(data['status'] == 0){
+                    $.ThinkBox.error(data['info'],{'delayClose':3000});
+                    return;
+                }
+                var preview = $('.upload-area').children('#preview-hidden');//获取子节点DIV
+                preview.show().removeClass('hidden');	//移除CLASS属性并且显示
+                //两个预览窗口赋值
+                $('.crop').children('img').attr('src',data['path']+'?random='+Math.random());
+                //隐藏表单赋值
+                $('#img_src').val(data['path']);
+                //绑定需要裁剪的图片
+                var img = $('<img />');
+                preview.append(img);
+                preview.children('img').attr('src',data['path']+'?random='+Math.random());
+                var crop_img = preview.children('img');
+                crop_img.attr('id',"cropbox").show();
+                var img = new Image();
+                img.src = data['path']+'?random='+Math.random();
+                //根据图片大小在画布里居中
+                img.onload = function(){
+                    var img_height = 0;
+                    var img_width = 0;
+                    var real_height = img.height;
+                    var real_width = img.width;
+                    if(real_height > real_width && real_height > 200){
+                        var persent = real_height / 200;
+                        real_height = 200;
+                        real_width = real_width / persent;
+                    }else if(real_width > real_height && real_width > 200){
+                        var persent = real_width / 200;
+                        real_width = 200;
+                        real_height = real_height / persent;
+                    }
+                    if(real_height < 200){
+                        img_height = (200 - real_height)/2;
+                    }
+                    if(real_width < 200){
+                        img_width = (200 - real_width)/2;
+                    }
+                    preview.css({width:(200-img_width)+'px',height:(200-img_height)+'px'});
+                    preview.css({paddingTop:img_height+'px',paddingLeft:img_width+'px'});
+                }
+                //裁剪插件
+                $('#cropbox').Jcrop({
+                    bgColor:'#333',   //选区背景色
+                    bgFade:true,      //选区背景渐显
+                    fadeTime:1000,    //背景渐显时间
+                    allowSelect:false, //是否可以选区，
+                    allowResize:true, //是否可以调整选区大小
+                    aspectRatio: 1,     //约束比例
+                    minSize : [100,100],//可选最小大小
+                    boxWidth : 200,		//画布宽度
+                    boxHeight : 200,	//画布高度
+                    onChange: showPreview,//改变时重置预览图
+                    onSelect: showPreview,//选择时重置预览图
+                    setSelect:[ 0, 0, 100, 100],//初始化时位置
+                    onSelect: function (c){	//选择时动态赋值，该值是最终传给程序的参数！
+                        $('#x').val(c.x);//需裁剪的左上角X轴坐标
+                        $('#y').val(c.y);//需裁剪的左上角Y轴坐标
+                        $('#w').val(c.w);//需裁剪的宽度
+                        $('#h').val(c.h);//需裁剪的高度
+                    }
+                });
+                //提交裁剪好的图片
+                $('.save-pic').click(function(){
+                    if($('#preview-hidden').html() == ''){
+                        $.ThinkBox.error('请先上传图片！');
+                    }else{
+                        //由于GD库裁剪gif图片很慢，所以长时间显示弹出框
+                        $.ThinkBox.success('图片处理中，请稍候……',{'delayClose':30000});
+                        $('#pic').submit();
+                    }
+                });
+                //重新上传,清空裁剪参数
+                var i = 0;
+                $('.reupload-img').click(function(){
+                    $('#preview-hidden').find('*').remove();
+                    $('#preview-hidden').hide().addClass('hidden').css({'padding-top':0,'padding-left':0});
+                });
+            }
+        });
+        //预览图
+        function showPreview(coords){
+            var img_width = $('#cropbox').width();
+            var img_height = $('#cropbox').height();
+            //根据包裹的容器宽高,设置被除数
+            var rx = 100 / coords.w;
+            var ry = 100 / coords.h;
+            $('#crop-preview-100').css({
+                width: Math.round(rx * img_width) + 'px',
+                height: Math.round(ry * img_height) + 'px',
+                marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                marginTop: '-' + Math.round(ry * coords.y) + 'px'
+            });
+            rx = 60 / coords.w;
+            ry = 60 / coords.h;
+            $('#crop-preview-60').css({
+                width: Math.round(rx * img_width) + 'px',
+                height: Math.round(ry * img_height) + 'px',
+                marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+                marginTop: '-' + Math.round(ry * coords.y) + 'px'
+            });
+        }
+    })
+
+</script>
+</body>
+</html>
+
+
+ava
+
+
+
+<param name="allowScriptAccess" value="always">
+<param name="flashvars" value="movieName=SWFUpload_0&amp;uploadURL=%2Fpratice%2Favatar%2Findex.php%2FHome%2FIndex%2FuploadImg.html&amp;useQueryString=false&amp;requeueOnError=false&amp;httpSuccess=&amp;assumeSuccessTimeout=30&amp;params=&amp;filePostName=Filedata&amp;fileTypes=*.jpg%3B%20*.png%3B%20*.gif%3B&amp;fileTypesDescription=All%20Files&amp;fileSizeLimit=0&amp;fileUploadLimit=0&amp;fileQueueLimit=1&amp;debugEnabled=false&amp;buttonImageURL=&amp;buttonWidth=200&amp;buttonHeight=200&amp;buttonText=&amp;buttonTextTopPadding=0&amp;buttonTextLeftPadding=0&amp;buttonTextStyle=color%3A%20%23000000%3B%20font-size%3A%2016pt%3B&amp;buttonAction=-100&amp;buttonDisabled=false&amp;buttonCursor=-2"></object><div id="user-pic-button" class="uploadify-button " style="height: 200px; line-height: 200px; width: 200px;"><span class="uploadify-button-text"><i class="userup-icon"></i>上传头像</span></div></div><div id="user-pic-queue" class="uploadify-queue"></div>
+    <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
+    <div class="preview hidden" id="preview-hidden"></div>
+</div>
+
+
+
+
+
+<param name="allowScriptAccess" value="always">
+<param name="flashvars" value="movieName=SWFUpload_0&amp;uploadURL=%2Fcmf%2Findex.php%3Fg%3DUser%26m%3DIndex%26a%3DuploadImg&amp;useQueryString=false&amp;requeueOnError=false&amp;httpSuccess=&amp;assumeSuccessTimeout=30&amp;params=&amp;filePostName=Filedata&amp;fileTypes=*.jpg%3B%20*.png%3B%20*.gif%3B&amp;fileTypesDescription=All%20Files&amp;fileSizeLimit=0&amp;fileUploadLimit=0&amp;fileQueueLimit=1&amp;debugEnabled=false&amp;buttonImageURL=&amp;buttonWidth=200&amp;buttonHeight=200&amp;buttonText=&amp;buttonTextTopPadding=0&amp;buttonTextLeftPadding=0&amp;buttonTextStyle=color%3A%20%23000000%3B%20font-size%3A%2016pt%3B&amp;buttonAction=-100&amp;buttonDisabled=false&amp;buttonCursor=-2"></object><div id="user-pic-button" class="uploadify-button " style="height: 200px; line-height: 200px; width: 200px;"><span class="uploadify-button-text"><i class="userup-icon"></i>上传头像</span></div></div><div id="user-pic-queue" class="uploadify-queue"></div>
+    <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
+    <div class="preview hidden" id="preview-hidden"></div>
+</div>

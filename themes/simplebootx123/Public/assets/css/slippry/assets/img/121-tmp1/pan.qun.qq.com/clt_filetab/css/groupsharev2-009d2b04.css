@@ -1,0 +1,774 @@
+a>
+     <delta oldepoch="1" oldversion="1.7.0.75" oldrelease="2.5.4.7.el7_1">
+      <filename>drpms/java-1.7.0-openjdk-accessibility-1.7.0.75-2.5.4.7.el7_1_1.7.0.99-2.6.5.0.el7_2.x86_64.drpm</filename>
+      <sequence>java-1.7.0-openjdk-accessibility-1:1.7.0.75-2.5.4.7.el7_1-bb5bad4108ac97a02d4398e50e1bcccb30</sequence>
+      <size>24860</size>
+      <checksum type="sha256">0c0d0abc6cf99d247242cb5a2e5581fd98a82a6cd6a917dc66fa4d81f987364f</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="1.7.0.79" oldrelease="2.5.5.2.el7_1">
+      <filename>drpms/java-1.7.0-openjdk-accessibility-1.7.0.79-2.5.5.2.el7_1_1.7.0.99-2.6.5.0.el7_2.x86_64.drpm</filename>
+      <sequence>java-1.7.0-openjdk-accessibility-1:1.7.0.79-2.5.5.2.el7_1-ad76f8d6dcc601cd094e6180af6e335730</sequence>
+      <size>24860</size>
+      <checksum type="sha256">b9cb8c57aec285f2b315317f4e771d44807d37d1839e83d07d457fb32777d664</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="libblkid-devel" epoch="0" version="2.23.2" release="26.el7_2.2" arch="x86_64">
+     <delta oldepoch="0" oldversion="2.23.2" oldrelease="22.el7_1">
+      <filename>drpms/libblkid-devel-2.23.2-22.el7_1_2.23.2-26.el7_2.2.x86_64.drpm</filename>
+      <sequence>libblkid-devel-2.23.2-22.el7_1-c388c1239e59d15feb9e5eb8fc761cd670</sequence>
+      <size>67976</size>
+      <checksum type="sha256">1fd8719a9fd9bd26324f484830990ec9911cad4f34baf1504959ab26aa59ecef</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="2.23.2" oldrelease="26.el7">
+      <filename>drpms/libblkid-devel-2.23.2-26.el7_2.23.2-26.el7_2.2.x86_64.drpm</filename>
+      <sequence>libblkid-devel-2.23.2-26.el7-c388c1239e59d15feb9e5eb8fc761cd670</sequence>
+      <size>67972</size>
+      <checksum type="sha256">fd105c79ef3c43f5c043fc88103b00bd91aead25e40ad9facd217400c289e5f9</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="2.23.2" oldrelease="22.el7_1.1">
+      <filename>drpms/libblkid-devel-2.23.2-22.el7_1.1_2.23.2-26.el7_2.2.x86_64.drpm</filename>
+      <sequence>libblkid-devel-2.23.2-22.el7_1.1-c388c1239e59d15feb9e5eb8fc761cd670</sequence>
+      <size>67976</size>
+      <checksum type="sha256">f787fbdd855139b341149f84de27fbe130386d657cbbe67689f77a78b3f2e3f6</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="2.23.2" oldrelease="21.el7">
+      <filename>drpms/libblkid-devel-2.23.2-21.el7_2.23.2-26.el7_2.2.x86_64.drpm</filename>
+      <sequence>libblkid-devel-2.23.2-21.el7-c388c1239e59d15feb9e5eb8fc761cd670</sequence>
+      <size>67972</size>
+      <checksum type="sha256">47e0dba48ac182d7f3fe5e39484b65c36415b59a8190f8d842ba9f500b05113b</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="pacemaker-doc" epoch="0" version="1.1.13" release="10.el7_2.2" arch="x86_64">
+     <delta oldepoch="0" oldversion="1.1.12" oldrelease="22.el7_1.1">
+      <filename>drpms/pacemaker-doc-1.1.12-22.el7_1.1_1.1.13-10.el7_2.2.x86_64.drpm</filename>
+      <sequence>pacemaker-doc-1.1.12-22.el7_1.1-13bff20d91d0b060b427a7259791c391ff60</sequence>
+      <size>50680</size>
+      <checksum type="sha256">a095ce5c6d0106cdd5bafa00932aa3ea918b31630e2aa49eb8e09ac0466e6b3b</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.1.12" oldrelease="22.el7">
+      <filename>drpms/pacemaker-doc-1.1.12-22.el7_1.1.13-10.el7_2.2.x86_64.drpm</filename>
+      <sequence>pacemaker-doc-1.1.12-22.el7-439f64427115e9fe17dde946143ab090ff60</sequence>
+      <size>50680</size>
+      <checksum type="sha256">ab4c2a9a4a62a83a93319e72f19483ec69cc98d4d16c9f1598c3c27bb64b20ae</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.1.12" oldrelease="22.el7_1.4">
+      <filename>drpms/pacemaker-doc-1.1.12-22.el7_1.4_1.1.13-10.el7_2.2.x86_64.drpm</filename>
+      <sequence>pacemaker-doc-1.1.12-22.el7_1.4-9a973b4d68d798426dbe09fccd97aab0ff60</sequence>
+      <size>50680</size>
+      <checksum type="sha256">c7835efaab6c608724bc60ebc2489652bfb1e78224adaae4c7586b78d6ae35dd</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.1.13" oldrelease="10.el7">
+      <filename>drpms/pacemaker-doc-1.1.13-10.el7_1.1.13-10.el7_2.2.x86_64.drpm</filename>
+      <sequence>pacemaker-doc-1.1.13-10.el7-03ea764e6340a3a5bbba963b95d7177570</sequence>
+      <size>50640</size>
+      <checksum type="sha256">0e188554392cc841ab0cd2f685f1e8963b3667c64ae26df5cea62273643a240f</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.1.12" oldrelease="22.el7_1.2">
+      <filename>drpms/pacemaker-doc-1.1.12-22.el7_1.2_1.1.13-10.el7_2.2.x86_64.drpm</filename>
+      <sequence>pacemaker-doc-1.1.12-22.el7_1.2-f8dc415495fa16eeb3b12f368741b744ff60</sequence>
+      <size>50676</size>
+      <checksum type="sha256">6fe0e2352886b7b316657812763fc84060efc009276d644c52dc70829645bbc3</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="libgudev1-devel" epoch="0" version="219" release="19.el7_2.9" arch="i686">
+     <delta oldepoch="0" oldversion="208" oldrelease="20.el7_1.2">
+      <filename>drpms/libgudev1-devel-208-20.el7_1.2_219-19.el7_2.9.i686.drpm</filename>
+      <sequence>libgudev1-devel-208-20.el7_1.2-a27694863de2af0d4ce7f14514207bbce3</sequence>
+      <size>59436</size>
+      <checksum type="sha256">9a0e02a717625ffe73512624139d3479da33d56d2fbda60c46819f1f7f62c93b</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="208" oldrelease="20.el7_1.6">
+      <filename>drpms/libgudev1-devel-208-20.el7_1.6_219-19.el7_2.9.i686.drpm</filename>
+      <sequence>libgudev1-devel-208-20.el7_1.6-a27694863de2af0d4ce7f14514207bbce3</sequence>
+      <size>59436</size>
+      <checksum type="sha256">ac0f382c185c50d65f022a77f3f768ee0e31328bb2a0e3356af63d6e1c2b6852</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="208" oldrelease="20.el7_1.5">
+      <filename>drpms/libgudev1-devel-208-20.el7_1.5_219-19.el7_2.9.i686.drpm</filename>
+      <sequence>libgudev1-devel-208-20.el7_1.5-a27694863de2af0d4ce7f14514207bbce3</sequence>
+      <size>59436</size>
+      <checksum type="sha256">be6afc8ae0ea3f90f0beb407253d6033586ae53c44d7436e80e631b3ce3f8985</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="208" oldrelease="20.el7">
+      <filename>drpms/libgudev1-devel-208-20.el7_219-19.el7_2.9.i686.drpm</filename>
+      <sequence>libgudev1-devel-208-20.el7-a27694863de2af0d4ce7f14514207bbce3</sequence>
+      <size>59436</size>
+      <checksum type="sha256">fd7e4c2c97083389491b9305f9a826a388b85a5ec922887659cd0198c6549e82</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="208" oldrelease="20.el7_1.3">
+      <filename>drpms/libgudev1-devel-208-20.el7_1.3_219-19.el7_2.9.i686.drpm</filename>
+      <sequence>libgudev1-devel-208-20.el7_1.3-a27694863de2af0d4ce7f14514207bbce3</sequence>
+      <size>59436</size>
+      <checksum type="sha256">87f8cfd11d1ce14623ac71125d99fa85e98fe49cbe1c5f7560669105d723341c</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="219" oldrelease="19.el7">
+      <filename>drpms/libgudev1-devel-219-19.el7_219-19.el7_2.9.i686.drpm</filename>
+      <sequence>libgudev1-devel-219-19.el7-1cf4c914aec9cf3834be946baa68ea29e3</sequence>
+      <size>58716</size>
+      <checksum type="sha256">26270166db1a08c3408aa1e2b785e96db003ac9bfb89c4e39cb31b3e4d019d9e</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="python-tdb" epoch="0" version="1.3.8" release="1.el7_2" arch="i686">
+     <delta oldepoch="0" oldversion="1.3.6" oldrelease="2.el7">
+      <filename>drpms/python-tdb-1.3.6-2.el7_1.3.8-1.el7_2.i686.drpm</filename>
+      <sequence>python-tdb-1.3.6-2.el7-15c858e13b8807f22bf75c8f3ffcae5110</sequence>
+      <size>16248</size>
+      <checksum type="sha256">f95aac4e597c1904392cb0ac7cfa69a1a022cde38d57ce26b3ae3e43107358ad</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.3.0" oldrelease="1.el7">
+      <filename>drpms/python-tdb-1.3.0-1.el7_1.3.8-1.el7_2.i686.drpm</filename>
+      <sequence>python-tdb-1.3.0-1.el7-28dbe47d558570f29449641c560a833910</sequence>
+      <size>16212</size>
+      <checksum type="sha256">d07669747b51efa30adc4d4510a04a220a26dea51a244a75f66743d4df9d3147</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="libreoffice-langpack-ru" epoch="1" version="4.3.7.2" release="5.el7_2.1" arch="x86_64">
+     <delta oldepoch="1" oldversion="4.3.7.2" oldrelease="5.el7">
+      <filename>drpms/libreoffice-langpack-ru-4.3.7.2-5.el7_4.3.7.2-5.el7_2.1.x86_64.drpm</filename>
+      <sequence>libreoffice-langpack-ru-1:4.3.7.2-5.el7-be20a8a217b7cda490a0d553d6f97dd9cd20</sequence>
+      <size>82416</size>
+      <checksum type="sha256">a4460a3c405532ead05cdc19b064b5318d4741195927e6c18d577437e8a89a78</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="4.2.6.3" oldrelease="5.el7">
+      <filename>drpms/libreoffice-langpack-ru-4.2.6.3-5.el7_4.3.7.2-5.el7_2.1.x86_64.drpm</filename>
+      <sequence>libreoffice-langpack-ru-1:4.2.6.3-5.el7-4327471ac4cb4a79a72c1029d7e77c42ad20</sequence>
+      <size>1026720</size>
+      <checksum type="sha256">af6c5a8620ea7ee6c7aed5e2bfd6c8adcc11988c69a7fd1d815a7d0311d6ff84</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="python-sss-murmur" epoch="0" version="1.13.0" release="40.el7_2.1" arch="x86_64">
+     <delta oldepoch="0" oldversion="1.13.0" oldrelease="40.el7">
+      <filename>drpms/python-sss-murmur-1.13.0-40.el7_1.13.0-40.el7_2.1.x86_64.drpm</filename>
+      <sequence>python-sss-murmur-1.13.0-40.el7-b0a3199e98afa871f03959dbca0745b820</sequence>
+      <size>81140</size>
+      <checksum type="sha256">85ba57f8892d37f22ff6c095afa0dca594e384214ae767840b2a0ff01d29c859</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="autocorr-vi" epoch="1" version="4.3.7.2" release="5.el7_2.1" arch="noarch">
+     <delta oldepoch="1" oldversion="4.2.6.3" oldrelease="5.el7">
+      <filename>drpms/autocorr-vi-4.2.6.3-5.el7_4.3.7.2-5.el7_2.1.noarch.drpm</filename>
+      <sequence>autocorr-vi-1:4.2.6.3-5.el7-e0ad221fca748b308cbe4090baf4a14640</sequence>
+      <size>47920</size>
+      <checksum type="sha256">2f65eb8fc05e67ed6a508f8c96a461b2d35939c5bbd1ecc837abc2172d051ee0</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="4.3.7.2" oldrelease="5.el7">
+      <filename>drpms/autocorr-vi-4.3.7.2-5.el7_4.3.7.2-5.el7_2.1.noarch.drpm</filename>
+      <sequence>autocorr-vi-1:4.3.7.2-5.el7-6a91c705d7c5ec01db4a01917f85be4340</sequence>
+      <size>46612</size>
+      <checksum type="sha256">807075b4f39b0b5eaad77b321d2ebc37d7e773d7a5363d7209e8130da52443f1</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="openssl-perl" epoch="1" version="1.0.1e" release="51.el7_2.4" arch="x86_64">
+     <delta oldepoch="1" oldversion="1.0.1e" oldrelease="42.el7">
+      <filename>drpms/openssl-perl-1.0.1e-42.el7_1.0.1e-51.el7_2.4.x86_64.drpm</filename>
+      <sequence>openssl-perl-1:1.0.1e-42.el7-99cfc99ec8e3d329d06153cd2486f2da40</sequence>
+      <size>51164</size>
+      <checksum type="sha256">d5965739f35649c6bc6acebfeb14bf707f8cf264f9fa5c688dd6ef9443ae850e</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="1.0.1e" oldrelease="42.el7.9">
+      <filename>drpms/openssl-perl-1.0.1e-42.el7.9_1.0.1e-51.el7_2.4.x86_64.drpm</filename>
+      <sequence>openssl-perl-1:1.0.1e-42.el7.9-99cfc99ec8e3d329d06153cd2486f2da40</sequence>
+      <size>51168</size>
+      <checksum type="sha256">9d7463edc09a8f715ccbfb71bf70c80f2f0a1f6ebee9a56c4ffc0407085f5b7f</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="1.0.1e" oldrelease="42.el7.6">
+      <filename>drpms/openssl-perl-1.0.1e-42.el7.6_1.0.1e-51.el7_2.4.x86_64.drpm</filename>
+      <sequence>openssl-perl-1:1.0.1e-42.el7.6-99cfc99ec8e3d329d06153cd2486f2da40</sequence>
+      <size>51168</size>
+      <checksum type="sha256">d203bc6caf37330ee3b99ad73d273c5ed50b51d3abf747d239cf2d92d81464f9</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="1.0.1e" oldrelease="42.el7.8">
+      <filename>drpms/openssl-perl-1.0.1e-42.el7.8_1.0.1e-51.el7_2.4.x86_64.drpm</filename>
+      <sequence>openssl-perl-1:1.0.1e-42.el7.8-99cfc99ec8e3d329d06153cd2486f2da40</sequence>
+      <size>51168</size>
+      <checksum type="sha256">86fe9267897cbeb01c78361c11a2d19da258d29b8ad061d7841fe9254b70c1f9</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="1.0.1e" oldrelease="42.el7_1.5">
+      <filename>drpms/openssl-perl-1.0.1e-42.el7_1.5_1.0.1e-51.el7_2.4.x86_64.drpm</filename>
+      <sequence>openssl-perl-1:1.0.1e-42.el7_1.5-99cfc99ec8e3d329d06153cd2486f2da40</sequence>
+      <size>51168</size>
+      <checksum type="sha256">287459071a160a8056096839c06ace3193feba95ba243d1ae5c70cbaf83352a2</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="1.0.1e" oldrelease="42.el7.4">
+      <filename>drpms/openssl-perl-1.0.1e-42.el7.4_1.0.1e-51.el7_2.4.x86_64.drpm</filename>
+      <sequence>openssl-perl-1:1.0.1e-42.el7.4-99cfc99ec8e3d329d06153cd2486f2da40</sequence>
+      <size>51168</size>
+      <checksum type="sha256">2b6ed60d31a34b12b0f2873b12511ba4f1d0dab1d500b6c044bef8ec5fb21896</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="gnutls-c++" epoch="0" version="3.3.8" release="14.el7_2" arch="x86_64">
+     <delta oldepoch="0" oldversion="3.3.8" oldrelease="12.el7_1.1">
+      <filename>drpms/gnutls-c++-3.3.8-12.el7_1.1_3.3.8-14.el7_2.x86_64.drpm</filename>
+      <sequence>gnutls-c++-3.3.8-12.el7_1.1-bbeb0224a6b79e117f73ff321004aba220</sequence>
+      <size>19320</size>
+      <checksum type="sha256">9934e912ff993c837e7cb9fb91f3c49fd033df88d9f99b8d52534728def13b6c</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.3.8" oldrelease="12.el7">
+      <filename>drpms/gnutls-c++-3.3.8-12.el7_3.3.8-14.el7_2.x86_64.drpm</filename>
+      <sequence>gnutls-c++-3.3.8-12.el7-b049c9b09f9beb349da80f1f396dce6320</sequence>
+      <size>19308</size>
+      <checksum type="sha256">f084116e3272c27607587bc0045b80fb8c4e918325686988f703f661d18c7976</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="glibc-static" epoch="0" version="2.17" release="106.el7_2.6" arch="i686">
+     <delta oldepoch="0" oldversion="2.17" oldrelease="105.el7">
+      <filename>drpms/glibc-static-2.17-105.el7_2.17-106.el7_2.6.i686.drpm</filename>
+      <sequence>glibc-static-2.17-105.el7-2a19a20574c713fd4d1508b79c32dda5c1</sequence>
+      <size>212472</size>
+      <checksum type="sha256">4879eda4104b88aaaff63212babe67053772cf97c4f05fd450254d912faa1bec</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="2.17" oldrelease="78.el7">
+      <filename>drpms/glibc-static-2.17-78.el7_2.17-106.el7_2.6.i686.drpm</filename>
+      <sequence>glibc-static-2.17-78.el7-16f5085539b2ab7cccc2b70e82834095c1</sequence>
+      <size>276908</size>
+      <checksum type="sha256">70e5393e7c17639b107c860839cffe58d0daaea432b8652b7385558239d1f243</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="fence-agents-rsb" epoch="0" version="4.0.11" release="27.el7_2.5" arch="x86_64">
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="13.el7_1.1">
+      <filename>drpms/fence-agents-rsb-4.0.11-13.el7_1.1_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-rsb-4.0.11-13.el7_1.1-780e0b93a7d5594ca3d50a56922d32ca20</sequence>
+      <size>14556</size>
+      <checksum type="sha256">87d3e3c9dd541513ae27f1ee715c3a9e487eef738db34ad572054f14bbec9fae</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="11.el7_1">
+      <filename>drpms/fence-agents-rsb-4.0.11-11.el7_1_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-rsb-4.0.11-11.el7_1-e4958d27e4bab0eb7692c975373dd65e20</sequence>
+      <size>14552</size>
+      <checksum type="sha256">7f7f8bcc4d24ad9f63a94617abc97be6d24b19f5dfc4697d27788ca8d1a7f09d</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="27.el7">
+      <filename>drpms/fence-agents-rsb-4.0.11-27.el7_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-rsb-4.0.11-27.el7-1b36f560960276ca21fd3b1bb498382f20</sequence>
+      <size>12972</size>
+      <checksum type="sha256">e2b74e9b218fef0cc1f66bf44d9c05d4dc82cba5c59aa2c414889da65ee37097</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="10.el7">
+      <filename>drpms/fence-agents-rsb-4.0.11-10.el7_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-rsb-4.0.11-10.el7-cd7b175f3ea5db9dca0ce937d83501e020</sequence>
+      <size>14556</size>
+      <checksum type="sha256">582517042448a254e3f75ed47e31e6386b83fe459dcdea45848e42cece91101f</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="13.el7_1">
+      <filename>drpms/fence-agents-rsb-4.0.11-13.el7_1_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-rsb-4.0.11-13.el7_1-b1447f4bf6ba8de1ac2a6d3164f1180120</sequence>
+      <size>14540</size>
+      <checksum type="sha256">9286d713ce806b63def2c2537b043f9d299c10a2e3980c259ea1c4d4dd47e4cf</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="13.el7_1.2">
+      <filename>drpms/fence-agents-rsb-4.0.11-13.el7_1.2_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-rsb-4.0.11-13.el7_1.2-13c8b1feaed92a4311f27733b09e261220</sequence>
+      <size>14544</size>
+      <checksum type="sha256">220ab8a5aaae24f6844cfe8a3ef128388bb4c756fa811aff65734d0fd743853e</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="tigervnc-server-applet" epoch="0" version="1.3.1" release="4.el7_2" arch="noarch">
+     <delta oldepoch="0" oldversion="1.2.80" oldrelease="0.30.20130314svn5065.el7">
+      <filename>drpms/tigervnc-server-applet-1.2.80-0.30.20130314svn5065.el7_1.3.1-4.el7_2.noarch.drpm</filename>
+      <sequence>tigervnc-server-applet-1.2.80-0.30.20130314svn5065.el7-ee9443e1faa777091fa0f685285047e440</sequence>
+      <size>65932</size>
+      <checksum type="sha256">93abebc813772d7a4ecf483c4688443d8540c025a2479fd813abd3694170c2ce</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.3.1" oldrelease="3.el7">
+      <filename>drpms/tigervnc-server-applet-1.3.1-3.el7_1.3.1-4.el7_2.noarch.drpm</filename>
+      <sequence>tigervnc-server-applet-1.3.1-3.el7-ae2e6c2c1bee9d841929145cba9107b540</sequence>
+      <size>35564</size>
+      <checksum type="sha256">789879694e58c3395c88c340278199fb4beedeecdbafa939d8ef1ec8f006401f</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="libwbclient-devel" epoch="0" version="4.2.10" release="6.el7_2" arch="i686">
+     <delta oldepoch="0" oldversion="4.2.3" oldrelease="10.el7">
+      <filename>drpms/libwbclient-devel-4.2.3-10.el7_4.2.10-6.el7_2.i686.drpm</filename>
+      <sequence>libwbclient-devel-0:4.2.3-10.el7-06c781d63d797b027e9efd8ebe03105430</sequence>
+      <size>72620</size>
+      <checksum type="sha256">c6945719071534428813687aed2a9d26a9cc240fc60c4a40f5241a8516d6ff71</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.12" oldrelease="23.el7_1">
+      <filename>drpms/libwbclient-devel-4.1.12-23.el7_1_4.2.10-6.el7_2.i686.drpm</filename>
+      <sequence>libwbclient-devel-0:4.1.12-23.el7_1-ea8fb3fb355a95f545fcc49739e7446c30</sequence>
+      <size>74784</size>
+      <checksum type="sha256">677cc78d11d508559f176f2ac75ee4659e6d810826e25786c9172f1b92af76d3</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.12" oldrelease="21.el7_1">
+      <filename>drpms/libwbclient-devel-4.1.12-21.el7_1_4.2.10-6.el7_2.i686.drpm</filename>
+      <sequence>libwbclient-devel-0:4.1.12-21.el7_1-ea8fb3fb355a95f545fcc49739e7446c30</sequence>
+      <size>74784</size>
+      <checksum type="sha256">f89535396a8b889019b7ae4b1298506dea11e527c7b81f3cd584fc89bbdcd220</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.12" oldrelease="24.el7_1">
+      <filename>drpms/libwbclient-devel-4.1.12-24.el7_1_4.2.10-6.el7_2.i686.drpm</filename>
+      <sequence>libwbclient-devel-0:4.1.12-24.el7_1-ea8fb3fb355a95f545fcc49739e7446c30</sequence>
+      <size>74784</size>
+      <checksum type="sha256">9fad56fd63ef165dc3301245f6ed777cdb68dbe72068d0cb187051657eee2d3b</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="tuned-utils-systemtap" epoch="0" version="2.5.1" release="4.el7_2.3" arch="noarch">
+     <delta oldepoch="0" oldversion="2.5.1" oldrelease="4.el7">
+      <filename>drpms/tuned-utils-systemtap-2.5.1-4.el7_2.5.1-4.el7_2.3.noarch.drpm</filename>
+      <sequence>tuned-utils-systemtap-2.5.1-4.el7-98fc51d93433125fbfd147257ce49431c1</sequence>
+      <size>18920</size>
+      <checksum type="sha256">c75877c9fe729f5972b8c1c901c7474bd9c9ef215b61098077893364a6505484</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="2.4.1" oldrelease="1.el7">
+      <filename>drpms/tuned-utils-systemtap-2.4.1-1.el7_2.5.1-4.el7_2.3.noarch.drpm</filename>
+      <sequence>tuned-utils-systemtap-2.4.1-1.el7-507785d8b0b7fc04c4705ba2bf00a7c8c1</sequence>
+      <size>19468</size>
+      <checksum type="sha256">630cc2a29b0cfc659a2b6253fe1c132b70ce636ad6f63dbc455871d0a90396a8</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="avahi-qt3-devel" epoch="0" version="0.6.31" release="15.el7_2.1" arch="x86_64">
+     <delta oldepoch="0" oldversion="0.6.31" oldrelease="15.el7">
+      <filename>drpms/avahi-qt3-devel-0.6.31-15.el7_0.6.31-15.el7_2.1.x86_64.drpm</filename>
+      <sequence>avahi-qt3-devel-0.6.31-15.el7-f3d4d07aa1de49142d93149775a026f140</sequence>
+      <size>19896</size>
+      <checksum type="sha256">a94c1a94b09561d349357e44305c72a04422f1e5e5cddf184df76ebee1ff9a78</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="0.6.31" oldrelease="14.el7">
+      <filename>drpms/avahi-qt3-devel-0.6.31-14.el7_0.6.31-15.el7_2.1.x86_64.drpm</filename>
+      <sequence>avahi-qt3-devel-0.6.31-14.el7-f3d4d07aa1de49142d93149775a026f140</sequence>
+      <size>19896</size>
+      <checksum type="sha256">0cc0b5703349443de620007a9b36c78a705295bb122096b275700a2abe7b847e</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="resource-agents" epoch="0" version="3.9.5" release="54.el7_2.10" arch="x86_64">
+     <delta oldepoch="0" oldversion="3.9.5" oldrelease="54.el7">
+      <filename>drpms/resource-agents-3.9.5-54.el7_3.9.5-54.el7_2.10.x86_64.drpm</filename>
+      <sequence>resource-agents-3.9.5-54.el7-53d2331296da34874baaba96cf698e9bc814c810</sequence>
+      <size>150528</size>
+      <checksum type="sha256">cd75d7f3828236a3f3260821bee0b0b307c3bc44689ffb2f5c4ff8be937aa853</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.9.5" oldrelease="40.el7">
+      <filename>drpms/resource-agents-3.9.5-40.el7_3.9.5-54.el7_2.10.x86_64.drpm</filename>
+      <sequence>resource-agents-3.9.5-40.el7-e9e813296653045b515f00b5207538a6a74b70</sequence>
+      <size>181640</size>
+      <checksum type="sha256">f303170aa3470f22770ab959a1e2cd2bb13c5931f9f8c3bb88b4a87f22818685</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.9.5" oldrelease="40.el7_1.3">
+      <filename>drpms/resource-agents-3.9.5-40.el7_1.3_3.9.5-54.el7_2.10.x86_64.drpm</filename>
+      <sequence>resource-agents-3.9.5-40.el7_1.3-f90034c768c0ddef215eca5ed30a97e7c74d70</sequence>
+      <size>169280</size>
+      <checksum type="sha256">90c03b39807c50f1258eefe78f90a9322d13a3483e11b772a62547295952f370</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.9.5" oldrelease="40.el7_1.6">
+      <filename>drpms/resource-agents-3.9.5-40.el7_1.6_3.9.5-54.el7_2.10.x86_64.drpm</filename>
+      <sequence>resource-agents-3.9.5-40.el7_1.6-1c119292b8c7e8c812b18f5c0e9a6c1af74f70</sequence>
+      <size>169504</size>
+      <checksum type="sha256">f391ef014a9bd102dfff90266282d25c4f9c5b7d2ccfe404550646236e3d94f6</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.9.5" oldrelease="40.el7_1.4">
+      <filename>drpms/resource-agents-3.9.5-40.el7_1.4_3.9.5-54.el7_2.10.x86_64.drpm</filename>
+      <sequence>resource-agents-3.9.5-40.el7_1.4-4bc799b87d0279bd4e37536233e5f06fe74e70</sequence>
+      <size>167812</size>
+      <checksum type="sha256">e1ce398f1e7bf2b25885138b0f4ed8c94ea68ff05710689b7b71924a7396b646</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.9.5" oldrelease="40.el7_1.2">
+      <filename>drpms/resource-agents-3.9.5-40.el7_1.2_3.9.5-54.el7_2.10.x86_64.drpm</filename>
+      <sequence>resource-agents-3.9.5-40.el7_1.2-e1a09506e6c35f59168ce757a93335fdb74c70</sequence>
+      <size>172968</size>
+      <checksum type="sha256">55fad0d5efafa944ff7e048d2b2043c05e0d992ade86aebf90e489b1c646ca8e</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="sssd-krb5-common" epoch="0" version="1.13.0" release="40.el7_2.2" arch="x86_64">
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.14">
+      <filename>drpms/sssd-krb5-common-1.12.2-58.el7_1.14_1.13.0-40.el7_2.2.x86_64.drpm</filename>
+      <sequence>sssd-krb5-common-1.12.2-58.el7_1.14-5bb92f57fe22dbad68da3671389d656d1220</sequence>
+      <size>151248</size>
+      <checksum type="sha256">490a16809cb5353f7c0f60a9c97504e985e6970ef3e15515c22ca3579922aee2</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.17">
+      <filename>drpms/sssd-krb5-common-1.12.2-58.el7_1.17_1.13.0-40.el7_2.2.x86_64.drpm</filename>
+      <sequence>sssd-krb5-common-1.12.2-58.el7_1.17-05d234b32fa7a113329ab2074ea8800c1220</sequence>
+      <size>151244</size>
+      <checksum type="sha256">e49854170f94c99246eaa56275fc405a9d7435eb6702d290d56e051252baba84</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.13.0" oldrelease="40.el7">
+      <filename>drpms/sssd-krb5-common-1.13.0-40.el7_1.13.0-40.el7_2.2.x86_64.drpm</filename>
+      <sequence>sssd-krb5-common-1.13.0-40.el7-0cccdf0c673a3fc1797d94c95184537c0220</sequence>
+      <size>146596</size>
+      <checksum type="sha256">783b43219754e527739ad11e1983e33d75ac6b4362c8f3f3ffa68c7369d3997d</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7">
+      <filename>drpms/sssd-krb5-common-1.12.2-58.el7_1.13.0-40.el7_2.2.x86_64.drpm</filename>
+      <sequence>sssd-krb5-common-1.12.2-58.el7-df4d5e9f354905dd70b9d353abe94fa01220</sequence>
+      <size>151240</size>
+      <checksum type="sha256">5b435ce5698769a57a63a578eae6ba45e7b5f1e29cee2b841e2d22656166138e</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.6">
+      <filename>drpms/sssd-krb5-common-1.12.2-58.el7_1.6_1.13.0-40.el7_2.2.x86_64.drpm</filename>
+      <sequence>sssd-krb5-common-1.12.2-58.el7_1.6-9dfe4aa44b16e7d9cf3fb09ba4e13bcb1220</sequence>
+      <size>151244</size>
+      <checksum type="sha256">e7a05d7d596945e91e3d185f2e9799094b2f3285f7cacdb966dd3a845fc3fb6e</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.18">
+      <filename>drpms/sssd-krb5-common-1.12.2-58.el7_1.18_1.13.0-40.el7_2.2.x86_64.drpm</filename>
+      <sequence>sssd-krb5-common-1.12.2-58.el7_1.18-051f8cfc61dfee7dc99cef070f0b214d1220</sequence>
+      <size>151248</size>
+      <checksum type="sha256">d387635badc52c3560fb6d7050d6460b9ad5596b236477e581949732ca5193fa</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="lvm2" epoch="7" version="2.02.130" release="5.el7_2.2" arch="x86_64">
+     <delta oldepoch="7" oldversion="2.02.130" oldrelease="5.el7">
+      <filename>drpms/lvm2-2.02.130-5.el7_2.02.130-5.el7_2.2.x86_64.drpm</filename>
+      <sequence>lvm2-7:2.02.130-5.el7-8392aca2488ca8030fdaefe09d346632437282152ec1</sequence>
+      <size>939996</size>
+      <checksum type="sha256">cfb376c48c216850a3f97276b09789c7949719a47c0d573f9dceb04b7b0741d7</checksum>
+    </delta>
+     <delta oldepoch="7" oldversion="2.02.115" oldrelease="3.el7_1.1">
+      <filename>drpms/lvm2-2.02.115-3.el7_1.1_2.02.130-5.el7_2.2.x86_64.drpm</filename>
+      <sequence>lvm2-7:2.02.115-3.el7_1.1-25e02ebff365a4a3d3aad53988b12762425282141ac1</sequence>
+      <size>948644</size>
+      <checksum type="sha256">be2e03e50f47ce777bc0264b553b65dc529f5f39f84bc4e5ff84052e06f25b27</checksum>
+    </delta>
+     <delta oldepoch="7" oldversion="2.02.115" oldrelease="3.el7">
+      <filename>drpms/lvm2-2.02.115-3.el7_2.02.130-5.el7_2.2.x86_64.drpm</filename>
+      <sequence>lvm2-7:2.02.115-3.el7-ed0a90c57e7543fb5b4a5808823b5aff425282141ac1</sequence>
+      <size>948752</size>
+      <checksum type="sha256">b652a879190d21211ea7872b7d596fbe9048dfd15f3e2a7bc506185791ed59b4</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="ipa-python" epoch="0" version="4.2.0" release="15.el7.centos.3" arch="x86_64">
+     <delta oldepoch="0" oldversion="4.1.0" oldrelease="18.el7.centos.0.1">
+      <filename>drpms/ipa-python-4.1.0-18.el7.centos.0.1_4.2.0-15.el7.centos.3.x86_64.drpm</filename>
+      <sequence>ipa-python-4.1.0-18.el7.centos.0.1-ac5ac0b91d39c9148dfe7b912d6c6f0f1225f1212721272a1252d121242a121212d121272a12421212424212127212a12124272322212121222121212122212121212221212121212321212121212121212121272121212121212830a312181121811b1161e112151b112121e1121811b115121215151212181121b11215181141312121213121212121312121212131212121212141212121212121212121218112121212121210</sequence>
+      <size>589340</size>
+      <checksum type="sha256">144ce626027864d2be142cf1f2700e03e118d55420a0b9564ac053f860026f25</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.0" oldrelease="18.el7.centos.3">
+      <filename>drpms/ipa-python-4.1.0-18.el7.centos.3_4.2.0-15.el7.centos.3.x86_64.drpm</filename>
+      <sequence>ipa-python-4.1.0-18.el7.centos.3-351736acb4cbaa0a4fbc8a4661774c4f1225f1212721272a1252d121242a121212d121272a12421212424212127212a12124272322212121222121212122212121212221212121212321212121212121212121272121212121212830a312181121811b1161e112151b112121e1121811b115121215151212181121b11215181141312121213121212121312121212131212121212141212121212121212121218112121212121210</sequence>
+      <size>589468</size>
+      <checksum type="sha256">587615af5234ac08600006708768da4c17f8171419fffc9dcff3e95bd2fe7a3f</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.0" oldrelease="18.el7.centos.4">
+      <filename>drpms/ipa-python-4.1.0-18.el7.centos.4_4.2.0-15.el7.centos.3.x86_64.drpm</filename>
+      <sequence>ipa-python-4.1.0-18.el7.centos.4-d59643995bc281f671bf1c0ec088d8291225f1212721272a1252d121242a121212d121272a12421212424212127212a12124272322212121222121212122212121212221212121212321212121212121212121272121212121212830a312181121811b1161e112151b112121e1121811b115121215151212181121b11215181141312121213121212121312121212131212121212141212121212121212121218112121212121210</sequence>
+      <size>589304</size>
+      <checksum type="sha256">4a7efb3ddd24c76c46594d60142f2e842c874c3d47c4b4bd50aab95c8fab78ef</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.2.0" oldrelease="15.el7.centos">
+      <filename>drpms/ipa-python-4.2.0-15.el7.centos_4.2.0-15.el7.centos.3.x86_64.drpm</filename>
+      <sequence>ipa-python-4.2.0-15.el7.centos-505b3d53d41866c92d7baba301accb2e1225f1212721272a125282242124242721212d121272427242121242421212427242128221242723222121212121222121212121222121212121222121212121212321212121212122212822121212121222d1272121212421212a30a312181121811b1161921512151518112121e1121811518115121215151212151811512192121518114131212121212131212121212131212121212131212121212121412121212121213121921212121212131e118112121215121210</sequence>
+      <size>147568</size>
+      <checksum type="sha256">4a5a8ada5026bd8b2181cc80ba70b89cc22bfe2c1c33876ba36e35925744622b</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="libwbclient" epoch="0" version="4.2.3" release="11.el7_2" arch="x86_64">
+     <delta oldepoch="0" oldversion="4.1.12" oldrelease="24.el7_1">
+      <filename>drpms/libwbclient-4.1.12-24.el7_1_4.2.3-11.el7_2.x86_64.drpm</filename>
+      <sequence>libwbclient-0:4.1.12-24.el7_1-c0d01860b5172e64ac2efb042863ce5c30</sequence>
+      <size>95152</size>
+      <checksum type="sha256">f9f365ea442b7e9bdf4e52f3e9cb16813aacc2c762f7227f1ac0bccffab7fd9b</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.12" oldrelease="21.el7_1">
+      <filename>drpms/libwbclient-4.1.12-21.el7_1_4.2.3-11.el7_2.x86_64.drpm</filename>
+      <sequence>libwbclient-0:4.1.12-21.el7_1-1e610ff93a7dff4b14046c02f5e4b11130</sequence>
+      <size>95152</size>
+      <checksum type="sha256">6f3c9e0ab5dd6294958d5ea151d87e6ea0e899005be090db6f94379c82cb13ee</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.2.3" oldrelease="10.el7">
+      <filename>drpms/libwbclient-4.2.3-10.el7_4.2.3-11.el7_2.x86_64.drpm</filename>
+      <sequence>libwbclient-0:4.2.3-10.el7-85d60602fe63174a10490a8948dd589130</sequence>
+      <size>71928</size>
+      <checksum type="sha256">a4a5a2ad9c6c84af5503a93688c1801ed7f22818d7e45f18303468a07194753b</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.12" oldrelease="23.el7_1">
+      <filename>drpms/libwbclient-4.1.12-23.el7_1_4.2.3-11.el7_2.x86_64.drpm</filename>
+      <sequence>libwbclient-0:4.1.12-23.el7_1-73ab404bb271320ef4da90c6031e1fa630</sequence>
+      <size>95152</size>
+      <checksum type="sha256">4569e0d31089f2b7a8d85aebd23e52e70b1406c4dda68d03213113f10a1e34cd</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="sssd-tools" epoch="0" version="1.13.0" release="40.el7_2.1" arch="x86_64">
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.18">
+      <filename>drpms/sssd-tools-1.12.2-58.el7_1.18_1.13.0-40.el7_2.1.x86_64.drpm</filename>
+      <sequence>sssd-tools-1.12.2-58.el7_1.18-cf4d97092fc1d93245c2bacd37786ab30514e910</sequence>
+      <size>338412</size>
+      <checksum type="sha256">b32b82cb913e32510a4b0e46f1ede0aab443995fd51805112cb6d91b20d16e03</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.6">
+      <filename>drpms/sssd-tools-1.12.2-58.el7_1.6_1.13.0-40.el7_2.1.x86_64.drpm</filename>
+      <sequence>sssd-tools-1.12.2-58.el7_1.6-6564c17190faead1bbd1fd356ee36d910514e910</sequence>
+      <size>337424</size>
+      <checksum type="sha256">b36a9505cc4261f16ccd9631a6f99aa897161c6580c0bbdd562ea7733346004e</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.13.0" oldrelease="40.el7">
+      <filename>drpms/sssd-tools-1.13.0-40.el7_1.13.0-40.el7_2.1.x86_64.drpm</filename>
+      <sequence>sssd-tools-1.13.0-40.el7-9961b277fb0fd92cb17ded35733ac7cb0515f910</sequence>
+      <size>339908</size>
+      <checksum type="sha256">823baf8ea38b378ef1969a300084f3c0fa1fe9d10bf7b1ddd3c8370dd6826b28</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7">
+      <filename>drpms/sssd-tools-1.12.2-58.el7_1.13.0-40.el7_2.1.x86_64.drpm</filename>
+      <sequence>sssd-tools-1.12.2-58.el7-b2422132e0771cb4e469d48b75e3a8d00514e910</sequence>
+      <size>340536</size>
+      <checksum type="sha256">7c719c342ce4c4fec514934ba70b5419466013f9e4edb4f8196744019aacebe6</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.14">
+      <filename>drpms/sssd-tools-1.12.2-58.el7_1.14_1.13.0-40.el7_2.1.x86_64.drpm</filename>
+      <sequence>sssd-tools-1.12.2-58.el7_1.14-164890e25f2b1dc977a730bed92145590514e910</sequence>
+      <size>340060</size>
+      <checksum type="sha256">bef1ddf8aa8af7db0a2b4d6c197ee775e91fc8fb1c62103e09b0faea8190572a</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="1.12.2" oldrelease="58.el7_1.17">
+      <filename>drpms/sssd-tools-1.12.2-58.el7_1.17_1.13.0-40.el7_2.1.x86_64.drpm</filename>
+      <sequence>sssd-tools-1.12.2-58.el7_1.17-565a50ba2b7804361b92d3d6a6d0af8b0514e910</sequence>
+      <size>338968</size>
+      <checksum type="sha256">472d82245eb16af1ea316c015c9206d28eacfe1a2e4dc77ae865a0adb2c59074</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="qt-examples" epoch="1" version="4.8.5" release="12.el7_2" arch="x86_64">
+     <delta oldepoch="1" oldversion="4.8.5" oldrelease="11.el7">
+      <filename>drpms/qt-examples-4.8.5-11.el7_4.8.5-12.el7_2.x86_64.drpm</filename>
+      <sequence>qt-examples-1:4.8.5-11.el7-167f419cdcabc652c964c86f08d742e6a8d7</sequence>
+      <size>652976</size>
+      <checksum type="sha256">249c3a1d92770f60eac4d12e1b73ed851c562a30a8c3700d3f0347978859dc62</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="4.8.5" oldrelease="8.el7">
+      <filename>drpms/qt-examples-4.8.5-8.el7_4.8.5-12.el7_2.x86_64.drpm</filename>
+      <sequence>qt-examples-1:4.8.5-8.el7-dbd5141008388f7192e6bcbfb32dcf25a8d7</sequence>
+      <size>1524828</size>
+      <checksum type="sha256">4236b93bb2e2edb52be5159ce386eaaf6547365c6cccceb7ffd1fd77f2f58e97</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="openssh-server" epoch="0" version="6.6.1p1" release="25.el7_2" arch="x86_64">
+     <delta oldepoch="0" oldversion="6.6.1p1" oldrelease="22.el7">
+      <filename>drpms/openssh-server-6.6.1p1-22.el7_6.6.1p1-25.el7_2.x86_64.drpm</filename>
+      <sequence>openssh-server-6.6.1p1-22.el7-9b3c7c3b97414eb3f31b8fade5572d9c035260</sequence>
+      <size>420892</size>
+      <checksum type="sha256">328bd12820069f6e02dc4295d836120f37aa593761ad12568611da4e2f38dffb</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="6.6.1p1" oldrelease="12.el7_1">
+      <filename>drpms/openssh-server-6.6.1p1-12.el7_1_6.6.1p1-25.el7_2.x86_64.drpm</filename>
+      <sequence>openssh-server-6.6.1p1-12.el7_1-1182997600b7157dfe5a7c5c48911405035260</sequence>
+      <size>436836</size>
+      <checksum type="sha256">ca3277e2ec0d2c291e2c960e4b896b36092cb91f6f3f061d8ec485a835345160</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="6.6.1p1" oldrelease="11.el7">
+      <filename>drpms/openssh-server-6.6.1p1-11.el7_6.6.1p1-25.el7_2.x86_64.drpm</filename>
+      <sequence>openssh-server-6.6.1p1-11.el7-638eee58962065c480816756d0681cfa035260</sequence>
+      <size>436848</size>
+      <checksum type="sha256">8cb151913f61b73be6adb16eb0548721b5bbe1ddc521ec765809ec108c752413</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="bind-license" epoch="32" version="9.9.4" release="29.el7_2.1" arch="noarch">
+     <delta oldepoch="32" oldversion="9.9.4" oldrelease="18.el7_1.3">
+      <filename>drpms/bind-license-9.9.4-18.el7_1.3_9.9.4-29.el7_2.1.noarch.drpm</filename>
+      <sequence>bind-license-32:9.9.4-18.el7_1.3-0c0feb6599cfc559a29ce942aa04535020</sequence>
+      <size>79556</size>
+      <checksum type="sha256">9325b9fb0e081d2af9b3eb5f88b18c8ec3c1af306ff37b4d47cc9d6aca70228d</checksum>
+    </delta>
+     <delta oldepoch="32" oldversion="9.9.4" oldrelease="18.el7_1.2">
+      <filename>drpms/bind-license-9.9.4-18.el7_1.2_9.9.4-29.el7_2.1.noarch.drpm</filename>
+      <sequence>bind-license-32:9.9.4-18.el7_1.2-0c0feb6599cfc559a29ce942aa04535020</sequence>
+      <size>79556</size>
+      <checksum type="sha256">c78643159c1eb99be16284dac1a77feea4428cbb3e505483541d659b8bbd11b1</checksum>
+    </delta>
+     <delta oldepoch="32" oldversion="9.9.4" oldrelease="18.el7_1.5">
+      <filename>drpms/bind-license-9.9.4-18.el7_1.5_9.9.4-29.el7_2.1.noarch.drpm</filename>
+      <sequence>bind-license-32:9.9.4-18.el7_1.5-0c0feb6599cfc559a29ce942aa04535020</sequence>
+      <size>79556</size>
+      <checksum type="sha256">69997fe7a2d086f7bcf60924e4ff0006c6a1e11c373dfdfee53a743008b465ec</checksum>
+    </delta>
+     <delta oldepoch="32" oldversion="9.9.4" oldrelease="18.el7">
+      <filename>drpms/bind-license-9.9.4-18.el7_9.9.4-29.el7_2.1.noarch.drpm</filename>
+      <sequence>bind-license-32:9.9.4-18.el7-0c0feb6599cfc559a29ce942aa04535020</sequence>
+      <size>79552</size>
+      <checksum type="sha256">ed5b62c1569db029007cf5854fd9ba0386766bd0ea9aa646cae68b262c5a5ce0</checksum>
+    </delta>
+     <delta oldepoch="32" oldversion="9.9.4" oldrelease="29.el7">
+      <filename>drpms/bind-license-9.9.4-29.el7_9.9.4-29.el7_2.1.noarch.drpm</filename>
+      <sequence>bind-license-32:9.9.4-29.el7-0c0feb6599cfc559a29ce942aa04535020</sequence>
+      <size>79548</size>
+      <checksum type="sha256">a4a35cd401afa63788630cfae792f7f20a9e67e18c349f803d013f7dcd04e75b</checksum>
+    </delta>
+     <delta oldepoch="32" oldversion="9.9.4" oldrelease="18.el7_1.1">
+      <filename>drpms/bind-license-9.9.4-18.el7_1.1_9.9.4-29.el7_2.1.noarch.drpm</filename>
+      <sequence>bind-license-32:9.9.4-18.el7_1.1-0c0feb6599cfc559a29ce942aa04535020</sequence>
+      <size>79552</size>
+      <checksum type="sha256">6a70e4148a46ef6937a64ca9fe2d8b09ef2b9fbcf2ea65fbef443496f8f6ff6a</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="fence-agents-ilo-mp" epoch="0" version="4.0.11" release="27.el7_2.5" arch="x86_64">
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="11.el7_1">
+      <filename>drpms/fence-agents-ilo-mp-4.0.11-11.el7_1_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-ilo-mp-4.0.11-11.el7_1-2caa1341127ce42aa1fa0cc227f377f820</sequence>
+      <size>14388</size>
+      <checksum type="sha256">91a5752d1f8c7884e75e48f867a8e8fb3d62bd4f73e9f5f6fbd5da925fddc970</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="13.el7_1">
+      <filename>drpms/fence-agents-ilo-mp-4.0.11-13.el7_1_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-ilo-mp-4.0.11-13.el7_1-dac2e0d2b66bda0c682ec66c7f229d2a20</sequence>
+      <size>14388</size>
+      <checksum type="sha256">0cbcc303833c529b3647b44d5a529fcdc8a8d506177057a132193de5a9e47d17</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="27.el7">
+      <filename>drpms/fence-agents-ilo-mp-4.0.11-27.el7_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-ilo-mp-4.0.11-27.el7-c07d61f32bcb50703adabd1a9ba5ad9020</sequence>
+      <size>12972</size>
+      <checksum type="sha256">023617a0a558e609f9b2faa2a7327b7e5bb6ebb0476bcbbd91958d6d9d41e8b7</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="13.el7_1.1">
+      <filename>drpms/fence-agents-ilo-mp-4.0.11-13.el7_1.1_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-ilo-mp-4.0.11-13.el7_1.1-8fd96b98988f9691d812b7a615f4d8cb20</sequence>
+      <size>14408</size>
+      <checksum type="sha256">aeabc2d12d5d8c7cac5386a16689899dd8cc2586f3c4d076a896e9c75a71bb9f</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="10.el7">
+      <filename>drpms/fence-agents-ilo-mp-4.0.11-10.el7_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-ilo-mp-4.0.11-10.el7-bf73afc0b06cc1b41a246880e8928fe320</sequence>
+      <size>14404</size>
+      <checksum type="sha256">ec94944efb0f403c82b1c60ab61a6c117cccfe43db4df506be92e82d93e882d6</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="13.el7_1.2">
+      <filename>drpms/fence-agents-ilo-mp-4.0.11-13.el7_1.2_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-ilo-mp-4.0.11-13.el7_1.2-21ed9a88d7b79027e5f5320275437bad20</sequence>
+      <size>14384</size>
+      <checksum type="sha256">99eca9f6aec5c81e04738abde3129e5925100134e27111086a90f353ecec0ebd</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="ipa-admintools" epoch="0" version="4.2.0" release="15.el7.centos.15" arch="x86_64">
+     <delta oldepoch="0" oldversion="4.2.0" oldrelease="15.el7.centos">
+      <filename>drpms/ipa-admintools-4.2.0-15.el7.centos_4.2.0-15.el7.centos.15.x86_64.drpm</filename>
+      <sequence>ipa-admintools-4.2.0-15.el7.centos-42246cb0bf668c9441034a5a8b00040a1160</sequence>
+      <size>77748</size>
+      <checksum type="sha256">5790981fd505790011035f98b4e6158ebd81a4d1a5537b3c9cb009c3e2ccb666</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.0" oldrelease="18.el7.centos.3">
+      <filename>drpms/ipa-admintools-4.1.0-18.el7.centos.3_4.2.0-15.el7.centos.15.x86_64.drpm</filename>
+      <sequence>ipa-admintools-4.1.0-18.el7.centos.3-c2823ae054a323314ed5bbbc61bf48111160</sequence>
+      <size>77756</size>
+      <checksum type="sha256">4eb8fcad6a45fb509b43b35cb44982e47230cc1a47ef645edadf4724605a0766</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.0" oldrelease="18.el7.centos.0.1">
+      <filename>drpms/ipa-admintools-4.1.0-18.el7.centos.0.1_4.2.0-15.el7.centos.15.x86_64.drpm</filename>
+      <sequence>ipa-admintools-4.1.0-18.el7.centos.0.1-c2823ae054a323314ed5bbbc61bf48111160</sequence>
+      <size>77756</size>
+      <checksum type="sha256">32b58d08d5b165449786cc36429b36f28ddd058eb54625e549c7b7417f77ac22</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.1.0" oldrelease="18.el7.centos.4">
+      <filename>drpms/ipa-admintools-4.1.0-18.el7.centos.4_4.2.0-15.el7.centos.15.x86_64.drpm</filename>
+      <sequence>ipa-admintools-4.1.0-18.el7.centos.4-c2823ae054a323314ed5bbbc61bf48111160</sequence>
+      <size>77756</size>
+      <checksum type="sha256">5226043d8addea563cfbbfa87f1e81ded60edaa51c0d6d4d7f633ce2e29b610d</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="tuned-profiles-compat" epoch="0" version="2.5.1" release="4.el7_2.1" arch="noarch">
+     <delta oldepoch="0" oldversion="2.4.1" oldrelease="1.el7">
+      <filename>drpms/tuned-profiles-compat-2.4.1-1.el7_2.5.1-4.el7_2.1.noarch.drpm</filename>
+      <sequence>tuned-profiles-compat-2.4.1-1.el7-18256f930b398ccd0c711d9e07adcfb192</sequence>
+      <size>20488</size>
+      <checksum type="sha256">ef74dd606c46ea8089bdeeacc95f17dbd727da06e4ea5a763c5872f53a80ef60</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="2.5.1" oldrelease="4.el7">
+      <filename>drpms/tuned-profiles-compat-2.5.1-4.el7_2.5.1-4.el7_2.1.noarch.drpm</filename>
+      <sequence>tuned-profiles-compat-2.5.1-4.el7-48309b83d6d4f67671cbd469c84a8c7192</sequence>
+      <size>18844</size>
+      <checksum type="sha256">ef0dfe4c351197828202f43ca9a0acb1cb8ff4c5337d737c04148577d3ece30d</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="cyrus-sasl-devel" epoch="0" version="2.1.26" release="20.el7_2" arch="i686">
+     <delta oldepoch="0" oldversion="2.1.26" oldrelease="19.2.el7">
+      <filename>drpms/cyrus-sasl-devel-2.1.26-19.2.el7_2.1.26-20.el7_2.i686.drpm</filename>
+      <sequence>cyrus-sasl-devel-2.1.26-19.2.el7-65266b173d67f1ea79325d0bbbf2e70302a11d81</sequence>
+      <size>54516</size>
+      <checksum type="sha256">e24e4c8066c37c63f4a831a116a7706bc832ac2ba529f467dc9c6214f06294fa</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="2.1.26" oldrelease="17.el7">
+      <filename>drpms/cyrus-sasl-devel-2.1.26-17.el7_2.1.26-20.el7_2.i686.drpm</filename>
+      <sequence>cyrus-sasl-devel-2.1.26-17.el7-a9716d36bda9c183cfbe2d290c00a75e02a11d81</sequence>
+      <size>54560</size>
+      <checksum type="sha256">da064c30eace0aa08bfbaa05d626059183e41fefd984d074c0464a8f8a21ec7b</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="libreoffice-ogltrans" epoch="1" version="4.3.7.2" release="5.el7_2.1" arch="x86_64">
+     <delta oldepoch="1" oldversion="4.2.6.3" oldrelease="5.el7">
+      <filename>drpms/libreoffice-ogltrans-4.2.6.3-5.el7_4.3.7.2-5.el7_2.1.x86_64.drpm</filename>
+      <sequence>libreoffice-ogltrans-1:4.2.6.3-5.el7-078056048b94ef9037f3259b4f721bf430</sequence>
+      <size>82412</size>
+      <checksum type="sha256">3f6b549e8bac69b6d66c231f88eae5309b7ff48fc9616ae747c6ca0e6fca9ea1</checksum>
+    </delta>
+     <delta oldepoch="1" oldversion="4.3.7.2" oldrelease="5.el7">
+      <filename>drpms/libreoffice-ogltrans-4.3.7.2-5.el7_4.3.7.2-5.el7_2.1.x86_64.drpm</filename>
+      <sequence>libreoffice-ogltrans-1:4.3.7.2-5.el7-d49ac4191312ea4959f13aff54d48fcc30</sequence>
+      <size>48300</size>
+      <checksum type="sha256">871c966c3592a6898f9caf1df707e4a2fc2044bf48d88b7029abaf9197578a4a</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="kernel-doc" epoch="0" version="3.10.0" release="327.4.5.el7" arch="noarch">
+     <delta oldepoch="0" oldversion="3.10.0" oldrelease="229.20.1.el7">
+      <filename>drpms/kernel-doc-3.10.0-229.20.1.el7_3.10.0-327.4.5.el7.noarch.drpm</filename>
+      <sequence>kernel-doc-3.10.0-229.20.1.el7-a7b36f21956500252d73e6f374aa443ffc8e12fa62ac88108d8e118b61</sequence>
+      <size>7327300</size>
+      <checksum type="sha256">489b0baaa477f125dc149920feac3514a993ccd82c0e5558ea18395d6b7f57aa</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.10.0" oldrelease="327.el7">
+      <filename>drpms/kernel-doc-3.10.0-327.el7_3.10.0-327.4.5.el7.noarch.drpm</filename>
+      <sequence>kernel-doc-3.10.0-327.el7-6eb051ab33ba46d084b198678faae9aaadae12ab6299a810bdae11bb61</sequence>
+      <size>7201544</size>
+      <checksum type="sha256">d11f309e0fe24838782ae496af6f35aab147fa510efa3e3377007fb5d30ce4ea</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.10.0" oldrelease="229.4.2.el7">
+      <filename>drpms/kernel-doc-3.10.0-229.4.2.el7_3.10.0-327.4.5.el7.noarch.drpm</filename>
+      <sequence>kernel-doc-3.10.0-229.4.2.el7-b0d598dfaf7d626df8adc8f55f902835fc8e12fa62ac88108d8e118b61</sequence>
+      <size>7301000</size>
+      <checksum type="sha256">952b3813c9130329a29fa6e4f2d2abf0bd39ba71b2f3a8fa88fef84bc77a2587</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.10.0" oldrelease="229.11.1.el7">
+      <filename>drpms/kernel-doc-3.10.0-229.11.1.el7_3.10.0-327.4.5.el7.noarch.drpm</filename>
+      <sequence>kernel-doc-3.10.0-229.11.1.el7-974bb839d7099a51fbab490ff0098856fc8e12fa62ac88108d8e118b61</sequence>
+      <size>7340656</size>
+      <checksum type="sha256">52b7272c1bc332b60977447cd9480d1912bb4cad55a4ca03c2dfad5fe628804b</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.10.0" oldrelease="229.el7">
+      <filename>drpms/kernel-doc-3.10.0-229.el7_3.10.0-327.4.5.el7.noarch.drpm</filename>
+      <sequence>kernel-doc-3.10.0-229.el7-3b5bf36cd625a88db069eb441e5e6bdefc8e12fa62ac88108d8e118b61</sequence>
+      <size>7310180</size>
+      <checksum type="sha256">2972a0cac053990b22034e0cfd8c905fef92d4432bea8418ea3f8d4e49fac919</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.10.0" oldrelease="229.14.1.el7">
+      <filename>drpms/kernel-doc-3.10.0-229.14.1.el7_3.10.0-327.4.5.el7.noarch.drpm</filename>
+      <sequence>kernel-doc-3.10.0-229.14.1.el7-cb1563ce1dda22af69b58f19bfa807f0fc8e12fa62ac88108d8e118b61</sequence>
+      <size>7320004</size>
+      <checksum type="sha256">5d4ae1b35e00c2add4dc3124501cd557ded8536fba6860f14c4165111b2a4d20</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="3.10.0" oldrelease="229.7.2.el7">
+      <filename>drpms/kernel-doc-3.10.0-229.7.2.el7_3.10.0-327.4.5.el7.noarch.drpm</filename>
+      <sequence>kernel-doc-3.10.0-229.7.2.el7-bdce6fb00cef1704148e4b157df1c6e6fc8e12fa62ac88108d8e118b61</sequence>
+      <size>7296964</size>
+      <checksum type="sha256">4bc8763448c5c1386cc337eca402a288c7c0a2f04dcf60cf31d4653caaaf41db</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="ntp" epoch="0" version="4.2.6p5" release="22.el7.centos.1" arch="x86_64">
+     <delta oldepoch="0" oldversion="4.2.6p5" oldrelease="19.el7.centos.3">
+      <filename>drpms/ntp-4.2.6p5-19.el7.centos.3_4.2.6p5-22.el7.centos.1.x86_64.drpm</filename>
+      <sequence>ntp-4.2.6p5-19.el7.centos.3-a06fcc37120ba539f030519d2d1c71be211326b211</sequence>
+      <size>491596</size>
+      <checksum type="sha256">49b5e507197643eb018090eb7e2bc645a62c098474e2cc21aaa544d98364e60c</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.2.6p5" oldrelease="19.el7.centos.1">
+      <filename>drpms/ntp-4.2.6p5-19.el7.centos.1_4.2.6p5-22.el7.centos.1.x86_64.drpm</filename>
+      <sequence>ntp-4.2.6p5-19.el7.centos.1-a06fcc37120ba539f030519d2d1c71be211326b211</sequence>
+      <size>491596</size>
+      <checksum type="sha256">c82d80eef19112d78b5874ee6813d5f7ce3af5d29359149b86e64d4e85b70125</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.2.6p5" oldrelease="22.el7.centos">
+      <filename>drpms/ntp-4.2.6p5-22.el7.centos_4.2.6p5-22.el7.centos.1.x86_64.drpm</filename>
+      <sequence>ntp-4.2.6p5-22.el7.centos-2d4d5ce9cb241edaeaf00c098713716a211326b211</sequence>
+      <size>476512</size>
+      <checksum type="sha256">2df2319e9b49cbfdb5589e1d88811689d22634eff6b152abb4e9dae1223ebc1f</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.2.6p5" oldrelease="19.el7.centos">
+      <filename>drpms/ntp-4.2.6p5-19.el7.centos_4.2.6p5-22.el7.centos.1.x86_64.drpm</filename>
+      <sequence>ntp-4.2.6p5-19.el7.centos-626bedd0b2fcf3b48059d327232da6bc211326b211</sequence>
+      <size>491612</size>
+      <checksum type="sha256">b1134f280bca73cc441ec0fce92fa649c1353d91951c1ad6bfdf5df59160d6d4</checksum>
+    </delta>
+    </newpackage>
+   <newpackage name="fence-agents-rhevm" epoch="0" version="4.0.11" release="27.el7_2.5" arch="x86_64">
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="10.el7">
+      <filename>drpms/fence-agents-rhevm-4.0.11-10.el7_4.0.11-27.el7_2.5.x86_64.drpm</filename>
+      <sequence>fence-agents-rhevm-4.0.11-10.el7-baa07211fe1022f63abf941585d9d82520</sequence>
+      <size>14784</size>
+      <checksum type="sha256">f5e9eab58da4373a06039beb894d980c0c93037e439e6e53965b423cd0898573</checksum>
+    </delta>
+     <delta oldepoch="0" oldversion="4.0.11" oldrelease="13.e

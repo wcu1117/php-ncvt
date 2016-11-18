@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>论坛中心|分享大一点的学生们的社团生活</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap-3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/forum.css">
+<!-- <link rel="stylesheet" href="css/school.css"> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="container-fluid">
+<header id="site-header" class="container-fluid">
+    <div class="container bgColor-white">
+        <hgroup><a href="index.html"><h1 id="site-log" class="col-md-4 marginTop-20px">高校社团汇</h1></a></hgroup>
+        <div class="hd-right col-md-6 fr pr0">
+            <ul class="info-nav container-fluid">
+                <li class="u-log">
+                    <a href="javasrcpt:;" data-toggle="modal" data-target="#myModal">登录</a>
+                    <!-- 弹出登录框 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">登录框</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form role="form">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">帐号：</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">密码：</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <button type="submit" class="btn btn-default">点击登录</button>
+                              <span class="marginLeft-10px u-reg">还没有帐号?<a href="javasrcpt:;">点击注册</a></span>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="u-reg"><a href="javasrcpt:;">注册分享社团快乐时光</a></li>
+                <li class="col-md-3 textalignC fr ncvt-box">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                    走进南职<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="http://www.ncvt.net/" target="_blank">学校官网</a></li>
+                        <li><a href="http://www.ncvt.net/jxglxt.htm" target="_blank">教务管理系统</a></li>
+                        <li><a href="http://crp.ncvt.net/login.portal" target="_blank">数字化校园</a></li>
+                        <!-- <li class="divider"></li> -->
+                        <li><a href="http://tsg.ncvt.net/" target="_blank">图书馆</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="search-box container-fluid">
+                <li class="clearfix">
+                    <form action="" method="post">
+                        <input type="text" name="search-con" class="search-con" placeholder="社团\活动\论坛">
+                        <input type="submit" name="search-btn" class="search-btn" value="提交">
+                    </form>
+                </li>
+                <li class="fr"></li>
+            </ul>
+        </div>
+        <div class="hd-left col-md-1 fr marginTop-20px">
+            <a href="http://www.weather.com.cn/weather/101300101.shtml" target="_blank">南宁天气</a>
+        </div>
+    </div>
+    <nav class="site-nav container">
+        <h2 class="hidden">导航</h2>
+        <ul>
+            <li class="col-md-2"><img src="images/schoolNews-icon.png" alt="" /><br /><a href="school.html">校园动态</a></li>
+            <li class="col-md-2"><img src="images/st-icon.png" alt="" /><br /><a href="st.html">社团中心</a></li>
+            <li class="col-md-2"><img src="images/forum-icon.png" alt="" /><br /><a href="forum.html">论坛互动</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/stzw.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>校园动态</li>
+                <li>></li>
+                <li>文章详情</li>
+            </ul>
+        </nav>
+        <section class="forum-con container-fluid">
+            <header class="hd clearfix">
+               <div class="btn-group fr pr0 col-md-3">
+                   <a href="javascript:;" class="post-btn btn btn-default" style="width: 100%;">发布新帖</a href="javascript:;">
+               </div>
+               <h2>论坛中心</h2>
+               <p><a href="javasrcpt:;">帮助</a> | <a href="javasrcpt:;">提议</a></p>
+               <p>今日:922 | 主题:147012</p>
+            </header>
+            <section class="bd col-md-9 padding0">
+                <div>
+                    <nav class="category">
+                        <h3 class="display-ib">分类</h3>
+                        <ul class="display-ib">
+                            <li><a href="javasrcpt:;" class="active">全部</a></li>
+                            <li><a href="javasrcpt:;">学习</a></li>
+                            <li><a href="javasrcpt:;">生活</a></li>
+                            <li><a href="javasrcpt:;">八卦</a></li>
+                            <li><a href="javasrcpt:;">自拍</a></li>
+                            <li><a href="javasrcpt:;">活动</a></li>
+                            <li><a href="javasrcpt:;">公告</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="more-option">
+                        <li><h3>筛选</h3></li>
+                        <li>
+                            <!-- 全部主题 -->
+                            <div class="btn-group">
+                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                全部主题 <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#">全部主题</a></li>
+                                  <li><a href="#">投票</a></li>
+                                  <li><a href="#">活动</a></li>
+                              </ul>
+                            </div>
+                            <!-- 全部时间 -->
+                            <div class="btn-group">
+                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                全部时间 <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#" class="active">全部时间</a></li>
+                                  <li><a href="#">一天</a></li>
+                                  <li><a href="#">两天</a></li>
+                                  <li><a href="#">一周</a></li>
+                                  <li><a href="#">一个月</a></li>
+                                  <li><a href="#">三个月</a></li>
+                              </ul>
+                            </div>
+                        </li>
+                        <li>排序:
+                            <!-- 全部时间 -->
+                            <div class="btn-group">
+                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                回复时间 <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#" class="active">回复时间</a></li>
+                                  <li><a href="#">发帖时间</a></li>
+                                  <li><a href="#">回复数量</a></li>
+                                  <li><a href="#">查看数量</a></li>
+                              </ul>
+                            </div>
+                        </li>
+                        <li class="fr">最新 | <a href="javascript:;">热门</a> | <a href="javascript:;">精华</a></li>
+                    </ul>
+                    <div class="list-itme">
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                        <article class="item clearfix">
+                            <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[类型]</a><a href="javasrcpt:;">帖子标题帖子标题帖子标题</a></h4>
+                            <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                            <aside class="subinfo">
+                                <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                <span>| 浏览：24 | 回复：0 |</span>
+                                <span><a href="javascript:;">最新回复者</a> <time datetime="2016-10-26 1:31">回复时间(距今)</time></span>
+                            </aside>
+                        </article>
+                    </div>
+                </div>
+                <footer class="con-footer">
+                    <nav class="textalignR">
+                        <ul class="pagination">
+                            <li class="prev"><a href="javascript:;">&laquo;</a></li>
+                            <li class="active"><a href="javascript:;">1</a></li>
+                            <li><a href="javascript:;">2</a></li>
+                            <li><a href="javascript:;">3</a></li>
+                            <li><a href="javascript:;">4</a></li>
+                            <li><a href="javascript:;">5</a></li>
+                            <li class="disabled"><span>...</span></li>
+                            <li><a href="javascript:;">48</a></li>
+                            <li class="next"><a href="javascript:;">&raquo;</a></li>
+                        </ul>
+                    </nav>
+                </footer>
+            </section>
+            <aside class="info-side fr pr0 col-md-3">
+            <div>
+                <h3>热帖排行</h3>
+                <ul>
+                    <li><a href="javascript:;">严禁无关话题灌水及相应处罚规定</a></li>
+                    <li><a href="javascript:;">华硕T100TA笔记本怎么实现U盘启动_U教授</a></li>
+                    <li><a href="javascript:;">论坛买的羽绒服从哪查询物流信息</a></li>
+                    <li><a href="javascript:;">感觉自己好丑不想要了</a></li>
+                    <li><a href="javascript:;">问一下，你们有这种情况吗</a></li>
+                    <li><a href="javascript:;">谁有我的流量多</a></li>
+                    <li><a href="javascript:;">西山之行！</a></li>
+                </ul>
+            </div>
+            </aside>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<footer id="site-footer" class="container-fluid">
+    <div class="container textalignC">
+        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
+    </div>
+    <div class="container-fluid bgWhite">
+        <div class="container">
+            <ul class="info-nav fl clearfix">
+                <li><a href="javasrcpt:;">关于我们</a></li>
+                <li><a href="javasrcpt:;">待定..</a></li>
+            </ul>
+            <p class="fr copyright">Copyright(C) NCVT P-N-Y 毕业设计作品. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

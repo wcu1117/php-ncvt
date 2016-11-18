@@ -1,0 +1,1634 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="Created-with" content="Document converted in part by ConvertDoc from www.Softinterface.com" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+        
+    </style>
+</head>
+<body>
+    <p class="c2">
+        <b>ADOBE</b></p>
+    <br>
+    <p class="c2">
+        <b>Softvérová licenčná zmluva</b></p>
+    <br>
+    <p class="c3">
+        PROSÍM, POZORNE SI PREČÍTAJTE TÚTO ZMLUVU. KOPÍROVANÍM, INŠTALÁCIOU ALEBO POUŽÍVANÍM
+        CELÉHO ALEBO ČASTI TOHTO SOFTVÉRU SÚHLASÍTE VY AKO ZÁKAZNÍK (ĎALEJ LEN „ZÁKAZNÍK“)
+        SO VŠETKÝMI PODMIENKAMI TEJTO ZMLUVY VRÁTANE USTANOVENÍ O OBMEDZENÍ PLATNOSTI LICENCIÍ
+        V ČLÁNKU 4, OBMEDZENÍ ZÁRUKY V ČLÁNKOCH 6 A 7, OBMEDZENÍ ZODPOVEDNOSTI V ČLÁNKU
+        8 A ŠPECIFICKÝCH USTANOVENÍ A VÝNIMIEK V ČLÁNKU 16. ZÁKAZNÍK VYHLASUJE, ŽE TÁTO
+        ZMLUVA MÁ VŠETKY NÁLEŽITOSTI AKO AKÁKOĽVEK INÁ, PÍSOMNE VYHOTOVENÁ, DOJEDNANÁ ZMLUVA,
+        PODPÍSANÁ ZÁKAZNÍKOM. ZÁKAZNÍK SÚHLASÍ, ŽE TÁTO ZMLUVA MÁ VŠETKY NÁLEŽITOSTI A JE
+        ROVNOCENNÁ AKO KTORÁKOĽVEK DOJEDNANÁ PÍSOMNÁ ZMLUVA, PODPÍSANÁ ZÁKAZNÍKOM. DODRŽIAVANIE
+        PODMIENOK TEJTO ZMLUVY ZÁKAZNÍKOM JE MOŽNÉ VYNÚTIŤ SÚDNOU CESTOU. AK ZÁKAZNÍK NESÚHLASÍ
+        S PODMIENKAMI TEJTO ZMLUVY, NIE JE OPRÁVNENÝ POUŽÍVAŤ TENTO SOFTVÉR.</p>
+    <br>
+    <p class="c3">
+        V prípade, ak zákazník uzavrel inú písomnú zmluvu priamo so spoločnosťou Adobe (napr.
+        množstevnú licenčnú zmluvu), ustanovenia predmetnej zmluvy môžu dopĺňať alebo majú
+        prednosť pred ustanoveniami tejto zmluvy. Tento softvér je LICENCOVANÝ (NIE VŠAK
+        PREDÁVANÝ) len v súlade s podmienkami tejto zmluvy. Použitie niektorých materiálov
+        a služieb vo vlastníctve Adobe, prípadne od tretích strán, obsiahnutých, respektíve,
+        dostupných cez softvér, môže byť predmetom dodatočných obchodných podmienok. Informácie
+        o materiáloch tretích strán sú dostupné na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/thirdparty_sk">
+            http://www.adobe.com/go/thirdparty_sk</a>.
+    </p>
+    <br>
+    <p class="c3">
+        Softvér môže spustiť AUTOMATICKÉ PRIPOJENIE počítača zákazníka DO INTERNETU. Softvér
+        tiež môže vyžadovať aktiváciu alebo registráciu. Ďalšie informácie o aktivácii,
+        pripojení na internet a ochrane súkromia sa nachádzajú v článkoch 14 a 16.</p>
+    <br>
+    <p class="c4">
+        <b>1. Vymedzenie pojmov.</b></p>
+    <br>
+    <p class="c5">
+        1.1 „Adobe“ označuje Adobe Systems Incorporated, spoločnosť zriadenú podľa práva
+        štátu Delaware, so sídlom 345 Park Avenue, San Jose, California 95110, v prípade,
+        ak sa táto Zmluva uzatvorí v Spojených štátoch amerických, Kanade alebo Mexiku;
+        v ostatných prípadoch predstavuje Adobe Systems Software Ireland Limited, 4–6 Riverwalk,
+        Citywest Business Campus, Dublin 24, Írsko.</p>
+    <br>
+    <p class="c5">
+        1.2 Modul „Adobe Runtime“ znamená Adobe AIR, Adobe Flash Player, Shockwave Player,
+        Adobe Media Player alebo Authorware Player.</p>
+    <br>
+    <p class="c5">
+        1.3 „Kompatibilný počítač“ znamená počítač s odporúčaným operačným systémom a hardvérovou
+        konfiguráciou, ako je uvedené v dokumentácii.</p>
+    <br>
+    <p class="c5">
+        1.4 „Počítač“ znamená virtuálne alebo fyzické zariadenie, ktoré prijíma informácie
+        v digitálnej alebo podobnej forme a manipuluje s nimi s cieľom dosiahnutia určitého
+        výsledku na základe súboru pokynov, a to najmä stolové počítače, laptopy, tablety,
+        mobilné zariadenia, telekomunikačné zariadenia, zariadenia s pripojením do internetu
+        a hardvérové produkty, schopné prevádzky širokej škály softvérových aplikácií na
+        prácu alebo zábavu.</p>
+    <br>
+    <p class="c5">
+        1.5 „Zákazník“ znamená vašu osobu alebo akýkoľvek právny subjekt, ktorý získal softvér
+        a v mene ktorého sa používa; napríklad váš zamestnávateľ.</p>
+    <br>
+    <p class="c5">
+        1.6 „Vnútorná sieť“ znamená súkromné, uzavreté sieťové zdroje, prístupné len pre
+        zamestnancov a individuálnych zmluvných partnerov (t. j. dočasných zamestnancov)
+        z konkrétnej spoločnosti alebo podobného podnikateľského subjektu. Vnútorná sieť
+        nezahŕňa súčasti internetu alebo iných sieťových spoločenstiev prístupných pre verejnosť,
+        napr. skupín, asociácií a podobných organizácií vyžadujúcich registrované členstvo
+        alebo predplatné.</p>
+    <br>
+    <p class="c5">
+        1.7 „Výstupný súbor“ znamená výstupný súbor vytvorený zákazníkom s pomocou softvéru.</p>
+    <br>
+    <p class="c5">
+        1.8 „Prípustný počet“ znamená jeden (1), ak nevyplýva z platnej licencie udelenej
+        spoločnosťou Adobe inak (napr. z množstevnej licencie).</p>
+    <br>
+    <p class="c5">
+        1.9 „Softvér“ znamená (a) všetky informácie, s ktorými je dodávaná táto zmluva,
+        a to najmä: (i) všetky súbory softvéru a iné počítačové informácie, (ii) akékoľvek
+        skriptovacie a programovacie postupy a logika, obsiahnuté v exportovaných súboroch
+        a formátoch alebo použité v službe Adobe Online Service, (iii) uložené fotografie,
+        obrázky, zvuky, objekty Clip Art a ďalšie umelecké objekty a ich vzorky, ktoré sú
+        súčasťou softvéru Adobe alebo sú sprístupnené na webovej stránke Adobe na účely
+        použitia so softvérom Adobe a nie sú poskytované spoločnosťou Adobe v rámci samostatnej
+        služby (ak nie je v takejto službe uvedené inak), alebo pochádzajú od tretej strany
+        („obsahové súbory“), (iv) súvisiaci vysvetľujúci tlačený materiál a súbory („dokumentácia“),
+        (v) typy písma a (b) akékoľvek upravené verzie, kópie, aktualizácie a doplnky takýchto
+        informácií, poskytnutých spoločnosťou Adobe zákazníkovi v čase a v rozsahu, v ktorom
+        nie sú upravené v samostatných obchodných podmienkach (spolu ďalej ako „aktualizácie“).</p>
+    <br>
+    <p class="c4">
+        <b>2. Softvérová licencia; Členstvo.</b></p>
+    <br>
+    <p class="c5">
+        2.1 Softvérová licencia. Tento článok sa vzťahuje na zákazníkov, ktorí si kúpili
+        softvérovú licenciu, ale zatiaľ nemajú zakúpenú licenciu alebo službu založenú na
+        členstve, akým je napríklad členstvo v skupine Creative Cloud (viac v článku 2.2).</p>
+    <br>
+    <p class="c5">
+        2.1.1 Udelenie licencie. Za podmienky sústavného dodržiavania zmluvných podmienok
+        a platieb príslušných licenčných poplatkov udeľuje Adobe zákazníkovi neexkluzívnu
+        a obmedzenú licenciu na používanie softvéru (a) na území alebo v regióne, kde zákazník
+        získal softvér od Adobe alebo jej autorizovaných predajcov alebo iným spôsobom,
+        uvedeným v dokumentácii (ďalej len „územie“), (b) v priebehu platnosti takejto licencie
+        (ďalej len „licenčná doba“), (c) v rozsahu typu licencie a na povolenom počte kompatibilných
+        počítačov zákazníka, tak ako je uvedené v dokumentácii a (d) v súlade s podmienkami
+        tejto dohody a príslušnej dokumentácie. Ak nie je v tejto zmluve, v príslušnej dokumentácii
+        alebo v čase kúpy ustanovené inak, licenčná doba nie je časovo obmedzená. Po uplynutí
+        alebo ukončení platnosti licencie sa môžu niektoré alebo všetky časti softvéru stať
+        nefunkčnými, a to bez predchádzajúceho upozornenia. Po uplynutí alebo ukončení platnosti
+        licencie nie je zákazník oprávnený bez obnovenia jej platnosti naďalej softvér používať.
+        Udelenie licencie v zmysle tohto článku sa dopĺňa zvláštnymi ustanoveniami článku
+        16, v súvislosti s použitím niektorých súvisiacich produktov a súčastí, ktoré môžu
+        byť zahrnuté v softvéri, ako napríklad softvér na prácu s typmi písma (font software),
+        aplikácie Acrobat, After Effects a Adobe Presenter, Contribute, Flash Player, Flash
+        Builder, Digital Publishing Suite a moduly Adobe Runtimes.</p>
+    <br>
+    <p class="c5">
+        2.1.2 Typy licencií.</p>
+    <br>
+    <p class="c5">
+        2.1.2.1 Softvér nezabezpečený sériovým číslom. Softvér alebo časti softvéru, ktoré
+        sú na licenčnú dobu poskytované bez sériového čísla, smú byť nainštalované a používané
+        na ľubovoľnom počte kompatibilných počítačov ako súčasť organizačného plánu jeho
+        nasadenia a počas trvania licenčnej doby len pod podmienkou použitia na účely jeho
+        demonštrácie, hodnotiace a školiace účely, a to len ak sú všetky výstupné súbory
+        alebo iné materiály vyrobené pomocou takéhoto spôsobu použitia použité iba na interné,
+        nekomerčné a neprodukčné účely. SOFTVÉR NEZABEZPEČENÝ SÉRIOVÝM ČÍSLOM JE POSKYTOVANÝ
+        „V DANOM STAVE“. PRÍSTUP A POUŽÍVANIE AKÉHOKOĽVEK VÝSTUPNÉHO SÚBORU, VYTVORENÉHO
+        TAKÝMTO SOFTVÉROM, JE LEN NA VLASTNÉ RIZIKO ZÁKAZNÍKA.</p>
+    <br>
+    <p class="c5">
+        2.1.2.2 Skúšobný softvér. Softvér alebo jeho časti, ktoré sú dodávané so sériovým
+        číslom, určené na „účely hodnotenia“ alebo iné podobné účely (ako napríklad softvér
+        alebo sériové číslo, dodávané ako „EVAL“ v rámci samostatnej zmluvy) („skúšobný
+        softvér“), môžu byť nainštalované a používané na povolenom počte kompatibilných
+        počítačov počas trvania licenčnej doby len na účely demonštrácie, hodnotenia a školení,
+        a to len ak sú všetky výstupné súbory alebo iné materiály vytvorené pomocou takéhoto
+        spôsobu použitia použité len na interné, nekomerčné a neprodukčné účely. SKÚŠOBNÝ
+        SOFTVÉR JE POSKYTOVANÝ „V DANOM STAVE“. PRÍSTUP A POUŽÍVANIE AKÉHOKOĽVEK VÝSTUPNÉHO
+        SÚBORU, VYTVORENÉHO TAKÝMTO SKÚŠOBNÝM SOFTVÉROM, JE LEN NA VLASTNÉ RIZIKO ZÁKAZNÍKA.</p>
+    <br>
+    <p class="c5">
+        2.1.2.3 Predplatiteľská edícia. V prípade softvéru, ktorý je k dispozícii na základe
+        predplatného („predplatiteľská edícia“), môže zákazník nainštalovať a používať takéto
+        vydanie len na povolenom počte kompatibilných počítačov a počas trvania licenčnej
+        doby. V závislosti od povoleného počtu počítačov na použitie predplatiteľskej edície
+        môže Adobe povoliť zákazníkovi počas licenčnej doby inštalovať a používať predošlú
+        verziu vydania pre predplatiteľov spolu s aktuálnou verziou na rovnakom počítači.
+        Zákazník súhlasí s tým, že Adobe môže kedykoľvek zmeniť typ softvéru (ako napríklad
+        špecifické komponenty, verzie, platformy, jazyky atď.), ktorý je obsiahnutý v predplatiteľskej
+        edícii, a nezodpovedá pritom zákazníkovi za takéto zmeny v žiadnom rozsahu. Nepretržitý
+        prístup k predplatiteľskej edícii si vyžaduje: (a) opakované pripojenie k internetu
+        na potreby aktivácie, obnovenia a potvrdenia licencie, (b) potvrdenie spoločnosti
+        Adobe alebo jej autorizovaných predajcov o opakovaných zrealizovaných platbách predplatného
+        a (c) súhlas zákazníka s podmienkami predplatného a ďalšími dodatočnými podmienkami,
+        ktoré sú k dispozícii na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/paymentterms_sk">
+            http://www.adobe.com/go/paymentterms_sk</a> alebo aktuálne platné v čase nákupu.
+        V prípade, ak Adobe nedostane pravidelnú platbu predplatného alebo nemôže opakovane
+        potvrdiť platnosť licencie, softvér sa môže stať bez ďalšieho upozornenia nefunkčným
+        až do momentu, keď Adobe prijme uvedenú platbu alebo potvrdí platnosť licencie.</p>
+    <br>
+    <p class="c5">
+        2.1.3 <b>Použitie na prenosnom alebo domácom počítači. V súlade s obmedzeniami, uvedenými
+            v článku 2.1.4, primárny používateľ počítača, na ktorom je nainštalovaný softvér
+            v súlade s článkom 2.1 („primárny používateľ“), môže nainštalovať druhú kópiu softvéru
+            na svoju výhradnú potrebu buď na prenosnom počítači alebo na počítači umiestnenom
+            vo svojej domácnosti za predpokladu, že softvér na prenosnom alebo domácom počítači
+            nebude použitý v tom istom čase ako softvér na primárnom počítači.</b></p>
+    <br>
+    <p class="c5">
+        2.1.4 Obmedzenia sekundárneho použitia pri množstevných licenciách. Ak bol softvér
+        nadobudnutý v rámci množstevného licenčného programu Adobe alebo množstevnej licenčnej
+        zmluvy ktorýmkoľvek držiteľom licencie iným, než držiteľom množstevnej výučbovej
+        licencie, potom druhá kópia softvéru, vyhotovená podľa článku 2.1.3, musí byť použitá
+        výlučne v záujme a v prospech tohto držiteľa množstevnej licencie.
+    </p>
+    <br>
+    <p class="c5">
+        2.1.5 Zavedenie duálnej platformy. Softvér je predmetom používania v osobitnej platforme
+        operačného systému. Na využívanie softvéru v jednotlivých platformách operačných
+        systémov si musí zákazník zakúpiť osobitnú licenciu. Napríklad v prípade, ak si
+        chce zákazník nainštalovať softvér v obidvoch platformách operačných systémov Mac
+        OS a Windows na elektronickom zariadení, na ktorom sa tieto používajú (t. j. duálne
+        zariadenie), musí si najskôr zaobstarať dve samostatné licencie k softvéru. Uvedené
+        platí aj v prípade, ak budú zákazníkovi na tom istom nosiči doručené dve verzie
+        softvéru, z ktorých každá bude navrhnutá pre inú platformu operačného systému.</p>
+    <br>
+    <p class="c5">
+        2.1.6 Distribúcia zo serveru. V súlade s dokumentáciou môže zákazník skopírovať
+        obraz softvéru na súborový server (File server) v rámci svojej vnútornej siete („server“)
+        na potreby prevzatia a inštalácie Softvéru na počítače v tej istej vnútornej sieti,
+        a to spôsobom povoleným v tomto článku 2.</p>
+    <br>
+    <p class="c5">
+        2.1.7 Použitie na serveri.</p>
+    <br>
+    <p class="c5">
+        2.1.7.1 V zmysle povolení uvedených v samostatnom dokumente, ktorý získa pri kúpe
+        alebo vo všeobecnej dokumentácii a v súlade s licenčnými obmedzeniami, uvedenými
+        v tejto zmluve, môže zákazník nainštalovať softvér na server iba na sprístupnenie
+        a používanie softvéru jednotlivcom, a to na počítači v rámci rovnakej vnútornej
+        siete („sieťový používateľ“). Sieťový používateľ, ktorý má prístup k takémuto softvéru,
+        sa označuje ako „používateľ serverového softvéru“. Celkový počet používateľov serverového
+        softvéru (tým sa nemyslí počet používateľov v rovnakom čase) nesmie presiahnuť povolené
+        číslo. Ak napríklad si zákazník zakúpil 10 licencií softvéru (povolený počet je
+        10) a rozhodne sa pre inštaláciu softvéru na serveri, potom môže povoliť až do 10
+        používateľov serverového softvéru (aj keď môže mať viac ako 10 sieťových používateľov
+        alebo menej ako 10 súbežných používateľov softvéru).</p>
+    <br>
+    <p class="c5">
+        2.1.7.2 Na objasnenie a bez ďalších obmedzení vyššie uvedené neumožňuje zákazníkovi
+        inštaláciu a prístup k softvéru (buď priamo alebo prostredníctvom príkazov, dát
+        alebo inštrukcií): (a) z alebo do počítača, ktorý nie je súčasťou vnútornej siete
+        zákazníka, (b) s cieľom sprístupnenia hosťovaných pracovných skupín alebo služieb
+        verejnosti, (c) fyzickým alebo právnickým osobám používať, sťahovať, kopírovať alebo
+        inak využívať funkčnosť softvéru, pokiaľ k tomu nemá licenciu od Adobe, (d) ako
+        súčasť systému práce alebo služby, prístupnej väčšiemu ako povolenému počtu používateľov,
+        alebo (e) na operácie, ktoré nie sú z podnetu jednotlivého používateľa (napr. automatizované
+        procesy servera).</p>
+    <br>
+    <p class="c5">
+        2.2 Členstvo. Článok 2.2 sa týka zákazníkov, ktorí si zakúpili členskú licenciu
+        alebo službu, ako napríklad členstvo v Creative Cloud (spolu ďalej ako „členstvo“).</p>
+    <br>
+    <p class="c5">
+        2.2.1 Služby Adobe Online vo vzťahu k členstvu. Za podmienky trvalého dodržiavania
+        ustanovení tejto zmluvy a realizovaných platieb prípadných členských poplatkov udelí
+        Adobe zákazníkovi právo, nevýhradné a limitované na vybrané územie, na prístup a
+        používanie softvéru a súvisiacich služieb Adobe Online (ako je ďalej uvedené v článku
+        16.4.1) ako súčasť členstva a za podmienok uvedených v tejto zmluve a dodatočných
+        podmienkach používania (v zmysle definície tohto termínu v článku 14.1.3 nižšie).</p>
+    <br>
+    <p class="c5">
+        2.2.2 Softvérová licencia vo vzťahu k členstvu. Za podmienky trvalého dodržiavania
+        ustanovení tejto zmluvy a realizovaných platieb prípadných členských poplatkov udelí
+        Adobe zákazníkovi nevýhradnú a obmedzenú licenciu na inštaláciu a používanie softvéru:
+        (a) na území, (b) počas doby aktívneho trvania členstva („doba členstva“) a (c)
+        spôsobom v súlade s podmienkami tejto zmluvy a príslušnej dokumentácie. Po uplynutí
+        alebo predčasnom ukončení doby členstva (x) môžu všetky alebo niektoré časti softvéru
+        bez predchádzajúceho upozornenia prestať fungovať a (y) zákazník nesmie softvér
+        ďalej používať, pokiaľ neobnovil svoje členstvo. Všetky podmienky týkajúce sa konkrétneho
+        softvéru, tak ako je uvedené v tejto zmluve, zostávajú v platnosti a naďalej sa
+        vzťahujú na zákazníka a jeho používanie takéhoto softvéru.</p>
+    <br>
+    <p class="c5">
+        2.2.3 Obmedzenia. Zákazník súhlasí s nasledovnými dodatočnými podmienkami a obmedzeniami
+        vo vzťahu k členstvu: (a) Adobe môže kedykoľvek zmeniť typ softvéru (ako napríklad
+        konkrétne produkty, komponenty, verzie, platformy, jazyky atď.), ktorý je zahrnutý
+        v členstve, pričom za takéto zmeny nezodpovedá zákazníkovi v akomkoľvek rozsahu,
+        (b) zákazník môže byť kedykoľvek v priebehu doby členstva vyzvaný na pripojenie
+        sa a prihlásenie, (c) softvér sa môže kedykoľvek automaticky pripojiť k internetu
+        na overenie členstva zákazníka, a to aj bez predchádzajúceho upozornenia, a (d)
+        zákazník nesmie povoliť alebo umožniť ostatným používať softvér v rozsahu povolení
+        zákazníka.</p>
+    <br>
+    <p class="c5">
+        2.3 Obsahové súbory. Ak nie je v súboroch s inštrukciami (Read-me), dokumentácii
+        alebo inej licencii(-ách) súvisiacich s obsahovými súbormi uvedené inak, môže zákazník
+        používať, zobrazovať, upravovať, kopírovať a distribuovať ľubovoľné obsahové súbory.
+        Zákazník však nesmie distribuovať obsahové súbory samostatne (t. j. za okolností,
+        v ktorých obsahové súbory tvoria primárnu hodnotu distribuovaného produktu) a nemôže
+        vykonávať práva z ochranných známok k obsahovým súborom alebo k dielam z nich odvodených.
+        Žiadna z tu uvedených skutočností nemá vplyv na vlastníctvo softvéru, tak ako je
+        definované v článku 3.</p>
+    <br>
+    <p class="c5">
+        2.4 Vzorový aplikačný kód. Zákazník môže upravovať zdrojový kód tých častí softvéru,
+        ktoré sú v sprievodnej dokumentácii výslovne označené ako ukážkový kód, ukážkový
+        kód aplikácie, fragmenty kódu, súbory vo formáte ActionScript alebo vzorové komponenty
+        (každé zvlášť ďalej ako „vzorový kód aplikácie“), výhradne s cieľom navrhovania,
+        vývoja a testovania webových stránok a aplikácií vyvinutých pomocou programov Adobe.
+        Zákazník je však oprávnený kopírovať a šíriť vzorový kód aplikácie (modifikovaný
+        alebo nemodifikovaný) len za predpokladu, ak sú splnené všetky nasledujúce podmienky:
+        (a) zákazník distribuuje spolu so svojou aplikáciou iba kompilované verzie objektového
+        kódu vzorového kódu aplikácie, (b) zákazník nezahrnie vzorový kód aplikácie do žiadneho
+        produktu alebo aplikácie navrhnutej na vývoj webových stránok a (c) zákazník nepoužije
+        označenie Adobe, logá, ikony alebo iné ochranné známky spoločnosti Adobe pri uvedení
+        svojej aplikácie na trh. Zákazník sa zaväzuje ochrániť, zabrániť vzniku škody prípadne
+        odškodniť spoločnosť Adobe od a pred akýmkoľvek stratami, škodou, nárokmi alebo
+        súdnymi spormi vrátane odmeny advokáta, ktoré vzniknú alebo vyplynú z používania
+        alebo distribúcie jeho aplikácie.</p>
+    <br>
+    <p class="c5">
+        2.5 Programovacie jazyky. Softvér môže pozostávať zo súčastí ExtendScript SDK a
+        Pixel Bender SDK. S ohľadom na obmedzenia upravené v tomto článku 2 udeľuje Adobe
+        zákazníkovi nevýlučnú, neprenosnú, bezplatnú licenciu na používanie položiek v rámci
+        ExtendScript SDK a Pixel Bender SDK, iba na potreby vnútorného vývoja aplikačných
+        programov navrhnutých na prácu s aplikáciami spoločnosti Adobe. S výnimkou výslovne
+        uvedenou v tomto článku sa nesmú žiadne súčasti ExtendScript SDK alebo Pixel Bender
+        SDK modifikovať alebo distribuovať. Zákazník sa zaväzuje ochrániť, zabrániť vzniku
+        škody prípadne odškodniť spoločnosť Adobe od a pred akýmkoľvek stratami, škodou,
+        nárokmi alebo súdnymi spormi vrátane odmeny advokáta, ktoré vzniknú alebo vyplynú
+        z takejto distribúcie.</p>
+    <br>
+    <p class="c5">
+        2.6 Kópie dokumentov. Zákazník môže vytvárať kópie dokumentácie na svoju vlastnú
+        vnútornú potrebu v súvislosti s používaním softvéru, a to v súlade s touto zmluvou,
+        avšak najviac v primerane nevyhnutnom rozsahu.</p>
+    <br>
+    <p class="c4">
+        <b>3. Duševné vlastníctvo.</b></p>
+    <br>
+    <p class="c5">
+        Softvér a všetky autorizované kópie vytvorené zákazníkom sú duševným vlastníctvom
+        a majetkom spoločnosti Adobe Systems Incorporated a jej dodávateľov. Štruktúra,
+        organizácia a zdrojový kód softvéru predstavujú cenné obchodné tajomstvo a dôverné
+        informácie spoločnosti Adobe Systems Incorporated a jej dodávateľov. Softvér je
+        chránený zákonom, a to najmä zákonmi Spojených štátov amerických a ďalších krajín
+        na ochranu autorských práv a ustanoveniami medzinárodných zmlúv. Pokiaľ sa v zmluve
+        neuvádza výslovne inak, na základe tejto zmluvy nevznikajú zákazníkovi žiadne práva
+        duševného vlastníctva vzťahujúce sa k softvéru. Všetky práva, ktoré nie sú výslovne
+        udelené, si vyhradzuje spoločnosť Adobe a jej dodávatelia.</p>
+    <br>
+    <p class="c4">
+        <b>4. Obmedzenia a požiadavky.</b></p>
+    <br>
+    <p class="c5">
+        4.1 Upozornenia o vlastníctve. Každá povolená kópia softvéru (okrem iného vrátane
+        dokumentácie), ktorú zákazník vyhotoví, musí obsahovať rovnaké upozornenie o autorských
+        právach a iné upozornenia o vlastníctve, tak ako sa objavia na alebo v softvéri.</p>
+    <br>
+    <p class="c5">
+        4.2 Povinnosti vzťahujúce sa k používaniu softvéru. Zákazník sa zaväzuje, že nebude
+        využívať softvér inak, ako to povoľuje táto zmluva, a že nebude používať softvér
+        spôsobom, ktorý nezodpovedá jeho návrhu alebo dokumentácii.</p>
+    <br>
+    <p class="c5">
+        4.3 Zákaz modifikácií. Ak sa to výslovne neuvádza v článkoch 2 alebo 16, zákazník
+        nesmie softvér meniť, prispôsobovať ani prekladať.</p>
+    <br>
+    <p class="c5">
+        4.4 Zákaz spätných analýz. Ak sa to výslovne neuvádza v článku 16.1, zákazník nesmie
+        vykonávať spätné analýzy, dekompilovať, rozkladať alebo sa akýmkoľvek iným spôsobom
+        pokúšať zistiť zdrojový kód softvéru.</p>
+    <br>
+    <p class="c5">
+        4.5 Zákaz rozdeľovania. Softvér môže obsahovať rôzne aplikácie a komponenty, môže
+        sprístupňovať rôzne služby Adobe Online, môže podporovať viaceré platformy a jazyky
+        a môže byť poskytnutý zákazníkovi na viacerých nosičoch alebo vo viacerých kópiách.
+        Napriek tomu je softvér navrhnutý a poskytnutý zákazníkovi ako jediný produkt, ktorý
+        má byť použitý ako jediný produkt na počítačoch v súlade s povoleniami uvedenými
+        v tejto zmluve. Pokiaľ nie je v dokumentácii povolené inak, zákazník nemusí inštalovať
+        všetky časti komponentov softvéru, avšak nesmie rozdeliť tieto časti komponentov
+        softvéru s cieľom použitia na rôznych počítačoch.</p>
+    <br>
+    <p class="c5">
+        4.6 Zákaz prevodu.</p>
+    <br>
+    <p class="c5">
+        4.6.1 ZÁKAZNÍK NESMIE PRENAJÍMAŤ, SPRÍSTUPŇOVAŤ V RÁMCI LÍZINGU, PREDÁVAŤ, POSKYTOVAŤ
+        SUBLICENCIE, POSTÚPIŤ ALEBO PREVIESŤ SVOJE PRÁVA K SOFTVÉRU (A TO NAJMÄ SOFTVÉRU,
+        KTORÝ ZÍSKAL PREVZATÍM Z WEBOVEJ STRÁNKY) ALEBO POSKYTNÚŤ OPRÁVNENIE NA KOPÍROVANIE
+        KTOREJKOĽVEK ČASTI SOFTVÉRU DO POČÍTAČOV INÝCH FYZICKÝCH ALEBO PRÁVNICKÝCH OSÔB
+        S VÝNIMKAMI POVOLENÝMI V TEJTO ZMLUVE.
+    </p>
+    <br>
+    <p class="c5">
+        4.6.2 S výnimkou výukových softvérových produktov (podľa definície v článku 16.3),
+        softvéru vo verzii pred jeho uvedením na trh (podľa definície v článku 16.2), skúšobného
+        softvéru, kópií softvéru neurčených na ďalší predaj alebo softvéru nadobudnutého
+        cez program množstevných licencií Adobe a ďalej v súlade s článkom 4.6.3, smie zákazník
+        trvalo previesť všetky svoje práva na používanie softvéru na inú osobu alebo právny
+        subjekt pod podmienkou, že: (a) zákazník tiež prevedie na túto osobu alebo právny
+        subjekt (i) túto zmluvu, (ii) sériové číslo (čísla), softvér spojený s nosičmi,
+        poskytnutými spoločnosťou Adobe a jej autorizovanými distribútormi a všetok ostatný
+        softvér alebo hardvér zviazaný, zabalený alebo predinštalovaný so softvérom, vrátane
+        všetkých kópií, aktualizácií a predošlých verzií (tak ako je definované v článku
+        5 nižšie), a (iii) všetky kópie softvéru na prácu s písmami (font software), (b)
+        si zákazník neponechá žiadne aktualizácie, staršie verzie alebo kópie vrátane záloh
+        a kópií uložených v počítači a (c) nadobúdateľ odsúhlasí ustanovenia a podmienky
+        tejto zmluvy a akékoľvek iné ustanovenia a podmienky, za ktorých zákazník nadobudol
+        platnú licenciu k softvéru. Ďalšie informácie o prevode softvéru, podliehajúceho
+        hromadným licenciám, sú dostupné na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/volumepolicies_sk">
+            http://www.adobe.com/go/volumepolicies_sk</a>.
+    </p>
+    <br>
+    <p class="c5">
+        4.6.3 Ak softvér vyžaduje opakovanú aktiváciu alebo registráciu a Adobe udelí na
+        základe požiadavky zákazníkovi výnimku z povinnosti takejto opakovanej aktivácie
+        a registrácie, potom okrem obmedzení ustanovených v aktivačných podmienkach (ako
+        je definované v článku 14.3) musí byť právo trvalého prevodu, podľa článku 4.6.2,
+        zrušené ihneď po udelení takejto výnimky.</p>
+    <br>
+    <p class="c5">
+        4.7 Zákaz poskytovateľa služieb (service bureau). Zákazník nebude používať ani ponúkať
+        softvér na báze servisného výpočtového strediska. Článok 16.6.3 poskytuje obmedzenú
+        výnimku pre obslužný softvér typov písma.</p>
+    <br>
+    <p class="c5">
+        4.8 Obmedzenia modulov Adobe Runtime. Zákazník nebude používať moduly Adobe Runtime
+        na akomkoľvek zariadení, ktoré nie je PC, alebo na zariadení s vlastnou predinštalovanou
+        (napríklad unikátnou pre konkrétny typ zariadenia) verziou akéhokoľvek operačného
+        systému. Aby nedošlo k nejednoznačnému výkladu a iba ako príklad, zákazník nesmie
+        použiť moduly Adobe Runtime na žiadnom (a) mobilnom zariadení, zariadení na dekódovanie
+        televízneho signálu (set top box), vreckovom počítači (handheld), telefóne, hernej
+        konzole, televízore, DVD prehrávači, počítači uspôsobenom primárne na prehrávanie
+        médií, t. j. media center (s výnimkou Windows XP Media Center Edition a jeho nástupcov),
+        elektronickom bilborde alebo inom digitálnom značení, internetovom zariadení alebo
+        inom s internetom prepojenom zariadení, PDA, zdravotníckom prístroji, bankomate,
+        telematickom zariadení, hernom zariadení, domácom automatizačnom systéme, kiosku,
+        diaľkovom ovládači alebo akomkoľvek inom spotrebnom elektronickom zariadení, (b)
+        na mobilných, káblových, satelitných alebo televíznych systémoch umiestnených u
+        operátorov alebo (c) na iných uzavretých systémových zariadeniach. Ďalšie informácie
+        o poskytovaní licencií k modulom Adobe Runtime sú dostupné na stránke <a target="ADB-ESG"
+            href="http://www.adobe.com/go/licensing_sk">http://www.adobe.com/go/licensing_sk</a>.
+    </p>
+    <br>
+    <p class="c5">
+        4.9 Oblasť. Zákazník smie používať softvér a pristupovať k službám Adobe Online
+        len na území a spôsobom v súlade s aktivačnou politikou popísanou na stránke <a target="ADB-ESG"
+            href="http://www.adobe.com/go/activation_sk">http://www.adobe.com/go/activation_sk</a>.
+        Spoločnosť Adobe môže zrušiť týmto udelené licencie alebo pozastaviť členstvo alebo
+        prístup k službám Adobe Online Services, ak zistí, že zákazník používa softvér alebo
+        služby Adobe Online Services mimo oprávneného územia.</p>
+    <br>
+    <p class="c4">
+        <b>5. Aktualizácie.</b></p>
+    <br>
+    <p class="c5">
+        V prípade, ak je softvér aktualizáciou predošlej verzie softvéru Adobe (ďalej len
+        „predchádzajúca verzia“), potom je použitie tejto aktualizácie zákazníkom podmienené
+        uchovaním predchádzajúcej verzie. Preto ak zákazník prenesie túto aktualizáciu v
+        súlade s ustanoveniami článku 4.6, musí súčasne s ňou preniesť aj predchádzajúcu
+        verziu. Pokiaľ chce zákazník využívať túto aktualizáciu ako nadstavbu predchádzajúcej
+        verzie, môže tak robiť len na rovnakom počítači, na ktorom nainštaloval a používa
+        predchádzajúcu verziu. Akékoľvek záväzky spoločnosti Adobe, ktoré sa viažu k podpore
+        predchádzajúcej verzie počas licenčnej doby, môžu zaniknúť v momente dostupnosti
+        tejto aktualizácie. Nie je povolený žiadny iný spôsob použitia aktualizácie. Licencie
+        k dodatočným aktualizáciám môže Adobe udeliť zákazníkovi v dodatočných alebo iných
+        zmluvných podmienkach.</p>
+    <br>
+    <p class="c4">
+        <b>6. Obmedzená záruka.</b></p>
+    <br>
+    <p class="c5">
+        Ak nie je v osobitnej zmluve medzi Adobe a držiteľom softvérovej licencie uvedené
+        inak, Adobe ručí osobám alebo subjektom, ktoré si po prvý raz zakúpili licenciu
+        na softvér s cieľom jeho používania v súlade s podmienkami tejto zmluvy, že softvér
+        bude fungovať v zmysle príslušnej používateľskej príručky k softvéru po dobu kratšiu
+        ako (a) deväťdesiat (90) dní, alebo ako (b) je doba trvania licencie, počnúc prevzatím
+        softvéru („záručná doba“), pri použití na kompatibilnom počítači. Nepodstatná odchýlka
+        vo fungovaní softvéru od používateľskej príručky nezakladá práva zo záruky. Táto
+        obmedzená záruka sa nevzťahuje na nižšie uvedený obsah, ktorý je dodávaný V DANOM
+        STAVE a bez záruky zo strany Adobe: (i) záplaty, (ii) softvér pre typy písma, (iii)
+        zavádzací softvér, skúšobné, štartovacie, hodnotiace a vzorové verzie a kópie softvéru,
+        ktoré nie sú určené na ďalší predaj, (iv) webové stránky, služby Adobe Online a
+        služby tretích strán, (v) certifikované služby spracovania dokumentov (viac v článku
+        16) a (vi) akýkoľvek softvér, ktorý Adobe sprístupňuje na prevzatie zdarma cez svoju
+        webovú stránku. Všetky nároky zo záruky musia byť uplatnené spolu s dokladom o kúpe
+        na Oddelení služieb zákazníkom spoločnosti Adobe v rámci uvedenej záručnej doby.
+        Ďalšie informácie o možnostiach reklamácií sú dostupné na stránke <a target="ADB-ESG"
+            href="http://www.adobe.com/go/support_sk">http://www.adobe.com/go/support_sk</a>.
+        Celková zodpovednosť spoločnosti Adobe a jej partnerských spoločností vo vzťahu
+        ku vzneseným nárokom a požiadavkám zákazníka na odškodnenie, vyplývajúcim zo záruky,
+        bude obmedzená na základe rozhodnutia Adobe na technickú softvérovú podporu v nadväznosti
+        na konkrétny typ reklamácie, na výmenu softvéru alebo, ak výmena nie je na základe
+        stanoviska Adobe možná, na refundáciu licenčného poplatku, ktorý zákazník pri kúpe
+        softvéru zaplatil. OBMEDZENÁ ZÁRUKA UVEDENÁ V TOMTO ČLÁNKU DÁVA ZÁKAZNÍKOVI OSOBITNÉ
+        PRÁVA. ZÁKAZNÍK VŠAK MÔŽE DISPONOVAŤ AJ ĎALŠÍMI PRÁVAMI, KTORÉ SA LÍŠIA V ZÁVISLOSTI
+        OD PRÁVNEHO PORIADKU JEDNOTLIVÝCH KRAJÍN. SPOLOČNOSŤ ADOBE NEMÁ V ÚMYSLE OBMEDZIŤ
+        PRÁVA ZÁKAZNÍKA ZO ZÁRUKY V ROZSAHU, KTORÝ NIE JE PRÁVNYM PORIADKOM DOVOLENÝ. Osobitné
+        ustanovenia, týkajúce sa platných právnych poriadkov jednotlivých krajín nájdete
+        v článku 16. Pre ďalšie informácie môžete kontaktovať Oddelenie služieb zákazníkom
+        spoločnosti Adobe.</p>
+    <br>
+    <p class="c4">
+        <b>7. Vylúčenie nároku.</b></p>
+    <br>
+    <p class="c5">
+        OBMEDZENÁ ZÁRUKA PODĽA ČLÁNKU 6 A AKÁKOĽVEK ZÁKONNÁ ZÁRUKA A NÁROK, KTORÝ NEMOŽNO
+        VYLÚČIŤ ALEBO OBMEDZIŤ V SÚLADE S PRÁVNYM PORIADKOM, PREDSTAVUJÚ JEDINÉ ZÁRUKY A
+        NÁROKY NA NÁHRADU VZNIKNUTEJ ŠKODY, VZŤAHUJÚCE SA K SOFTVÉRU. SPOLOČNOSŤ ADOBE,
+        JEJ DCÉRSKE SPOLOČNOSTI, DODÁVATELIA A CERTIFIKAČNÉ ORGÁNY (DEFINOVANÉ NIŽŠIE) NEPREBERAJÚ
+        ŽIADNE INÉ ZÁRUKY, PODMIENKY, VYHLÁSENIA ALEBO USTANOVENIA, VÝSLOVNE VYJADRENÉ ALEBO
+        IMPLICITNE VYPLÝVAJÚCE ČI UŽ Z LEGISLATÍVY, OBYČAJOV ALEBO ZO ZVYKOVÉHO PRÁVA V
+        AKEJKOĽVEK ZÁLEŽITOSTI VRÁTANE, NIE VŠAK VÝLUČNE, VO VZŤAHU K VÝKONU PRÁV, BEZPEČNOSTI,
+        NEPORUŠOVANIU PRÁV TRETÍCH OSÔB, INTEGRÁCII, OBCHODOVATEĽNOSTI, NERUŠENÉHO UŽÍVANIA,
+        USPOKOJIVEJ KVALITY A VHODNOSTI NA AKÝKOĽVEK ŠPECIFICKÝ ÚČEL, AKO TIE POSKYTNUTÉ
+        A STANOVENÉ ZÁKONOM, NA KTORÉ VZNIKÁ ZÁKONNÝ NÁROK. SPOLOČNOSŤ ADOBE A JEJ DODÁVATELIA
+        NEPOSKYTUJÚ INÝ SOFTVÉR ANI PRÍSTUP NA WEBOVÉ STRÁNKY, ONLINE SLUŽBY SPOLOČNOSTI
+        ADOBE ALEBO ONLINE SLUŽBY POSKYTOVANÉ TRETÍMI STRANAMI A SLUŽBY CERTIFIKAČNÝCH AUTORÍT
+        V DANOM STAVE A BEZ NEDOSTATKOV, AKO TIE POSKYTNUTÉ A STANOVENÉ ZÁKONOM A NA KTORÉ
+        VZNIKÁ ZÁKONNÝ NÁROK. TOTO VYLÚČENIE NÁROKU NA ZÁRUKU MÔŽE BYŤ V NIEKTORÝCH PRÁVNYCH
+        SYSTÉMOCH NEPLATNÉ. PODĽA PRÁVNEHO PORIADKU, KTORÉHO PÔSOBNOSTI SA NIE JE MOŽNÉ
+        VZDAŤ ANI JU VYLÚČIŤ, MÔŽE ZÁKAZNÍK DISPONOVAŤ DODATOČNÝMI PRÁVAMI ZO ZÁRUKY. SPOLOČNOSŤ
+        ADOBE NEMÁ V ÚMYSLE OBMEDZIŤ PRÁVA ZÁKAZNÍKA ZO ZÁRUKY V ROZSAHU, KTORÝ NIE JE PRÁVNYM
+        PORIADKOM DOVOLENÝ. Ustanovenia článkov 7 a 8 zostanú v platnosti aj po ukončení
+        doby platnosti tejto zmluvy bez ohľadu na to, z akého dôvodu zanikla, avšak z tohto
+        ustanovenia nevyplýva, ani toto ustanovenie nevytvára žiadne trvalé právo používať
+        softvér po ukončení doby platnosti zmluvy.</p>
+    <br>
+    <p class="c4">
+        <b>8. Obmedzenie zodpovednosti.</b></p>
+    <br>
+    <p class="c5">
+        S VÝNIMKOU VYŠŠIE UVEDENÉHO VÝLUČNÉHO NÁROKU ZO ZÁRUKY, POSKYTNUTÉHO SPOLOČNOSŤOU
+        ADOBE A AKÝMIKOĽVEK NÁROKMI, KTORÉ NEMÔŽU BYŤ VYLÚČENÉ ALEBO OBMEDZENÉ PODĽA PRÁVNEHO
+        PORIADKU, SPOLOČNOSŤ ADOBE, JEJ DCÉRSKE SPOLOČNOSTI, DODÁVATELIA A CERTIFIKAČNÉ
+        ORGÁNY ZÁKAZNÍKOVI V ŽIADNOM PRÍPADE NEZODPOVEDAJÚ ZA AKÉKOĽVEK STRATY, ŠKODY, NÁROKY
+        ALEBO VÝDAVKY AKÉHOKOĽVEK DRUHU VRÁTANE AKÝCHKOĽVEK NÁSLEDNÝCH, NEPRIAMYCH ALEBO
+        NÁHODNÝCH ŠKÔD, AKÉHOKOĽVEK UŠLÉHO ZISKU ALEBO AKÝCHKOĽVEK STRÁT NA ÚSPORÁCH, AKÝCHKOĽVEK
+        ŠKÔD VYPLÝVAJÚCICH Z PRERUŠENIA OBCHODNÝCH ČINNOSTÍ, UJMY NA ZDRAVÍ ALEBO ZANEDBANIA
+        STAROSTLIVOSTI ALEBO NÁROKOV TRETÍCH OSÔB, AJ KEĎ ZÁSTUPCA SPOLOČNOSTI ADOBE BOL
+        UPOZORNENÝ NA MOŽNOSŤ TAKEJTO STRATY, ŠKODY, NÁROKOV ALEBO VÝDAVKOV. V KAŽDOM PRÍPADE
+        JE CELKOVÁ ZODPOVEDNOSŤ SPOLOČNOSTI ADOBE, JEJ DCÉRSKYCH SPOLOČNOSTÍ, DODÁVATEĽOV
+        A CERTIFIKAČNÝCH ORGÁNOV PODĽA TEJTO ZMLUVY ALEBO V SÚVISLOSTI S TOUTO ZMLUVOU OBMEDZENÁ
+        NA SUMU, ZAPLATENÚ ZA SOFTVÉR V PRÍPADE, AK BOLA VÔBEC ZAPLATENÁ. TOTO OBMEDZENIE
+        SA VZŤAHUJE AJ NA PRÍPADY ZÁSADNÉHO ALEBO PODSTATNÉHO PORUŠENIA ALEBO PORUŠENIA
+        ZÁSADNÝCH ALEBO PODSTATNÝCH PODMIENOK TEJTO ZMLUVY. Nič, čo je uvedené v tejto zmluve,
+        neobmedzuje zodpovednosť spoločnosti Adobe voči zákazníkovi pre prípad smrti alebo
+        zranenia vyplývajúceho z nedbanlivosti spoločnosti Adobe alebo z trestného činu
+        podvodného konania (podvod). Adobe koná v mene svojich dcérskych spoločností, dodávateľov
+        a certifikačných orgánov s cieľom odoprenia, vylúčenia a obmedzenia záväzkov, záruk
+        a zodpovednosti, ale nekoná v ich mene v žiadnom inom ohľade ani s žiadnym iným
+        cieľom.
+    </p>
+    <br>
+    <p class="c5">
+        PREDCHÁDZAJÚCE OBMEDZENIA A VÝNIMKY SA POUŽIJÚ V ROZSAHU PRÍPUSTNOM PODĽA PLATNÉHO
+        PRÁVNEHO PORIADKU KRAJINY ZÁKAZNÍKA. TOTO OBMEDZENIE ZODPOVEDNOSTI NEMUSÍ BYŤ V
+        NIEKTORÝCH PRÁVNYCH SYSTÉMOCH PLATNÉ. ZÁKAZNÍK MÔŽE DISPONOVAŤ PRÁVAMI, KTORÝCH
+        SA NEMOŽNO VZDAŤ PODĽA PRÁVNYCH PREDPISOV NA OCHRANU SPOTREBITEĽA A PODĽA INÝCH
+        PRÁVNYCH PREDPISOV. SPOLOČNOSŤ ADOBE NEMÁ V ÚMYSLE OBMEDZIŤ PRÁVA ZÁKAZNÍKA ZO ZÁRUKY
+        V ROZSAHU, KTORÝ NIE JE POVOLENÝ PRÁVNYM PORIADKOM. OSOBITNÉ USTANOVENIA TÝKAJÚCE
+        SA PRÁVNYCH PORIADKOV SÚ UVEDENÉ V ČLÁNKU 16.</p>
+    <br>
+    <p class="c4">
+        <b>9. Pravidlá pre vývoz.</b></p>
+    <br>
+    <p class="c5">
+        Zákazník berie na vedomie, že softvér podlieha administratívnym vývozným nariadeniam
+        Spojených štátov amerických a ďalším zákonom, obmedzeniam a nariadeniam na kontrolu
+        vývozu (spolu ďalej len „zákony o vývoze“), a že bude konať v súlade so zákonmi
+        o vývoze. Zákazník nebude zasielať, prepravovať, exportovať ani reexportovať softvér,
+        priamo ani nepriamo do: (a) do ktorejkoľvek krajiny, na ktorú sa vzťahujú obmedzenia
+        vývozu zo Spojených štátov amerických (a to najmä Kuba, Irán, Severná Kórea, Sudán
+        a Sýria) (každá jednotlivo ďalej len ako „krajina podliehajúca embargu“), (b) ktorémukoľvek
+        koncovému používateľovi, ktorého poznáte alebo odôvodnene viete, že ich využije
+        na návrh, vývoj alebo výrobu nukleárnych, chemických alebo biologických zbraní alebo
+        raketových systémov, kozmických rakiet a sondážnych rakiet alebo systémov bezposádkových
+        vzdušných prostriedkov (každé jednotlivo ďalej len ako „zakázané použitie“), alebo
+        (c) ktorémukoľvek koncovému používateľovi, ktorému bola zakázaná účasť v exportných
+        transakciách Spojených štátov amerických ktorýmkoľvek federálnym výkonným orgánom
+        vlády Spojených štátov amerických (ďalej len „sankcionovaná strana“). Zákazník navyše
+        zodpovedá za konanie v súlade so všetkými miestnymi právnymi predpismi, platnými
+        v jurisdikcii zákazníka, ktoré môžu ovplyvniť jeho právo na import, export alebo
+        používanie softvéru. Zákazník vyhlasuje a zaručuje sa, že (a) nie je občanom, ani
+        nemá trvalý pobyt v krajine podliehajúcej embargu, (b) nebude používať softvér spôsobom
+        kvalifikovaným ako zakázané použitie a (c) nie je sankcionovanou stranou. Všetky
+        práva používať softvér sú udelené pod podmienkou, že v prípade, ak zákazník poruší
+        ustanovenia tejto zmluvy, bude týchto práv pozbavený. Ak má spoločnosť Adobe vedomosť
+        o tom, že došlo k nejakému porušeniu uvedených pravidiel, spoločnosti Adobe môže
+        byť zabránené, aby poskytovala ďalšiu údržbu a podporu pre softvér.</p>
+    <br>
+    <p class="c4">
+        <b>10. Rozhodné právo.</b></p>
+    <br>
+    <p class="c5">
+        Ak je zákazník spotrebiteľom, ktorý používa softvér len na osobné nekomerčné účely,
+        potom sa táto zmluva riadi zákonmi jurisdikcie, v ktorej zákazník zakúpil licenciu
+        na používanie softvéru. Pokiaľ zákazník nie je takýmto spotrebiteľom, spravuje sa
+        táto zmluva (a je vytvorená v súlade s ním) platným právom účinným v: (a) štáte
+        Kalifornia, pokiaľ sa v okamihu nadobudnutia licencie k softvéru zákazník nachádza
+        v Spojených štátoch amerických, v Kanade alebo v Mexiku, alebo (b) Japonsku, pokiaľ
+        sa v okamihu nadobudnutia licencie k softvéru zákazník nachádza v Japonsku, alebo
+        (c) Singapure, pokiaľ sa v okamihu nadobudnutia licencie k softvéru zákazník nachádza
+        v členskom štáte Združenia národov juhovýchodnej Ázie (ASEAN), Čínskej ľudovej republike,
+        v správnych regiónoch Hongkong a Macao, Taiwane alebo v Kórejskej republike, alebo
+        (d) Anglicka a Walesu, pokiaľ sa v okamihu nadobudnutia licencie k softvéru zákazník
+        nachádza v akejkoľvek inej jurisdikcii, ako je uvedené vyššie. Nevýlučnú súdnu právomoc
+        k všetkým sporom súvisiacim s touto zmluvou majú príslušné súdy v Santa Clara County
+        v Kalifornii, ak sa aplikuje právo štátu Kalifornia, okresný súd (District Court)
+        v Tokiu v Japonsku, ak sa aplikuje japonské právo, a príslušné súdy v Londýne v
+        Anglicku, ak sa aplikuje právo Anglicka a Walesu. Pokiaľ platí singapurské právo,
+        bude akýkoľvek spor vyplývajúci z tejto zmluvy alebo spor, ktorý vznikol v súvislosti
+        s ňou, vrátane akýchkoľvek otázok ohľadne jej existencie, platnosti či ukončenia
+        platnosti, riešený a s konečnou platnosťou rozhodnutý rozhodcovským konaním v Singapure,
+        v súlade s pravidlami vedenia rozhodcovských konaní Singapurského medzinárodného
+        rozhodcovského strediska (Singapore International Arbitration Centre, „SIAC“), ktoré
+        budú v danom čase v platnosti, pričom takéto pravidlá sa považujú za odkazom včlenené
+        do tohto článku. Rozhodovať bude jeden rozhodca, ktorého strany vyberú spoločne.
+        V prípade, ak nebude rozhodca zvolený v priebehu tridsať (30) dní potom, ako jedna
+        strana predloží písomnú požiadavku na postúpenie sporu do rozhodcovského konania,
+        vykoná výber predseda SIAC. Jazykom rozhodcovského konania bude angličtina. Bez
+        ohľadu na akékoľvek ustanovenie tejto zmluvy môže spoločnosť Adobe alebo zákazník
+        požiadať akýkoľvek súdny, správny alebo iný orgán, aby nariadil akékoľvek dočasné
+        alebo ochranné opatrenie vrátane súdneho príkazu, konkrétneho plnenia alebo iného
+        spravodlivého opatrenia, tak pred začiatkom súdneho či arbitrážneho konania, ako
+        aj počas neho, a to s cieľom ochrany práv a záujmov alebo s cieľom vynútenia špecifických
+        podmienok, ktoré sú vhodné pre dočasné opatrenia. Táto zmluva sa nebude riadiť nasledovným
+        poriadkom, použitie ktorého je výslovne vylúčené: (x) kolíznymi normami akejkoľvek
+        jurisdikcie, (y) Dohovorom OSN o zmluvách o medzinárodnej kúpe tovaru a (z) zákonom
+        o jednotnom prenose počítačových informácií v znení schválenom v konkrétnej jurisdikcii.</p>
+    <br>
+    <p class="c4">
+        <b>11. Všeobecné ustanovenia.</b></p>
+    <br>
+    <p class="c5">
+        Ak ktorékoľvek ustanovenie tejto zmluvy bude vyhlásené za neplatné alebo nevynútiteľné,
+        nemá to vplyv na platnosť ostatných ustanovení tejto zmluvy, ktoré zostanú aj naďalej
+        platné a budú vynútiteľné v súlade so svojimi podmienkami. Túto zmluvu možno zmeniť
+        len písomnou formou, podpísanou oprávneným zástupcom spoločnosti Adobe. V prípade
+        interpretácie alebo výkladu tejto zmluvy sa použije jej anglická verzia. Táto zmluva
+        predstavuje úplnú dohodu medzi zákazníkom a spoločnosťou Adobe, týkajúcu sa softvéru
+        a nahrádzajúcu všetky predchádzajúce vyhlásenia, rokovania, prísľuby, prejavy a
+        reklamu súvisiacu so softvérom.</p>
+    <br>
+    <p class="c4">
+        <b>12. Upozornenie pre koncových používateľov z vládnych inštitúcii USA.</b></p>
+    <br>
+    <p class="c5">
+        12.1 Licencia technológii spoločnosti Adobe pre vládne inštitúcie USA. Zákazník
+        sa zaväzuje, že v prípade, ak nadobúda licenciu k softvéru spoločnosti Adobe pre
+        vládne inštitúcie USA alebo akýchkoľvek ich zmluvných partnerov, nadobudne predmetnú
+        licenciu v súlade s podmienkami uvedenými v 48 C.F.R. odsek 12.212 (pre civilné
+        organizácie) a 48 C.F.R. odseky 227.7202-1 a 227.7202-4 (pre Ministerstvo obrany).
+        Ak ide o koncových používateľov z vládnych inštitúcií USA, spoločnosť Adobe sa zaväzuje
+        dodržiavať ustanovenia všetkých platných zákonov o rovnosti príležitostí vrátane,
+        ak je to odôvodnené, ustanovenia Executive Order 11246 v znení neskorších predpisov,
+        § 402 Zákona o podpore začlenenia sa veteránov z vietnamského obdobia („Vietnam
+        Era Veterans Readjustment Assistance Act“) z roku 1974 (38 USC 4212) a § 503 Zákona
+        o rehabilitácii („Rehabilitation Act“) z roku 1973 v znení neskorších predpisov
+        a úpravy uvedenej v 41 CFR časť 60-1 až 60-60, 60-250 a 60-741. Doložka o pozitívnej
+        diskriminácií, ako aj úprava zahrnutá v predošlej vete, budú zapracované vo forme
+        odkazu k tejto zmluve.</p>
+    <br>
+    <p class="c5">
+        12.2 Komerčné položky. Pre koncových používateľov z vládnych inštitúcií USA predstavuje
+        softvér „komerčnú položku“, tak ako je definovaná v 48 C.F.R. § 2.101, pozostávajúcu
+        z „komerčného softvéru pre počítače“ a „dokumentácie komerčného softvéru pre počítače“,
+        tak ako sú tieto pojmy použité v 48 C.F.R. § 12.212 alebo 48 C.F.R. § 227.7202 v
+        platnom znení. V súlade s 48 C.F.R. § 12.212 alebo 48 C.F.R. § 227.7202-1 až 227.7202-4
+        v platnom znení sú tento komerčný softvér pre počítače a dokumentácia pre komerčný
+        softvér pre počítače licencované na použitie koncovými používateľmi z vládnych inštitúcii
+        USA (a) iba ako komerčná položka a (b) iba v rozsahu tých práv, ktoré sú udelené
+        všetkým ostatným koncovým používateľom v súlade s podmienkami a ustanoveniami tu
+        uvedenými. Neuvedené práva sú vyhradené podľa zákonov na ochranu autorských práv
+        Spojených štátov amerických.</p>
+    <br>
+    <p class="c4">
+        <b>13. Súlad s licenciami.</b></p>
+    <br>
+    <p class="c5">
+        Ak je zákazník podnikateľ, spoločnosť, či organizácia, zákazník súhlasí s tým, že
+        okrem akejkoľvek kontroly dodržiavania licenčných podmienok vykonávanej softvérom
+        má spoločnosť Adobe alebo jej poverený zástupca právo, nie viac ako raz za dvanásť
+        (12) mesiacov, po dobu siedmich (7) pracovných dňoch od predošlej výzvy, doručenej
+        zákazníkovi, vykonať kontrolu záznamov, systémov a vybavenia zákazníka, aby overil,
+        či jeho použitie akéhokoľvek a každého softvéru Adobe či služby je v súlade s jeho
+        platnou licenciou od spoločnosti Adobe. Napríklad má spoločnosť Adobe právo prístupu
+        k záznamom zákazníka, z ktorých je možné zistiť, či boli jednotlivé inštalácie opatrené
+        sériovými číslami, a zákazník je povinný poskytnúť takéto záznamy na základe výzvy
+        Adobe bez zbytočného odkladu. Okrem toho musí zákazník do tridsiatich (30) dní od
+        prijatia požiadavky poskytnúť spoločnosti Adobe všetky požadované záznamy a informácie
+        na účely overenia súladu spôsobu použitia akéhokoľvek a všetkých softvérov Adobe
+        s príslušnou platnou licenciou. Ďalšie informácie o serializácii sú dostupné na
+        stránke <a target="ADB-ESG" href="http://www.adobe.com/go/elicensing_sk">http://www.adobe.com/go/elicensing_sk</a>.
+    </p>
+    <br>
+    <p class="c4">
+        <b>14. Možnosti pripojenia a ochrana súkromia.</b></p>
+    <br>
+    <p class="c5">
+        14.1 Automatické pripojenie k internetu. Softvér sa môže, aj bez predchádzajúceho
+        upozornenia, na počítači zákazníka automaticky pripojiť k internetu a komunikovať
+        s webovou stránkou Adobe alebo doménou Adobe na účely validácie licencie a poskytnutia
+        ďalších informácií, vlastností alebo funkcií zákazníkovi. Pokiaľ nie je v bodoch
+        14.2 až 14.7 uvedené inak, nasledujúce ustanovenia sa budú vzťahovať na každé automatické
+        pripojenie k internetu prostredníctvom softvéru:</p>
+    <br>
+    <p class="c5">
+        14.1.1 Zásady ochrany súkromia lokality Adobe Online sa použijú pri každom pripojení
+        softvéru k internetu a komunikácii s webovou stránkou Adobe, či už automaticky,
+        alebo na výslovnú žiadosť používateľa. Politika ochrany súkromia spoločnosti Adobe
+        umožňuje sledovanie návštevnosti webových stránok a podrobne určuje predmet sledovania
+        a používanie súborov cookies, webových majákov (web beacons) a podobných zariadení.
+    </p>
+    <br>
+    <p class="c5">
+        14.1.2 Pri každom pripojení softvéru k lokalite Adobe prostredníctvom internetu
+        softvér v súlade s politikou ochrany súkromia Adobe Online zbiera a prenáša informácie
+        týkajúce sa zákazníka do spoločnosti Adobe. Viac informácií nájdete na stránke <a
+            target="ADB-ESG" href="http://www.adobe.com/go/privacy_sk">http://www.adobe.com/go/privacy_sk</a>
+        („Politika ochrany súkromia“).</p>
+    <br>
+    <p class="c5">
+        14.1.3 V prípade, ak sa zákazník pripojí k službe Adobe Online Service (ako je definované
+        v článku 16.4 nižšie) alebo aktivuje alebo registruje softvér, môžu sa v súlade
+        s politikou ochrany súkromia a ďalšími podmienkami používania, vzťahujúcimi sa k
+        službe Adobe Online Service (spolu s podmienkami používania Adobe.com a ďalšími
+        príslušnými podmienkami, ďalej len ako „dodatočné podmienky používania“), prenášať
+        a uchovávať v spoločnosti Adobe dodatočné informácie, ako napríklad identifikácia
+        zákazníka, používateľské meno a heslo.</p>
+    <br>
+    <p class="c5">
+        14.1.4 V rozsahu povolenom príslušnou legislatívou, prípadne v rozsahu odsúhlasenom
+        zákazníkom, smie Adobe (a) posielať zákazníkovi transakčné správy na uľahčenie aktivácie,
+        registrácie a použitia softvéru alebo služieb Adobe Online, alebo (b) odovzdávať
+        marketingové informácie, ktoré sú súčasťou produktu, s cieľom informovania o softvéri
+        a ďalších produktoch a službách Adobe, s využitím informácií o zákazníkovi, a to
+        najmä o verzii platformy, verzii softvéru, stave licencie a jazyku.</p>
+    <br>
+    <p class="c5">
+        14.2 Aktualizácie. Softvér môže bez dodatočného oznámenia spustiť automatické pripojenie
+        počítača zákazníka k internetu (občasne alebo pravidelne) s cieľom (a) kontroly
+        aktualizácií, ktoré sú k dispozícii na prevzatie a na ich inštaláciu na počítači
+        a (b) oznámenia výsledku pokusov o inštaláciu spoločnosti Adobe.</p>
+    <br>
+    <p class="c3">
+        14.3 Aktivácia. Softvér môže od zákazníka vyžadovať, aby si (a) zabezpečil identifikáciu
+        Adobe, (b) aktivoval alebo reaktivoval svoj softvér, (c) zaregistroval softvér,
+        alebo (d) potvrdil svoje členstvo. Takáto požiadavka môže zapríčiniť pripojenie
+        počítača zákazníka k internetu bez upozornenia, a to počas inštalácie, spúšťania
+        a neskôr aj pravidelne pri ďalšom používaní. Akonáhle sa softvér pripojí, začne
+        zbierať a odosielať príslušné informácie do spoločnosti Adobe. Ďalšie informácie
+        o aktivácii sú dostupné na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/activation_sk">
+            http://www.adobe.com/go/activation_sk</a> („Aktivačné podmienky“). Softvér alebo
+        zákazník môžu takisto prijímať informácie od Adobe, napríklad informácie týkajúce
+        sa licencie zákazníka, predplatného alebo členstva. Adobe môže tieto informácie
+        použiť na odhalenie a prevenciu podvodného alebo neoprávneného použitia, ktoré nie
+        je v súlade s platnou licenciou, predplatným alebo členstvom. Neúspešný pokus pri
+        aktivácii alebo registrácii softvéru, pri potvrdení predplatného, alebo členstva
+        alebo odhalenie zo strany Adobe o podvodnom alebo neoprávnenom použití softvéru
+        môže mať za následok obmedzenú funkčnosť, úplnú nefunkčnosť softvéru alebo pozastavenie,
+        prípadne ukončenie predplatného alebo členstva.</p>
+    <br>
+    <p class="c5">
+        14.4 Deaktivácia. Zákazník môže deaktivovať a odinštalovať softvér zo svojho počítača
+        s cieľom jeho inštalácie a aktivácie na inom počítači v súlade s touto zmluvou („deaktivácia“)
+        a ako sa ďalej uvádza na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/activation_sk">
+            http://www.adobe.com/go/activation_sk</a>. Deaktivácia si vyžaduje internetové
+        pripojenie.</p>
+    <br>
+    <p class="c5">
+        14.5 Využívanie online služieb. Softvér môže bez dodatočného oznámenia spustiť automatické
+        pripojenie počítača zákazníka k internetu (občasne alebo pravidelne) s cieľom zjednodušenia
+        prístupu zákazníka k obsahu a službám poskytovaným spoločnosťou Adobe alebo tretími
+        stranami, ako je podrobne popísané v článku 16.4 (služby online). Okrem toho sa
+        môže softvér bez ďalšieho upozornenia automaticky pripojiť k internetu a aktualizovať
+        prevzateľné materiály z týchto online služieb s cieľom zabezpečenia okamžitej dostupnosti
+        týchto služieb, aj keď je zákazník v režime offline.</p>
+    <br>
+    <p class="c5">
+        14.6 Digitálne certifikáty. Softvér používa digitálne certifikáty (ako je popísané
+        v článku 16.5), aby pomohol zákazníkovi identifikovať stiahnuté súbory (napríklad
+        aplikácie alebo obsah) a osoby alebo subjekty, ktoré uvedené súbory vydávajú. Napríklad
+        modul Adobe AIR používa digitálne certifikáty na pomoc zákazníkom pri identifikácii
+        vydavateľa aplikácií Adobe AIR. Produkty radu Adobe Acrobat taktiež využívajú digitálne
+        certifikáty na podpisovanie a overovanie podpisov v dokumentoch PDF (Portable Document
+        Format) a overovanie certifikovaných dokumentov PDF. Počítač zákazníka sa môže počas
+        overovania digitálneho certifikátu pripojiť k internetu.</p>
+    <br>
+    <p class="c5">
+        14.7 Správca nastavení. Softvér môže obsahovať prehrávač Flash Player. Prehrávač
+        Flash Player môže ukladať vybrané používateľské nastavenia ich uchovaním v počítači
+        zákazníka vo forme lokálnych zdieľaných objektov. Tieto sú priamo spojené s aplikáciou
+        Flash Player v počítači zákazníka a umožňujú mu tak prispôsobovať funkcie tohto
+        modulu. Správca nastavení programu Flash Player povoľuje zákazníkovi takéto nastavenia
+        zmeniť vrátane možnosti obmedziť ukladanie lokálnych zdieľaných objektov tretími
+        stranami alebo udeliť obsahu tretích strán právo na prístup k mikrofónu a kamere
+        na počítači zákazníka. Ďalšie informácie o tom, ako konfigurovať nastavenia príslušnej
+        verzie programu Flash Player, vrátane informácií o spôsobe zakázania lokálnych zdieľaných
+        objektov pomocou správcu nastavení (Settings Manager) programu Flash Player nájdete
+        na adrese <a target="ADB-ESG" href="http://www.adobe.com/go/settingsmanager_sk">http://www.adobe.com/go/settingsmanager_sk</a>.
+        Ďalšie informácie o lokálnych zdieľaných objektoch sú dostupné na stránke <a target="ADB-ESG"
+            href="http://www.adobe.com/go/flashplayer_security_sk">http://www.adobe.com/go/flashplayer_security_sk</a>.
+    </p>
+    <br>
+    <p class="c4">
+        <b>15. Komunikácia rovnocenných subjektov (Peer to Peer siete).</b></p>
+    <br>
+    <p class="c5">
+        Softvér môže použiť pripojenie zákazníka do miestnej siete na automatické pripojenie
+        sa k inému softvéru spoločnosti Adobe a pritom v miestnej sieti môže určiť, že je
+        sprístupnený na komunikáciu s iným softvérom spoločnosti Adobe. Tieto spojenia môžu
+        prenášať IP adresu pripojenia zákazníka k lokálnej sieti.</p>
+    <br>
+    <p class="c4">
+        <b>16. Osobitné ustanovenia a výnimky.</b></p>
+    <br>
+    <p class="c5">
+        Tento článok definuje osobitné ustanovenia, vzťahujúce sa na konkrétne produkty
+        a komponenty softvéru, ako aj obmedzené výnimky k vyššie uvedeným ustanoveniam a
+        podmienkam. V prípade, ak je ktorékoľvek ustanovenie tohto článku v rozpore s akýmkoľvek
+        iným ustanovením alebo podmienkou uvedenou v tejto zmluve, podmienky uvedené v tomto
+        článku nahrádzajú takéto konfliktné ustanovenie alebo podmienku.</p>
+    <br>
+    <p class="c5">
+        16.1 Nestrannosť ustanovenia v rámci Európskeho hospodárskeho priestoru; Povinné
+        upozornenie pre Austráliu.</p>
+    <br>
+    <p class="c5">
+        16.1.1 Táto zmluva neobmedzuje zákonné práva akejkoľvek zainteresovanej strany vrátane
+        osôb v postavení spotrebiteľa. Ak napríklad ide o spotrebiteľov na Novom Zélande,
+        ktorí nadobudli softvér na osobné, domáce použitie (nie na obchodné účely), podlieha
+        táto zmluva zákonu o spotrebiteľských garanciách (Consumer Guarantees Act).</p>
+    <br>
+    <p class="c5">
+        16.1.2 V prípade, ak zákazník nadobudol softvér v rámci Európskeho hospodárskeho
+        priestoru (EHP), zákazník sa obvykle zdržiava v Európskom hospodárskom priestore
+        a zákazník je spotrebiteľom (teda využíva tento softvér na osobné a nekomerčné účely),
+        potom sa článok 6 (Obmedzená záruka) na kúpu a použitie softvéru zákazníkom nevzťahuje.
+        Namiesto toho spoločnosť Adobe poskytuje od momentu kúpy softvéru dvojročnú záruku
+        na všetky funkcie softvéru uvedené v dokumentácii („dohodnutá funkcionalita“), ak
+        sa tento používa na kompatibilnom počítači. Nepodstatná odchýlka od dohodnutej funkcionality
+        nezakladá žiadne záručné právo. TÁTO ZÁRUKA SA NEVZŤAHUJE NA SOFTVÉR, KTORÝ ZÁKAZNÍK
+        POUŽÍVA AKO SOFTVÉR VYDANÝ PRED UVEDENÍM NA TRH, TESTOVACIU KÓPIU, PREDBEŽNÚ KÓPIU,
+        UKÁŽKU ALEBO SOFTVÉR NA PRÁCU S PÍSMAMI (FONT SOFTWARE), ALEBO AK PRESTAL SPRÁVNE
+        FUNGOVAŤ Z DÔVODU JEHO ZMENY ZÁKAZNÍKOM. Na uplatnenie nároku zo záruky musí zákazník
+        v lehote 2 rokov kontaktovať Oddelenie služieb zákazníkom Adobe a predložiť doklad
+        o kúpe softvéru. Spoločnosť Adobe v spolupráci so zákazníkom preverí, či ide o chybu
+        softvéru, alebo mu oznámi, že chyba vznikla ako príčina nesprávnej inštalácie softvéru
+        (v takom prípade Adobe poskytne zákazníkovi potrebnú pomoc). Ak je v softvéri chyba,
+        môže zákazník požiadať Adobe o vrátenie peňazí alebo opravenú/náhradnú kópiu softvéru.
+        Nároky musia byť doložené dokladom o kúpe. V prípade, ak sú podmienky záruky zákazníka
+        naplnené, spoločnosť Adobe mu poskytne náhradný/opravený softvér, okrem prípadov,
+        keď je takáto výmena pre spoločnosť Adobe neprijateľná. V týchto prípadoch spoločnosť
+        Adobe poskytne zákazníkovi finančnú náhradu. Na pomoc so zárukou kontaktujte Oddelenie
+        služieb zákazníkom spoločnosti Adobe.</p>
+    <br>
+    <p class="c5">
+        Prosím, nezabudnite, že pre nároky na náhradu škody, ktoré si zákazník v súvislosti
+        s týmto softvérom uplatní, ostávajú naďalej platné ustanovenia článku 8 (Obmedzenie
+        zodpovednosti). Spoločnosť Adobe je však zodpovedná za priame škody, ktoré sú bežne
+        predvídateľné v prípade porušenia tejto zmluvy zo strany Adobe. Zákazníkovi sa odporúča
+        vykonať všetky primerané opatrenia na predídenie vzniku a zníženie škôd, najmä vyhotovením
+        záložných kópií softvéru a svojich počítačových údajov.</p>
+    <br>
+    <p class="c5">
+        Účel tejto zmluvy a najmä tohto článku 16.1.2 je zameraný na definíciu práv zákazníka
+        (vrátane jeho zákonných práv) v prípade, že nastanú problémy pri používaní softvéru.
+        Ak je rozsah zákonných práv zákazníka väčší ako tento popis, potom sú platné jeho
+        práva vyplývajúce zo zákona.</p>
+    <br>
+    <p class="c5">
+        16.1.3 Žiadna časť tejto zmluvy (vrátane článku 4.4) nesmie obmedziť akékoľvek neodňateľné
+        právo zákazníka dekompilovať softvér, ktoré mu priznáva záväzná právna úprava. Ak
+        sa napríklad zákazník nachádza na území Európskej únie (EÚ), môže mať právo, za
+        určitých podmienok uvedených v príslušnom zákone, dekompilovať softvér, ak je to
+        potrebné s cieľom dosiahnuť kompatibilitu softvéru s iným softvérovým programom,
+        v prípade ak predtým písomne požiadal spoločnosť Adobe o poskytnutie informácii
+        nevyhnutných na zabezpečenie takejto kompatibility a spoločnosť Adobe tieto informácie
+        nesprístupnila. Okrem toho je vykonanie takejto dekompilácie možné iba zákazníkom
+        alebo inou osobou, ktorá je oprávnená používať kópiu softvéru v mene zákazníka.
+        Spoločnosť Adobe má právo klásť si odôvodnené podmienky predtým, než tieto informácie
+        poskytne. Každú informáciu poskytnutú spoločnosťou Adobe alebo získanú zákazníkom
+        v zmysle uvedených povolení je zákazník oprávnený použiť iba na vyššie uvedený účel
+        a nesmie ju postúpiť tretej strane ani použiť na vytvorenie softvéru, ktorý je v
+        základných vlastnostiach podobný vlastnostiam softvéru alebo sa používa na akúkoľvek
+        inú činnosť, ktorá porušuje autorské práva spoločnosti Adobe alebo jej licenčných
+        partnerov.
+    </p>
+    <br>
+    <p class="c5">
+        16.1.4 Pokiaľ zákazník nadobudne softvér na území Austrálie, potom nasledujúce ustanovenia
+        platia bez ohľadu na akékoľvek iné protichodné ustanovenia tejto zmluvy:</p>
+    <br>
+    <p class="c5">
+        UPOZORNENIE PRE SPOTREBITEĽOV V AUSTRÁLII:</p>
+    <br>
+    <p class="c5">
+        Záruku poskytovanú na naše výrobky nie je možné vylúčiť podľa austrálskeho zákona
+        na ochranu spotrebiteľov. Máte nárok na výmenu alebo náhradu v prípade zásadného
+        zlyhania a na náhradu za akékoľvek iné rozumne predvídateľné straty alebo škody.
+        Taktiež máte nárok na opravu alebo výmenu tovaru, ak tovar nespĺňa požiadavky na
+        prijateľnú kvalitu a jeho zlyhanie nepredstavuje zásadné zlyhanie. Na naše softvérové
+        produkty sa tiež vzťahuje 90-dňová obmedzená záruka, ktorú poskytuje Adobe Systems
+        Software Ireland Limited, so sídlom 4-6 Riverwalk, Citywest Business Campus, Dublin,
+        Írsko, ako je uvedené v zmluve. Ak vaše produkty neposkytujú základné vlastnosti
+        a funkcie popísané v používateľskej dokumentácii v priebehu 90 dní od ich doručenia,
+        zavolajte, prosím, na oddelenie zákazníckej podpory Adobe na číslo 1800 614 863
+        a uveďte údaje o vašom produkte, sériové číslo a doklad o kúpe. Môžete byť vyzvaní,
+        aby ste vrátili softvérový produkt na stanovenú adresu; v takom prípade bude vrátenie
+        tovaru realizované na vaše vlastné náklady. Výhody vyplývajúce z tejto záruky predstavujú
+        dodatočné práva nad rámec iných práv a opravných prostriedkov, ktoré môžete mať
+        zo zákona.</p>
+    <br>
+    <p class="c5">
+        16.2 Dodatočné ustanovenia pre skúšobný softvér. Ak je softvér predpredajnou verziou
+        alebo ide o beta softvér („pre-release softvér“), použije sa tento článok. Tento
+        pre-release softvér nepredstavuje konečný produkt spoločnosti Adobe a môže obsahovať
+        chyby a iné problémy, ktoré môžu spôsobiť systémové alebo iné zlyhanie a stratu
+        dát. Spoločnosť Adobe neuvedie nikdy pre-release softvér do komerčného predaja.
+        Ak zákazník získal pre-release softvér na základe osobitnej písomnej zmluvy, napríklad
+        sériovej zmluvy Adobe Systems Incorporated pre pre-release softvér, spravuje sa
+        používanie softvéru tiež touto zmluvou. Na základe výzvy zo strany spoločnosti Adobe
+        alebo na základe uvedenia predmetného softvéru na trh, podľa toho čo nastane skôr,
+        zákazník vráti alebo zničí všetky kópie pre-release softvéru. POUŽITIE PRE-RELEASE
+        SOFTVÉRU ZÁKAZNÍKOM JE NA JEHO VLASTNÉ NEBEZPEČENSTVO. PRE OBMEDZENÚ ZÁRUKU A OBMEDZENIE
+        ZODPOVEDNOSTI, VZŤAHUJÚCE SA NA PRE-RELEASE SOFTVÉR, SI POZRITE ČLÁNKY 6 A 8.</p>
+    <br>
+    <p class="c5">
+        16.3 Výučbový softvérový produkt. Ak je softvér spojený s touto zmluvou výučbovým
+        softvérovým produktom (softvér vyrobený a distribuovaný na použitie len pre koncových
+        používateľov z oblasti školstva), zákazník nie je oprávnený použiť softvér, pokiaľ
+        nespĺňa predpoklady pre koncového používateľa z oblasti školstva podľa právneho
+        poriadku príslušnej krajiny. Informácie o oprávneniach nájdete na stránke <a target="ADB-ESG"
+            href="http://www.adobe.com/go/edu_purchasing_sk">http://www.adobe.com/go/edu_purchasing_sk</a>.
+        Na vyhľadanie kontaktu na autorizovaného predajcu pre oblasť školstva navštívte,
+        prosím, stránku <a target="ADB-ESG" href="http://www.adobe.com/go/store_sk">http://www.adobe.com/go/store_sk</a>
+        a hľadajte odkaz Buying Adobe Products Worldwide (celosvetová predajná sieť produktov
+        Adobe).</p>
+    <br>
+    <p class="c5">
+        16.4 On-line služby.</p>
+    <br>
+    <p class="c5">
+        16.4.1 Poskytované spoločnosťou Adobe. Softvér zabezpečuje prístup zákazníka k obsahu
+        a rôznym službám hosťovaným na webových stránkach spravovaných spoločnosťou Adobe
+        alebo jej dcérskymi spoločnosťami („Adobe Online Services“). Príkladom takých služieb
+        Adobe Online sú najmä: Adobe BrowserLab, Adobe CS Review, Business Catalyst, Digital
+        Publishing Suite, Acrobat.com, Search for Help a produkt Welcome Screens. V niektorých
+        prípadoch sa služba Adobe Online Service môže javiť ako funkcia alebo rozšírenie
+        v softvéri aj napriek tomu, že je prístupná a hosťovaná na webovej stránke. Prístup
+        k službe Adobe Online Service si môže vyžadovať, aby zákazník aktivoval softvér,
+        získal identifikáciu Adobe ID, odsúhlasil ďalšie obchodné podmienky, alebo si vyžaduje
+        osobitný poplatok. Služby Adobe Online Services nemusia byť k dispozícii vo všetkých
+        jazykoch ani obyvateľom všetkých krajín a spoločnosť Adobe môže kedykoľvek a z akéhokoľvek
+        dôvodu zmeniť alebo úplne zrušiť prístup ku ktorejkoľvek z týchto služieb. Spoločnosť
+        Adobe si zároveň vyhradzuje právo účtovať si poplatky za prístup k alebo za využívanie
+        služby Adobe Online Service, ktorá sa v predchádzajúcom období poskytovala bezplatne.
+        Článok 14 uvádza dôležité informácie týkajúce internetového pripojenia a ochrany
+        súkromia zákazníka. V súlade s ustanoveniami článku 14 pri prístupe softvéru k službe
+        Adobe Online Service sa využívanie takýchto služieb zákazníkom riadi politikou ochrany
+        súkromia spoločnosti Adobe (<a target="ADB-ESG" href="http://www.adobe.com/go/privacy_sk">http://www.adobe.com/go/privacy_sk</a>),
+        podmienkami používania Adobe.com (<a target="ADB-ESG" href="http://www.adobe.com/go/terms_sk">http://www.adobe.com/go/terms_sk</a>)
+        a akýmikoľvek dodatočnými podmienkami používania, ktoré bude mať v tom čase k dispozícii.</p>
+    <br>
+    <p class="c5">
+        16.4.2 Ponuky tretích strán. Softvér môže zabezpečovať prístup zákazníka na webové
+        stránky, na ktorých je ponúkaný tovar, informácie, softvér a služby („online služby
+        tretích strán“). Príkladom takýchto služieb tretích strán je napríklad služba Kodak
+        EasyShare Gallery. Prístup zákazníka a použitie akejkoľvek online služby poskytovanej
+        tretími osobami sa riadi ustanoveniami, podmienkami, vylúčeniami nárokov a upozorneniami
+        nachádzajúcimi sa na takejto stránke alebo inak spojenými s týmito online službami
+        poskytovanými tretími osobami. Spoločnosť Adobe nepreveruje, nepreberá ani neakceptuje
+        zodpovednosť za online služby poskytované tretími osobami. Akékoľvek konanie medzi
+        zákazníkom a treťou osobou v súvislosti s online službou poskytovanou tretími osobami
+        vrátane politiky ochrany súkromia tejto osoby a použitia osobných údajov zákazníka,
+        dodania tovarov a služieb a platieb za ne a akékoľvek ďalšie ustanovenia, podmienky,
+        záruky alebo vyhlásenia súvisiace s takýmito konaniami, predstavujú vzťah výlučne
+        medzi zákazníkom a touto treťou osobou. Online služby poskytované tretími stranami
+        nemusia byť k dispozícii vo všetkých jazykoch ani obyvateľom všetkých krajín a spoločnosť
+        Adobe môže kedykoľvek a z akéhokoľvek dôvodu zmeniť prístup ku ktorejkoľvek online
+        službe poskytovanej tretími stranami alebo prerušiť jej dostupnosť.</p>
+    <br>
+    <p class="c5">
+        16.4.3 IBA AK BOLO VÝSLOVNE DOHODNUTÉ SO SPOLOČNOSŤOU ADOBE ALEBO JEJ DCÉRSKYMI
+        SPOLOČNOSŤAMI ALEBO TREŤOU STRANOU V OSOBITNEJ ZMLUVE INAK, POUŽITIE ONLINE SLUŽIEB
+        SPOLOČNOSTI ADOBE A ONLINE SLUŽIEB POSKYTOVANÝCH TRETÍMI STRANAMI JE NA VLASTNÉ
+        RIZIKO ZÁKAZNÍKA V SÚLADE S OBMEDZENIAMI ZÁRUKY A ZODPOVEDNOSTI PODĽA ČLÁNKOV 7
+        A 8.</p>
+    <br>
+    <p class="c5">
+        16.5 Digitálne certifikáty.</p>
+    <br>
+    <p class="c5">
+        16.5.1 Používanie. Digitálne certifikáty vydávajú tretie strany ako certifikačné
+        orgány vrátane poskytovateľov služieb certifikovaných dokumentov Adobe (CDS - Adobe
+        Certified Document Services), uvedených na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/partners_cds_sk">
+            http://www.adobe.com/go/partners_cds_sk</a> a v zozname predajcov Adobe Approved
+        Trust List (AATL) na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/aatl_sk">
+            http://www.adobe.com/go/aatl_sk</a> (spolu ďalej len „certifikačné orgány“)
+        alebo môžu byť podpísané vlastným podpisom.</p>
+    <br>
+    <p class="c5">
+        16.5.2 Obchodné podmienky. Kúpa, použitie a spoľahlivosť digitálnych certifikátov
+        sú predmetom vzťahu medzi zákazníkom a certifikačným orgánom. Predtým, než sa zákazník
+        spoľahne na certifikovaný dokument, digitálny podpis alebo služby certifikačného
+        orgánu, mal by sa oboznámiť s platnými obchodnými podmienkami, podľa ktorých príslušný
+        certifikačný orgán poskytuje služby, napríklad predplatiteľských zmlúv, dohôd o
+        používaní certifikátov, certifikačných politík a podmienok poskytovania. Na stránke
+        <a target="ADB-ESG" href="http://www.adobe.com/go/partners_cds_sk">http://www.adobe.com/go/partners_cds_sk</a>
+        nájdete informácie o predajcoch Adobe CDS a na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/aatl_sk">
+            http://www.adobe.com/go/aatl_sk</a> nájdete informácie o predajcoch Adobe AATL.</p>
+    <br>
+    <p class="c5">
+        16.5.3 Súhlas s podmienkami. Zákazník súhlasí s tým, že (a) softvér z dôvodu konfigurácie
+        alebo externých príčin môže zobrazovať certifikát ako platný, hoci v skutočnosti
+        môže byť v čase overovania už odvolaný alebo neplatný, (b) bezpečnosť alebo integrita
+        digitálneho certifikátu mohla byť narušená z dôvodu nejakého konania alebo nekonania
+        osoby, ktorá dokument podpísala, príslušného certifikačného orgánu alebo inej tretej
+        strany a (c) certifikát môže byť certifikátom s vlastným podpisom, ktorý neposkytol
+        certifikačný orgán. ZÁKAZNÍK JE VÝLUČNE ZODPOVEDNÝ ZA ROZHODNUTIE, ČI JE MOŽNÉ SA
+        SPOĽAHNÚŤ NA CERTIFIKÁT, ALEBO NIE. POKIAĽ CERTIFIKAČNÝ ORGÁN NEPOSKYTNE ZÁKAZNÍKOVI
+        SAMOSTATNÚ PÍSOMNÚ ZÁRUKU, MUSÍ ZÁKAZNÍK POUŽÍVAŤ DIGITÁLNE CERTIFIKÁTY VÝHRADNE
+        NA VLASTNÉ RIZIKO</p>
+    <br>
+    <p class="c5">
+        16.5.4 Oprávnená tretia strana. Zákazník súhlasí s tým, že akýkoľvek certifikačný
+        orgán, na ktorý sa odkazuje, je oprávnenou treťou stranou tejto zmluvy a bude mať
+        právo vynútiť si dodržanie tejto zmluvy vo svojom mene tak, ako keby bol spoločnosťou
+        Adobe.</p>
+    <br>
+    <p class="c5">
+        16.5.5 Náhrada škody. Zákazník súhlasí, že zamedzí akejkoľvek a každej zodpovednosti,
+        strate, akcii, škode alebo nárokom voči Adobe a akémukoľvek súvzťažnému certifikačnému
+        úradu (s výnimkou prípadov výslovne uvedených v jej vlastných zmluvných podmienkach)
+        (vrátane všetkých primeraných výdavkov, nákladov a poplatkov za právne zastúpenie)
+        vzniknutých z alebo týkajúcich sa používania alebo spoliehania sa na akékoľvek služby
+        tohto úradu, a to najmä: (a) spoľahnutie sa na exspirovaný alebo zrušený certifikát,
+        (b) nesprávne overenie certifikátu, (c) použitie certifikátu spôsobom iným, než
+        povoleným príslušnými zmluvnými podmienkami, touto zmluvou alebo príslušnými právnymi
+        predpismi, (d) neschopnosť prijímať primerané rozhodnutia ako dôsledok spoľahnutia
+        sa na služby a certifikáty vydavateľa, alebo (e) neschopnosť naplniť záväzky uvedené
+        v zmluvných podmienkach, týkajúce sa týchto služieb.</p>
+    <br>
+    <p class="c5">
+        16.6 Softvér na spracovanie typov písma (Font Software). Ak softvér obsahuje softvér
+        na spracovanie typov písma:</p>
+    <br>
+    <p class="c5">
+        16.6.1 Softvér na spracovanie typov písma môže zákazník použiť spolu so softvérom
+        na počítačoch spôsobom uvedeným v článku 2 a realizovať výstup softvéru na spracovanie
+        písma do ktoréhokoľvek periférneho zariadenia(-í) spojeného s takýmto počítačom(-mi).</p>
+    <br>
+    <p class="c5">
+        16.6.2 Ak je prípustný počet počítačov päť (5) alebo menej, je zákazník oprávnený
+        nahrať softvér na spracovanie typov písma do pamäti (pevný disk alebo RAM) jedného
+        z periférnych zariadení spojených s najmenej jedným z týchto počítačov s cieľom
+        jeho umiestnenia v tomto periférnom zariadení s tým, že softvér na spracovanie typov
+        písma môže stiahnuť do pamäte ďalšieho periférneho zariadenia na každých ďalších
+        päť počítačov z prípustného počtu.
+    </p>
+    <br>
+    <p class="c5">
+        16.6.3 Kópiu typov písma, ktoré zákazník použil v určitom súbore, môže vziať do
+        komerčnej tlačiarne alebo inému poskytovateľovi služby a tento poskytovateľ služby
+        môže použiť typy písma na spracovanie súboru zákazníka za predpokladu, že tento
+        poskytovateľ služby má platnú licenciu na použitie predmetného softvéru na spracovanie
+        typov písma.</p>
+    <br>
+    <p class="c5">
+        16.6.4 Zákazník môže vložiť kópie softvéru na spracovanie typov písma do svojich
+        elektronických dokumentov s cieľom tlače a prezerania a úpravy dokumentu. Z tejto
+        licencie nevyplývajú ani nie sú udelené žiadne iné práva na vkladanie uvedených
+        softvérov.</p>
+    <br>
+    <p class="c5">
+        16.6.5 Výnimkou z vyššie uvedeného sú typy písma uvedené na stránke <a target="ADB-ESG"
+            href="http://www.adobe.com/go/restricted_fonts_sk">http://www.adobe.com/go/restricted_fonts_sk</a>,
+        ktoré sú súčasťou softvéru iba s cieľom prevádzky používateľského rozhrania softvéru
+        a nie na zaradenie do všetkých výstupných súborov. Uvedené typy písiem nie sú podľa
+        tohto článku 16.6. licencované. Zákazník sa zaväzuje, že nebude kopírovať, presúvať,
+        aktivovať alebo používať, a nepovolí akémukoľvek nástroju na správu typov písma
+        kopírovať, presúvať, aktivovať alebo používať uvedené typy písma v rámci alebo pomocou
+        akejkoľvek aplikácie, programu alebo súboru iného, ako je softvér.</p>
+    <br>
+    <p class="c5">
+        16.7 Modul After Effects Render Engine. Ak softvér zahŕňa plnú verziu modulu Adobe
+        After Effects, zákazník môže nainštalovať neobmedzené množstvo kópií modulu Render
+        Engine na počítače vo svojej vnútornej sieti, ktorá zahŕňa najmenej jeden počítač,
+        na ktorom je nainštalovaná plná verzia softvéru Adobe After Effects. Pojem „Render
+        Engine“ znamená inštalovateľnú časť softvéru, ktorá povoľuje zobrazenie projektov
+        After Effects, ale nemôže byť použitá na vytvorenie alebo zmenu projektov a nezahŕňa
+        celé používateľské rozhranie After Effects.</p>
+    <br>
+    <p class="c5">
+        16.8 Moduly Acrobat Standard, Acrobat Pro, a Adobe Acrobat Suite Features. Ak softvér
+        zahŕňa moduly Acrobat Standard, Acrobat Pro, Acrobat Suite alebo niektoré funkcie
+        v rámci vyššie uvedených programov, potom platia ustanovenia článku 16.8.</p>
+    <br>
+    <p class="c5">
+        16.8.1 Ďalšie definície.</p>
+    <br>
+    <p class="c5">
+        16.8.1.1 „Zaviesť“ znamená doručiť alebo inak sprístupniť, priamo alebo nepriamo,
+        akýmkoľvek spôsobom avšak predovšetkým prostredníctvom siete alebo internetu, rozšírený
+        dokument jednému alebo viacerým príjemcom.</p>
+    <br>
+    <p class="c5">
+        16.8.1.2 „Rozšírený dokument“ znamená súbor vo formáte PDF, spracovaný softvérom
+        tak, aby umožnil lokálne ukladať dokumenty s vyplnenými formulármi PDF.</p>
+    <br>
+    <p class="c5">
+        16.8.2 Softvér môže zahŕňať aktivačnú technológiu, ktorá umožňuje zákazníkovi aktivovať
+        dokumenty PDF s určitými vlastnosťami použitím súboru digitálnych oprávnení umiestneného
+        v softvéri („kľúč“). Zákazník sa zaväzuje, že nebude vstupovať, snažiť sa vstupovať,
+        kontrolovať, znemožňovať, premiestňovať, používať alebo distribuovať kľúč na akýkoľvek
+        účel.</p>
+    <br>
+    <p class="c5">
+        16.8.3 V prípade každého unikátneho rozšíreného dokumentu (Extended Document) zákazník
+        smie (a) zaviesť tento rozšírený dokument k neobmedzenému počtu príjemcov, ale nesmie
+        získavať údaje z viac ako päťsto (500) inštancií takéhoto rozšíreného dokumentu
+        (alebo akejkoľvek jeho tlačenej kópie), ktorý obsahuje údaje od príjemcu, alebo
+        (b) zavádzať rozšírený dokument najviac päťsto (500) príjemcom bez obmedzenia počtu
+        extrakcie údajov od príjemcu z tohto rozšíreného dokumentu. Získanie ďalšej licencie
+        na použitie modulov Acrobat Standard, Acrobat Pro a Adobe Acrobat Suite nemá za
+        následok zvýšenie vyššie uvedených limitov (to znamená, že vyššie uvedené limity
+        sú súhrnné celkové limity bez ohľadu na to, koľko ďalších licencií na používanie
+        modulov Acrobat Standard, Acrobat Pro a Adobe Acrobat Suite zákazník nadobudne).
+        Na vylúčenie pochybností, pokiaľ si zákazník zakúpi iný produkt alebo službu Adobe,
+        ktorý mu umožňuje posielať väčšie množstvo súborov alebo šablón PDF (napr. Adobe
+        FormsCentral alebo Adobe LiveCycle Reader Extensions), potom podmienky tohto produktu
+        alebo služby Adobe majú prednosť pred podmienkami tohto článku.</p>
+    <br>
+    <p class="c5">
+        16.9 Projektory a modul Flash Player. Právo zákazníka používať akýkoľvek prehrávač
+        formátu Flash, projektor, samostatne fungujúci prehrávač, plug-in modul alebo ovládač
+        ActiveX, ktorý mu bol poskytnutý ako súčasť alebo spolu so softvérom alebo vo výstupnom
+        súbore, zodpovedá výlučne tomu, čo je uvedené na stránke <a target="ADB-ESG" href="http://www.adobe.com/go/flashplayer_usage_sk">
+            http://www.adobe.com/go/flashplayer_usage_sk</a>. S výnimkou podmienok použitia
+        na uvedenej stránke nemá zákazník žiadne oprávnenie používať alebo distribuovať
+        tento softvér.</p>
+    <br>
+    <p class="c5">
+        16.10 Služby Contribute Publishing Services. V súlade s licenčnou zmluvou pre koncového
+        používateľa softvéru Contribute Publishing Services spojenou s takýmto softvérom
+        sa zákazník nesmie pripojiť k softvéru Contribute Publishing Services, ak nenadobudol
+        licenciu na pripojenie k takémuto softvéru Contribute Publishing Services, a to
+        pre každého jednotlivca, ktorý sa pripojí k tomuto softvéru Contribute Publishing
+        Services, avšak skúšobné verzie (trial versions) softvéru Adobe Contribute sa môžu
+        nainštalovať a pripojiť k softvéru Contribute Publishing Services v súlade s licenčnou
+        zmluvou pre koncového používateľa.</p>
+    <br>
+    <p class="c5">
+        16.11 Modul Adobe Presenter. Ak softvér obsahuje modul Adobe Presenter a zákazník
+        nainštaluje alebo používa službu Adobe Connect Add-in v súvislosti s použitím softvéru,
+        zákazník súhlasí, že nainštalujete a použijete túto nadstavbu len na stolnom počítači
+        a nie na akomkoľvek inom zariadení, ktoré nemá parametre PC, najmä nie na webovom
+        zariadení, set top boxe, handhelde, telefóne alebo web-pad zariadení. Navyše, časť
+        softvéru, ktorá je vložená v prezentácii, informácii alebo obsahu vytvorenom a vygenerovanom
+        pomocou softvéru Adobe Presenter Run-Time môže byť použitá len spolu s prezentáciou,
+        informáciami alebo s obsahom, v ktorom je vložená. Zákazník sám nesmie použiť a
+        musí sa pričiniť, aby nikto z držiteľov licencie k prezentácii, informácii a obsahu
+        nepoužíval Adobe Presenter Run-Time inak, ako vložený v tejto prezentácii, informácii
+        alebo obsahu. Okrem toho zákazník sám nesmie používať a musí sa pričiniť, aby ani
+        držitelia licencie k prezentácii, informácii alebo obsahu nemenili, nevykonávali
+        spätnú analýzu alebo dekompiláciu Adobe Presenter Run-Time.</p>
+    <br>
+    <p class="c5">
+        16.12 Modul Flash Builder so službami LiveCycle Data Services (LCDS) Data Management
+        Library. Adobe Flash Builder môže obsahovať knižnicu fds.swc. Zákazník môže používať
+        knižnicu fds.swc len na zabezpečenie možností správy dát na strane klienta a ako
+        výstupný súbor softvéru, ktorý sám vyvíja, a to za nasledujúcich podmienok: Zákazník
+        nesmie (a) použiť fds.swc na to, aby umožnil asociácie alebo offline možnosti v
+        rámci softvéru alebo (b) začleniť fds.swc do akéhokoľvek softvéru, ktorý je podobný
+        ako Adobe LiveCycle Data Services alebo BlazeDS. Pokiaľ by zákazník chcel vykonávať
+        niektoré činnosti z vyššie uvedených, bude musieť požiadať spoločnosť Adobe o samostatnú
+        licenciu.</p>
+    <br>
+    <p class="c5">
+        16.13 Modul Digital Publishing Suite. Nasledujúce podmienky platia v prípade, ak
+        softvér obsahuje niektoré súčasti alebo funkcie určené na prácu alebo prístup k
+        aplikácii Digital Publishing Suite, v súlade s dodatočnými podmienkami použitia
+        pre Digital Publishing Suite. Nástroje pracovnej plochy DPS Desktop Tools predstavujú
+        aplikácie Folio Overlays Panel, Folio Builder Panel, Content Viewer for Desktop
+        a Digital Publishing Plug-in for InDesign. Ak softvér obsahuje nástroj DPS Desktop
+        Tool (alebo akúkoľvek jeho časť), potom ak nie je v článku 16 alebo dodatočných
+        podmienkach používania uvedené inak, môže zákazník inštalovať a používať nástroje
+        DPS Desktop Tools výhradne na účely (a) vytvárania alebo produkcie obsahu navrhnutého
+        na zobrazenie v prehliadači obsahu („výstup“), (b) hodnotenia a testovania výstupu
+        a (c), tam kde sú k dispozícii, prístupu a použitia služieb Adobe Digital Publishing
+        Suite, v súlade s dodatočnými podmienkami použitia. Pokiaľ mu týmto nebolo povolené,
+        zákazník nesmie zobrazovať, distribuovať, modifikovať, či verejne spúšťať nástroje
+        DPS Desktop Tools.</p>
+    <br>
+    <p class="c5">
+        16.14 DISTRIBÚCIA AVC. Nasledujúce upozornenie sa vzťahuje na softvér obsahujúci
+        funkcie AVC na import a export: TENTO PRODUKT JE LICENCOVANÝ NA ZÁKLADE LICENCIE
+        AVC PORTFOLIO PATENT NA OSOBNÉ A NEKOMERČNÉ POUŽÍVANIE SPOTREBITEĽMI NA (a) KÓDOVANIE
+        VIDEA V SÚLADE SO ŠTANDARDOM AVC („AVC VIDEO“) A/ALEBO (b) DEKÓDOVANIE AVC VIDEA,
+        KTORÉ BOLO ZAKÓDOVANÉ SPOTREBITEĽOM NA SÚKROMNÉ NEKOMERČNÉ ÚČELY A/ALEBO ZÍSKANÉ
+        OD POSKYTOVATEĽA VIDEA S LICENCIOU NA POSKYTOVANIE AVC VIDEA. Z UVEDENÉHO NEVYPLÝVA
+        A ANI SA NEPOSKYTUJE ŽIADNA LICENCIA NA INÝ ÚČEL POUŽITIA. ĎALŠIE INFORMÁCIE MOŽNO
+        ZÍSKAŤ OD SPOLOČNOSTI MPEG LA, L.L.C. NA STRÁNKE <a target="ADB-ESG" href="http://www.adobe.com/go/mpegla_sk">
+            http://www.adobe.com/go/mpegla_sk</a>.
+    </p>
+    <br>
+    <p class="c5">
+        16.15 DISTRIBÚCIA MPEG-2. Nasledujúce upozornenie sa vzťahuje na softvér obsahujúci
+        funkcie MPEG-2 na import a export: Použitie tohto produktu inak ako na osobné použitie
+        spotrebiteľmi v súlade s normami MPEG-2 NA kódovanie video informácií v rámci balíkov
+        médií bez licencie podľa príslušných patentov z portfólia patentov MPEG-2, ktorú
+        poskytuje spoločnosť MPEG LA, L.L.C. 250 STEELE STREET, SUITE 300 DENVER, COLORADO
+        80206, SA VÝSLOVNE ZAKAZUJE.</p>
+    <br>
+    <p class="c5">
+        16.16 Apple. Ak je softvér prevzatý z lokality Apple iTunes Application Store („aplikácia“),
+        potom zákazník berie na vedomie a súhlasí s nižšie uvedenými dodatočnými podmienkami:
+        (a) spoločnosť Apple nenesie žiadnu zodpovednosť za aplikáciu a jej obsah, (b) použitie
+        aplikácie zákazníkom je obmedzené na neprenosnú licenciu na používanie aplikácie
+        na každom zariadení iPhone™, iPad™ alebo iPod Touch™, ktoré zákazník vlastní alebo
+        ovláda, v súlade so zmluvnými podmienkami lokality Application Store, (c) spoločnosť
+        Apple nemá žiadnu povinnosť poskytnúť akejkoľvek podporné služby pre aplikáciu,
+        (d) v rozsahu povolenom príslušnou legislatívou Apple nemá žiadnu povinnosť vyplývajúcu
+        zo záruky k aplikácii a spoločnosť Adobe bude zodpovedná za všetky nároky, straty,
+        záväzky, škody, náklady alebo výdavky, ktoré možno pripísať akémukoľvek porušeniu
+        zodpovednosti vo vzťahu k zárukám stanoveným v tejto dohode, (e) spoločnosť Apple
+        nie je zodpovedná voči nárokom týkajúcim sa aplikácie alebo vlastníctva a/alebo
+        použitia aplikácie zákazníkom, a to najmä: (i) nárokom z titulu zodpovednosti za
+        chyby výrobku, (ii) nárokom z dôvodu, že aplikácia nespĺňa niektorú zo zákonných
+        požiadaviek, a (iii) nárokom z titulu ochrany spotrebiteľa, (f) spoločnosť Apple
+        nie je zodpovedná za akékoľvek nároky tretích strán z dôvodu, že aplikácia porušuje
+        práva duševného vlastníctva tretích strán a (g) spoločnosť Apple a jej pobočky sú
+        oprávnené tretie strany v zmysle tejto dohody vo vzťahu k akejkoľvek takejto aplikácii
+        a spoločnosť Apple bude oprávnená domáhať sa svojich práv z tejto zmluvy voči zákazníkovi
+        ako oprávnená tretia strana.
+    </p>
+    <br>
+    <p class="c6">
+        Ak máte akékoľvek otázky ohľadom tejto zmluvy alebo si želáte požiadať o viac informácií
+        od spoločnosti Adobe, použite, prosím, adresu a kontaktné informácie zahrnuté v
+        tomto produkte a kontaktujte príslušnú pobočku spoločnosti Adobe.</p>
+    <br>
+    <p class="c3">
+        Názov tohto softvéru, Adobe, Acrobat, Adobe Connect, AIR, After Effects, Authorware,
+        Business Catalyst, Contribute, Creative Suite, Digital Publishing Suite, Flash,
+        Flash Builder, LiveCycle Pixel Bender, Presenter, Shockwave a všetky súvisiace tituly
+        a logá sú registrované ochranné známky alebo ochranné známky spoločnosti Adobe Systems
+        Incorporated v Spojených štátoch amerických a/alebo iných krajinách. Všetky ostatné
+        ochranné známky sú majetkom svojich majiteľov.</p>
+    <br>
+    <p class="c7">
+        Gen_WWCombined-sk_SK-20120712_1830
+    </p>
+    <br>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�
+��|�/**
+ * This file has no copyright assigned and is placed in the Public Domain.
+ * This file is part of the mingw-w64 runtime package.
+ * No warranty is given; refer to the file DISCLAIMER.PD within this package.
+ */
+#ifndef __IPHLPAPI_H__
+#define __IPHLPAPI_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+#include <iprtrmib.h>
+#include <ipexport.h>
+#include <iptypes.h>
+#include <netioapi.h>
+#include <tcpmib.h>
+#include <udpmib.h>
+#include <tcpestats.h>
+
+  DWORD WINAPI GetNumberOfInterfaces(PDWORD pdwNumIf);
+  DWORD WINAPI GetIfEntry(PMIB_IFROW pIfRow);
+  DWORD WINAPI GetIfTable(PMIB_IFTABLE pIfTable,PULONG pdwSize,WINBOOL bOrder);
+  DWORD WINAPI GetIpAddrTable(PMIB_IPADDRTABLE pIpAddrTable,PULONG pdwSize,WINBOOL bOrder);
+  DWORD WINAPI GetIpNetTable(PMIB_IPNETTABLE pIpNetTable,PULONG pdwSize,WINBOOL bOrder);
+  DWORD WINAPI GetIpForwardTable(PMIB_IPFORWARDTABLE pIpForwardTable,PULONG pdwSize,WINBOOL bOrder);
+  DWORD WINAPI GetTcpTable(PMIB_TCPTABLE pTcpTable,PDWORD pdwSize,WINBOOL bOrder);
+  DWORD WINAPI GetUdpTable(PMIB_UDPTABLE pUdpTable,PDWORD pdwSize,WINBOOL bOrder);
+  DWORD WINAPI GetIpStatistics(PMIB_IPSTATS pStats);
+  DWORD WINAPI GetIpStatisticsEx(PMIB_IPSTATS pStats,DWORD dwFamily);
+  DWORD WINAPI GetIcmpStatistics(PMIB_ICMP pStats);
+  DWORD WINAPI GetIcmpStatisticsEx(PMIB_ICMP_EX pStats,DWORD dwFamily);
+  DWORD WINAPI GetTcpStatistics(PMIB_TCPSTATS pStats);
+  DWORD WINAPI GetTcpStatisticsEx(PMIB_TCPSTATS pStats,DWORD dwFamily);
+  DWORD WINAPI GetUdpStatistics(PMIB_UDPSTATS pStats);
+  DWORD WINAPI GetUdpStatisticsEx(PMIB_UDPSTATS pStats,DWORD dwFamily);
+  DWORD WINAPI SetIfEntry(PMIB_IFROW pIfRow);
+  DWORD WINAPI CreateIpForwardEntry(PMIB_IPFORWARDROW pRoute);
+  DWORD WINAPI SetIpForwardEntry(PMIB_IPFORWARDROW pRoute);
+  DWORD WINAPI DeleteIpForwardEntry(PMIB_IPFORWARDROW pRoute);
+  DWORD WINAPI SetIpStatistics(PMIB_IPSTATS pIpStats);
+  DWORD WINAPI SetIpTTL(UINT nTTL);
+  DWORD WINAPI CreateIpNetEntry(PMIB_IPNETROW pArpEntry);
+  DWORD WINAPI SetIpNetEntry(PMIB_IPNETROW pArpEntry);
+  DWORD WINAPI DeleteIpNetEntry(PMIB_IPNETROW pArpEntry);
+  DWORD WINAPI FlushIpNetTable(DWORD dwIfIndex);
+  DWORD WINAPI CreateProxyArpEntry(DWORD dwAddress,DWORD dwMask,DWORD dwIfIndex);
+  DWORD WINAPI DeleteProxyArpEntry(DWORD dwAddress,DWORD dwMask,DWORD dwIfIndex);
+  DWORD WINAPI SetTcpEntry(PMIB_TCPROW pTcpRow);
+  DWORD WINAPI GetInterfaceInfo(PIP_INTERFACE_INFO pIfTable,PULONG dwOutBufLen);
+  DWORD WINAPI GetUniDirectionalAdapterInfo(PIP_UNIDIRECTIONAL_ADAPTER_ADDRESS pIPIfInfo,PULONG dwOutBufLen);
+
+#ifndef NhpAllocateAndGetInterfaceInfoFromStack_DEFINED
+#define NhpAllocateAndGetInterfaceInfoFromStack_DEFINED
+  DWORD WINAPI NhpAllocateAndGetInterfaceInfoFromStack(IP_INTERFACE_NAME_INFO **ppTable,PDWORD pdwCount,WINBOOL bOrder,HANDLE hHeap,DWORD dwFlags);
+#endif
+
+  DWORD WINAPI GetBestInterface(IPAddr dwDestAddr,PDWORD pdwBestIfIndex);
+  DWORD WINAPI GetBestInterfaceEx(struct sockaddr *pDestAddr,PDWORD pdwBestIfIndex);
+  DWORD WINAPI GetBestRoute(DWORD dwDestAddr,DWORD dwSourceAddr,PMIB_IPFORWARDROW pBestRoute);
+  DWORD WINAPI GetExtendedTcpTable (PVOID pTcpTable,PDWORD pdwSize,BOOL bOrder,ULONG ulAf,TCP_TABLE_CLASS TableClass,ULONG Reserved);
+  DWORD WINAPI NotifyAddrChange(PHANDLE Handle,LPOVERLAPPED overlapped);
+  DWORD WINAPI NotifyRouteChange(PHANDLE Handle,LPOVERLAPPED overlapped);
+  WINBOOL WINAPI CancelIPChangeNotify(LPOVERLAPPED notifyOverlapped);
+  DWORD WINAPI GetAdapterIndex(LPWSTR AdapterName,PULONG IfIndex);
+  DWORD WINAPI AddIPAddress(IPAddr Address,IPMask IpMask,DWORD IfIndex,PULONG NTEContext,PULONG NTEInstance);
+  DWORD WINAPI DeleteIPAddress(ULONG NTEContext);
+  DWORD WINAPI GetNetworkParams(PFIXED_INFO pFixedInfo,PULONG pOutBufLen);
+  DWORD WINAPI GetAdaptersInfo(PIP_ADAPTER_INFO pAdapterInfo,PULONG pOutBufLen);
+  PIP_ADAPTER_ORDER_MAP WINAPI GetAdapterOrderMap(VOID);
+
+#ifdef _WINSOCK2API_
+  DWORD WINAPI GetAdaptersAddresses(ULONG Family,DWORD Flags,PVOID Reserved,PIP_ADAPTER_ADDRESSES pAdapterAddresses,PULONG pOutBufLen);
+#endif
+
+  DWORD WINAPI GetPerAdapterInfo(ULONG IfIndex,PIP_PER_ADAPTER_INFO pPerAdapterInfo,PULONG pOutBufLen);
+  DWORD WINAPI IpReleaseAddress(PIP_ADAPTER_INDEX_MAP AdapterInfo);
+  DWORD WINAPI IpRenewAddress(PIP_ADAPTER_INDEX_MAP AdapterInfo);
+  DWORD WINAPI SendARP(IPAddr DestIP,IPAddr SrcIP,PULONG pMacAddr,PULONG PhyAddrLen);
+  WINBOOL WINAPI GetRTTAndHopCount(IPAddr DestIpAddress,PULONG HopCount,ULONG MaxHops,PULONG RTT);
+  DWORD WINAPI GetFriendlyIfIndex(DWORD IfIndex);
+  DWORD WINAPI EnableRouter(HANDLE *pHandle,OVERLAPPED *pOverlapped);
+  DWORD WINAPI UnenableRouter(OVERLAPPED *pOverlapped,LPDWORD lpdwEnableCount);
+  DWORD WINAPI DisableMediaSense(HANDLE *pHandle,OVERLAPPED *pOverLapped);
+  DWORD WINAPI RestoreMediaSense(OVERLAPPED *pOverlapped,LPDWORD lpdwEnableCount);
+  DWORD WINAPI GetIpErrorString(IP_STATUS ErrorCode,PWCHAR Buffer,PDWORD Size);
+
+DWORD WINAPI GetExtendedUdpTable(
+  PVOID pUdpTable,
+  PDWORD pdwSize,
+  WINBOOL bOrder,
+  ULONG ulAf,
+  UDP_TABLE_CLASS TableClass,
+  ULONG Reserved
+);
+
+DWORD WINAPI GetOwnerModuleFromTcp6Entry(
+  PMIB_TCP6ROW_OWNER_MODULE pTcpEntry,
+  TCPIP_OWNER_MODULE_INFO_CLASS Class,
+  PVOID Buffer,
+  PDWORD pdwSize
+);
+
+DWORD WINAPI GetOwnerModuleFromTcpEntry(
+  PMIB_TCPROW_OWNER_MODULE pTcpEntry,
+  TCPIP_OWNER_MODULE_INFO_CLASS Class,
+  PVOID Buffer,
+  PDWORD pdwSize
+);
+
+DWORD WINAPI GetOwnerModuleFromUdp6Entry(
+  PMIB_UDP6ROW_OWNER_MODULE pUdpEntry,
+  TCPIP_OWNER_MODULE_INFO_CLASS Class,
+  PVOID Buffer,
+  PDWORD pdwSize
+);
+
+DWORD WINAPI GetOwnerModuleFromUdpEntry(
+  PMIB_UDPROW_OWNER_MODULE pUdpEntry,
+  TCPIP_OWNER_MODULE_INFO_CLASS Class,
+  PVOID Buffer,
+  PDWORD pdwSize
+);
+
+#if (_WIN32_WINNT == 0x0502) /* Only with Win2003 SP1 and SP2 */
+  WINBOOL WINAPI CancelSecurityHealthChangeNotify(LPOVERLAPPED notifyOverlapped);
+#endif /*(_WIN32_WINNT == 0x0502)*/
+
+#if (_WIN32_WINNT >= 0x0600)
+#include <windns.h>
+
+typedef enum _NET_ADDRESS_FORMAT {
+  NET_ADDRESS_FORMAT_UNSPECIFIED   = 0,
+  NET_ADDRESS_DNS_NAME,
+  NET_ADDRESS_IPV4,
+  NET_ADDRESS_IPV6
+} NET_ADDRESS_FORMAT;
+
+typedef struct _NET_ADDRESS_INFO {
+  NET_ADDRESS_FORMAT Format;
+  __C89_NAMELESS union {
+    struct {
+      WCHAR Address[DNS_MAX_NAME_BUFFER_LENGTH];
+      WCHAR Port[6];
+    } NamedAddress;
+    SOCKADDR_IN  Ipv4Address;
+    SOCKADDR_IN6 Ipv6Address;
+    SOCKADDR     IpAddress;
+  };
+} NET_ADDRESS_INFO, *PNET_ADDRESS_INFO;
+
+ULONG WINAPI GetPerTcp6ConnectionEStats(
+  PMIB_TCP6ROW Row,
+  TCP_ESTATS_TYPE EstatsType,
+  PUCHAR Rw,
+  ULONG RwVersion,
+  ULONG RwSize,
+  PUCHAR Ros,
+  ULONG RosVersion,
+  ULONG RosSize,
+  PUCHAR Rod,
+  ULONG RodVersion,
+  ULONG RodSize
+);
+
+ULONG WINAPI SetPerTcp6ConnectionEStats(
+  PMIB_TCP6ROW Row,
+  TCP_ESTATS_TYPE EstatsType,
+  PUCHAR Rw,
+  ULONG RwVersion,
+  ULONG RwSize,
+  ULONG Offset
+);
+
+ULONG WINAPI SetPerTcpConnectionEStats(
+    PMIB_TCPROW Row,
+    TCP_ESTATS_TYPE EstatsType,
+    PUCHAR Rw,
+    UL

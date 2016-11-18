@@ -1,0 +1,12 @@
+   <_length>1</_length>
+          <_type>vmodl.TypeName[]</_type>
+          <e id="0">vim.vm.device.VirtualUSBController</e>
+        </supportedUSBControllerList>
+        <supports3D>false</supports3D>
+        <supportsCpuHotAdd>false</supportsCpuHotAdd>
+        <supportsCpuHotRemove>false</supportsCpuHotRemove>
+        <supportsHotPlugPCI>true</supportsHotPlugPCI>
+        <supportsMemoryHotAdd>false</supportsMemoryHotAdd>
+        <supportsPvscsiControllerForBoot>false</supportsPvscsiControllerForBoot>
+        <supportsSlaveDisk>true</supportsSlaveDisk>
+        <supportsVMI>false</supports

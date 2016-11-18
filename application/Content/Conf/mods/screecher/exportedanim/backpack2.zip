@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>" />
+<title>编辑软件:<?php echo $row['title']?> - 会员中心 - <?php echo $cfg_webname; ?></title>
+<link href="templets/style/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="templets/js/j.js"></script>
+<script type="text/javascript" language='javascript' src="templets/js/main.js"></script>
+<script type="text/javascript" src="templets/js/load.js"></script>
+<script type="text/javascript" src="templets/js/leftmenu.js"></script>
+<script type="text/javascript" src="templets/js/checkSubmit.js"></script>
+<script type="text/javascript">
+var startNum = 2;
+function MakeUpload()
+{
+	var upfield = document.getElementById("uploadfield");
+	var morelinkobj = document.getElementById("morelink");
+	var endNum =  parseInt(document.form1.picnum.value) + startNum;
+	morelinkobj.style.display = "block";
+	if(endNum>12) endNum = 12;
+	for(startNum;startNum<=endNum;startNum++){
+		upfield.innerHTML += "<div class='mT10' style='margin-top:16px'>";
+		upfield.innerHTML += "<font color='#727272'>软件地址"+startNum+"：</font><input type='text' name='softurl"+startNum+"' value='http://' maxlength='100' class='intxt'> ";
+		upfield.innerHTML += " ";
+		upfield.innerHTML += "<font color='#727272'>服务器名称：</font><input type='text' name='servermsg"+startNum+"' class='intxt' style='width:150px'>\r\n";
+		upfield.innerHTML += "</div>";
+	}
+}
+
+function ShowHideAddr()
+{
+	document.getElementById('morelink').style.display = (document.getElementById('morelink').style.display=='block' ? 'none' : 'block');
+	document.getElementById('btsh3').value = (document.getElementById('morelink').style.display=='block' ? '隐藏地址' : '显示地址');
+}
+
+-->
+</script>
+</head>
+<body>
+<div id="main">
+  <?php include(DEDEMEMBER."/templets/head.htm"); ?>
+  <div id="content" class="w960 clearfix">
+    <?php include(DEDEMEMBER."/templets/menu.php"); ?>
+    <div id="mcpmain">
+      <div id="appTab">
+        <ul>
+          <li class="thisTab"><a href="#"><span>编辑软件</span></a></li>
+        </ul>
+      </div>
+     <form class="mTB10 mR10 mL10" name="form1" action="soft_edit.php" method="post" enctype="multipart/form-data" onsubmit="return checkSubmit();">
+          <input type="hidden" name="dopost" value="save" />
+          <input type="hidden" name="aid" value="<?php echo $row['id']; ?>" />
+          <input type="hidden" name="idhash" value="<?php echo md5($row['id'].$cfg_cookie_encode); ?>" />
+          <input type="hidden" name="channelid" value="<?php echo $row['channel']; ?>" />
+          <input type="hidden" name="oldlitpic" value="<?php echo $row['litpic']; ?>" />
+          <input type="hidden" name="sortrank" value="<?php echo $row['sortrank']; ?>" />
+      <div id="mainCp">
+        <h3 class="meTitle"><strong>编辑软件</strong></h3>
+        <div class="postForm">
+          <p class="cellBg">
+            <label><?php echo $cInfos['typename']; ?>名称：</label>
+            <input name="title" type="text" id="title" value="<?php echo $row['title']?>" maxlength="100" class="intxt"/>
+          </p>
+          <p>
+            <label>标签TA

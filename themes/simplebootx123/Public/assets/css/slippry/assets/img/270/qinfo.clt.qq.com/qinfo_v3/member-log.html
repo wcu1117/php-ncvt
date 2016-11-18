@@ -1,0 +1,158 @@
+<script type="text/javascript">
+    $(function () {
+        $('#JobSupervise_from').ajaxForm({
+            beforeSubmit: validaFun,
+            success: function (data) {
+                CloseLoading();
+                if (data.State == "Success") {
+                    jErpAlertDialog(data.Msg, null, 1, function () {
+                        $("#btn_bar").show();
+                        CloseManageAuditing();
+                    });
+                }
+                else {
+                    CloseLoading();
+                    jErpAlertDialog(data.Msg, null, 2);
+                    $("#btn_bar").show();
+                }
+            }
+        });
+
+    });
+
+    function SubmitStudentJobInfo(JobStateId) {
+
+        $("#JobStateId").val(JobStateId);
+
+        if (JobStateId == -2) {
+            jErpConfirmDialog("您确定填报信息无效发回重新填报？", null, function () {
+                setValue(); //取值
+                $("#JobSupervise_from").submit();
+            }, function () {
+
+            })
+        } else if (JobStateId == -1) {
+            jErpConfirmDialog("您确定该学生无实习无就业？<br/>既然无实习和就业，所填写信息将为清空!", null, function () {
+                setValue(); //取值
+                $("#JobSupervise_from").submit();
+            }, function () {
+
+            })
+        } else if (JobStateId == 0) {
+            setValue(); //取值
+            $("#JobSupervise_from").submit();
+        } else if (JobStateId == 1) {
+            setValue(); //取值
+            $("#JobSupervise_from").submit();
+        } 
+ else if (JobStateId == 2) {
+            setValue(); //取值
+            $("#JobSupervise_from").submit();
+        }else {
+            return;
+        }
+
+
+    }
+
+
+    function setValue() {
+        var BYQXDM = $('#BYQXDM').data('tDropDownList');
+        $("#BYQXMC").val(BYQXDM.text() == '——选择——' ? '' : BYQXDM.text());
+
+        var JYDWXZDM = $('#JYDWXZDM').data('tDropDownList');
+        $("#JYDWXZMC").val(JYDWXZDM.text() == '——选择——' ? '' : JYDWXZDM.text());
+
+        var JYDWHYDM = $('#JYDWHYDM').data('tDropDownList');
+        $("#JYDWHYMC").val(JYDWHYDM.text() == '——选择——' ? '' : JYDWHYDM.text());
+
+        var JYDWSZDDM = $('#JYDWSZDDM').data('tDropDownList');
+        $("#JYDWSZDMC").val(JYDWSZDDM.text() == '——选择——' ? '' : JYDWSZDDM.text());
+
+        var GZZWLBDM = $('#GZZWLBDM').data('tDropDownList');
+        $("#GZZWLBMC").val(GZZWLBDM.text() == '——选择——' ? '' : GZZWLBDM.text());
+
+
+
+        var CheckObjectDM = $('#CheckObjectDM').data('tDropDownList');
+        $("#CheckObjectMC").val(CheckObjectDM.text() == '——选择——' ? '' : CheckObjectDM.text());
+
+        var CheckTypeDM = $('#CheckTypeDM').data('tDropDownList');
+        $("#CheckTypeMC").val(CheckTypeDM.text() == '——选择——' ? '' : CheckTypeDM.text());
+
+
+
+    }
+
+    function validaFun() {
+        var JobStateId = $("#JobStateId").val();
+        var BYQXDM = $("#BYQXDM").val();
+        if (JobStateId == 0 || JobStateId == 1) {
+            var BYQXDM = $.trim($("#BYQXDM").val());
+            var JYDWMC = $.trim($("#JYDWMC").val());
+            var JYDWXZDM = $.trim($("#JYDWXZDM").val());
+            var JYDWZZJGDM = $.trim($("#JYDWZZJGDM").val());
+            var JYDWHYDM = $.trim($("#JYDWHYDM").val());
+            var JYDWSZDDM = $.trim($("#JYDWSZDDM").val());
+            var CompanyAddress = $.trim($("#CompanyAddress").val());
+            var JYDWLXR = $.trim($("#JYDWLXR").val());
+            var JYDWLXMobile = $.trim($("#JYDWLXMobile").val());
+            var JobName = $.trim($("#JobName").val());
+            var JYDWLXDH = $.trim($("#JYDWLXDH").val());
+            var GZZWLBDM = $.trim($("#GZZWLBDM").val());
+            var JobDate = $.trim($("#JobDate").val());
+            var EmolumentTxt = $.trim($("#EmolumentTxt").val());
+            var EmolumentNum = $.trim($("#EmolumentNum").val());
+
+            var IsDuiKou = $.trim($("#IsDuiKou").val());
+            var CheckObjectDM = $.trim($("#CheckObjectDM").val());
+            var CheckTypeDM = $.trim($("#CheckTypeDM").val());
+            var CheckDate = $.trim($("#CheckDate").val());
+            var KJJYZMSJ = $.trim($("#KJJYZMSJ").val());
+            if (BYQXDM == null || BYQXDM == '') {
+                jErpAlertDialog("必须选择“毕业去向”", null, 2);
+                return false;
+            }
+            if (IsDuiKou == null || IsDuiKou == '') {
+                jErpAlertDialog("必须选择“是否专业对口就业”", null, 2);
+                return false;
+            }
+            if (CheckObjectDM == null || CheckObjectDM == '') {
+                jErpAlertDialog("必须选择“核查对象”", null, 2);
+                return false;
+            }
+            if (CheckTypeDM == null || CheckTypeDM == '') {
+                jErpAlertDialog("必须选择“核查方式”", null, 2);
+                return false;
+            }
+            if (CheckDate == null || CheckDate == '') {
+                jErpAlertDialog("必须选择“核查时间”", null, 2);
+                return false;
+            }
+
+            if (JobStateId == 1) {
+                if (KJJYZMSJ == null || KJJYZMSJ == '') {
+                    jErpAlertDialog("必须填写“开具就业证明时间”才能算为就业", null, 2);
+                    return false;
+                }
+            }
+
+            if (BYQXDM == 10 || BYQXDM == 11 || BYQXDM == 12) {
+                if (JYDWMC == null || JYDWMC == '') {
+                    jErpAlertDialog("必须填写“就业单位名称”", null, 2);
+                    return false;
+                }
+
+                if (JYDWXZDM == null || JYDWXZDM == '') {
+                    jErpAlertDialog("必须选择“就业单位性质”", null, 2);
+                    return false;
+                }
+
+                if (JYDWZZJGDM == null || JYDWZZJGDM == '') {
+                    jErpAlertDialog("必须填写“组织机构代码”", null, 2);
+                    return false;
+                }
+
+                if (JYDWHYDM == null || JYDWHYDM == '') {
+                    jErpAlertDialog("必须选择“就业单位行业”", null, 2);
+                    return fal

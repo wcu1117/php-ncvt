@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>论坛中心|分享大一点的学生们的社团生活</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__TMPL__Public/css/style.css">
+    <link rel="stylesheet" href="__TMPL__Public/css/forum.css">
+    <script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
+    <script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container-fluid">
+<tc_include file="Public:nav"/>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>校园动态</li>
+                <li>></li>
+                <li>文章详情</li>
+            </ul>
+        </nav>
+        <section class="forum-con container-fluid">
+            <header class="hd clearfix">
+               <div class="btn-group fr pr0 col-md-3">
+                   <a href="{:U('index/add')}" class="post-btn btn btn-default" style="width: 100%;">发布新帖</a>
+               </div>
+               <h2>论坛中心</h2>
+               <p><a href="javasrcpt:;">帮助</a> | <a href="javasrcpt:;">提议</a></p>
+               <p>今日:922 | 主题:147012</p>
+            </header>
+            <section class="bd col-md-9 padding0">
+                <div>
+                    <nav class="category">
+                        <h3 class="display-ib">分类</h3>
+                        <ul class="display-ib">
+                            <li><a href="javasrcpt:;" class="active">全部</a></li>
+                            <li><a href="javasrcpt:;">学习</a></li>
+                            <li><a href="javasrcpt:;">生活</a></li>
+                            <li><a href="javasrcpt:;">八卦</a></li>
+                            <li><a href="javasrcpt:;">自拍</a></li>
+                            <li><a href="javasrcpt:;">活动</a></li>
+                            <li><a href="javasrcpt:;">公告</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="more-option">
+                        <li><h3>筛选</h3></li>
+                        <li>
+                            <!-- 全部主题 -->
+                            <div class="btn-group">
+                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                全部主题 <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#">全部主题</a></li>
+                                  <li><a href="#">投票</a></li>
+                                  <li><a href="#">活动</a></li>
+                              </ul>
+                            </div>
+                            <!-- 全部时间 -->
+                            <div class="btn-group">
+                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                全部时间 <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#" class="active">全部时间</a></li>
+                                  <li><a href="#">一天</a></li>
+                                  <li><a href="#">两天</a></li>
+                                  <li><a href="#">一周</a></li>
+                                  <li><a href="#">一个月</a></li>
+                                  <li><a href="#">三个月</a></li>
+                              </ul>
+                            </div>
+                        </li>
+                        <li>排序:
+                            <!-- 全部时间 -->
+                            <div class="btn-group">
+                              <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                                回复时间 <span class="caret"></span>
+                              </button>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="#" class="active">回复时间</a></li>
+                                  <li><a href="#">发帖时间</a></li>
+                                  <li><a href="#">回复数量</a></li>
+                                  <li><a href="#">查看数量</a></li>
+                              </ul>
+                            </div>
+                        </li>
+                        <li class="fr">最新 | <a href="javascript:;">热门</a> | <a href="javascript:;">精华</a></li>
+                    </ul>
+                    <div class="list-itme">
+                        <foreach name="posts" item="vo">
+                            <article class="item clearfix">
+                                <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[{$vo
+                                    .post_type}]</a><a
+                                        href="{:U('Index/detail',array('id'=>$vo['id']))}">{$vo.post_title
+                                    }</a></h4>
+                                <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                                <aside class="subinfo">
+                                    <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                    <span>| 浏览：{$vo.post_hits} | 回复：{$vo.comment_count} |</span>
+                                    <span><a href="javascript:;">最新回复者</a>
+                                        <time datetime="{$vo.post_date}">{$vo.post_date}</time></span>
+                                </aside>
+                            </article>
+                        </foreach>
+
+
+                    </div>
+                </div>
+                <footer class="con-footer">
+                    <nav class="textalignR">
+                        <ul class="pagination">
+                            {$page}
+                        </ul>
+                    </nav>
+                </footer>
+            </section>
+            <aside class="info-side fr pr0 col-md-3">
+            <div>
+                <h3>热帖排行</h3>
+                <ul>
+                    <li><a href="javascript:;">严禁无关话题灌水及相应处罚规定</a></li>
+                    <li><a href="javascript:;">华硕T100TA笔记本怎么实现U盘启动_U教授</a></li>
+                    <li><a href="javascript:;">论坛买的羽绒服从哪查询物流信息</a></li>
+                    <li><a href="javascript:;">感觉自己好丑不想要了</a></li>
+                    <li><a href="javascript:;">问一下，你们有这种情况吗</a></li>
+                    <li><a href="javascript:;">谁有我的流量多</a></li>
+                    <li><a href="javascript:;">西山之行！</a></li>
+                </ul>
+            </div>
+            </aside>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<tc_include file="Public:footer"/>
+</body>
+</html>

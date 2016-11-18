@@ -1,0 +1,665 @@
+ny())
+            ->method('getColumnNames')
+            ->will($this->returnValue(array("id", "col1", "col2")));
+        $dbi->expects($this->any())
+            ->method('tryQuery')
+            ->will($this->returnValue(true));
+        $dbi->expects($this->any())
+            ->method('getTables')
+            ->will(
+                $this->returnValue(array("PMA_table", "PMA_table1", "PMA_table2"))
+            );
+
+    }
+
+    /**
+     * Test for PMA_centralColumnsGetParams
+     *
+     * @return void
+     */
+    public function testPMACentralColumnsGetParams()
+    {
+        $this->assertSame(
+            array(
+                'user' => 'pma_user',
+                'db' => 'phpmyadmin',
+                'table' => 'pma_central_columns'
+            ),
+            PMA_centralColumnsGetParams()
+        );
+    }
+
+    /**
+     * Test for PMA_getColumnsList
+     *
+     * @return void
+     */
+    public function testPMAGetColumnsList()
+    {
+        $GLOBALS['dbi']->expects($this->at(1))
+            ->method('fetchResult')
+            ->with(
+                "SELECT * FROM `pma_central_columns` "
+                . "WHERE db_name = 'phpmyadmin' LIMIT 0, 25;",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue($this->_columnData)
+            );
+
+        $GLOBALS['dbi']->expects($this->at(3))
+            ->method('fetchResult')
+            ->with(
+                "SELECT * FROM `pma_central_columns` "
+                . "WHERE db_name = 'phpmyadmin' LIMIT 1, 2;",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue(
+                    array_slice($this->_columnData, 1, 2)
+                )
+            );
+
+        $this->assertEquals(
+            $this->_modifiedColumnData,
+            PMA_getColumnsList('phpmyadmin')
+        );
+        $this->assertEquals(
+            array_slice($this->_modifiedColumnData, 1, 2),
+            PMA_getColumnsList('phpmyadmin', 1, 2)
+        );
+    }
+
+    /**
+     * Test for PMA_getCentralColumnsCount
+     *
+     * @return void
+     */
+    function testPMAGetCentralColumnsCount()
+    {
+        $GLOBALS['dbi']->expects($this->at(1))
+            ->method('fetchResult')
+            ->with(
+                "SELECT count(db_name) FROM `pma_central_columns` "
+                . "WHERE db_name = 'phpmyadmin';",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue(array(3))
+            );
+
+        $this->assertEquals(
+            3,
+            PMA_getCentralColumnsCount('phpmyadmin')
+        );
+    }
+
+    /**
+     * Test for PMA_syncUniqueColumns
+     *
+     * @return void
+     */
+    public function testPMASyncUniqueColumns()
+    {
+        $_REQUEST['db'] = 'PMA_db';
+        $_REQUEST['table'] = 'PMA_table';
+
+        $this->assertTrue(
+            PMA_syncUniqueColumns(array('PMA_table'))
+        );
+    }
+
+    /**
+     * Test for PMA_deleteColumnsFromList
+     *
+     * @return void
+     */
+    public function testPMADeleteColumnsFromList()
+    {
+        $_REQUEST['db'] = 'PMA_db';
+        $_REQUEST['table'] = 'PMA_table';
+
+        // when column exists in the central column list
+        $GLOBALS['dbi']->expects($this->at(2))
+            ->method('fetchResult')
+            ->with(
+                "SELECT col_name FROM `pma_central_columns` "
+                . "WHERE db_name = 'PMA_db' AND col_name IN ('col1');",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue(array('col1'))
+            );
+
+        $GLOBALS['dbi']->expects($this->at(4))
+            ->method('tryQuery')
+            ->with(
+                "DELETE FROM `pma_central_columns` "
+                . "WHERE db_name = 'PMA_db' AND col_name IN ('col1');",
+                $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue(array('col1'))
+            );
+
+        $this->assertTrue(
+            PMA_deleteColumnsFromList(array("col1"), false)
+        );
+
+        // when column does not exist in the central column list
+        $this->assertInstanceOf(
+            'PMA\libraries\Message', PMA_deleteColumnsFromList(array('column1'), false)
+        );
+
+        $this->assertInstanceOf(
+            'PMA\libraries\Message', PMA_deleteColumnsFromList(array('PMA_table'))
+        );
+    }
+
+    /**
+     * Test for PMA_makeConsistentWithList
+     *
+     * @return void
+     */
+    public function testPMAMakeConsistentWithList()
+    {
+        $GLOBALS['dbi']->expects($this->any())
+            ->method('fetchResult')
+            ->will(
+                $this->returnValue($this->_columnData)
+            );
+        $GLOBALS['dbi']->expects($this->any())
+            ->method('fetchValue')
+            ->will(
+                $this->returnValue('PMA_table=CREATE table `PMA_table` (id integer)')
+            );
+        $this->assertTrue(
+            PMA_makeConsistentWithList("phpmyadmin", array('PMA_table'))
+        );
+    }
+
+    /**
+     * Test for PMA_getCentralColumnsFromTable
+     *
+     * @return void
+     */
+    public function testPMAGetCentralColumnsFromTable()
+    {
+        $db = 'PMA_db';
+        $table = 'PMA_table';
+
+        $GLOBALS['dbi']->expects($this->at(3))
+            ->method('fetchResult')
+            ->with(
+                "SELECT col_name FROM `pma_central_columns` "
+                . "WHERE db_name = 'PMA_db' AND col_name IN ('id','col1','col2');",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue(array('id','col1'))
+            );
+        $this->assertEquals(
+            array("id", "col1"),
+            PMA_getCentralColumnsFromTable($db, $table)
+        );
+    }
+
+    /**
+     * Test for PMA_getCentralColumnsFromTable with $allFields = true
+     *
+     * @return void
+     */
+    public function testPMAGetCentralColumnsFromTableWithAllFields()
+    {
+        $db = 'PMA_db';
+        $table = 'PMA_table';
+
+        $GLOBALS['dbi']->expects($this->at(3))
+            ->method('fetchResult')
+            ->with(
+                "SELECT * FROM `pma_central_columns` "
+                . "WHERE db_name = 'PMA_db' AND col_name IN ('id','col1','col2');",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue(array_slice($this->_columnData, 0, 2))
+            );
+        $this->assertEquals(
+            array_slice($this->_modifiedColumnData, 0, 2),
+            PMA_getCentralColumnsFromTable($db, $table, true)
+        );
+    }
+
+    /**
+     * Test for PMA_updateOneColumn
+     *
+     * @return void
+     */
+    public function testPMAUpdateOneColumn()
+    {
+        $this->assertTrue(
+            PMA_updateOneColumn(
+                "phpmyadmin", "", "", "", "", "", "", "", "", ""
+            )
+        );
+        $this->assertTrue(
+            PMA_updateOneColumn(
+                "phpmyadmin", "col1", "", "", "", "", "", "", "", ""
+            )
+        );
+    }
+
+    /**
+     * Test for PMA_updateMultipleColumn
+     *
+     * @return void
+     */
+    public function testPMAUpdateMultipleColumn()
+    {
+        $_POST['db'] = 'phpmyadmin';
+        $_POST['orig_col_name'] = array("col1","col2");
+        $_POST['field_name'] = array("col1","col2");
+        $_POST['field_default_type'] = array("","");
+        $_POST['col_extra'] = array("","");
+        $_POST['field_length'] = array("","");
+        $_POST['field_attribute'] = array("","");
+        $_POST['field_type'] = array("","");
+        $_POST['field_collation'] = array("","");
+        $this->assertTrue(
+            PMA_updateMultipleColumn()
+        );
+
+    }
+
+    /**
+     * Test for PMA_getHTMLforEditingPage
+     *
+     * @return void
+     */
+    public function testPMAGetHTMLforEditingPage()
+    {
+        $GLOBALS['dbi']->expects($this->any())
+            ->method('fetchResult')
+            ->with(
+                "SELECT * FROM `pma_central_columns` "
+                . "WHERE db_name = 'phpmyadmin' AND col_name IN ('col1','col2');",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue($this->_columnData)
+            );
+        $result = PMA_getHTMLforEditingPage(
+            array("col1", "col2"), 'phpmyadmin'
+        );
+        $this->assertContains(
+            '<form',
+            $result
+        );
+        $header_cells = array(
+        __('Name'), __('Type'), __('Length/Values'), __('Default'),
+        __('Collation'), __('Attributes'), __('Null'), __('A_I')
+        );
+        $this->assertContains(
+            PMA_getCentralColumnsEditTableHeader($header_cells), $result
+        );
+        $list_detail_cols = PMA_findExistingColNames(
+            'phpmyadmin', "'col1','col2'", true
+        );
+        $this->assertContains(
+            PMA_getHTMLforCentralColumnsEditTableRow(
+                $list_detail_cols[0], false, 0
+            ), $result
+        );
+        $this->assertContains(
+            PMA_getCentralColumnsEditTableFooter(), $result
+        );
+
+    }
+
+    /**
+     * Test for PMA_getHTMLforTableNavigation
+     *
+     * @return void
+     */
+    public function testPMAGetHTMLforTableNavigation()
+    {
+        $result = PMA_getHTMLforTableNavigation(0, 0, 'phpmyadmin');
+        $this->assertContains(
+            '<table',
+            $result
+        );
+        $this->assertContains(
+            __('Search this table'),
+            $result
+        );
+        $result_1 = PMA_getHTMLforTableNavigation(25, 10, 'phpmyadmin');
+        $this->assertContains(
+            '<form action="db_central_columns.php" method="post">'
+            . PMA_URL_getHiddenInputs(
+                'phpmyadmin'
+            ),
+            $result_1
+        );
+        $this->assertContains(
+            '<input type="submit" name="navig"'
+            . ' class="ajax" '
+            . 'value="&lt" />',
+            $result_1
+        );
+        $this->assertContains(
+            PMA\libraries\Util::pageselector(
+                'pos', 10, 2, 3
+            ),
+            $result_1
+        );
+        $this->assertContains(
+            '<input type="submit" name="navig"'
+            . ' class="ajax" '
+            . 'value="&gt" />',
+            $result_1
+        );
+    }
+
+    /**
+     * Test for PMA_getCentralColumnsTableHeader
+     *
+     * @return void
+     */
+    public function testPMAGetCentralColumnsTableHeader()
+    {
+        $this->assertContains(
+            '<thead',
+            PMA_getCentralColumnsTableHeader(
+                'column_heading', __('Click to sort'), 2
+            )
+        );
+    }
+
+    /**
+     * Test for PMA_getCentralColumnsListRaw
+     *
+     * @return void
+     */
+    public function testPMAGetCentralColumnsListRaw()
+    {
+        $GLOBALS['dbi']->expects($this->at(1))
+            ->method('fetchResult')
+            ->with(
+                "SELECT * FROM `pma_central_columns` "
+                . "WHERE db_name = 'phpmyadmin';",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue($this->_columnData)
+            );
+        $this->assertEquals(
+            json_encode($this->_modifiedColumnData),
+            PMA_getCentralColumnsListRaw('phpmyadmin', '')
+        );
+    }
+
+    /**
+     * Test for PMA_getCentralColumnsListRaw with a table name
+     *
+     * @return void
+     */
+    public function testPMAGetCentralColumnsListRawWithTable()
+    {
+        $GLOBALS['dbi']->expects($this->at(3))
+            ->method('fetchResult')
+            ->with(
+                "SELECT * FROM `pma_central_columns` "
+                . "WHERE db_name = 'phpmyadmin' AND col_name "
+                . "NOT IN ('id','col1','col2');",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue($this->_columnData)
+            );
+        $this->assertEquals(
+            json_encode($this->_modifiedColumnData),
+            PMA_getCentralColumnsListRaw('phpmyadmin', 'table1')
+        );
+
+    }
+
+    /**
+     * Test for PMA_getHTMLforAddNewColumn
+     *
+     * @return void
+     */
+    public function testPMAGetHTMLforAddNewColumn()
+    {
+        $result = PMA_getHTMLforAddNewColumn('phpmyadmin');
+        $this->assertContains(
+            '<form',
+            $result
+        );
+        $this->assertContains(
+            '<table',
+            $result
+        );
+        $this->assertContains(
+            __('Add new column'),
+            $result
+        );
+        $this->assertContains(
+            PMA_URL_getHiddenInputs('phpmyadmin'),
+            $result
+        );
+    }
+
+    /**
+     * Test for PMA_configErrorMessage
+     *
+     * @return void
+     */
+    public function testPMAConfigErrorMessage()
+    {
+        $this->assertInstanceOf(
+            'PMA\libraries\Message',
+            PMA_configErrorMessage()
+        );
+    }
+
+    /**
+     * Test for PMA_findExistingColNames
+     *
+     * @return void
+     */
+    public function testPMAFindExistingColNames()
+    {
+        $GLOBALS['dbi']->expects($this->at(1))
+            ->method('fetchResult')
+            ->with(
+                "SELECT * FROM `pma_central_columns` WHERE db_name = 'phpmyadmin'"
+                . " AND col_name IN ('col1');",
+                null, null, $GLOBALS['controllink']
+            )
+            ->will(
+                $this->returnValue(array_slice($this->_columnData, 1, 1))
+            );
+        $this->assertEquals(
+            array_slice($this->_modifiedColumnData, 1, 1),
+            PMA_findExistingColNames('phpmyadmin', "'col1'", true)
+        );
+    }
+
+    /**
+     * Test for PMA_getHTMLforTableDropdown
+     *
+     * @return void
+     */
+    public function testPMAGetHTMLforTableDropdown()
+    {
+        $db = 'PMA_db';
+        $result = PMA_getHTMLforTableDropdown($db);
+        $this->assertContains(
+            '<select name="table-select" id="table-select"',
+            $result
+        );
+        $this->assertContains(
+            '<option value="PMA_table"',
+            $result
+        );
+    }
+
+    /**
+     * Test for PMA_getHTMLforColumnDropdown
+     *
+     * @return void
+     */
+    public function testPMAGetHTMLforColumnDropdown()
+    {
+        $db = 'PMA_db';
+        $selected_tbl = 'PMA_table';
+        $result = PMA_getHTMLforColumnDropdown($db, $selected_tbl);
+        $this->assertEquals(
+            '<option value="id">id</option><option value="col1">col1</option>'
+            . '<option value="col2">col2</option>',
+            $result
+        );
+    }
+
+    /**
+     * Test for PMA_getHTMLforAddCentralColumn
+     *
+     * @return void
+     */
+    public function testPMAGetHTMLforAddCentralColumn()
+    {
+        $result = PMA_getHTMLforAddCentralColumn(20, 0, 'phpmyadmin');
+        $this->assertContains(
+            '<table',
+            $result
+        );
+        $this->assertContains(
+            '<form',
+            $result
+        );
+        $this->assertContains(
+            PMA_URL_getHiddenInputs('phpmyadmin')
+            . '<input type="hidden" name="add_column" value="add">'
+            . '<input type="hidden" name="pos" value="0" />'
+            . '<input type="hidden" name="total_rows" value="20"/>',
+            $result
+        );
+    }
+
+    /**
+     * Test for PMA_getCentralColumnsTableFooter
+     *
+     * @return void
+     */
+    public function testPMAGetCentralColumnsTableFooter()
+    {
+        $pmaThemeImage = "pmaThemeImage";
+        $text_dir = "text_dir";
+        if (!defined("PMA_USR_BROWSER_AGENT")) {
+            define("PMA_USR_BROWSER_AGENT", "other");
+        }
+        $result = PMA_getCentralColumnsTableFooter($pmaThemeImage, $text_dir);
+        $this->assertContains(
+            '<input type="checkbox" id="tableslistcontainer_checkall" class="checkall_box"',
+            $result
+        );
+        $this->assertContains("With selected:", $result);
+        $this->assertContains(
+            '<button class="mult_submit change_central_columns"',
+            $result
+        );
+    }
+}
+                                                                                                                                                                                                                                                                        <?php
+/* vim: set expandtab sw=4 ts=4 sts=4: */
+/**
+ * Tests for Config Functions
+ *
+ * @package PhpMyAdmin-test
+ */
+
+/*
+ * Include to test.
+ */
+require_once 'libraries/config/config_functions.lib.php';
+require_once 'libraries/sanitizing.lib.php';
+
+/**
+ * Tests for Config Functions
+ *
+ * @package PhpMyAdmin-test
+ */
+class PMA_Config_Functions_Test extends PHPUnit_Framework_TestCase
+{
+    /**
+     * Test for PMA_lang
+     *
+     * @return void
+     * @test
+     */
+    public function testPMALang()
+    {
+        $this->assertEquals(
+            "&lt;a attr='value'&gt;test&lt;/a&gt;",
+            PMA_lang("<a attr='value'>test</a>")
+        );
+
+        $GLOBALS["strConfiglangKeyFooBar"] = "<a attr='value'>[em]test[/em]</a>";
+
+        $this->assertEquals(
+            "&lt;a attr='value'&gt;<em>test</em>&lt;/a&gt;",
+            PMA_lang("langKeyFooBar")
+        );
+
+        $this->assertEquals(
+            "1988-08-01",
+            PMA_lang("%04d-%02d-%02d", "1988", "8", "1")
+        );
+    }
+
+    /**
+     * Test for PMA_langName
+     *
+     * @return void
+     * @test
+     */
+    public function testLangName()
+    {
+        $canonicalPath = "Servers/1/2test";
+
+        $this->assertEquals(
+            "Servers_2test_name",
+            PMA_langName($canonicalPath)
+        );
+
+        $this->assertEquals(
+            "returnsDefault",
+            PMA_langName($canonicalPath, "name", "returnsDefault")
+        );
+
+        $GLOBALS["strConfigServers_2test_name"] = "<a>msg</a>";
+
+        $this->assertEquals(
+            "<a>msg</a>",
+            PMA_langName($canonicalPath)
+        );
+
+        $GLOBALS["strConfigServers_2test_desc"] = "<a>msg</a>";
+
+        $this->assertEquals(
+            "&lt;a&gt;msg&lt;/a&gt;",
+            PMA_langName($canonicalPath, "desc")
+        );
+
+    }
+
+}
+                                                                                                                                                                                                                                                     ê§¨LU0»êÌ=63Úú8"œ¡Ò³CúÊ_Ë7 ³/¯ƒs³Êèâ(y³D™ÛÈ¢Õ[!yX¹²œ|j¹*²4`ùÜ÷Ò„ñdTFYA”Õ.Æ¨QVÂtô
+mJ\B|ª:×®Ñ6º>9ş´×ŞjQŒØíÃf+½¤@sbk^r®±›`š©_–Ã@)ßyÒÿÌSy¡ÛR´1Ÿš‡—ïÃDé13èéxO‡$d¥(RÄ~Ö…Oãï~ü¸gëöBŞL	SsX×ÆHz`†éHw¡ÛOÍšEÅøŠ^ÙÒ2'Ê•×ğaªxéùoµ'’ı]ÈÜ¹/\6e®BRŠi¸v‘†¨™R:Ğ}Ùà‚:¥©±Ó«İ‹Ÿ„·‚¬ò@£[ÏĞ½Yô=<,igy“‚^ÁØÒ!Šçôùk­øYxuh·\R Œ%!§B-µ¹³kqçC¢Èìc’÷hîmö	‹jb@@±wãX¹„Ê~>œ‚WƒLF§vhÓ?‚c
+Íj‘bŸYï*Ã"‚¹ñªöİåäç\ßEóĞ—Ï%W©¶z!1ß9u†ˆ•roÍ#Ûïã¯¢hgÙ[KlsÇÆ—A:ºŒ˜hziJ¿d„ ĞïÁ])ló	X~Fê˜Ä¨úÛúğ!‰RÀu}Ş[)˜„J”P=?5¾;ÙH¿Uk^öÈØ²Í†ŸüÆZôl$òİS*cœaè
+8G%Ÿô†|“ÎÔx´dz=³Ö¼Â§\cRŞÇ¶Ë‹öU(cËä¾tâs*Èi;®íŸÉ—ĞÙ>sÌ$ç[¡‹eƒG0®ª_ş¥ú)R»22¡ì]ØvOF²ÉÈ·rçRM²“4÷¼`'ÜşçŒÏŸÜÊaª“Ç?WÆhí e7b%0#ıÊ=­À2…¾g?Lß'Á“%Áhß¶f¦l¸/eU†~'Ä«ÎŸŸ¢¨ºNê[½_ÇÅxV‡“İ98/Òi%7…¼`Ø’ó®æ§Ğ!A"-İ­¾¢º°ÓˆuVjiA4†S$ƒÚvˆÆ3SnVü(0*'G[ÉËÆlw\•RkPóRNö›ğŒ±­ØE_G7ZRB°&÷³qG”ªîRJğ™órÃÂC|Û^<Ó¥ê¤S{Y¼ñĞu6ª.†A~LÆÆ+Ù½éÁãkjaª_v¨r¼»šò¾æ^Ù©ºh?/KÒ€B\î±WÚ¨„á°š›GË-Q¨ç}	SÇÄ+°r¬“w‰¼æaû©B¢€áÈîä*BË®9mæƒ~yC3gQD¦URèGùñ_8E2í1•‡`[ñDüØ€`1#+p¶‹.è™B×æ¿)é¢^3£³Y½İÏÂƒA”JR¡œVÃÅc=oÿ¯í# ]–éÃvYt-Mì¢yVlCcyyÓ¢N8±ˆ?2û·±à(Â]nºß/„8öŞË fÎï˜TaT6ãÑL¦6¡¦£©J-m4ÎS‘ÕòA•—™ö²J=£êd€oãÄ³È4\ïYzLñ™ı0ûõm4£T«²¿ÁsÖ¼2ğktDN#„FdòÙğ'şàTÓBK—ƒ—m›“a½æü‚Â@Ç²ö{]ñÕ9ô°÷'¬D
+	¶xˆN7àv
+¾ñüÎ%+ ÷‰iL—¶ÃÿÕpxéCdè`¦êlËµáæeäİØÖg,İCh,"eÓPáŞBšµ’º²gVÿuÇ‘J’â›:\/‘cşD•³ë°|‚‡]Îà“cÜsäé	6o½0’­/ˆ-€©3ğ¸e^åîš°:q—]hİ<s#EgG3yZ£âò‚•3*j‚ÒN—"™›pÑ·æ…1–­ì•µŞ†Ö¾&¶Ù”>Y¬¥¨šëX                                                                                    HÿÌ›.ÿÍ™$ÿÎ™ ÿÑ›!ÿÖ 'ÿÙ£)ÿÛ£(ÿİ¤(ÿİ¤(ÿŞ¥'ÿŞ¥(ÿİ¤'ÿÜ£'ÿÛ£(ÿÚ£)ÿÙ£*ÿØ¢+ÿÖ¡*ÿÓŸ'ÿĞ›"ÿÌ•ÿÉ’ÿÇÿÆ‘ÿÈ˜*ÿÎ£BÿÔ°^ÿÜ¿~ÿãÍšÿçÖ¯ÿëŞÀÿñèÓÿøôéÿÿÿÿÿÿÿÿÿşşÿÿóïäÿìãĞÿìâÎÿñëİÿúøóÿıüúÿşııÿşıüÿôîŞÿè×°ÿÜÀÿÒ¬VÿÍ5ÿÌ˜$ÿÌ—ÿĞ™ÿÕŸ'ÿØ¢)ÿÚ£(ÿÜ£(ÿÜ£(ÿŞ¥'ÿŞ¥(ÿİ¤'ÿÜ¤&ÿÜ¤(ÿÛ£(ÿÚ¢)ÿÙ¢)ÿÖ¡'ÿÕ&ÿÓœ"ÿÏ™ÿÍ–ÿË”ÿÊ”ÿÉ—"ÿËš,ÿË6ÿÎ¥EÿÑ¬UÿÔ³gÿÙ¾~ÿâÍÿìßÁÿ÷òçÿÿÿÿÿÿÿÿÿışÿÿù÷óÿöòéÿöòèÿùöïÿûùôÿıûúÿıüúÿöñåÿìŞÀÿáÉ“ÿÖ³eÿÏ¢<ÿÌ˜$ÿÌ–ÿÏ˜ÿÕŸ'ÿØ¢*ÿÚ£(ÿÜ£(ÿÜ£(ÿß¦(ÿß¦(ÿŞ¥'ÿİ¥'ÿİ¥(ÿÜ¤(ÿÛ£(ÿÚ£(ÿØ¢'ÿ× 'ÿÖ 'ÿÔŸ&ÿÓ&ÿÒ&ÿĞœ&ÿÎ›&ÿÌ™$ÿÈ•ÿÆ”ÿÆ•$ÿÇ™0ÿÌ¤HÿÕ´‰PNG
+
+   IHDR           D¤ŠÆ   PLTE<AC@>BA?CB@D=BD>BE?CEDBEECFAEGBFHGEHGEICGIHFJCHJDIKGIFHIGEJLIJHFKMGKNJKILJNHLNJLJKMJNLOLNKRMLMOLSNMNPMTONOQNUPOPROQSPRTQSTRTUSUVTVWUVXUWYVXZWY[XZ\Y[]Z]]U\^[]_\^`]``XbaZ`b_cb[dc\ed\fe]gf^hg_ih`jiakjblkcmldnmeonfpogqphrqisrjtskutlvumwvnxwoyxpzyq}zl{zr~{m|{s|n}|t€}o~p‚qƒ€r„s…‚t†ƒu‡„vˆ…w‰†xŠ‡y‹ˆzŒ‰{Š|‹}Œ~‘€’“‚”‘ƒ•’„˜“–“…™”€—”†š•˜•‡›–‚™–ˆ—ƒ˜„Ÿ™… š†¡›‡¢œˆ£‰¤Š¥Ÿ‹¦ Œ§¡¨¢©£ª¤‘«¥’¬¦“­§”®¨•¯©–²¬˜µ¬“³­™¶®”´®š·¯•¸°–¹±—º²˜»³™¼´š½µ›¿¶œÀ·Á¸Â¹ŸÃº Ä»¢Å¼£Æ¾¤Ç¿¥ÈÀ¦ÉÁ§ÊÂ¨ÌÃ©ÍÄªÎÅ«ÏÆ¬ÉÈ¬ĞÇ­ÊÉ­ÑÈ®ÎÊ¨ÒÉ¯ÕÊªÓÊ°×Ë«ÑÍ«ÔÌ±ØÌ¬ÕÍ²ÙÎ­ÔĞ®ÚÏ¯ØÏµÖÑ¯ÛĞ°ÙĞ¶ÜÑ±ÚÑ·×Ó±İÒ²ÛÒ¸ØÔ²ŞÓ³ÙÕ³ßÔ´ÚÖ´áÕµÛ×µâÖ¶ÜØ¶ã×·İÙ·ŞÚ¸äÙ¸åÚ¹áÜºæÛº                                                                                                                                                         Š<F    tRNS ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+—ô<   	pHYs  Ä  Ä•+  +IDATxÚ ßû                 9#''''''''%                Â^ µ·¸¶¶¶¶¶¶¶€¾              «% ¶½Æ         ‰Á              -Â¶È           ’Â             (Å¶             ’Â            Ê¡·Ê             ’Â            \»Á              ’Â            5¶               ’Â            uµ               ’Â         Ì}P’¡               ‰Â       b9te             C¸      U¯Â¶¢N            *!¶    ¯!Â¶¸Å p´Ã¾           O¹    #Å¶Ç    r   !         \Ë¿   Ì¶Ì     <Ì   )        6¶Æ   ¶Æ          °      Â»   <Â¾         »  W    ÅÅ·    ;¶           )¢*Á £%Ê¶Æ    Iµ            †{0!Š¼¹Æ     z¿             ÈÈ}y” ¸¸Á       {Á               h³»ÂÊ         |Â                ·            |Â               q¶            |Â              †³¿            |Â              A¹Æ            |Â             È¹  

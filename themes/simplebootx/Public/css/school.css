@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+/*main 侧边栏*/
+.side-box {
+    padding: 0;
+    border:3px solid #ddd; 
+    margin-top: 30px;
+    background-color: #fff;
+    font-family: Georgia, serif;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.side-box ul li{ 
+    border-top: 2px solid #ddd;
+    padding: 4px 8px 0 8px; 
+}  
+.side-box ul li:first-child, .side-box .bd>a:first-child { border-top: none; }
+.side-box .hd{ 
+    color: #666; 
+    font-size: 1.2em;
+    height: 2em; 
+    line-height: 2em; 
+    margin: -4px -8px 0; 
+    padding: 0 8px;
+    border-bottom: 1px solid #ccc;
+    background-color: #edebea;  
+    cursor: pointer;
+}
+.side-box .bd>a{
+    display: block;
+    border-top: 1px solid #dedede;
+    line-height: 2em;
+}
+.side-box .bd{ display: none; }
+.current .bd{ display: block; }
+
+
+/*main 专题内容*/
+.article-box { 
+    width: 78.666%; 
+    padding: 30px 20px 0; 
+    background: url("../images/top_main_rcon_bg.png") center center; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+.con-item { 
+    width: 48%;
+    min-height: 86px;
+    padding: 0;
+    margin-bottom: 2%;
+    background-color: #fff;
+    
+    border: 1px solid rgba(0,0,0,.3);
+    -webkit-box-shadow: 0px 2px 9px rgba(0,0,0,.3);
+    box-shadow: 0px 2px 9px rgba(0,0,0,.3); 
+}
+.con-item:nth-child(2n+2){float: right; }
+.con-item .hd {
+    width: 43%;
+    margin-right: 3%;
+    padding-top: 24.333%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+.con-item .bd>h3{
+    margin-top: 9%;
+    font-size: 1em;
+    line-height: 1.3em;
+    padding-right: 3%;
+    font-family: 'Microsoft YaHei';
+}
+.con-item .bd>h3>a, .con-item .bd>h3>a:hover{ color: #000 }
+.con-item .post-tiem{
+    display: block;
+    position: absolute;
+    top: 0; right: 0; 
+    z-index: 99;
+    padding: .3em .5em .3em .5em;
+    line-height: 1.8em;
+    color: #fff;
+    font-size: .6em;
+    background-color: #2f94c1;
+}
+.con-item .post-tiem>strong { float: left; font-weight: 700; font-size: 3em; }
+
+/*分页*/
+.con-footer{
+    position: relative;
+    margin-top: 3%;
+    width: 100%;
+    max-width: 100%;
+}

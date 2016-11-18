@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>发布帖子|分享大一点的学生们的社团生活</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap-3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/forum.css">
+<!-- <link rel="stylesheet" href="css/school.css"> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="container-fluid">
+<header id="site-header" class="container-fluid">
+    <div class="container bgColor-white">
+        <hgroup><a href="index.html"><h1 id="site-log" class="col-md-4 marginTop-20px">高校社团汇</h1></a></hgroup>
+        <div class="hd-right col-md-6 fr pr0">
+            <ul class="info-nav container-fluid">
+                <li class="u-log">
+                    <a href="javasrcpt:;" data-toggle="modal" data-target="#myModal">登录</a>
+                    <!-- 弹出登录框 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">登录框</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form role="form">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">帐号：</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">密码：</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <button type="submit" class="btn btn-default">点击登录</button>
+                              <span class="marginLeft-10px u-reg">还没有帐号?<a href="javasrcpt:;">点击注册</a></span>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="u-reg"><a href="javasrcpt:;">注册分享社团快乐时光</a></li>
+                <li class="col-md-3 textalignC fr ncvt-box">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                    走进南职<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="http://www.ncvt.net/" target="_blank">学校官网</a></li>
+                        <li><a href="http://www.ncvt.net/jxglxt.htm" target="_blank">教务管理系统</a></li>
+                        <li><a href="http://crp.ncvt.net/login.portal" target="_blank">数字化校园</a></li>
+                        <!-- <li class="divider"></li> -->
+                        <li><a href="http://tsg.ncvt.net/" target="_blank">图书馆</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="search-box container-fluid">
+                <li class="clearfix">
+                    <form action="" method="post">
+                        <input type="text" name="search-con" class="search-con" placeholder="社团\活动\论坛">
+                        <input type="submit" name="search-btn" class="search-btn" value="提交">
+                    </form>
+                </li>
+                <li class="fr"></li>
+            </ul>
+        </div>
+        <div class="hd-left col-md-1 fr marginTop-20px">
+            <a href="http://www.weather.com.cn/weather/101300101.shtml" target="_blank">南宁天气</a>
+        </div>
+    </div>
+    <nav class="site-nav container">
+        <h2 class="hidden">导航</h2>
+        <ul>
+            <li class="col-md-2"><img src="images/schoolNews-icon.png" alt="" /><br /><a href="school.html">校园动态</a></li>
+            <li class="col-md-2"><img src="images/st-icon.png" alt="" /><br /><a href="st.html">社团中心</a></li>
+            <li class="col-md-2"><img src="images/forum-icon.png" alt="" /><br /><a href="forum.html">论坛互动</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/stzw.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>论坛中心</li>
+                <li>></li>
+                <li>发布帖子</li>
+            </ul>
+        </nav>
+        <section class="forumEditor-con container-fluid">
+            <header><h3 class="hd">发表帖子</h3></header>
+            <div class="master-con">
+            <form action="" method="post">
+                <div class="Editor-hd">
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                        选择分类 <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#" class="active">八卦</a></li>
+                          <li><a href="#">学习</a></li>
+                          <li><a href="#">自拍</a></li>
+                          <li><a href="#">活动</a></li>
+                          <li><a href="#">生活</a></li>
+                          <li><a href="#">公告</a></li>
+                        </ul>
+                        <label><input type="text" name="" class="form-control form-con" /></label>
+                        <!-- <span>还可以输入xx个字</span> -->
+                    </div>
+                </div>
+                <div class="Editor-bd">
+                    <textarea id="editor_id" name="content" style="width:100%;height:500px;"></textarea>
+                </div>
+                <footer>
+                    <p>输入验证码:<label><input type="text" name="" class="form-control form-con"></label></p>
+                    <p><span class="verifycode"><img src="url" atl="验证码图片" class="codeImg"></span><a href="javasrcpt:0;" class="changecode">看不清?</a></p>
+                    <p><label><input type="submit" name="" id="post-btn" value="发布帖子" /></label></p>
+                </footer>
+            </form>
+            </div>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<footer id="site-footer" class="container-fluid">
+    <div class="container textalignC">
+        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
+    </div>
+    <div class="container-fluid bgWhite">
+        <div class="container">
+            <ul class="info-nav fl clearfix">
+                <li><a href="javasrcpt:;">关于我们</a></li>
+                <li><a href="javasrcpt:;">待定..</a></li>
+            </ul>
+            <p class="fr copyright">Copyright(C) NCVT P-N-Y 毕业设计作品. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script charset="utf-8" src="editor/kindeditor.js"></script>
+<script charset="utf-8" src="editor/lang/zh_CN.js"></script>
+<script>
+    //编辑器
+    KindEditor.options.filterMode = false;
+    KindEditor.ready(function(K) {
+        window.editor = K.create('#editor_id');
+        K.create('#editor_id', {
+            allowFileManager : true,
+            resizeType : 0,
+            afterBlur: function(){ this.sync(); },
+            items:[
+                'source', '|', 'undo', 'redo', '|', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+                'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+                'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+                'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+                'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+                'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+                'flash', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+                'anchor', 'link', 'unlink', '|', 'preview'
+            ]
+        });
+        // // 取得HTML内容
+        //html = editor.html();
+
+        // // 同步数据后可以直接取得textarea的value
+        // editor.sync();
+        // html = document.getElementById('editor_id').value; // 原生API
+        // html = K('#editor_id').val(); // KindEditor Node API
+        // html = $('#editor_id').val(); // jQuery
+
+        // 设置HTML内容
+        //editor.html('HTML内容');
+
+        //***editor.html()实际能够获取内容***//
+        K('#post-btn').click(function(e) {
+            alert(editor.html());
+        });
+    });
+</script>
+</body>
+</html>

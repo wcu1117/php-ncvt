@@ -1,0 +1,58 @@
+tNews .= '        </td>
+    </tr>';
+}
+$latestNews .= '</table>';
+
+$drgonIterm = array(
+            'item1' => '<dt class="lside"><span class="l">'.$cfg_soft_enname.';¸üÐÂÏûÏ¢</span></dt>
+                        <dd>
+                            <div id="updatetest">
+                                <div id="updateinfos">
+                                      <div class="updatedvt"><b>ÄúÏµÍ³°æ±¾×îºó¸üÐÂÊ±¼äÎª£º'.$oktime.' </b><br/>
+                                      <a href="javascript:LoadUpdateInfos();" class="np coolbg">½øÐÐÔÚÏß¸üÐÂ</a> &nbsp
+                                       <a href="sys_repair.php" class="np coolbg">ÏµÍ³´íÎóÐÞ¸´</a></div>
+                                       <iframe name="stafrm" src="'.$offUrl.'&uptime='.$oktime.'" frameborder="0" id="stafrm" width="98%" height="50"></iframe>
+                                </div>
+                             </div>
+                        </dd>',
+            'item2' => '<dt class="lside"><span class="l">ÉÌÒµÊÚÈ¨²éÑ¯</span></dt>
+                        <dd>
+                            <div class="biz">
+                                <script type="text/javascript" src="'.$updateHost.'/dedecms/authorization.'.$cfg_soft_lang.'.js"></script>
+                            </div>
+                        </dd>',
+            'item3' => '<dt class="lside">
+                                <div class="l">¿ì½Ý²Ù×÷</div>
+                                <div class="r"><a href="#" onClick="AddNew()"><b>¡¾ÐÂÔö¡¿</b></a><a href="#" onClick="ListAll()"><b>¡¾¹ÜÀí¡¿</b></a></div>
+                            </dt>
+                            <dd>
+                                <div id="quickmenu">'.$menu .'
+                                </div>
+                            </dd> ',
+            'item4' => '<dt class="lside"><div class="l">ÏµÍ³»ù±¾ÐÅÏ¢</div></dt>
+                        <dd class="intable">
+                            <table width="98%" class="dboxtable">
+                                <tr>
+                                    <td width="25%" class="nline">ÄúµÄ¼¶±ð£º</td>
+                                    <td class="nline">'.$adminname.'
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5" class="nline">PHP»·¾³ÕªÒª£º</td>
+                                    <td class="nline"> PHP°æ±¾£º'.$phpversion.'&nbsp;GD°æ±¾£º'.$gdversion.'</td>
+                                </tr>
+                                <tr>
+                                    <td class="nline">ÊÇ·ñ°²È«Ä£Ê½£º<font color="red">'.$isSafeMode .'</font> '.$safe.'
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nline">
+                                        Register_Globals£º<font color="red">'.$regblo.'</font> &nbsp;
+                                        Magic_Quotes_Gpc£º<font color="red">'.$magquo.'</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="nline">Ö§³ÖÉÏ´«µÄ×î´óÎÄ¼þ£º'.$post_msize.'</td>
+                                </tr>
+                                <tr>
+                                    <td class="nline">ÊÇ·ñÔÊÐí´ò¿ªÔ

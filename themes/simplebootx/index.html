@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>分享大一点的学生们的社团生活</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap-3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body class="container-fluid">
+<header id="site-header" class="container-fluid">
+    <div class="container bgColor-white">
+        <hgroup><a href="index.html"><h1 id="site-log" class="col-md-4 marginTop-20px">高校社团汇</h1></a></hgroup>
+        <div class="hd-right col-md-6 fr pr0">
+            <ul class="info-nav container-fluid">
+                <li class="u-log">
+                    <a href="javasrcpt:;" data-toggle="modal" data-target="#myModal">登录</a>
+                    <!-- 弹出登录框 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">登录框</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form role="form">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">帐号：</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">密码：</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <button type="submit" class="btn btn-default">点击登录</button>
+                              <span class="marginLeft-10px u-reg">还没有帐号?<a href="javasrcpt:;">点击注册</a></span>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="u-reg"><a href="javasrcpt:;">注册分享社团快乐时光</a></li>
+                <li class="col-md-3 textalignC fr ncvt-box">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                    走进南职<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="http://www.ncvt.net/" target="_blank">学校官网</a></li>
+                        <li><a href="http://www.ncvt.net/jxglxt.htm" target="_blank">教务管理系统</a></li>
+                        <li><a href="http://crp.ncvt.net/login.portal" target="_blank">数字化校园</a></li>
+                        <!-- <li class="divider"></li> -->
+                        <li><a href="http://tsg.ncvt.net/" target="_blank">图书馆</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="search-box container-fluid">
+                <li class="clearfix">
+                    <form action="" method="post">
+                        <input type="text" name="search-con" class="search-con" placeholder="社团\活动\论坛">
+                        <input type="submit" name="search-btn" class="search-btn" value="提交">
+                    </form>
+                </li>
+                <li class="fr"></li>
+            </ul>
+        </div>
+        <div class="hd-left col-md-1 fr marginTop-20px">
+            <a href="http://www.weather.com.cn/weather/101300101.shtml" target="_blank">南宁天气</a>
+        </div>
+    </div>
+</header>
+<div id="site-main" class="container-fluid bgNone">
+    <div id="setBaImg" class="mainTop-box container-fluid">
+        <div>
+            <div class="container">
+                <section class="banner-box overflowH col-md-5">
+                    <h2 class="hidden">专题栏</h2>
+                    <div id="carousel-example-generic" class="carousel slide " data-ride="carousel">
+                        <!-- Indicators -->  
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                        </ol>  
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <a href="javasrcpt:;" class="item active" style="background-image: url('images/banner1.jpg');">
+                                <div class="carousel-caption">
+                                    ...
+                                </div>
+                            </a>
+                            <a href="javasrcpt:;" class="item" style="background-image: url('images/banner2.jpg');">
+                                <div class="carousel-caption">
+                                ...
+                                </div>
+                            </a>
+                            <a href="javasrcpt:;" class="item" style="background-image: url('images/banner3.jpg');">
+                                <div class="carousel-caption">
+                                ...
+                                </div>
+                            </a>
+                            <a href="javasrcpt:;" class="item" style="background-image: url('images/banner4.jpg');">
+                                <div class="carousel-caption">
+                                ...
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </section>
+                <section class="news-box col-md-6 fr">
+                    <h2 class="news-hd display-ib">校园资讯</h2>
+                    <a href="javasrcpt:;" class="news-more">查看更多</a>
+                    <div> 
+                        <ul class="news-list">
+                            <li><span class="fr">[ 2016-10-23]</span><a href="javasrcpt:;">另外还包含了针对打印机显示或隐藏内容的工具类</a></li>
+                            <li><span class="fr">[ 2016-10-23]</span><a href="javasrcpt:;">来创建语义化的布局</a></li>
+                            <li><span class="fr">[ 2016-10-23]</span><a href="javasrcpt:;">通过研究后面的实例，可以将这些原理应</a></li>
+                            <li><span class="fr">[ 2016-10-23]</span><a href="javasrcpt:;">在栅格系统中，我们在 Less 文件中使用</a></li>
+                            <li><span class="fr">[ 2016-10-23]</span><a href="javasrcpt:;">我们偶尔也会在媒体查询代码中包</a></li>
+                            <li><span class="fr">[ 2016-10-23]</span><a href="javasrcpt:;">是否不希望在小屏幕设备上所有列都堆叠在一起？</a></li>
+                        </ul>
+                        <p class="sub-message">关注校园身边的大事情小趣事！</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="mian-nav container-fluid">
+        <section class="site-nav container">
+            <h2 class="hidden">导航</h2>
+            <nav>
+                <ul>
+                    <li class="col-md-2"><img src="images/schoolNews-icon.png" alt="" /><br /><a href="school.html">校园动态</a></li>
+                    <li class="col-md-2"><img src="images/st-icon.png" alt="" /><br /><a href="st.html">社团中心</a></li>
+                    <li class="col-md-2"><img src="images/forum-icon.png" alt="" /><br /><a href="forum.html">论坛互动</a></li>
+                    <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+                    <li class="col-md-2"><img src="images/stzw.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+                    <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+                </ul>
+            </nav>
+        </section>
+        <div class="container-fluid">
+            <section class="hot-event container">
+                <h2>推荐活动</h2>
+                <ul class="overflowH">
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                    <li class="col-md-3">
+                        <a href="javasrcpt:;" class="item-img"></a>
+                        <p><time>2016-10-23</time><span>信息工程学院</span></p>
+                        <p><a href="javasrcpt:;">503演(辩)协会二会</a></p>
+                    </li>
+                </ul>
+            </section>
+            <section class="hot-st container">
+                <h2>热门社团</h2>
+                <ul class="clearfix">
+                    <li class="col-md-2"><a href="javasrcpt:;" style="background-image: url('images/main_slider1.jpg')"></a></li>
+                    <li class="col-md-2"><a href="javasrcpt:;" style="background-image: url('images/main_slider2.jpg')"></a></li>
+                    <li class="col-md-2"><a href="javasrcpt:;" style="background-image: url('images/main_slider3.jpg')"></a></li>
+                    <li class="col-md-2"><a href="javasrcpt:;" style="background-image: url('images/main_slider4.jpg')"></a></li>
+                    <li class="col-md-2"><a href="javasrcpt:;" style="background-image: url('images/banner4.jpg')"></a></li>
+                    <li class="col-md-2"><a href="javasrcpt:;" style="background-image: url('images/banner2.jpg')"></a></li>
+                </ul>
+                <p class="info">看看有没有自己喜欢的社团?</p>
+            </section>
+            <div class="container-fluid" ></div>
+        </div>
+    </div>
+</div>
+<footer id="site-footer" class="container-fluid">
+    <div class="container textalignC">
+        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
+    </div>
+    <div class="container-fluid bgWhite">
+        <div class="container">
+            <ul class="info-nav fl clearfix">
+                <li><a href="javasrcpt:;">关于我们</a></li>
+                <li><a href="javasrcpt:;">待定..</a></li>
+            </ul>
+            <p class="fr copyright">Copyright(C)南宁职业技术学院 毕业设计作品. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script>
+    window.onload = function(){
+        //设置背景图, 使用 window.onload 在加载完成DOM执行而不事先加载图片！
+        var mydate = new Date();
+        if(mydate.getHours()>18 === true){
+            var setBaImg = document.getElementById('setBaImg');
+            setBaImg.style.backgroundImage = "url(images/yozora_bg.jpg)";
+        }
+    }
+</script>
+</body>
+</html>

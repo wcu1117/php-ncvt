@@ -1,0 +1,172 @@
+@charset "utf-8";
+
+/*侧边栏*/
+.u-side{
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    padding-bottom: 20px;
+
+    border-radius: 5px;
+}
+.u-myName { margin-top: 10px; }
+.u-name {
+    padding-top: 10px;
+    font-size: .8em;
+}
+.u-box>h4{ 
+    font-size: 1.2em; 
+    margin-top: 15px;
+}
+.u-box>ul{
+    font-size: 1em;
+    text-indent: 2em;
+}
+
+/*main右侧*/
+.u-setInfo, .u-myPassw,
+.u-main .conBox {
+    background-color: #fff;
+    border: 1px solid #cdcdcd;
+    min-height: 492px; 
+    /*475px*/
+    padding-top: 20px;
+}
+.u-setInfo { min-height: 515px; }
+.u-setInfo .nav-pills {margin-bottom: 15px; }
+.u-main .conBox { padding: 20px 15px }
+
+/*表格*/
+.u-main .table td{
+    /*???*/
+    width: 1px;
+    max-width: 10%;
+    min-width: 40px;
+    text-align: right;
+    vertical-align: middle;
+    border-top: none;
+    white-space: nowrap;
+}
+.u-main .table td:first-child { font-weight: 700; }
+.u-main .table td:nth-of-type(2n){
+    text-align: left;
+}
+.u-main .form-control { display: inline-block; width: auto; }
+.u-main .nav-tabs>li,
+.u-setInfo .nav-pills>li {
+    display: inline-block;
+    float: none;
+}
+.u-main .classTag {
+    background-color: #f0f6fb;
+    border: 1px solid #cdcdcd;
+    padding: 0 10px;
+    padding-top: 5px;
+}
+.u-main .classTag li { margin-right: 15px; display: inline-block; }
+.u-main .classTag a { display: inline-block; }
+.u-main .classTag li.active>a {
+    padding: 6px 8px;
+    border: 2px solid #cdcdcd;
+    border-bottom: 0;
+    border-radius: 5px 5px 0 0;
+    background-color: #fff;
+    margin-bottom: -1px;
+}
+
+/*上传头像*/
+.upload-photo { display: inline-block; margin: 15px 0; }
+.upload-photo .main-left {
+    width: 360px;
+    height: 300px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+
+    background-image: url('../images/upload-bg.png');
+    background-repeat: repeat;
+}
+.upload-photo .side-right {
+    position: relative;
+    display: table-cell;
+    padding-left: 30px;
+}
+.upload-photo .side-right>p{ color: #e57708; }
+.upload-photo .side-right:before{
+    content: "";
+    display: block;
+    position: absolute; left: 15px;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle;
+    background-color: #cdcdcd;
+}
+.photo-sm>img{ width: 138px; height: 138px;  }
+.photo-xs>img{ width: 68px; height: 68px;  }
+
+/*选项卡*/
+.u-uploadAdd {
+    width: 80%;
+    margin: 0 auto 20px;
+}
+.u-main .nav-classTag .fr { margin-top: 6px; }
+
+/*留言板*/
+.u-guestBookBox>.con li { padding: 2px 0; }
+.u-guestBookBox>.con li>span { b 
+    font-size: 1.2em;
+    line-height: 1em;
+    color: #666;
+}
+
+
+/*我的社团*/
+.u-main .st-classTag { border-top: 1px solid #cdcdcd; font-size: 1em;}
+.u-main .st-classTag .active { color: #333 }
+.u-stBox .new-event { padding-top: 0; padding-bottom: 0; }
+.u-stBox .u-hd,
+.u-main>.u-hd { margin-top: 3px; font-size: 1.2em; margin-bottom: 5px; }
+.conBox .table>thead>tr>th {
+    background-color: rgba(205, 205, 205, 0.27);
+    border-bottom-color: rgba(221, 221, 221, 0.27);
+}
+.conBox .table>tbody>tr { border-bottom: 1px dashed #cdcdcd; }
+.table-num1, 
+.table-num2, 
+.table-num3, 
+.table-num4, 
+.table-num5,
+.table-num6 { max-width: 50% !important; text-align: left; }
+.table-num1{ min-width: 50% !important; text-align: left !important; }
+.table-num2{ width: 10% !important; }
+.table-num3{ width: 12% !important; text-align: left !important; }
+.table-num4{ width: 12% !important; }
+.table-num5{ width: 10% !important; text-align: left !important; }
+.table-num6{ width: 30% !important; }
+.td-name { font-size: 1.1em; }
+
+.conBox .pager a {
+    padding: 2px 6px;
+     -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/*设置我的信息*/
+.u-setNmae input, 
+.u-studentId input, 
+.u-realname input {
+    height: 28px;
+    padding: 2px 5px;
+}
+#setName-btn {
+    color: #428bca;
+    cursor: pointer;
+}
+
+/*我的私信*/
+.u-messageBox .post-con {
+    width: 360px;
+    height: 150px;
+}

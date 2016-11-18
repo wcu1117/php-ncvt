@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新闻文章页|分享大一点的学生们的社团生活</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="bootstrap-3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/news.css">
+<!-- <link rel="stylesheet" href="css/school.css"> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="container-fluid">
+<header id="site-header" class="container-fluid">
+    <div class="container bgColor-white">
+        <hgroup><a href="index.html"><h1 id="site-log" class="col-md-4 marginTop-20px">高校社团汇</h1></a></hgroup>
+        <div class="hd-right col-md-6 fr pr0">
+            <ul class="info-nav container-fluid">
+                <li class="u-log">
+                    <a href="javasrcpt:;" data-toggle="modal" data-target="#myModal">登录</a>
+                    <!-- 弹出登录框 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">登录框</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form role="form">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">帐号：</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">密码：</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <button type="submit" class="btn btn-default">点击登录</button>
+                              <span class="marginLeft-10px u-reg">还没有帐号?<a href="javasrcpt:;">点击注册</a></span>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="u-reg"><a href="javasrcpt:;">注册分享社团快乐时光</a></li>
+                <li class="col-md-3 textalignC fr ncvt-box">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                    走进南职<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="http://www.ncvt.net/" target="_blank">学校官网</a></li>
+                        <li><a href="http://www.ncvt.net/jxglxt.htm" target="_blank">教务管理系统</a></li>
+                        <li><a href="http://crp.ncvt.net/login.portal" target="_blank">数字化校园</a></li>
+                        <!-- <li class="divider"></li> -->
+                        <li><a href="http://tsg.ncvt.net/" target="_blank">图书馆</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="search-box container-fluid">
+                <li class="clearfix">
+                    <form action="" method="post">
+                        <input type="text" name="search-con" class="search-con" placeholder="社团\活动\论坛">
+                        <input type="submit" name="search-btn" class="search-btn" value="提交">
+                    </form>
+                </li>
+                <li class="fr"></li>
+            </ul>
+        </div>
+        <div class="hd-left col-md-1 fr marginTop-20px">
+            <a href="http://www.weather.com.cn/weather/101300101.shtml" target="_blank">南宁天气</a>
+        </div>
+    </div>
+    <nav class="site-nav container">
+        <h2 class="hidden">导航</h2>
+        <ul>
+            <li class="col-md-2"><img src="images/schoolNews-icon.png" alt="" /><br /><a href="school.html">校园动态</a></li>
+            <li class="col-md-2"><img src="images/st-icon.png" alt="" /><br /><a href="st.html">社团中心</a></li>
+            <li class="col-md-2"><img src="images/forum-icon.png" alt="" /><br /><a href="forum.html">论坛互动</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/stzw.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>校园动态</li>
+                <li>></li>
+                <li>文章详情</li>
+            </ul>
+        </nav>
+        <section class="container-fluid con-box">
+            <h2 class="display-n">文章内容详情</h2>
+            <article class="col-md-8 article-con">
+                <header>
+                    <h3 class="newstitle">2016iWeb峰会成都站，开启HTML5“无界”时代</h3>
+                    <p class="post-time">发布日期：<time datatime="2016/10/24">2016/10/24</time><span class="read-count">阅读数量：<i>365</i></span></p>
+                </header>
+                <div class="main-con">
+                    <p>由中国最大的HTML5社区——HTML5梦工场主办的2016 HTML5峰会“iWeb峰会”城市巡回国内第二站——广州站于昨日（9月24日）在广州市海珠区琶醍A区珠江啤酒博物馆旁Linkspace召开。本届峰会以聚势集结的姿态，力邀部分致力于HTML5实践的企业、团队以及广大开发者们前来共同探讨HTML5的全面发展。</p>
+                    
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854526764780.png" alt="图片加载出错" >
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854535256608.png" alt="图片加载出错" >
+ 
+                    <p>本站峰会在HTML5梦工场趣趣游戏平台商务经理郑斯元介绍当前HTML5行业及广州当地行业趋势下拉开序幕。
+
+                    首先分享的是来自蝴蝶互动罗坚副总裁，在分享中表示手机页游比以往的游戏浪潮需要面对更恶劣的市场环境，更强大的竞争对手，更短暂的窗口时间，所以更需要全面的发行助力才能提高产品的成功概率。并用《传奇世界H5》作为案例，和现场开发者一起分享探讨发行将如何推动产品逐步取得市场的认可。</p>
+
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854592929142.png" alt="图片加载出错" >
+
+                    接着来自LayaBox合伙人李明在演讲中分析道如何把握游戏行业新机遇，页游市场份额逐年萎缩，手游一片血海，H5蓝海亟需突破。和现场开发者探讨了游戏行业真正的机遇到底在哪里？页游？手游？H5？Layabox助力产业升级，以技术融合三端市场，以全新思路为游戏行业的生态构建新的方案，寻求游戏行业的全新机遇。
+
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854616630568.png" alt="图片加载出错" >
+
+                    白鹭时代布道师张鑫磊在分享中表示，目前HTML5游戏市场愈发成熟，游戏玩家对于游戏画面玩法要求越来越高，CP对于游戏开发速度也逐步提升。为了满足市场所带来的需求，并向现场小伙伴们介绍了Egret未来技术发展方向以及Egret工作流未来优化方向。
+
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854642158552.png" alt="图片加载出错" >
+
+                    野狗科技联合创始人肖光宇在分享中讲述了什么是实时，以及实时的需求和存在的意义。强调了实时是一个普遍的需求，是无处不在的（需求）。在他看来，实时可以让单条数据的价值是可以达到最大化，很有用。接着Dcloud从整个行业生态分析移动互联网下半场-不用好HTML5，大部分公司都会死。尖锐视点振聋发聩，现场掌声不断。
+
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854667929667.png" alt="图片加载出错" >
+
+                    随着网络速度的快速发展，和跨平台应用的需求增加，HTML5 web 应用迎来了新的机遇爆发期。但是很多开发者困扰于web兼容性和应用性能，同时，现代化的web应用也应具有更多的“黑科技” 。针对于此，来自微软的丁煜恒开发技术顾问介绍如何使用微软Microsoft Edge的开发工具来帮助HTML5的快速开发，调试和提升HTML5 的兼容性和性能。 同时，在此次课程里还会介绍如何通过微软AI （人工智能）技术让web应用更加智能，与用户之间自然交流。
+
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854749445328.png" alt="图片加载出错" >
+
+                    来自科大讯飞的软件工程师戴烨分享了人工智能下的H5语音玩法，随着H5技术不断流行，特别是在手机端渐渐成为主流技术，语音技术作为非常好的一种交互模式，它与H5的结合将会给我们的应用带来更加好的体验。精彩的演讲引起现场开发者的共鸣。
+
+                    <img src="http://image-html5dw-com.b0.upaiyun.com/www.html5dw.com/uploads/1474854761375959.png" alt="图片加载出错" >
+
+                    最后，来自Dcloud 前端架构师崔红保在分享了移动互联网下半场，为什么HTML5才是王道。DCloud面向HTML5行业分别推出了开发工具HBuilder、手机强化引擎5+ Runtime、跨平台前端框架mui、应用发行产品流应用，通过系列产品对HTML5的强化支持，使得HTML5能达到原生的功能和体验，同时在发行上更优于原生应用。普通的HTML5技术与原生技术相比，有跨平台、动态、开放、直达二级内容页面等特点，但却在性能、工具、能力方面弱于原生技术。
+
+                    而HTML5开发IDE“HBuilder”，以改善HTML5开发工具弱于原生的问题。手机强化引擎“5+ Runtime”，其内置的Native.js技术可调用手机终端40多万原生API，弥补HTML5功能弱于原生的问题。MUI以跨平台的方式，让开发者开发的应用界面可以与原生媲美，更像APP界面，同时拥有体积小、性能高的优点。而应用发行产品流应用，让大家不再以推广app体积大受困，达到秒装秒开的效果，同时节省成本。
+
+                    一个行业的发展和进步离不开大家的关注与支持，一种技术的完善与价值需要更多人的探索和创新。作为国内最大的HTML5社区，我们深感机遇与挑战并存。我们衷心希望能与您一起，在共同推进行业进步！后续iWeb峰会将在其他城市持续发力，继续以标杆姿态，汇聚磅礴之势，聚力联动，澎湃行业动力，加速成长，放大价值，精彩不容错过，众多亮点让我们拭目以待。
+
+                    <address class="info-from">
+                        <h4>文章来源</h4>
+                        <i class="src">链接地址: <a href="javascript:;">http://cnd/bootstrap-3.3.0/js/bootstrap.min.js</a></i>
+                    </address>
+                </div>
+                <footer class="pagination">
+                    <p>上一篇：<a href="javascript:;">CSS单词换行and断词，你真的完全了解吗</a></p>
+                    <p>下一篇：<a href="javascript:;">2016年的十大技术趋势！</a></p>
+                </footer>
+            </article>
+            <aside class="other-article fr col-md-3 padding0">
+                <h3>相关文章</h3>
+                <ul style="padding: 15px 20px;">
+                    <li class="item">
+                        <dl>
+                            <dt><a href="javascript:;">UC游戏开放平台宣布2013年要实现3亿分成，并将发布HTML5游戏引擎X-Canvas ...</a></dt>
+                            <dd>UC今天在北京举行了一个发布会，宣布 2013 年的游戏战略要实...</dd>
+                        </dl>
+                    </li>
+                    <li class="item">
+                        <dl>
+                            <dt><a href="javascript:;">UC游戏开放平台宣布2013年要实现3亿分成，并将发布HTML5游戏引擎X-Canvas ...</a></dt>
+                            <dd>UC今天在北京举行了一个发布会，宣布 2013 年的游戏战略要实...</dd>
+                        </dl>
+                    </li>
+                    <li class="item">
+                        <dl>
+                            <dt><a href="javascript:;">UC游戏开放平台宣布2013年要实现3亿分成，并将发布HTML5游戏引擎X-Canvas ...</a></dt>
+                            <dd>UC今天在北京举行了一个发布会，宣布 2013 年的游戏战略要实...</dd>
+                        </dl>
+                    </li>
+                    <li class="item">
+                        <dl>
+                            <dt><a href="javascript:;">UC游戏开放平台宣布2013年要实现3亿分成，并将发布HTML5游戏引擎X-Canvas ...</a></dt>
+                            <dd>UC今天在北京举行了一个发布会，宣布 2013 年的游戏战略要实...</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<footer id="site-footer" class="container-fluid">
+    <div class="container textalignC">
+        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
+    </div>
+    <div class="container-fluid bgWhite">
+        <div class="container">
+            <ul class="info-nav fl clearfix">
+                <li><a href="javasrcpt:;">关于我们</a></li>
+                <li><a href="javasrcpt:;">待定..</a></li>
+            </ul>
+            <p class="fr copyright">Copyright(C) NCVT P-N-Y 毕业设计作品. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>

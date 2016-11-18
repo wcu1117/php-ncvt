@@ -1,0 +1,30 @@
+]
+    [\fB\-I\fR\fIdir\fR...] [\fB\-iquote\fR\fIdir\fR...]
+    [\fB\-W\fR\fIwarn\fR...]
+    [\fB\-M\fR|\fB\-MM\fR] [\fB\-MG\fR] [\fB\-MF\fR \fIfilename\fR]
+    [\fB\-MP\fR] [\fB\-MQ\fR \fItarget\fR...]
+    [\fB\-MT\fR \fItarget\fR...]
+    [\fB\-P\fR] [\fB\-fno\-working\-directory\fR]
+    [\fB\-x\fR \fIlanguage\fR] [\fB\-std=\fR\fIstandard\fR]
+    \fIinfile\fR \fIoutfile\fR
+.PP
+Only the most useful options are listed here; see below for the remainder.
+.SH "DESCRIPTION"
+.IX Header "DESCRIPTION"
+The C preprocessor, often known as \fIcpp\fR, is a \fImacro processor\fR
+that is used automatically by the C compiler to transform your program
+before compilation.  It is called a macro processor because it allows
+you to define \fImacros\fR, which are brief abbreviations for longer
+constructs.
+.PP
+The C preprocessor is intended to be used only with C, \*(C+, and
+Objective-C source code.  In the past, it has been abused as a general
+text processor.  It will choke on input which does not obey C's lexical
+rules.  For example, apostrophes will be interpreted as the beginning of
+character constants, and cause errors.  Also, you cannot rely on it
+preserving characteristics of the input which are not significant to
+C\-family languages.  If a Makefile is preprocessed, all the hard tabs
+will be removed, and the Makefile will not work.
+.PP
+Having said that, you can often get away with using cpp on things which
+are not C.  Other 
