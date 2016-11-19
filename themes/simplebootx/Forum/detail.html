@@ -5,31 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>帖子文章内容|分享大一点的学生们的社团生活</title>
+    <!--对话框的样式-->
+    <link href="__PUBLIC__/simpleboot/themes/{:C('SP_ADMIN_STYLE')}/theme.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/js/artDialog/skins/default.css" rel="stylesheet" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="__TMPL__Public/css/style.css">
     <link rel="stylesheet" href="__TMPL__Public/css/forum.css">
-    <script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
-    <script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
-    <script src="__TMPL__Public/js/jquery.sticky-kit.min.js"></script>
+
     <script type="text/javascript">
-        $(function(){
-            // 定位父框滚动
-            $(".u-master").stick_in_parent();
-            // 评论内容
-            $("#reply-hd").click(function(e){
-                if($(this).next().is(':visible')==false){
-                    $(this).next().show(0);
-                    $(this).parent().css({"position":"relative","padding-left":"0"});
-                    $("#reply-hd").text("收起回复 -");
-                }else{
-                    $(this).next().hide(0);
-                    $(this).parent().css({"position":"absolute","padding-left":"15px"});
-                    $("#reply-hd").text("所有回复 +");
-                }
-            });
-        });
+        //全局变量
+        var GV = {
+            ROOT: "__ROOT__/",
+            WEB_ROOT: "__WEB_ROOT__/",
+            JS_ROOT: "public/js/",
+            APP:'{$Think.MODULE_NAME}'/*当前应用名*/
+        };
     </script>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/wind.js"></script>
+    <script src="__PUBLIC__/simpleboot/bootstrap/js/bootstrap.min.js"></script>
+
     <style type="text/css">
         .pic-list li {
             margin-bottom: 5px;
@@ -63,6 +59,10 @@
             form.appendChild(input[0]);
             form.appendChild(input[1]);
             var div = document.getElementById('replybox'+i);
+//            if(!div){
+//                var div = document.createElement('div');
+//                div.setAttribute('id','replybox'+i);
+//            }
             div.appendChild(form);
         }
     </script>
@@ -88,16 +88,16 @@
         </nav>
         <article class="forumPost-con container-fluid">
             <aside class="u-master">
-                <a href="javascript:;" class="u-photo"><img src="images/08_avatar_middle.jpg" alt="" /></a>
+                <a href="javascript:;" class="u-photo"><img src="{$user.avatar}_100.jpg" alt="" /></a>
                 <address>
-                    <p class="u-name">@黑钦王</p>
+                    <p class="u-name">{$user.user_nicename}</p>
                     <p><a href="javascript:;">加为好友</a> <a href="javascript:;">给我留言</a><br /><a href="javascript:;">我的主页</a> <a href="javascript:;">个人相册</a></p>
                     <hr />
                     <p>
                         <span>身份</span>：<a href="javascript:;">学生</a>/<a href="javascript:;">普通会员</a><br />
-                        <span>年级</span>：2014级 <br />
-                        <span>学院</span>：信息工程学院 <br />
-                        <span>专业</span>：计算机网络技术
+                        <span>年级</span>：{$ed.enter}级 <br />
+                        <span>学院</span>：{$ed.college} <br />
+                        <span>专业</span>：{$ed.major}
                     </p>
                 </address>
             </aside>
@@ -110,7 +110,7 @@
                         <strong
                             class="fr reply-num">楼主</strong></p>
                 </header>
-                <div class="master-con">
+                <div class="master-con" style="width: 100%;">
                     {$post.post_content}
                     <php>
                         $arr = json_decode($post['smeta'],true);
@@ -118,13 +118,13 @@
                         $arr2 = $arr['photo'];
                     </php>
                         <foreach name="arr1" item="img">
-                            <img src="./data/upload/{$img}" alt=""/>
+                            <img style="width: 80px;" src="./data/upload/{$img}" alt=""/>
 
                         </foreach>
 
 
                         <foreach name="arr2" item="img2">
-                            <img src="./data/upload/{$img2.url}" align="{$img2.alt}"/>
+                            <img style="width: 100%;" src="./data/upload/{$img2.url}" align="{$img2.alt}"/>
                         </foreach>
 
 
@@ -136,18 +136,21 @@
         </article>
 
             <foreach name="reply" item="reply" key="key">
-        <article class="forumPost-con container-fluid">
+                <if condition="$reply['post_id'] eq $post['id']">
+                    <article class="forumPost-con container-fluid">
             <aside class="u-master">
-                <a href="javascript:;" class="u-photo"><img src="images/08_avatar_middle.jpg" alt="" /></a>
+                <a href="javascript:;"
+                   class="u-photo"><notempty name="reply.avatar"><img src="{$reply.avatar}_100.jpg" alt=""
+                /><else/><img src="./themes/simplebootx/public/images/headicon_128.png"/></notempty></a>
                 <address>
-                    <p class="u-name">@黑钦王</p>
+                    <p class="u-name">{$reply.user_nicename}</p>
                     <p><a href="javascript:;">加为好友</a> <a href="javascript:;">给我留言</a><br /><a href="javascript:;">我的主页</a> <a href="javascript:;">个人相册</a></p>
                     <hr />
                     <p>
                         <span>身份</span>：<a href="javascript:;">学生</a>/<a href="javascript:;">普通会员</a><br />
-                        <span>年级</span>：2014级 <br />
-                        <span>学院</span>：信息工程学院 <br />
-                        <span>专业</span>：计算机网络技术
+                        <span>年级</span>：{$reply.enter}级 <br />
+                        <span>学院</span>：{$reply.college} <br />
+                        <span>专业</span>：{$reply.major}
                     </p>
                 </address>
             </aside>
@@ -179,7 +182,6 @@
 
                         <if condition="$sma['reply_id'] eq $reply['reply_id']">
                             <assign name="ss" value="$sma"/>
-                            <h4 id="reply-hd">收起回复 -</h4>
                             <div class="reply-con" id="replybox{$reply.reply_id}">
 
                                     <article class="item clearfix">
@@ -192,23 +194,8 @@
                                             {$sma.post_content}
                                         </div>
                                     </article>
-
-
-
-                                    <!--<article class="item clearfix">-->
-                                        <!--<header class="container-fluid pr">-->
-                                            <!--<h4 class="mt0"><a href="javascript:;" class="u-photo"><img src="images/08_avatar_middle.jpg" alt="" /></a> <a href="javascript:;" class="u-name">Bigyang</a></h4>-->
-                                            <!--<time datetime="2016-10-25 01:20" class="fr post-tiem" style="color: #909090">2016-10-25 01:20</time>-->
-                                        <!--</header>-->
-                                        <!--<blockquote class="source"><a href="javascript:;">黑钦王</a>：尝试下回复的内容试试看！</blockquote>-->
-                                        <!--<div>-->
-                                            <!--回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容回复的内容-->
-                                        <!--</div>-->
-                                        <!--<ul class="reply-btn ">-->
-                                            <!--<li><a href="javascript:;">回复</a></li>-->
-                                        <!--</ul>-->
-                                 <!--</article>-->
-                </div>  </if>
+                            </div>
+                        </if>
 
                         </foreach>
 
@@ -216,6 +203,7 @@
                 </div>
             </section>
         </article>
+                </if>
             </foreach>
         <footer class="con-footer">
             <nav class="textalignC">
@@ -243,7 +231,7 @@
                             <tr>
                                 <th style="width: 50px;">内容</th>
                                 <td>
-                                    <script type="text/plain" id="content" name="post_content"></script>
+                                    <script type="text/plain" id="content1" name="post_content"></script>
                                 </td>
                             </tr>
                             <tr>
@@ -268,188 +256,19 @@
         </form>
         </volist>
     </div>
-    <script type="text/javascript" src="__PUBLIC__/js/common.js"></script>
+    <!--上传图片的类-->
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/common.js"></script>
+    <!--加载编辑器-->
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"> </script>
+    <!-- 实例化编辑器 -->
     <script type="text/javascript">
-        //编辑器路径定义
-        var editorURL = GV.WEB_ROOT;
+        var ue = UE.getEditor('content1');
     </script>
-    <script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
-    <script type="text/javascript">
-        $(function() {
-            $(".js-ajax-close-btn").on('click', function(e) {
-                e.preventDefault();
-                Wind.use("artDialog", function() {
-                    art.dialog({
-                        id : "question",
-                        icon : "question",
-                        fixed : true,
-                        lock : true,
-                        background : "#CCCCCC",
-                        opacity : 0,
-                        content : "您确定需要关闭当前页面嘛？",
-                        ok : function() {
-                            setCookie("refersh_time", 1);
-                            window.close();
-                            return true;
-                        }
-                    });
-                });
-            });
-            /////---------------------
-            Wind.use('validate', 'ajaxForm', 'artDialog', function() {
-                //javascript
 
-                //编辑器
-                editorcontent = new baidu.editor.ui.Editor();
-                editorcontent.render('content');
-                try {
-                    editorcontent.sync();
-                } catch (err) {
-                }
-                //增加编辑器验证规则
-                jQuery.validator.addMethod('editorcontent', function() {
-                    try {
-                        editorcontent.sync();
-                    } catch (err) {
-                    }
-                    return editorcontent.hasContents();
-                });
-                var form = $('form.js-ajax-forms');
-                //ie处理placeholder提交问题
-                if ($.browser && $.browser.msie) {
-                    form.find('[placeholder]').each(function() {
-                        var input = $(this);
-                        if (input.val() == input.attr('placeholder')) {
-                            input.val('');
-                        }
-                    });
-                }
-
-                var formloading = false;
-                //表单验证开始
-                form.validate({
-                    //是否在获取焦点时验证
-                    onfocusout : false,
-                    //是否在敲击键盘时验证
-                    onkeyup : false,
-                    //当鼠标掉级时验证
-                    onclick : false,
-                    //验证错误
-                    showErrors : function(errorMap, errorArr) {
-                        //errorMap {'name':'错误信息'}
-                        //errorArr [{'message':'错误信息',element:({})}]
-                        try {
-                            $(errorArr[0].element).focus();
-                            art.dialog({
-                                id : 'error',
-                                icon : 'error',
-                                lock : true,
-                                fixed : true,
-                                background : "#CCCCCC",
-                                opacity : 0,
-                                content : errorArr[0].message,
-                                cancelVal : '确定',
-                                cancel : function() {
-                                    $(errorArr[0].element).focus();
-                                }
-                            });
-                        } catch (err) {
-                        }
-                    },
-                    //验证规则
-                    rules : {
-                        'post[post_title]' : {
-                            required : 1
-                        },
-                        'post[post_content]' : {
-                            editorcontent : true
-                        }
-                    },
-                    //验证未通过提示消息
-                    messages : {
-                        'post[post_title]' : {
-                            required : '请输入标题'
-                        },
-                        'post[post_content]' : {
-                            editorcontent : '内容不能为空'
-                        }
-                    },
-                    //给未通过验证的元素加效果,闪烁等
-                    highlight : false,
-                    //是否在获取焦点时验证
-                    onfocusout : false,
-                    //验证通过，提交表单
-                    submitHandler : function(forms) {
-                        if (formloading)
-                            return;
-                        $(forms).ajaxSubmit({
-                            url : form.attr('action'), //按钮上是否自定义提交地址(多按钮情况)
-                            dataType : 'json',
-                            beforeSubmit : function(arr, $form, options) {
-                                formloading = true;
-                            },
-                            success : function(data, statusText, xhr, $form) {
-                                formloading = false;
-                                if (data.status) {
-                                    setCookie("refersh_time", 1);
-                                    //添加成功
-                                    Wind.use("artDialog", function() {
-                                        art.dialog({
-                                            id : "succeed",
-                                            icon : "succeed",
-                                            fixed : true,
-                                            lock : true,
-                                            background : "#CCCCCC",
-                                            opacity : 0,
-                                            content : data.info,
-                                            button : [ {
-                                                name : '继续添加？',
-                                                callback : function() {
-                                                    reloadPage(window);
-                                                    return true;
-                                                },
-                                                focus : true
-                                            }, {
-                                                name : '返回列表页',
-                                                callback : function() {
-                                                    location = "{:U('AdminPost/index')}";
-                                                    return true;
-                                                }
-                                            } ]
-                                        });
-                                    });
-                                } else {
-                                    artdialog_alert(data.info);
-                                }
-                            }
-                        });
-                    }
-                });
-            });
-            ////-------------------------
-        });
-    </script>
     <div class="container-fluid fooetrBg"></div>
 </div>
 <tc_include file="Public:footer"/>
-<script type="text/javascript">
-    $(function(){
-        // 定位父框滚动
-        $(".u-master").stick_in_parent();
-        // 评论内容
-        $("#reply-hd").click(function(e){
-           if($(this).next().is(':visible')==false){
-                $(this).next().show(0);
-                $(this).parent().css({"position":"relative","padding-left":"0"});
-                $("#reply-hd").text("收起回复 -");
-           }else{
-                $(this).next().hide(0);
-                $(this).parent().css({"position":"absolute","padding-left":"15px"});
-                $("#reply-hd").text("所有回复 +");
-           }
-        });
-    });
-</script>
+
 </body>
 </html>

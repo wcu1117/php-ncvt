@@ -30,9 +30,9 @@
         UEDITOR_HOME_URL: URL
 
         // 服务器统一请求接口路径
-        , serverUrl: URL + "../../../index.php?g=Asset&m=Ueditor&a=upload"
+        , serverUrl: URL + "php/controller.php"
 
-        //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
+        //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的重新定义
         , toolbars: [[
             'fullscreen', 'source', '|', 'undo', 'redo', '|',
             'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
@@ -41,12 +41,11 @@
             'directionalityltr', 'directionalityrtl', 'indent', '|',
             'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
             'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', 'insertimage', 'emotion', /*'scrawl',*/ 'insertvideo', 'music', 'attachment', 'map', /*'gmap',*/ 'insertframe', 'insertcode', /*'webapp',*/ 'pagebreak', 'template', 'background', '|',
+            'simpleupload', 'insertimage', 'emotion', 'scrawl', 'insertvideo', 'music', 'attachment', 'map', 'gmap', 'insertframe', 'insertcode', 'webapp', 'pagebreak', 'template', 'background', '|',
             'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
             'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
-            'print', 'preview', 'searchreplace', 'help', 'drafts'
+            'print', 'preview', 'searchreplace', 'drafts', 'help'
         ]]
-    	//,allowDivTransToP:false
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         //,labelMap:{
         //    'anchor':'', 'undo':''
@@ -77,9 +76,6 @@
 
         //,initialContent:'欢迎使用ueditor!'    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
-        ,initialFrameWidth:'100%'  //初始化编辑器宽度,默认1000
-        //,initialFrameHeight:320  //初始化编辑器高度,默认320
-
         //,autoClearinitialContent:true //是否自动清除编辑器初始内容，注意：如果focus属性设置为true,这个也为真，那么编辑器一上来就会触发导致初始化的内容看不到了
 
         //,focus:false //初始化时，是否让编辑器获得焦点true或false
@@ -87,7 +83,7 @@
         //如果自定义，最好给p标签如下的行高，要不输入中文时，会有跳动感
         //,initialStyle:'p{line-height:1em}'//编辑器层级的基数,可以用来改变字体等
 
-        //,iframeCssUrl: URL + '/themes/iframe.css' //给编辑器内部引入一个css文件
+        //,iframeCssUrl: URL + '/themes/iframe.css' //给编辑区域的iframe引入一个css文件
 
         //indentValue
         //首行缩进距离,默认是2em
@@ -369,75 +365,67 @@
 		,whitList: {
 			a:      ['target', 'href', 'title', 'class', 'style'],
 			abbr:   ['title', 'class', 'style'],
-			address: ['class', 'style', 'id'],
+			address: ['class', 'style'],
 			area:   ['shape', 'coords', 'href', 'alt'],
 			article: [],
 			aside:  [],
 			audio:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'class', 'style'],
-			b:      ['class', 'style', 'id'],
+			b:      ['class', 'style'],
 			bdi:    ['dir'],
 			bdo:    ['dir'],
 			big:    [],
-			blockquote: ['cite','class', 'style', 'id'],
-			br:     ['class', 'style', 'id'],
-			caption: ['class', 'style', 'id'],
+			blockquote: ['cite', 'class', 'style'],
+			br:     [],
+			caption: ['class', 'style'],
 			center: [],
 			cite:   [],
-			code:   ['class', 'style', 'id'],
-			col:    ['align', 'valign', 'span', 'width', 'class', 'style', 'id'],
-			colgroup: ['align', 'valign', 'span', 'width', 'class', 'style', 'id'],
-			dd:     ['class', 'style', 'id'],
-			del:    ['datetime', 'class', 'style', 'id'],
+			code:   ['class', 'style'],
+			col:    ['align', 'valign', 'span', 'width', 'class', 'style'],
+			colgroup: ['align', 'valign', 'span', 'width', 'class', 'style'],
+			dd:     ['class', 'style'],
+			del:    ['datetime'],
 			details: ['open'],
-			div:    ['class', 'style', 'id'],
-			dl:     ['class', 'style', 'id'],
-			dt:     ['class', 'style', 'id'],
-			em:     ['class', 'style', 'id'],
-			embed:  [
-				'type', 'class', 'style', 'pluginspage',
-				'src', 'width', 'height', 'align', 'wmode',
-				'play', 'loop', 'menu', 'allowscriptaccess',
-				'allowfullscreen', 'id'
-			],
+			div:    ['class', 'style'],
+			dl:     ['class', 'style'],
+			dt:     ['class', 'style'],
+			em:     ['class', 'style'],
 			font:   ['color', 'size', 'face'],
 			footer: [],
-			h1:     ['class', 'style', 'id'],
-			h2:     ['class', 'style', 'id'],
-			h3:     ['class', 'style', 'id'],
-			h4:     ['class', 'style', 'id'],
-			h5:     ['class', 'style', 'id'],
-			h6:     ['class', 'style', 'id'],
+			h1:     ['class', 'style'],
+			h2:     ['class', 'style'],
+			h3:     ['class', 'style'],
+			h4:     ['class', 'style'],
+			h5:     ['class', 'style'],
+			h6:     ['class', 'style'],
 			header: [],
-			hr:     ['class', 'style', 'id'],
-			i:      ['class', 'style', 'id'],
-			iframe: ['src', 'width', 'height', 'class', 'id', 'style', 'frameborder', 'name'],
-			img:    ['src', 'alt', 'title', 'width', 'height', 'id', '_src', 'loadingclass', '_url', 'data-latex'],
-			ins:    ['datetime', 'class', 'style', 'id'],
-			li:     ['class', 'style', 'id'],
+			hr:     [],
+			i:      ['class', 'style'],
+			img:    ['src', 'alt', 'title', 'width', 'height', 'id', '_src', 'loadingclass', 'class', 'data-latex'],
+			ins:    ['datetime'],
+			li:     ['class', 'style'],
 			mark:   [],
 			nav:    [],
-			ol:     ['class', 'style', 'id'],
-			p:      ['class', 'style', 'id'],
-			pre:    ['class', 'style', 'id'],
+			ol:     ['class', 'style'],
+			p:      ['class', 'style'],
+			pre:    ['class', 'style'],
 			s:      [],
 			section:[],
-			small:  ['class', 'style', 'id'],
-			source: ['src', 'type'],
-			span:   ['class', 'style', 'id'],
-			sub:    ['class', 'style', 'id'],
-			sup:    ['class', 'style', 'id'],
-			strong: ['class', 'style', 'id'],
-			table:  ['width', 'border', 'align', 'valign', 'class', 'style', 'id'],
-			tbody:  ['align', 'valign', 'width', 'class', 'style', 'id'],
-			td:     ['width', 'rowspan', 'colspan', 'align', 'valign', 'class', 'style', 'id'],
-			tfoot:  ['align', 'valign', 'class', 'style', 'id'],
-			th:     ['width', 'rowspan', 'colspan', 'align', 'valign', 'class', 'style', 'id'],
-			thead:  ['align', 'valign', 'class', 'style', 'id'],
-			tr:     ['rowspan', 'align', 'valign', 'class', 'style', 'id'],
-			tt:     ['class', 'style', 'id'],
+			small:  [],
+			span:   ['class', 'style'],
+			sub:    ['class', 'style'],
+			sup:    ['class', 'style'],
+			strong: ['class', 'style'],
+			table:  ['width', 'border', 'align', 'valign', 'class', 'style'],
+			tbody:  ['align', 'valign', 'class', 'style'],
+			td:     ['width', 'rowspan', 'colspan', 'align', 'valign', 'class', 'style'],
+			tfoot:  ['align', 'valign', 'class', 'style'],
+			th:     ['width', 'rowspan', 'colspan', 'align', 'valign', 'class', 'style'],
+			thead:  ['align', 'valign', 'class', 'style'],
+			tr:     ['rowspan', 'align', 'valign', 'class', 'style'],
+			tt:     [],
 			u:      [],
-			ul:     ['class', 'style', 'id'],
-			video:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'class', 'style', 'id']
+			ul:     ['class', 'style'],
+			video:  ['autoplay', 'controls', 'loop', 'preload', 'src', 'height', 'width', 'class', 'style']
 		}
     };
 

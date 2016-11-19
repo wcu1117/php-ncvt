@@ -10,14 +10,11 @@ class IndexController extends HomebaseController  {
         $this->check_login();
         if(sp_is_user_login()){
             $session_user=session('user');
-            if ($session_user){
-                $this->assign('login',$session_user);
-            }
         }
     }
     //登录
 	public function index() {
-		//$id=I("get.id");
+		$id=session('user')['id'];
 
 		$users_model=M("Users");
 
@@ -89,6 +86,8 @@ class IndexController extends HomebaseController  {
         $id = I('get.id');
         //图片裁剪数据
         $params = I('post.');						//裁剪参数
+
+        var_dump($params);
         if(!isset($params) && empty($params)){
             $this->error('参数错误！');
         }
@@ -96,7 +95,7 @@ class IndexController extends HomebaseController  {
         //头像目录地址
         $path = './Data/upload/avatar/';
         //要保存的图片
-        $real_path = $path.'temp.jpg';
+        $real_path = $path.'1.jpg';
         //临时图片地址
         $pic_path = $path.'temp.jpg';
         //取一个唯一名字
@@ -105,6 +104,7 @@ class IndexController extends HomebaseController  {
         $Think_img = new \Think\Image();
         //裁剪原图得到选中区域
         $Think_img->open($pic_path)->crop($params['w'],$params['h'],$params['x'],$params['y'])->save($real_path);
+        //$Think_img->open($pic_path)->crop(100,100,100,0)->save($real_path);
         //生成缩略图
         $Think_img->open($real_path)->thumb(100,100, 1)->save($path.$name.'_100.jpg');
         $Think_img->open($real_path)->thumb(60,60, 1)->save($path.$name.'_60.jpg');
@@ -114,11 +114,11 @@ class IndexController extends HomebaseController  {
         $user = M('users');
         $avatar = $path.$name;
         $result = $user->where(array('id'=>$id))->setField("avatar",$avatar);
-        if($result){
-            $this->success("上传头像成功",U("index/index",array('id'=>$id)));
-        }else{
-            $this->error("上传头像失败");
-        }
+//        if($result){
+//            $this->success("上传头像成功",U("index/index",array('id'=>$id)));
+//        }else{
+//            $this->error("上传头像失败");
+//        }
 
     }
 

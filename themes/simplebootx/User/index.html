@@ -385,7 +385,7 @@
                         <h5 class="hidden">上传头像</h5>
                             <!-- 修改头像 -->
                             <form action="{:U('Index/cropImg',array('id'=>$user['id']))}" method="post" id="pic"
-                                  class="update-pic js-ajax-forms">
+                                  class="update-pic">
                                 <div class="upload-area">
                                     <input type="file" id="user-pic">
                                     <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
@@ -400,7 +400,7 @@
                                     <div class="tcrop">头像预览</div>
                                     <div class="crop crop100"><img id="crop-preview-100" src="" alt=""></div>
                                     <div class="crop crop60"><img id="crop-preview-60" src="" alt=""></div>
-                                    <a class="uppic-btn save-pic js-ajax-submit" href="javascript:;">保存</a>
+                                    <a class="uppic-btn save-pic" href="javascript:;">保存</a>
                                     <a class="uppic-btn reupload-img" href="javascript:$('#user-pic').uploadify('cancel','*');">重新上传</a>
                                 </div>
                             </form>

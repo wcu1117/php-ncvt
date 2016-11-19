@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="__TMPL__Public/css/forum.css">
     <script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
     <script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -102,9 +104,12 @@
                                     .post_type}]</a><a
                                         href="{:U('Index/detail',array('id'=>$vo['id']))}">{$vo.post_title
                                     }</a></h4>
-                                <a href="javascript:;" class="fl u-photo"><img src="images/08_avatar_small.jpg" /></a>
+                                <a href="javascript:;"class="fl u-photo"><notempty name="vo.avatar"><img
+                                        src="{$vo.avatar}_30.jpg"/><else/><img
+                                        src="./themes/simplebootx/public/images/headicon_30.png"/></notempty></a>
                                 <aside class="subinfo">
-                                    <address class="display-ib margin0"><a href="javascript:;">作者</a></address>
+                                    <address
+                                            class="display-ib margin0"><a href="javascript:;">{$vo.author_name}</a></address>
                                     <span>| 浏览：{$vo.post_hits} | 回复：{$vo.comment_count} |</span>
                                     <span><a href="javascript:;">最新回复者</a>
                                         <time datetime="{$vo.post_date}">{$vo.post_date}</time></span>
