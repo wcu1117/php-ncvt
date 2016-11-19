@@ -4,6 +4,7 @@
  * 会员注册登录
  */
 namespace User\Controller;
+use Think\Image;
 use Common\Controller\HomebaseController;
 class IndexController extends HomebaseController  {
     function _initialize() {
@@ -30,6 +31,9 @@ class IndexController extends HomebaseController  {
 		$this->assign('con',$con);
 		$this->display(":index");
 
+    }
+    function avatar(){
+        $this->display(":avatar");
     }
 
     //编辑信息
@@ -67,12 +71,14 @@ class IndexController extends HomebaseController  {
     //上传头像
     public function uploadImg(){
         $upload = new \Think\Upload(C('UPLOAD_CONFIG'));	// 实例化上传类
+
         //头像目录地址
-        //$path = './avatar/';
+        $path = '/data/upload/avatar/temp.jpg';
         if(!$upload->upload()) {						// 上传错误提示错误信息
             $this->ajaxReturn(array('status'=>0,'info'=>$upload->getError()));
         }else{											// 上传成功 获取上传文件信息
-//            $temp_size = getimagesize($path.'temp.jpg');
+//            $temp_size = getimagesize($path);
+//
 //            if($temp_size[0] < 100 || $temp_size[1] < 100){//判断宽和高是否符合头像要求
 //                $this->ajaxReturn(array('status'=>0,'info'=>'图片宽或高不得小于100px！'));
 //            }
@@ -83,11 +89,11 @@ class IndexController extends HomebaseController  {
     //裁剪并保存用户头像
     public function cropImg(){
         //获取用户ID
-        $id = I('get.id');
+        $id = session('user')['id'];
         //图片裁剪数据
         $params = I('post.');						//裁剪参数
 
-        var_dump($params);
+        //var_dump($params);
         if(!isset($params) && empty($params)){
             $this->error('参数错误！');
         }
@@ -114,11 +120,11 @@ class IndexController extends HomebaseController  {
         $user = M('users');
         $avatar = $path.$name;
         $result = $user->where(array('id'=>$id))->setField("avatar",$avatar);
-//        if($result){
-//            $this->success("上传头像成功",U("index/index",array('id'=>$id)));
-//        }else{
-//            $this->error("上传头像失败");
-//        }
+        if($result){
+            $this->success("上传头像成功",U("index/index",array('id'=>$id)));
+        }else{
+            $this->error("上传头像失败");
+        }
 
     }
 

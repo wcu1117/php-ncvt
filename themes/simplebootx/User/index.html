@@ -6,20 +6,12 @@
     <title>用户中心|分享大一点的学生们的社团生活</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="__TMPL__public/css/jquery.Jcrop.min.css" media="all">
-
-    <link rel="stylesheet" type="text/css" href="__TMPL__public/js/uploadify-v3.1/uploadify.css" media="all">
-    <!--<script type="text/javascript" src="__TMPL__public/js/jquery-1.7.2.min.js"></script>-->
-    <link rel="stylesheet" type="text/css" href="__TMPL__public/js/ThinkBox/css/ThinkBox.css" media="all">
-    <link href="__TMPL__Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="__TMPL__public/bootstrap-3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="__TMPL__public/css/style.css">
     <link rel="stylesheet" href="__TMPL__public/css/user.css">
     <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
-
-
 
     <style type="text/css">
         .main{
@@ -45,7 +37,7 @@
             position: relative;
             float: left;
             margin-right: 30px;
-            margin-left:200px;
+            /*margin-left:200px;*/
             width: 200px;
             height: 200px;
             background-color: #F5F5F5;
@@ -126,6 +118,13 @@
             display: none;
         }
     </style>
+
+    <link rel="stylesheet" type="text/css" href="__TMPL__public/css/jquery.Jcrop.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__TMPL__public/js/uploadify-v3.1/uploadify.css" media="all">
+    <script type="text/javascript" src="__TMPL__public/js/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="__TMPL__public/js/ThinkBox/css/ThinkBox.css" media="all">
+
+
 
 </head>
 <body class="container-fluid">
@@ -383,28 +382,27 @@
                     <!--上传头像-->
                     <section class="u-educationAdd hidden">
                         <h5 class="hidden">上传头像</h5>
-                            <!-- 修改头像 -->
-                            <form action="{:U('Index/cropImg',array('id'=>$user['id']))}" method="post" id="pic"
-                                  class="update-pic">
-                                <div class="upload-area">
-                                    <input type="file" id="user-pic">
-                                    <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
-                                    <div class="preview hidden" id="preview-hidden"></div>
-                                </div>
-                                <div class="preview-area">
-                                    <input type="hidden" id="x" name="x" />
-                                    <input type="hidden" id="y" name="y" />
-                                    <input type="hidden" id="w" name="w" />
-                                    <input type="hidden" id="h" name="h" />
-                                    <input type="hidden" id='img_src' name='src'/>
-                                    <div class="tcrop">头像预览</div>
-                                    <div class="crop crop100"><img id="crop-preview-100" src="" alt=""></div>
-                                    <div class="crop crop60"><img id="crop-preview-60" src="" alt=""></div>
-                                    <a class="uppic-btn save-pic" href="javascript:;">保存</a>
-                                    <a class="uppic-btn reupload-img" href="javascript:$('#user-pic').uploadify('cancel','*');">重新上传</a>
-                                </div>
-                            </form>
-                            <!-- /修改头像 -->
+                        <!-- 修改头像 -->
+                        <form action="{:U('Index/cropImg')}" method="post" id="pic" class="update-pic cf">
+                            <div class="upload-area">
+                                <input type="file" id="user-pic">
+                                <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
+                                <div class="preview hidden" id="preview-hidden"></div>
+                            </div>
+                            <div class="preview-area">
+                                <input type="hidden" id="x" name="x" />
+                                <input type="hidden" id="y" name="y" />
+                                <input type="hidden" id="w" name="w" />
+                                <input type="hidden" id="h" name="h" />
+                                <input type="hidden" id='img_src' name='src'/>
+                                <div class="tcrop">头像预览</div>
+                                <div class="crop crop100"><img id="crop-preview-100" src="" alt=""></div>
+                                <div class="crop crop60"><img id="crop-preview-60" src="" alt=""></div>
+                                <a class="uppic-btn save-pic" href="javascript:;">保存</a>
+                                <a class="uppic-btn reupload-img" href="javascript:$('#user-pic').uploadify('cancel','*');">重新上传</a>
+                            </div>
+                        </form>
+                        <!-- /修改头像 -->
 
                     </section>
                     <!--教育信息-->
@@ -535,22 +533,9 @@
         </div>
     </div>
 </footer>
-<script type="text/javascript">
-    //全局变量
-    var GV = {
-        ROOT: "__ROOT__/",
-        WEB_ROOT: "__WEB_ROOT__/",
-        JS_ROOT: "public/js/"
-    };
-</script>
+
 <script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
-<script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
-<!-- Placed at the end of the document so the pages load faster -->
-<!--Placed at the end of the document so the pages load faster-->
-<script src="__PUBLIC__/js/jquery.js"></script>
-<script src="__PUBLIC__/js/wind.js"></script>
-<script src="__TMPL__Public/assets/simpleboot/bootstrap/js/bootstrap.min.js"></script>
-<script src="__PUBLIC__/js/frontend.js"></script>
+
 <script>
     $(function(){
         //用户中心选项卡
@@ -585,75 +570,10 @@
     })
 </script>
 
-<script>
-
-    $(function(){
-        $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
-
-        $("#main-menu li.dropdown").hover(function(){
-            $(this).addClass("open");
-        },function(){
-            $(this).removeClass("open");
-        });
-
-        $.post("{:U('user/index/is_login')}",{},function(data){
-            if(data.status==1){
-                if(data.user.avatar){
-                    $("#main-menu-user .headicon").attr("src",data.user.avatar.indexOf("http")==0?data.user.avatar:"{:sp_get_image_url('[AVATAR]','!avatar')}".replace('[AVATAR]',data.user.avatar));
-                }
-
-                $("#main-menu-user .user-nicename").text(data.user.user_nicename!=""?data.user.user_nicename:data.user.user_login);
-                $("#main-menu-user li.login").show();
-
-            }
-            if(data.status==0){
-                $("#main-menu-user li.offline").show();
-            }
-
-            $.post("{:U('user/notification/getLastNotifications')}",{},function(data){
-                $(".nav .notifactions .count").text(data.list.length);
-            });
-
-        });
-        ;(function($){
-            $.fn.totop=function(opt){
-                var scrolling=false;
-                return this.each(function(){
-                    var $this=$(this);
-                    $(window).scroll(function(){
-                        if(!scrolling){
-                            var sd=$(window).scrollTop();
-                            if(sd>100){
-                                $this.fadeIn();
-                            }else{
-                                $this.fadeOut();
-                            }
-                        }
-                    });
-
-                    $this.click(function(){
-                        scrolling=true;
-                        $('html, body').animate({
-                            scrollTop : 0
-                        }, 500,function(){
-                            scrolling=false;
-                            $this.fadeOut();
-                        });
-                    });
-                });
-            };
-        })(jQuery);
-
-        $("#backtotop").totop();
-
-
-    });
-</script>
-
-
 <script type="text/javascript" src="__TMPL__public/js/uploadify-v3.1/jquery.uploadify-3.1.min.js"></script>
 <script type="text/javascript" src="__TMPL__public/js/jquery.Jcrop.min.js"></script>
 <script type="text/javascript" src="__TMPL__public/js/ThinkBox/jquery.ThinkBox.js"></script>
+
 <script type="text/javascript">
     $(function(){
         //上传头像(uploadify插件)
@@ -673,12 +593,12 @@
                 console.log(data);
 
                 var data = $.parseJSON(data);
-                if(data['status'] == 0){
+                if(data['status'] == 0){    //如果上传失败
                     $.ThinkBox.error(data['info'],{'delayClose':3000});
                     return;
                 }
-                var preview = $('.upload-area').children('#preview-hidden');//获取子节点DIV
-                preview.show().removeClass('hidden');	//移除CLASS属性并且显示
+                var preview = $('.upload-area').children('#preview-hidden');
+                preview.show().removeClass('hidden');
                 //两个预览窗口赋值
                 $('.crop').children('img').attr('src',data['path']+'?random='+Math.random());
                 //隐藏表单赋值
@@ -779,7 +699,6 @@
     })
 
 </script>
-
 
 </body>
 </html>
