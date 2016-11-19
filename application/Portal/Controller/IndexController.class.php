@@ -32,9 +32,11 @@ class IndexController extends HomebaseController {
 	
     //首页
 	public function index() {
-        $session_user=session('user');
-        if ($session_user){
-            $this->assign('login',$session_user);
+        //登录状态
+        $u_id=session('user')['id'];
+        if ($u_id){
+            $avatar = $this->user->where("id={$u_id}")->select();
+            $this->assign('login',$avatar);
         }
         $news=M('news');
         $new=$news->order("id desc")->limit(0,6)->select();

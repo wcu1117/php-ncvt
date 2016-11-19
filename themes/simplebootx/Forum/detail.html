@@ -91,7 +91,10 @@
                 <a href="javascript:;" class="u-photo"><img src="{$user.avatar}_100.jpg" alt="" /></a>
                 <address>
                     <p class="u-name">{$user.user_nicename}</p>
-                    <p><a href="javascript:;">加为好友</a> <a href="javascript:;">给我留言</a><br /><a href="javascript:;">我的主页</a> <a href="javascript:;">个人相册</a></p>
+                    <p><a href="javascript:;">加为好友</a> <a
+                            href="{:U('user/person/myguestbook',array('id'=>$user['id']))}">给我留言</a><br /><a
+                            href="{:U('user/person/index',array('id'=>$user['id']))}">我的主页</a> <a
+                            href="javascript:;">个人相册</a></p>
                     <hr />
                     <p>
                         <span>身份</span>：<a href="javascript:;">学生</a>/<a href="javascript:;">普通会员</a><br />
@@ -144,7 +147,11 @@
                 /><else/><img src="./themes/simplebootx/public/images/headicon_128.png"/></notempty></a>
                 <address>
                     <p class="u-name">{$reply.user_nicename}</p>
-                    <p><a href="javascript:;">加为好友</a> <a href="javascript:;">给我留言</a><br /><a href="javascript:;">我的主页</a> <a href="javascript:;">个人相册</a></p>
+                    <p><a href="javascript:;">加为好友</a> <a href="javascript:;">给我留言</a><br /><a
+                            href="{:U('user/index/person',array('id'=>$reply['user_id']))}">我的主页
+                    </a>
+                        <a
+                            href="javascript:;">个人相册</a></p>
                     <hr />
                     <p>
                         <span>身份</span>：<a href="javascript:;">学生</a>/<a href="javascript:;">普通会员</a><br />

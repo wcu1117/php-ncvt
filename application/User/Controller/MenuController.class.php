@@ -9,13 +9,15 @@ namespace User\Controller;
 use Common\Controller\HomebaseController;
 
 class MenuController extends HomebaseController{
+    protected $user;
     function _initialize() {
+        $this->user = M('users');
         $this->check_login();
         if(sp_is_user_login()){
-            $session_user=session('user');
-            if ($session_user){
-                $this->assign('login',$session_user);
-            }
+            $session_user=session('user')['id'];
+            $users = $this->user->where("id={$session_user}")->find();
+                $this->assign('user',$users);
+
         }
     }
     function index(){
