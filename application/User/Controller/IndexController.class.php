@@ -5,10 +5,19 @@
  */
 namespace User\Controller;
 use Common\Controller\HomebaseController;
-class IndexController extends HomebaseController {
+class IndexController extends HomebaseController  {
+    function _initialize() {
+        $this->check_login();
+        if(sp_is_user_login()){
+            $session_user=session('user');
+            if ($session_user){
+                $this->assign('login',$session_user);
+            }
+        }
+    }
     //登录
 	public function index() {
-		$id=I("get.id");
+		//$id=I("get.id");
 
 		$users_model=M("Users");
 
@@ -181,9 +190,6 @@ class IndexController extends HomebaseController {
     }
 
 
-    function avatar(){
-        $this->display(":avatar");
-    }
     
     function is_login(){
     	if(sp_is_user_login()){

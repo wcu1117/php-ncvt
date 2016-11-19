@@ -138,9 +138,9 @@ class LoginController extends HomebaseController {
         //exit();
         if(!empty($result)){
             if(sp_compare_password($password, $result['user_pass'])){
-                //session('user',$result);
-                //写入此次登录信息
-                $this->success("登录验证成功！", U("index/index",array('id'=>$result['id'])));
+                session('user',$result);
+                //写入此次登录信息   ,array('id'=>$result['id'])
+                $this->success("登录验证成功！", U("portal/index/index",0));
             }else{
                 $this->error("密码错误！");
             }

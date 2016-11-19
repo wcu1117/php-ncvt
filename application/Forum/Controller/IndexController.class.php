@@ -8,6 +8,14 @@ class IndexController extends HomebaseController{
     protected $reply;
     protected $small_reply;
     function _initialize(){
+        $this->check_login();
+        if(sp_is_user_login()){
+            $session_user=session('user');
+            if ($session_user){
+                $this->assign('login',$session_user);
+            }
+        }
+
         $this->posts = M('posts');
         $this->terms = M('terms');
         $this->reply = M('post_reply');

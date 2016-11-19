@@ -9,6 +9,15 @@ namespace User\Controller;
 use Common\Controller\HomebaseController;
 
 class MenuController extends HomebaseController{
+    function _initialize() {
+        $this->check_login();
+        if(sp_is_user_login()){
+            $session_user=session('user');
+            if ($session_user){
+                $this->assign('login',$session_user);
+            }
+        }
+    }
     function index(){
         $this->display("index/index");
     }
