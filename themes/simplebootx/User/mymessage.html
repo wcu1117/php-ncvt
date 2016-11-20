@@ -41,8 +41,8 @@
                 <nav class="u-nav clearfix borderB0">
                     <ul class="classTag nav-classTag borderB0 clearfix">
                         <li class="active"><a href="javascript:0;" >收件箱({$re_c})</a></li>
-                        <li><a href="javasrcpt:0;">发件箱({$se_c})</a></li>
-                        <li><a href="javasrcpt:0;">+ 写私信</a></li>
+                        <li><a href="javascript:void(0);">发件箱({$se_c})</a></li>
+                        <li><a href="javascript:void(0);">+ 写私信</a></li>
                     </ul>
                 </nav>
                 <!-- 我的消息 -->
@@ -60,9 +60,9 @@
                           <tbody>
                           <foreach name="re" item="r">
                               <tr>
-                                  <td class="table-num1"><a href="javasrcpt:0;" class="td-name">{$r.content}
+                                  <td class="table-num1"><a href="javascript:void(0);" class="td-name">{$r.content}
                                   </a><br><span></span></td>
-                                  <td class="table-num3"><a href="javasrcpt:0;">{$r.sender}</a></td>
+                                  <td class="table-num3"><a href="javascript:void(0);">{$r.sender}</a></td>
                                   <td class="table-num5">{$r.time}</td>
                               </tr>
                           </foreach>
@@ -94,9 +94,9 @@
                             <tbody>
                             <foreach name="se" item="s">
                                 <tr>
-                                    <td class="table-num1"><a href="javasrcpt:0;" class="td-name">{$s.content}
+                                    <td class="table-num1"><a href="javascript:void(0);" class="td-name">{$s.content}
                                     </a><br><span></span></td>
-                                    <td class="table-num3"><a href="javasrcpt:0;">{$s.email}</a></td>
+                                    <td class="table-num3"><a href="javascript:void(0);">{$s.email}</a></td>
                                     <td class="table-num5">{$s.time}</td>
                                 </tr>
                             </foreach>
