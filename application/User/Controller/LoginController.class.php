@@ -18,6 +18,9 @@ class LoginController extends HomebaseController {
 	        $this->display(":login");
 	    }
 	}
+	function login1(){
+	    $this->display(":login123");
+    }
 
 
 	
@@ -75,16 +78,18 @@ class LoginController extends HomebaseController {
     //登录验证
     function dologin(){
 
+
     	if(!sp_check_verify_code()){
-    		$this->error("验证码错误！");
+    		$this->error("验证码错误！",null);
     	}
-    	
+
+
     	$users_model=M("Users");
     	$rules = array(
     			//array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
     			array('username', 'require', '手机号/邮箱/用户名不能为空！', 1 ),
     			array('password','require','密码不能为空！',1),
-    	
+
     	);
     	if($users_model->validate($rules)->create()===false){
     		$this->error($users_model->getError());
@@ -106,9 +111,9 @@ class LoginController extends HomebaseController {
             if(sp_compare_password($password, $result['user_pass'])){
                 session('user',$result);
                 //写入此次登录信息   ,array('id'=>$result['id'])
-                $this->success("登录验证成功！", U("portal/index/index",0));
+                $this->success("登录验证成功！",U("index/index"));
             }else{
-                $this->error("密码错误！");
+                $this->error("密码错误！",null);
             }
         }else{
             $this->error("用户名不存在！");

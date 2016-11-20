@@ -223,8 +223,7 @@
                     <section class="u-educationAdd hidden">
                         <h5 class="hidden">编辑信息</h5>
                         <div class="con table-responsive">
-                            <form action="{:U("index/edit_post",array('id'=>$user['id']))}" method="post"
-                            name="u-setinfo" class="form-horizontal js-ajax-form">
+                            <form id="form1" method="post" name="u-setinfo" class="form-horizontal js-ajax-form">
                                 <table class="table">
                                     <tr class="u-setNmae">
                                         <td>昵称：</td>
@@ -238,7 +237,7 @@
                                         <td>学号：</td>
                                         <td>
                                             <input type="text" name="school_id " class="form-control" value="<notempty
-                                                name="user.schol_id">{$user.school_id}</notempty>"/><span>*</span></td>
+                                                name="user.school_id">{$user.school_id}</notempty>"/><span>*</span></td>
                                     </tr>
                                     <tr class="u-realname">
                                         <td>真实姓名：</td>
@@ -372,7 +371,9 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <label class="btn-group dropup"><input type="submit" name="submit-btn" value="保存" class="btn btn-default" /></label>
+                                            <label class="btn-group dropup"><input type="text" id="btn1"
+                                                                                   name="submit-btn"
+                                                                                   value="保存" class="btn btn-default" /></label>
                                             <label class="btn-group dropup"><input type="reset" name="reset-btn" value="重置" class="btn btn-default" /></label>
                                         </td>
                                     </tr>
@@ -384,7 +385,7 @@
                     <section class="u-educationAdd hidden">
                         <h5 class="hidden">上传头像</h5>
                         <!-- 修改头像 -->
-                        <form action="{:U('Index/cropImg')}" method="post" id="pic" class="update-pic cf">
+                        <form method="post" id="pic" class="update-pic cf">
                             <div class="upload-area">
                                 <input type="file" id="user-pic">
                                 <div class="file-tips">支持JPG,PNG,GIF，图片小于1MB，尺寸不小于100*100,真实高清头像更受欢迎！</div>
@@ -410,7 +411,7 @@
                     <section class=" hidden">
                         <h5 class="hidden">教育经历</h5>
                         <div class="con table-responsive">
-                            <form action="{:U('Index/edu_post',array('id'=>$user['id']))}" method="post">
+                            <form id="form3" method="post">
                             <table class="table  js-ajax-form">
                                 <tr>
                                     <td>毕业学校：</td>
@@ -468,7 +469,7 @@
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <label class="btn-group dropup"><input type="submit" name="submit-btn"
+                                        <label class="btn-group dropup"><input id="btn3" type="submit" name="submit-btn"
                                                                                value="保存" class="btn btn-default js-ajax-submit" /></label>
                                         <label class="btn-group dropup"><input type="reset" name="reset-btn" value="重置" class="btn btn-default" /></label>
                                     </td>
@@ -481,7 +482,7 @@
                     <section class="u-contactAdd hidden">
                         <h5 class="hidden">联系方式</h5>
                         <div class="con table-responsive">
-                            <form action="{:U('Index/con_post',array('id'=>$user['id']))}" method="post">
+                            <form id="form4" method="post">
                             <table class="table  js-ajax-form">
 
                                     <tr>
@@ -506,7 +507,8 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <label class="btn-group dropup"><input type="submit" name="submit-btn"
+                                            <label class="btn-group dropup"><input id="btn4" type="submit"
+                                                                                   name="submit-btn"
                                                                                    value="确定保存" class="btn btn-default js-ajax-submit" /></label>
                                         </td>
                                     </tr>
@@ -520,20 +522,7 @@
     </div>
     <div class="container-fluid fooetrBg"></div>
 </div>
-<footer id="site-footer" class="container-fluid">
-    <div class="container textalignC">
-        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
-    </div>
-    <div class="container-fluid bgWhite">
-        <div class="container">
-            <ul class="info-nav fl clearfix">
-                <li><a href="javasrcpt:;">关于我们</a></li>
-                <li><a href="javasrcpt:;">待定..</a></li>
-            </ul>
-            <p class="fr copyright">Copyright(C) NCVT P-N-Y 毕业设计作品. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
+<tc_include file="Public:footer"/>
 
 <script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
 
@@ -568,6 +557,215 @@
         });
 
 
+    })
+</script>
+
+<!-- ajax -->
+<!--<script src="__PUBLIC__/js/jquery.js"></script>-->
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        //修改信息
+        $('#btn1').click(function () {
+            var url = "{:U("index/edit_post")}";//发送URL
+            var data = $('#form1').serialize();    //序列化表单数据
+
+            $.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        });
+        //上传头像
+        $('.save-pic').click(function () {
+            var url = "{:U('Index/cropImg')}";//发送URL
+            var data = $('#pic').serialize();    //序列化表单数据
+
+            $.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        });
+        //教育信息
+        $('#btn3').click(function () {
+            var url = "{:U('Index/edu_post')}";//发送URL
+            var data = $('#form3').serialize();    //序列化表单数据
+
+            $.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        });
+        //联系信息
+        $('#btn4').click(function () {
+            var url = "{:U('Index/con_post')}";//发送URL
+            var data = $('#form4').serialize();    //序列化表单数据
+
+            $.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
     })
 </script>
 
@@ -700,6 +898,8 @@
     })
 
 </script>
+
+
 
 </body>
 </html>

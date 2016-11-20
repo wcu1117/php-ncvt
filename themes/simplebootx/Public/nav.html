@@ -36,7 +36,7 @@
                                         <h4 class="modal-title" id="myModalLabel">登录框</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <form role="form"  action="{:U('user/login/dologin')}" method="post">
+                                        <form role="form"  id="forms" method="post">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">帐号：</label>
                                                 <input type="email" class="form-control" name="username"
@@ -51,15 +51,15 @@
                                                 <input type="text" class="form-control" name="verify">
                                                 {:sp_verifycode_img('length=4&font_size=14&width=100&height=34&charset=2345678&use_noise=1&use_curve=0')}
                                             </div>
-                                            <button type="submit" class="btn btn-default">点击登录</button>
-                                            <span class="marginLeft-10px u-reg">还没有帐号?<a href="javasrcpt:;">点击注册</a></span>
+                                            <a type="submit" id="btn" class="btn btn-default">点击登录</a>
+                                            <span class="marginLeft-10px u-reg">还没有帐号?<a href="{:U('user/register/index')}">点击注册</a></span>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li class="u-reg"><a href="javasrcpt:;">注册分享社团快乐时光</a></li>
+                    <li class="u-reg"><a href="{:U('user/register/index')}">注册分享社团快乐时光</a></li>
                 </notempty>
 
 

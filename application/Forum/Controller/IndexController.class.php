@@ -11,11 +11,11 @@ class IndexController extends HomebaseController{
     function _initialize(){
         $this->posts = M('posts');
         //$this->check_login();
-        if(sp_is_user_login()){
-            $session_user=session('user')['id'];
-            $users = $this->posts->select();
-            $this->assign('posts',$users);
-
+        $u_id=session('user')['id'];
+        if ($u_id){
+            $user = M("users");
+            $avatar = $user->where("id={$u_id}")->find();
+            $this->assign('login',$avatar);
         }
         //实例化模型
         $this->user = M('users');

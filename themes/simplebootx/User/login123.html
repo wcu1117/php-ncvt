@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>用户登录|分享大一点的学生们的社团生活</title>
+	<link href="__TMPL__public/assets/css/style.css" rel="stylesheet">
+	<link href="__TMPL__Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet">
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="__PUBLIC__/js/jquery.js"></script>
+	<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+
+</head>
+
+<body class="body-white">
+
+
+				<form class="form-horizontal" id="forms" method="post">
+					<div class="control-group">
+						<input type="text" id="input_username" name="username" placeholder="手机号/邮箱/用户名" class="span4">
+					</div>
+
+					<div class="control-group">
+						<input type="password" id="input_password" name="password" placeholder="密码" class="span4">
+					</div>
+
+					<div class="control-group">
+						<div class="span4" style="margin-left: 0px;">
+							<input type="text" id="input_verify" name="verify"  placeholder="验证码" style="width:252px;">
+							{:sp_verifycode_img('length=4&font_size=14&width=100&height=34&charset=2345678&use_noise=1&use_curve=0')}
+						</div>
+
+					</div>
+
+					<div class="control-group">
+						<a class="btn" style="margin-left: 0px" value="确定"></a>
+					</div>
+				</form>
+
+	<!-- /container -->
+
+
+
+
+
+				<script type="text/javascript">
+					$(function(){
+						$('.btn').click(function () {
+							var url = "{:U('user/login/dologin')}";//发送URL
+							var data = $('#forms').serialize();	//序列化表单数据
+
+							$.post(url,{
+									username: encodeURI($('#input_username').val()),//获取值
+									password: encodeURI($('#input_password').val()),
+									verify : encodeURI($('#input_verify').val())
+								},
+								 function(data){
+									console.log(data);
+									//alert(data.info);
+									if(data.status==1){
+										noty({
+											text:data.info,
+											type:'success',
+											layout:'center',
+											callback:{
+												onClose:function(){
+													if (data.referer) {
+														location.href = data.referer;
+														return;
+													}
+
+													if(refresh || refresh==undefined){
+														reloadPage(window);
+													}
+												}
+											}
+										});
+
+									}else{
+										noty({text: data.info,
+											type:'error',
+											layout:'center',
+											callback:{
+												onClose:function(){
+													if (data.referer) {
+														location.href = data.referer;
+													}
+												}
+											}
+										});
+
+									}
+								})
+
+						})
+
+					})
+				</script>
+
+</body>
+</html>

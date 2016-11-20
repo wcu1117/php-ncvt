@@ -9,6 +9,7 @@
         <!--对话框的样式-->
     <link href="__PUBLIC__/simpleboot/themes/{:C('SP_ADMIN_STYLE')}/theme.min.css" rel="stylesheet">
     <link href="__PUBLIC__/js/artDialog/skins/default.css" rel="stylesheet" />
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
 
     <!--上传图片JS的样式-->
     <script type="text/javascript">
@@ -63,8 +64,7 @@
         <section class="forumEditor-con container-fluid">
             <header><h3 class="hd">发表帖子</h3></header>
             <div class="master-con">
-                <form action="{:U('Index/add_post')}" method="post" class="form-horizontal js-ajax-forms"
-                      enctype="multipart/form-data">
+                <form id="forms" method="post" class="form-horizontal"  enctype="multipart/form-data">
                     <div class="row-fluid">
                         <div class="span99">
                             <table class="table table-bordered">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button class="btn btn-primary js-ajax-submit" type="submit">提交</button>
+                        <a class="btn" id="btn" type="submit">提交</a>
                         <a class="btn" href="javascript:history.back(-1);">返回</a>
                     </div>
                 </form>
@@ -132,6 +132,63 @@
     <div class="container-fluid fooetrBg"></div>
 </div>
 <tc_include file="Public:footer"/>
+<!-- ajax -->
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
 
+<script type="text/javascript">
+    $(function(){
+        $('#btn').click(function () {
+            var url = "{:U('Index/add_post')}";//发送URL
+            var data = $('#forms').serialize();    //序列化表单数据
+
+            $.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
+
+    })
+</script>
 </body>
 </html>

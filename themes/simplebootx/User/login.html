@@ -5,9 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>用户登录|分享大一点的学生们的社团生活</title>
-	<link href="__TMPL__public/assets/css/style.css" rel="stylesheet">
+	<!-- Bootstrap --><link href="__TMPL__public/assets/css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="__TMPL__Public/css/style.css">
 	<link href="__TMPL__Public/assets/simpleboot/themes/simplebootx/theme.min.css" rel="stylesheet">
-
+	<link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
 </head>
 
 <body class="body-white">
@@ -78,25 +79,27 @@
 		<div class="row">
 			<div class="span4 offset4">
 				<h2 class="text-center">用户登录</h2>
-				<form class="form-horizontal js-ajax-form" action="{:U('user/login/dologin')}" method="post">
+				<form class="form-horizontal" id="forms"  method="post">
 					<div class="control-group">
-						<input type="text" id="input_username" name="username" placeholder="手机号/邮箱/用户名" class="span4">
+						<input type="text" id="input_username" name="username" placeholder="手机号/邮箱/用户名" style="height:35px;" class="span4">
 					</div>
 
 					<div class="control-group">
-						<input type="password" id="input_password" name="password" placeholder="密码" class="span4">
+						<input type="password" id="input_password" name="password" placeholder="密码"
+							   style="height:35px;"
+							   class="span4">
 					</div>
 
 					<div class="control-group">
 						<div class="span4" style="margin-left: 0px;">
-							<input type="text" id="input_verify" name="verify"  placeholder="验证码" style="width:252px;">
+							<input type="text" id="input_verify" name="verify"  placeholder="验证码" style="width:252px;height:35px;">
 							{:sp_verifycode_img('length=4&font_size=14&width=100&height=34&charset=2345678&use_noise=1&use_curve=0')}
 						</div>
 						
 					</div>
 
 					<div class="control-group">
-						<button class="btn btn-primary js-ajax-submit span4" type="submit" style="margin-left: 0px">确定</button>
+						<a class="btn btn-primary span4" id="btn" type="text" style="margin-left: 0px">确定</a>
 					</div>
 
 					<div class="control-group" style="text-align: center;">
@@ -113,29 +116,64 @@
 
 	</div>
 	<!-- /container -->
+<!-- ajax -->
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
 
 <script type="text/javascript">
-	//全局变量
-	var GV = {
-		ROOT: "__ROOT__/",
-		WEB_ROOT: "__WEB_ROOT__/",
-		JS_ROOT: "public/js/"
-	};
+	$(function(){
+		$('#btn').click(function () {
+			var url = "{:U('user/login/dologin')}";//发送URL
+			var data = $('#forms').serialize();    //序列化表单数据
+
+			$.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+					function(data){
+						console.log(data);
+						//alert(data.info);
+						if(data.status==1){
+							noty({
+								text:data.info,
+								type:'success',
+								layout:'center',
+								callback:{
+									onClose:function(){
+										if (data.referer) {
+											location.href = data.referer;
+											return;
+										}
+
+										if(refresh || refresh==undefined){
+											reloadPage(window);
+										}
+									}
+								}
+							});
+
+						}else{
+							noty({text: data.info,
+								type:'error',
+								layout:'center',
+								callback:{
+									onClose:function(){
+										if (data.referer) {
+											location.href = data.referer;
+										}
+									}
+								}
+							});
+
+						}
+					})
+
+		})
+
+	})
 </script>
-<!-- Le javascript
-<!-- Bootstrap -->
-<link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="__TMPL__Public/css/style.css">
-<script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
-<script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
-
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="__PUBLIC__/js/jquery.js"></script>
-<script src="__PUBLIC__/js/wind.js"></script>
-<script src="__TMPL__Public/assets/simpleboot/bootstrap/js/bootstrap.min.js"></script>
-<script src="__PUBLIC__/js/frontend.js"></script>
-
-
 
 </body>
 </html>

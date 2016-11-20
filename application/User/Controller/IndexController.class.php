@@ -62,7 +62,7 @@ class IndexController extends HomebaseController  {
 
     //编辑信息
     function edit_post(){
-        $id=I('get.id');
+        $id=session('user')['id'];
         if(IS_POST){
             //拼接日期
             $birthday['year'] = I('post.year');
@@ -156,7 +156,7 @@ class IndexController extends HomebaseController  {
 
     //更新学历信息和联系方式
     function edu_post(){
-        $id = I('get.id');//用户ID
+        $id=session('user')['id'];//用户ID
         $ed = M("education");//实例化表
 
         //把用户ID插入到信息表去
@@ -191,7 +191,7 @@ class IndexController extends HomebaseController  {
     }
 
     function con_post(){
-        $id = I('get.id');//用户ID
+        $id=session('user')['id'];//用户ID
         $ed = M("contact");//实例化表
 
         //把用户ID插入到信息表去
