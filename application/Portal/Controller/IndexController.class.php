@@ -35,7 +35,8 @@ class IndexController extends HomebaseController {
         //登录状态
         $u_id=session('user')['id'];
         if ($u_id){
-            $avatar = $this->user->where("id={$u_id}")->select();
+            $user = M("users");
+            $avatar = $user->where("id={$u_id}")->find();
             $this->assign('login',$avatar);
         }
         $news=M('news');

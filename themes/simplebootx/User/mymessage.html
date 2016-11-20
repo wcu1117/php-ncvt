@@ -16,6 +16,8 @@
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -38,8 +40,8 @@
                 <h3 class="u-hd">我的论坛</h3>
                 <nav class="u-nav clearfix borderB0">
                     <ul class="classTag nav-classTag borderB0 clearfix">
-                        <li class="active"><a href="javascript:0;" >私信(0)</a></li>
-                        <li><a href="javasrcpt:0;">系统消息(0)</a></li>
+                        <li class="active"><a href="javascript:0;" >收件箱({$re_c})</a></li>
+                        <li><a href="javasrcpt:0;">发件箱({$se_c})</a></li>
                         <li><a href="javasrcpt:0;">+ 写私信</a></li>
                     </ul>
                 </nav>
@@ -56,11 +58,15 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td class="table-num1"><a href="javasrcpt:0;" class="td-name">私信的内容内容。。</a><br><span></span></td>
-                              <td class="table-num3"><a href="javasrcpt:0;">发件人昵称</a></td>
-                              <td class="table-num5">11月10日</td>
-                            </tr>
+                          <foreach name="re" item="r">
+                              <tr>
+                                  <td class="table-num1"><a href="javasrcpt:0;" class="td-name">{$r.content}
+                                  </a><br><span></span></td>
+                                  <td class="table-num3"><a href="javasrcpt:0;">{$r.sender}</a></td>
+                                  <td class="table-num5">{$r.time}</td>
+                              </tr>
+                          </foreach>
+
                           </tbody>
                         </table>
                         <footer>
@@ -75,17 +81,35 @@
                 </section>
                 <!-- 私信内容 -->
                 <section class="u-messageBox hidden">
-                    <h4 class="hidden">我的消息</h4>
+                    <h4 class="hidden">已发信息</h4>
                     <div class="conBox pt0">
-                        <dl>
-                            <dt><h3>我要干烂you..</h3><address style="font-weight: 300; color: #666">由 <a href="javascript:0;">@bigYang</a> 发出</address><hr /></dt>
-                            <dd>
-                                <p>装完系统后，会发现很多硬件都无法使用，比如触摸屏无反应，或者任务栏音量图标打红叉等。这是因为刚装完的系统还没有安装该型电脑对应的驱动，相应的硬件无法识别。此时，只需到该型电脑品牌的官网上下载相应驱动，安装后便可使用（最好全部驱动都使用官方提供的重新安装一遍）。</p>
-                            </dd>
-                        </dl>
-                        <footer class="pagination">
-                            <p>上一条：<a href="javascript:;">CSS单词换行and断词，你真的完全了解吗</a></p>
-                            <p>下一条：<a href="javascript:;">2016年的十大技术趋势！</a></p>
+                        <table class="table table-hover marginTop-10px">
+                            <thead>
+                            <tr>
+                                <th class="table-num1">内容</th>
+                                <th class="table-num3">收件人</th>
+                                <th class="table-num2">发送时间</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <foreach name="se" item="s">
+                                <tr>
+                                    <td class="table-num1"><a href="javasrcpt:0;" class="td-name">{$s.content}
+                                    </a><br><span></span></td>
+                                    <td class="table-num3"><a href="javasrcpt:0;">{$s.email}</a></td>
+                                    <td class="table-num5">{$s.time}</td>
+                                </tr>
+                            </foreach>
+
+                            </tbody>
+                        </table>
+                        <footer>
+                            <nav>
+                                <ul class="pager textalignL">
+                                    <li><a href="#">上页</a></li>
+                                    <li><a href="#">下页</a></li>
+                                </ul>
+                            </nav>
                         </footer>
                     </div>
                 </section>
@@ -93,27 +117,20 @@
                 <section class="u-messageBox hidden">
                     <h4 class="hidden">我的消息</h4>
                     <div class="table-responsive conBox">
-                        <form action="" method="post" name="u-postMessage">
+                        <form action="{:U('user/menu/send_post')}" method="post" name="u-postMessage">
                         <table class="table">
                             <tr>
                                 <td>收件人：</td>
-                                <td><input type="text" name="u-consignee" value="" placeholder="ID/昵称/学号" class="form-control" /></td>
+                                <td><input type="text" name="email" value="" placeholder="邮箱"
+                                           class="form-control" /></td>
                             </tr>
                             <tr>
                                 <td>主题：</td>
-                                <td><input type="text" name="Message-theme" value="" class="form-control" /></td>
+                                <td><input type="text" name="title" value="" class="form-control" /></td>
                             </tr>
                             <tr>
                                 <td class="v-alignTop">内容：</td>
-                                <td><textarea name="Message-con" class="post-con form-control"></textarea></td>
-                            </tr>
-                            <tr>
-                                <td>验证码：</td>
-                                <td><input type="text" name="code" /> <span class="hidden">提示错误</span></td>
-                            </tr>
-                            <tr>
-                                <td> </td>
-                                <td><span class="verifycode"><img src="" atl="" class="codeImg" /></span><a href="javasrcpt:0;" class="changecode">看不清?</a></td>
+                                <td><textarea name="content" class="post-con form-control"></textarea></td>
                             </tr>
                             <tr>
                                 <td></td>

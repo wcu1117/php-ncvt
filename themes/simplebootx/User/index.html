@@ -146,7 +146,7 @@
                 <nav>
                     <ul class="infoBox-nav nav nav-tabs textalignL" role="tablist">
                         <li role="presentation" class="active"><a href="javasrcpt:0;">基本资料</a></li>
-                        <li role="presentation"><a href="u-setPassw.html">密码修改</a></li>
+                        <li role="presentation"><a href="{:U('login/password')}">密码修改</a></li>
                     </ul>
                 </nav>
                 <article class="u-setInfo get-sectionBox">
@@ -173,13 +173,21 @@
                                     <td>
                                         <span>{$user.user_nicename}</span>
                                         <input type="text" name="u-setName" value="黑钦王" class="u-EditorName hidden form-control" />
-                                        <srtong id="setName-btn">修改</srtong>
+
                                     </td>
                                 </tr>
                                 <tr class="u-studentId">
                                     <td>学号：</td>
                                     <td>
                                         <span>{$user.schoolid}</span>
+                                    </td>
+                                </tr>
+                                <tr class="u-setNmae">
+                                    <td>邮箱：</td>
+                                    <td>
+                                        <span>{$user.user_email}</span>
+                                        <input type="text" name="u-setName" value="黑钦王" class="u-EditorName hidden form-control" />
+
                                     </td>
                                 </tr>
                                 <tr class="u-realname">
@@ -207,14 +215,7 @@
                                     <td>
                                         <span>{$user.signature}</span>
                                     </td>                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        <button><a href="{:U("index/myinfo",array('id'=>$user['id']))}"  class="btn
-                                            btn-default"
-                                            value="保存">修改信息</a></button>
-                                    </td>
-                                </tr>
+
                             </table>
                         </div>
                     </section>

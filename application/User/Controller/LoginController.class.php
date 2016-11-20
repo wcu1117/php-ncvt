@@ -21,89 +21,55 @@ class LoginController extends HomebaseController {
 
 
 	
-	function forgot_password(){
-		$this->display(":forgot_password");
-	}
-	
-	
-	function doforgot_password(){
-		if(IS_POST){
-			if(!sp_check_verify_code()){
-				$this->error("验证码错误！");
-			}else{
-				$users_model=M("Users");
-				$rules = array(
-						//array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
-						array('email', 'require', '邮箱不能为空！', 1 ),
-						array('email','email','邮箱格式不正确！',1), // 验证email字段格式是否正确
-						
-				);
-				if($users_model->validate($rules)->create()===false){
-					$this->error($users_model->getError());
-				}else{
-					$email=I("post.email");
-					$find_user=$users_model->where(array("user_email"=>$email))->find();
-					if($find_user){
-						$this->_send_to_resetpass($find_user);
-						$this->success("密码重置邮件发送成功！",__ROOT__."/");
-					}else {
-						$this->error("账号不存在！");
-					}
-					
-				}
-				
-			}
-			
-		}
+	function password(){
+        $this->check_login();
+        $u_id=session('user')['id'];
+        if ($u_id){
+            $user = M("users");
+            $avatar = $user->where("id={$u_id}")->find();
+            $this->assign('login',$avatar);
+        }
+		$this->display(":mypasswd");
 	}
 	
 
 	
+	function reset()
+    {
 
-	
-	
-	function password_reset(){
-	    $users_model=M("Users");
-	    $hash=I("get.hash");
-	    $find_user=$users_model->where(array("user_activation_key"=>$hash))->find();
-	    if (empty($find_user)){
-	        $this->error('重置码无效！',__ROOT__."/");
-	    }else{
-	        $this->display(":password_reset");
-	    }
-	}
-	
-	function dopassword_reset(){
-		if(IS_POST){
-			if(!sp_check_verify_code()){
-				$this->error("验证码错误！");
-			}else{
-				$users_model=M("Users");
-				$rules = array(
-						//array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
-						array('password', 'require', '密码不能为空！', 1 ),
-						array('password','5,20',"密码长度至少5位，最多20位！",1,'length',3),
-						array('repassword', 'require', '重复密码不能为空！', 1 ),
-						array('repassword','password','确认密码不正确',0,'confirm'),
-						array('hash', 'require', '重复密码激活码不能空！', 1 ),
-				);
-				if($users_model->validate($rules)->create()===false){
-					$this->error($users_model->getError());
-				}else{
-					$password=sp_password(I("post.password"));
-					$hash=I("post.hash");
-					$result=$users_model->where(array("user_activation_key"=>$hash))->save(array("user_pass"=>$password,"user_activation_key"=>""));
-					if($result){
-						$this->success("密码重置成功，请登录！",U("user/login/index"));
-					}else {
-						$this->error("密码重置失败，重置码无效！");
-					}
-					
-				}
-				
-			}
-		}
-	}
+        if (IS_POST) {
+            $pass1 = I("post.password1");//获取提交数据
+            $pass2 = I("post.password2");//获取提交数据
+            $pass = I("post.password");//获取提交数据
+
+            $id = session('user')['id'];
+            $users_model = M("Users");
+            $old_pass = $users_model->where("id={$id}")->getField('user_pass',true);//获取密码
+            $rules = array(
+                //array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
+                array('password1', 'require', '密码不能为空！', 1),
+                array('password1', '5,20', "密码长度至少5位，最多20位！", 1, 'length', 3),
+                array('password2', 'require', '重复密码不能为空！', 1),
+                array('password2', 'password1', '确认密码不正确', 0, 'confirm'),
+            );
+            if ($users_model->validate($rules)->create() === false) {
+                $this->error($users_model->getError());
+            }else{
+                if (sp_compare_password($pass,$old_pass[0])) {
+                    $password = sp_password($pass1);
+                    $result = $users_model->where("id={$id}")->save(array("user_pass" => $password));
+                    if ($result) {
+                        $this->success("密码重置成功，请登录！", U("user/login/index"));
+                    } else {
+                        $this->error("密码重置失败，重置码无效！");
+                    }
+                } else {
+                    $this->error("原密码错误!请重新输入");
+                }
+
+            }
+        }
+    }
 	
 	
     //登录验证

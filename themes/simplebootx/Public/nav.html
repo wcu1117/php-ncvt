@@ -13,11 +13,11 @@
                     </li>
                     <li class="dropdown user login">
                         <a class="dropdown-toggle user" data-toggle="dropdown">
-                            <notempty name="login[0]['avatar']"><img src="{$login[0]['avatar']}_30.jpg"
+                            <notempty name="login['avatar']"><img src="{$login['avatar']}_30.jpg"
                                                                      class="headicon"/><else/><img
                                     src="/cmf/themes/simplebootx/Public/images/headicon_30.png" class="headicon"/></notempty>
 
-                            <span class="user-nicename">{$login[0]['user_nicename']}</span><b class="caret"></b></a>
+                            <span class="user-nicename">{$login['user_nicename']}</span><b class="caret"></b></a>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="{:U('user/index/index')}"><i class="fa fa-user"></i> &nbsp;个人中心</a></li>
                             <li class="divider"></li>

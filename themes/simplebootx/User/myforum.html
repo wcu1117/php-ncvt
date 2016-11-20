@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>我加入的社团|分享大一点的学生们的社团生活</title>
+<title>我的论坛|分享大一点的学生们的社团生活</title>
 <!-- Bootstrap -->
 <link rel="stylesheet" href="__TMPL__public/bootstrap-3.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="__TMPL__public/css/style.css">
@@ -16,6 +16,8 @@
   <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -38,9 +40,9 @@
                 <h3 class="u-hd">我的论坛</h3>
                 <nav class="u-nav clearfix borderB0">
                     <ul class="classTag borderB0 clearfix">
-                        <li class="active"><a href="javasrcpt:0;">我的贴子</a></li>
-                        <li><a href="javasrcpt:0;">我的评论内容</a></li>
-                        <li><a href="javasrcpt:0;">我的收藏</a></li>
+                        <li class="active"><a href="javascript:void(0);">我的贴子</a></li>
+                        <li><a href="javascript:void(0);">我的评论内容</a></li>
+                        <li><a href="javascript:void(0);">我的收藏</a></li>
                     </ul>
                 </nav>
                 <!-- 我的帖子 -->
@@ -56,11 +58,15 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td class="table-num1"><a href="javasrcpt:0;" class="td-name">华硕T100终于引导windows to go，感受附带简单教程</a></td>
-                          <td class="table-num3"><span>正常</span></td>
-                          <td class="table-num5"><i>2014-11-10</i></td>
-                        </tr>
+                      <foreach name="post" item="po">
+                          <tr>
+                              <td class="table-num1"><a href="{:U('forum/Index/detail',array('id'=>$po['id']))}"
+                                                        class="td-name">{$po.post_title}</a></td>
+                              <td class="table-num3"><span>正常</span></td>
+                              <td class="table-num5"><i>{$po.post_date}</i></td>
+                          </tr>
+                      </foreach>
+
                       </tbody>
                     </table>
                     <footer>
@@ -85,10 +91,14 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td class="table-num1"><a href="javasrcpt:0;" class="td-name">被评论的帖子标题（如在同一帖子多条回复，则只显示一条记录）</a></td>
-                          <td class="table-num5">11月10日</td>
-                        </tr>
+                      <foreach name="re" item="r">
+                          <tr>
+                              <td class="table-num1"><a href="{:U('forum/Index/detail',array('id'=>$r['post_id']))}"
+                                                        class="td-name">{$r.post_title}</a></td>
+                              <td class="table-num5">{$r.reply_time}</td>
+                          </tr>
+                      </foreach>
+
                       </tbody>
                     </table>
                     <footer>

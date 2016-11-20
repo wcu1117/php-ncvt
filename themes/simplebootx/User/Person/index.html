@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用户中心|分享大一点的学生们的社团生活</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="__TMPL__public/bootstrap-3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="__TMPL__public/css/style.css">
+    <link rel="stylesheet" href="__TMPL__public/css/user.css">
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
+
+
+
+</head>
+<body class="container-fluid">
+<tc_include file="Public:nav"/>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>个人中心</li>
+            </ul>
+        </nav>
+        <section class="user-con container-fluid">
+        <tc_include file="User:Person:menu"/>
+            <section class="u-main col-md-10">
+                <nav>
+                    <ul class="infoBox-nav nav nav-tabs textalignL" role="tablist">
+                        <li role="presentation" class="active"><a href="javasrcpt:0;">基本资料</a></li>
+                    </ul>
+                </nav>
+                <article class="u-setInfo get-sectionBox">
+                    <header>
+                        <h4 class="hidden">基本资料</h4>
+                        <nav class="u-nav">
+                            <ul id="setInfo-nav" class=" nav nav-pills textalignC" role="tablist">
+                              <li role="presentation" class="active"><a href="javasrcpt:0;">基本信息</a></li>
+                              <li role="presentation"><a href="javasrcpt:0;">教育经历</a></li>
+                              <li role="presentation"><a href="javasrcpt:0;">联系方式</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <hr />
+                    <!--用户信息-->
+                    <section class="u-infoAdd">
+                        <h5 class="hidden">基本信息</h5>
+                        <div class="con table-responsive">
+                            <table class="table">
+                                <tr class="u-setNmae">
+                                    <td>昵称：</td>
+                                    <td>
+                                        <span>{$user.user_nicename}</span>
+                                        <input type="text" name="u-setName" value="黑钦王" class="u-EditorName hidden form-control" />
+
+                                    </td>
+                                </tr>
+                                <tr class="u-setNmae">
+                                    <td>邮箱：</td>
+                                    <td>
+                                        <span>{$user.user_email}</span>
+                                        <input type="text" name="u-setName" value="黑钦王" class="u-EditorName hidden form-control" />
+
+                                    </td>
+                                </tr>
+                                <tr class="u-studentId">
+                                    <td>学号：</td>
+                                    <td>
+                                        <span>{$user.schoolid}</span>
+                                    </td>
+                                </tr>
+                                <tr class="u-realname">
+                                    <td>真实姓名：</td>
+                                    <td>
+                                        <span>{$user.user_name}</span>
+                                    </td>                                </tr>
+                                <tr class="u-sex">
+                                    <td>性别：</td>
+                                    <td>
+                                        <span><if condition="$user.sex eq 1">男<else/>女</if></span>
+                                    </td>                                </tr>
+                                <tr class="u-birth">
+                                    <td>生日：</td>
+                                    <td>
+                                        <span>{$user.birthday}</span>
+                                    </td>                                </tr>
+                                <tr>
+                                    <td>星座：</td>
+                                    <td>
+                                        <span>{$user.constellation}</span>
+                                    </td>                                </tr>
+                                <tr>
+                                    <td class="v-alignTop">签名介绍：</td>
+                                    <td>
+                                        <span>{$user.signature}</span>
+                                    </td>                                </tr>
+
+                            </table>
+                        </div>
+                    </section>
+                    <!--教育信息-->
+                    <section class=" hidden">
+                        <h5 class="hidden">教育经历</h5>
+                        <div class="con table-responsive">
+                            <form action="{:U('Index/edu_post',array('id'=>$user['id']))}" method="post">
+                            <table class="table  js-ajax-form">
+                                <tr>
+                                    <td>毕业学校：</td>
+                                    <td><input type="text" name="shcool" value="南宁职业技术学院" disabled class="form-control" /></td>
+                                </tr>
+                                <tr>
+                                    <td>入学年份：</td>
+                                    <td>
+                                        <select name="enter" class="form-control">
+                                            <option>{$user.enter}</option>
+
+                                        </select>
+                                        <span>年</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>学历：</td>
+                                    <td>
+                                        <select name="level" class="form-control" disabled >
+                                            <option checked >大专</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>专业：</td>
+                                    <td>
+                                        <select name="college" class="form-control">
+                                            <option>{$user.college}</option>
+                                        </select>
+                                        <span>学院/系 -</span>
+                                        <select name="major" class="form-control">
+                                            <option>{$user.major}</option>
+                                        </select>
+                                        <span>专业</span>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            </form>
+                        </div>
+                    </section>
+                    <!--联系方式-->
+                    <section class="u-contactAdd hidden">
+                        <h5 class="hidden">联系方式</h5>
+                        <div class="con table-responsive">
+                            <table class="table  js-ajax-form">
+
+                                    <tr>
+                                        <td>手机号码：</td>
+                                        <td><input type="text" name="number" class="form-control"
+                                                   value="{$user.number}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>新浪微博：</td>
+                                        <td><input type="text" name="weibo" class="form-control"
+                                                   value="{$user.weibo}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email：</td>
+                                        <td><input type="text" name="email" class="form-control"
+                                                   value="{$user.email}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Q Q：</td>
+                                        <td><input type="text" name="qq" class="form-control" value="{$user.qq}"/></td>
+                                    </tr>
+
+                                </table>
+                        </div>
+                    </section>
+                </article>
+            </section>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<footer id="site-footer" class="container-fluid">
+    <div class="container textalignC">
+        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
+    </div>
+    <div class="container-fluid bgWhite">
+        <div class="container">
+            <ul class="info-nav fl clearfix">
+                <li><a href="javasrcpt:;">关于我们</a></li>
+                <li><a href="javasrcpt:;">待定..</a></li>
+            </ul>
+            <p class="fr copyright">Copyright(C) NCVT P-N-Y 毕业设计作品. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
+
+<script>
+    $(function(){
+        //用户中心选项卡
+        var u_navTag_btn = $('.u-nav>ul').children('li');
+        var sectionBox = $('.get-sectionBox').children('section');
+        for (var i = 0; i < u_navTag_btn.length; i++) {
+            u_navTag_btn[i].index = i;
+            u_navTag_btn[i].onclick = function(){
+                for (var i = 0; i < u_navTag_btn.length; i++) {
+                    u_navTag_btn[i].className = "";
+                    $(sectionBox[i]).addClass("hidden");
+                }
+                this.className = "active";
+                $(sectionBox[this.index]).removeClass("hidden");
+            }
+        }
+        //修改昵称
+        var oldUserName = $('.u-infoAdd .u-setNmae>td>span');
+        var newUserName = $('.u-EditorName');
+        $('#setName-btn').click(function(){
+            if(oldUserName.is(':visible') == true){
+                oldUserName.addClass('hidden');
+                newUserName.removeClass('hidden');
+            }else{
+                oldUserName.removeClass('hidden');
+                newUserName.addClass('hidden');
+                oldUserName.text(newUserName.val());
+            }
+        });
+
+
+    })
+</script>
+
+
+</body>
+</html>

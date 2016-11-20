@@ -121,31 +121,5 @@ class RegisterController extends HomebaseController {
 	}
 
 	
-	function active(){
-		$hash=I("get.hash","");
-		if(empty($hash)){
-			$this->error("激活码不存在");
-		}
-		
-		$users_model=M("Users");
-		$find_user=$users_model->where(array("user_activation_key"=>$hash))->find();
-		
-		if($find_user){
-			$result=$users_model->where(array("user_activation_key"=>$hash))->save(array("user_activation_key"=>"","user_status"=>1));
-			
-			if($result){
-				$find_user['user_status']=1;
-				session('user',$find_user);
-				$this->success("用户激活成功，正在登录中...",__ROOT__."/");
-			}else{
-				$this->error("用户激活失败!",U("user/login/index"));
-			}
-		}else{
-			$this->error("用户激活失败，激活码无效！",U("user/login/index"));
-		}
-		
-		
-	}
-	
 	
 }

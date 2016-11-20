@@ -29,13 +29,13 @@
             <ul>
                 <li>首页</li>
                 <li>></li>
-                <li>我的个人中心</li>
+                <li>个人中心</li>
                 <li>></li>
-                <li>我的社团</li>
+                <li>留言板</li>
             </ul>
         </nav>
         <section class="user-con container-fluid">
-            <tc_include file="User:menu"/>
+            <tc_include file="User:Person:menu"/>
             <section class="u-main u-guestBookBox col-md-10">
                 <h3 class="u-hd">我的留言板</h3>
                 <nav class="clearfix borderB0">
@@ -55,8 +55,10 @@
                     <div class="edit-con">
                         <h4><i>@给我留言吧!</i></h4>
                         <div>
-                            <form action="" method="post">
-                            <textarea name="u-edit" class="con form-control" style="width: 490px; height: 150px;"></textarea>
+                            <form action="{:U('person/guest_post',array('id'=>$user['user_id']))}" method="post">
+                            <textarea name="content" class="con form-control"
+                                      style="width: 490px; height: 150px;">
+                            </textarea>
                             <label class="btn-group dropup display-b"><input type="submit" name="submit-btn" value="留言" class="btn btn-default"></label>
                             </form>
                         </div>
