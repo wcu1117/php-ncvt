@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>活动发布|分享大一点的学生们的社团生活</title>
+    <tc_include file="Organ:head"/>
+</head>
+<body class="container-fluid">
+<tc_include file="Public:nav"/>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>社团中心</li>
+                <li>></li>
+                <li>发布活动</li>
+            </ul> 
+        </nav>
+        <section class="st-box st-index st-push container-fluid  ">
+            <aside class="st-side push-left col-md-3 padding0">
+                <header class="hd">
+                    <h2 class="margin0">活动发布</h2>
+                </header>
+                <div>
+                <form action="" method="post">
+                    <div class="add-banner">
+                        <a href="javasrcpt:0;" class="edit-img" data-toggle="modal" data-target="#up_edit-img" style="background-image: url('images/banner1.jpg');">点击就送</a>
+                        <p class="tip">建议尺寸1125*450，请勿上传超过5M的图片</p>
+                        <!-- 弹出登录框 在此设置 input= files 传图片 -->
+                        <div class="modal fade" id="up_edit-img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title" id="myModalLabel">上传活动Banner</h4>
+                              </div>
+                              <div class="modal-body">
+                                  <div class="up_left">
+                                    <label class="file-btn"> <input type="file" name="up_img" /> </label>
+                                    <p class="tip">*为了更好地显示活动，建议活动banner尺寸为1125*450，大小为<2M.</p>
+                                  </div>
+                                  <div class="up_right">
+                                      <div class="banner" style="background-image:url(images/active_banner.png);"></div>
+                                  </div>
+                                  <a  id="banner-subBtn" class="btn btn-default " role="button">开始上传</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+                    </div>
+                    <div class="event-principal pt0 pb0 display-ib">
+                        <span>主要负责人：</span>
+                        <div class="display-ib">
+                            <select class="form-control" name="event-principal">
+                                <option>艾特黑钦王</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="push-type pr">
+                        <span>活动类型：</span>
+                        <div>
+                            <label class="item active">体育<input type="checkbox" name="push-type0" checked="true" /></label>
+                            <label class="item">学术<input type="checkbox" name="push-type1" /></label>
+                            <label class="item">文娱<input type="checkbox" name="push-type2" /></label>
+                            <label class="item">游戏<input type="checkbox" name="push-type3" /></label>
+                            <label class="item">公益<input type="checkbox" name="push-type4" /></label>
+                            <label class="item">其它<input type="checkbox" name="push-type5" /></label>
+                        </div>
+                        <p class="tip hidden" style="position: absolute;bottom:0;color: red;font-size: .8em; margin: 10px 0;">*至少选择 1 类型。</p>
+                    </div>
+                    <div class="apply-condition">
+                        <span>设置报名信息：</span>
+                        <div>
+                            <label class="item active">此活动需报名审核<input type="checkbox" name="condition_1" checked="true"></label>
+                        </div>
+                    </div>
+                    <div class="width100 textalignL marginTB-15px">
+                        <input type="submit" name="submit-btn" value="发布" class="submit-btn" />
+                        <input type="submit" name="view-btn" value="预览" class="view-btn" />
+                    </div>
+                </div>
+            </aside>
+            <article class="st-main push-right col-md-9">
+                <header class="marginBottom-20px">
+                    <h3><input type="text" name="push-title" class="push-title" placeholder="请输入标题" /></h3>
+                </header>
+                <div class="push-info overflowH">
+                    <p class="input-start pr marginBottom-20px">
+                        <span class="fl">时间：</span>
+                        <input type="text" id="push-tiem" name="push-tiem" placeholder readonly="true" class="" />
+                    </p>
+                    <p class="input-location pr marginBottom-20px">
+                        <span class="fl">地点：</span>
+                        <input type="text" name="input-location" placeholder  class="" style="font-style: italic;" />
+                    </p>
+                    <p class="input-pusher pr marginBottom-20px">
+                        <span>主办方：</span>
+                        <input type="text" name="input-pusher" placeholder readonly="true" disabled="true" value="南宁职业技术学院" class="" />
+                    </p>
+                    <p class="input-end pr marginBottom-20px">
+                        <span>报名截止：</span>
+                        <input type="text" name="input-end" id="input-end" placeholder readonly="true" class="" />
+                    </p>
+                </div>
+                <div class="push-con marginTop-20px pr15px">
+                    <textarea rows="30  " id="container" name="content" class="edit-con"></textarea>
+                </div>
+            </article>
+            </form>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<tc_include file="Public:footer"/>
+<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script src="__TMPL__public/bootstrap-3.3.0/js/moment.min.js"></script>
+<script src="__TMPL__public/bootstrap-3.3.0/js/daterangepicker.js"></script>
+<!-- 配置文件 -->
+<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
+<script>
+    $(function(){
+        var push_type_num;
+        //回复评论
+        $('.reply-btn').click(function(){
+            var reply_con = $(this).parent().next();
+            if(reply_con.is(':visible') == false){
+                reply_con.removeClass('hidden');
+            }else{
+                reply_con.addClass('hidden');
+            }
+        });
+
+        //多选框
+        $(".push-left input:checkbox").click(function(){
+
+            var push_typeLength = $(".push-type input:checkbox:checked");
+            if(push_typeLength.length == 0){ $(".push-type .tip").removeClass("hidden");}else{$(".push-type .tip").addClass("hidden");
+            }
+
+            $(".push-left input:checkbox:checked").parent().addClass("active");
+            $(".push-left input:checkbox:not(:checked)").parent().removeClass("active");
+        }); 
+
+    });
+
+    //插件库
+    $(function(){
+        //时间插件
+        $('#push-tiem').daterangepicker({
+            "timePicker": true,
+            "timePicker24Hour": true,
+            "timePickerIncrement": 5,
+            "showISOWeekNumbers": true,
+            "locale": {
+                "direction": "ltr",
+                "format": "YYYY-MM-DD hh:mm",
+                "separator": " 至 ",
+                "applyLabel": "确定",
+                "cancelLabel": "关闭",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "daysOfWeek": [
+                    "天",
+                    "一",
+                    "二",
+                    "三",
+                    "四",
+                    "五",
+                    "六"
+                ],
+                "monthNames": [
+                    "1月",
+                    "2月",
+                    "3月",
+                    "4月",
+                    "5月",
+                    "6月",
+                    "7月",
+                    "8月",
+                    "9月",
+                    "10月",
+                    "11月",
+                    "12月"
+                ],
+                "firstDay": 1
+            },
+            "linkedCalendars": false,
+            "autoUpdateInput": false,
+            "alwaysShowCalendars": true,
+            "startDate": "2016-11-17",
+            "endDate": "2017-11-18",
+            "autoUpdateInput": true
+            // "minDate": "2016-11-17",
+            // "maxDate": "YYYY/MM/DD"
+        });
+        $('#input-end').daterangepicker({
+            "singleDatePicker": true,
+            "timePicker": true,
+            "timePicker24Hour": true,
+            "timePickerIncrement": 5,
+            "locale": {
+                "direction": "ltr",
+                "format": "YYYY-MM-DD hh:mm",
+                "separator": " 至 ",
+                "applyLabel": "确定",
+                "cancelLabel": "关闭",
+                "fromLabel": "From",
+                "toLabel": "To",
+                "customRangeLabel": "Custom",
+                "daysOfWeek": [
+                    "天",
+                    "一",
+                    "二",
+                    "三",
+                    "四",
+                    "五",
+                    "六"
+                ],
+                "monthNames": [
+                    "1月",
+                    "2月",
+                    "3月",
+                    "4月",
+                    "5月",
+                    "6月",
+                    "7月",
+                    "8月",
+                    "9月",
+                    "10月",
+                    "11月",
+                    "12月"
+                ],
+                "firstDay": 1
+            }
+        });
+        
+        //实例化编辑器 
+        var ue = UE.getEditor('container',{
+            toolbars: [
+                [
+                'source',   //源代码
+                'fontfamily', //字体
+                'fontsize', //字体大小
+                'blockquote', //引用
+                'bold',   //加粗
+                'italic',   //斜体
+                'underline',    //下划线
+                'strikethrough',    //删除线
+                'forecolor', //字体颜色
+                'backcolor', //背景色
+                'removeformat', //清除格式
+                'horizontal',   //分割线
+                'justifyleft', //居左对齐
+                'justifyright', //居右对齐
+                'justifycenter', //居中对齐
+                'justifyjustify', //两端对齐
+                'lineheight',   //行间距
+                'insertorderedlist', //有序   列表
+                'insertunorderedlist', //无序列表
+                'fullscreen',  //全屏
+                'attachment',   //添加附件
+                'link',    //加上链接
+                'insertimage',   //多图上传
+                'preview',  //预览
+
+
+                ]
+            ],
+            autoFloatEnabled : true,
+            wordCount: false,
+            enableContextMenu: true,
+            autoHeightEnabled: false,
+            initialFrameHeight: 330,
+            scaleEnabled: false
+        });
+        ue.ready(function() {
+            //设置最小高度
+            // ue.setHeight(330);
+        });
+    });
+</script>
+</body>
+</html>
