@@ -39,6 +39,12 @@ class IndexController extends HomebaseController {
             $avatar = $user->where("id={$u_id}")->find();
             $this->assign('login',$avatar);
         }
+        //未读消息
+        $m = M('message');//实例化
+        $email = session('user')['user_email'];
+        $rec_count = $m->where("email='".$email."' and status=0")->count();
+        $this->assign('news_count',$rec_count);//模版赋值
+
         $news=M('news');
         $new=$news->order("id desc")->limit(0,6)->select();
         $this->assign('news',$new);

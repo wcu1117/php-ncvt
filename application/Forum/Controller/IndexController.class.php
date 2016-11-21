@@ -9,6 +9,11 @@ class IndexController extends HomebaseController{
     protected $small_reply;
     protected $user;
     function _initialize(){
+        //实例化模型
+        $this->user = M('users');
+        $this->terms = M('terms');
+        $this->reply = M('post_reply');
+        $this->small_reply = M('post_small_reply');
         $this->posts = M('posts');
         //$this->check_login();
         $u_id=session('user')['id'];
@@ -17,12 +22,13 @@ class IndexController extends HomebaseController{
             $avatar = $user->where("id={$u_id}")->find();
             $this->assign('login',$avatar);
         }
-        //实例化模型
-        $this->user = M('users');
-        $this->posts = M('posts');
-        $this->terms = M('terms');
-        $this->reply = M('post_reply');
-        $this->small_reply = M('post_small_reply');
+        //未读消息
+        $m = M('message');//实例化
+        $email = session('user')['user_email'];
+        $rec_count = $m->where("email='".$email."' and status=0")->count();
+        $this->assign('news_count',$rec_count);//模版赋值
+
+
     }
     function index(){
 

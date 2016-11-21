@@ -67,7 +67,7 @@ class MenuController extends HomebaseController{
         $m = M('message');
         $result = $m->add($msg);
         if($result){
-            $this->success("发送成功");
+            $this->success("发送成功",U("menu/message"),0);
         }
     }
     //留言板

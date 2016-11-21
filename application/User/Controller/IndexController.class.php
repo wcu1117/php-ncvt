@@ -72,7 +72,7 @@ class IndexController extends HomebaseController  {
 
             //拼接数据
             $users['user_nicename'] = I('post.user_nicename');
-            $users['username'] = I('post.user_name');
+            $users['user_name'] = I('post.user_name');
             $users['school_id'] = I('post.school_id');
             $users['sex'] = I('post.sex');
             $users['constellation'] = I('post.constellation');
@@ -80,11 +80,13 @@ class IndexController extends HomebaseController  {
             $users['signature'] = I('post.signature');
             $users['birthday'] = $birthday;
             //更新数据
+            var_dump($users);
             $users_model=M("Users");
             $result=$users_model->where(array("id"=>$id))->save($users);
             if($result){
                 $this->success("更新成功！", U("index/index",array('id'=>$id)));
             }else{
+                //var_dump($result);
                 $this->error("更新失败");
             }
 

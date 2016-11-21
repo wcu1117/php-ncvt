@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="__TMPL__public/css/style.css">
     <link rel="stylesheet" href="__TMPL__public/css/user.css">
 <!-- <link rel="stylesheet" href="css/school.css"> -->
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+
     <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
 
 </head>
@@ -46,7 +41,7 @@
                         <h4 class="hidden">密码修改</h4>
                     </header>
                     <div class="con table-responsive">
-                        <form action="{:U('User/Login/reset')}" method="post" name="u-setPassword">
+                        <form id="forms" method="post">
                             <table class="table">
                                 <tr>
                                     <td>原密码：</td>
@@ -72,7 +67,8 @@
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <label class="btn-group dropup"><input type="submit" name="submit-btn" value="确定更改" class="btn btn-default" /></label>
+                                        <label class="btn-group dropup"><input type="button" id="btn" name="submit-btn"
+                                                                               value="确定更改" class="btn btn-default" /></label>
                                     </td>
                                 </tr>
                             </table>
@@ -84,39 +80,55 @@
     </div>
     <div class="container-fluid fooetrBg"></div>
 </div>
-<footer id="site-footer" class="container-fluid">
-    <div class="container textalignC">
-        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
-    </div>
-    <div class="container-fluid bgWhite">
-        <div class="container">
-            <ul class="info-nav fl clearfix">
-                <li><a href="javasrcpt:;">关于我们</a></li>
-                <li><a href="javasrcpt:;">待定..</a></li>
-            </ul>
-            <p class="fr copyright">Copyright(C) NCVT P-N-Y 毕业设计作品. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
-<script>
-    $(function(){
-        //用户中心选项卡
-        var setInfo_nav_btn = $('#setInfo-nav').children('li');
-        var setInfo_box = $('.u-setInfo').children('section');
-        for (var i = 0; i < setInfo_nav_btn.length; i++) {
-            setInfo_nav_btn[i].index = i;
-            setInfo_nav_btn[i].onclick = function(){
+<tc_include file="Public:footer"/>
 
-                for (var i = 0; i < setInfo_nav_btn.length; i++) {
-                    setInfo_nav_btn[i].className = "";
-                    $(setInfo_box[i]).addClass("hidden");
-                }
-                this.className = "active";
-                $(setInfo_box[this.index]).removeClass("hidden");
-            }
-        }
+<!-- ajax -->
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+<script type="text/javascript">
+    $('#btn').click(function () {
+        var url = "{:U('User/Login/reset')}";//发送URL
+        var data = $('#forms').serialize();    //序列化表单数据
+
+        $.post(url,data,
+                function(data){
+                    console.log(data);
+                    //alert(data.info);
+                    if(data.status==1){
+                        noty({
+                            text:data.info,
+                            type:'success',
+                            layout:'center',
+                            callback:{
+                                onClose:function(){
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                        return;
+                                    }
+
+                                    if(refresh || refresh==undefined){
+                                        reloadPage(window);
+                                    }
+                                }
+                            }
+                        });
+
+                    }else{
+                        noty({text: data.info,
+                            type:'error',
+                            layout:'center',
+                            callback:{
+                                onClose:function(){
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                    }
+                                }
+                            }
+                        });
+
+                    }
+                })
 
     })
 </script>

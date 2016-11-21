@@ -179,7 +179,7 @@
                                 <tr class="u-studentId">
                                     <td>学号：</td>
                                     <td>
-                                        <span>{$user.schoolid}</span>
+                                        <span>{$user.school_id}</span>
                                     </td>
                                 </tr>
                                 <tr class="u-setNmae">
@@ -220,10 +220,10 @@
                         </div>
                     </section>
                     <!--编辑信息-->
-                    <section class="u-educationAdd hidden">
+                    <section class="u-infoAdd hidden">
                         <h5 class="hidden">编辑信息</h5>
                         <div class="con table-responsive">
-                            <form id="form1" method="post" name="u-setinfo" class="form-horizontal js-ajax-form">
+                            <form id="form1" method="post">
                                 <table class="table">
                                     <tr class="u-setNmae">
                                         <td>昵称：</td>
@@ -236,7 +236,7 @@
                                     <tr class="u-studentId">
                                         <td>学号：</td>
                                         <td>
-                                            <input type="text" name="school_id " class="form-control" value="<notempty
+                                            <input type="text" name="school_id" class="form-control" value="<notempty
                                                 name="user.school_id">{$user.school_id}</notempty>"/><span>*</span></td>
                                     </tr>
                                     <tr class="u-realname">
@@ -371,9 +371,9 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <label class="btn-group dropup"><input type="text" id="btn1"
+                                            <label class="btn-group dropup"><input id="btn1" type="button"
                                                                                    name="submit-btn"
-                                                                                   value="保存" class="btn btn-default" /></label>
+                                                                                   value="保存" class="btn btn-default js-ajax-submit" /></label>
                                             <label class="btn-group dropup"><input type="reset" name="reset-btn" value="重置" class="btn btn-default" /></label>
                                         </td>
                                     </tr>
@@ -408,7 +408,7 @@
 
                     </section>
                     <!--教育信息-->
-                    <section class=" hidden">
+                    <section class="u-educationAdd hidden">
                         <h5 class="hidden">教育经历</h5>
                         <div class="con table-responsive">
                             <form id="form3" method="post">
@@ -469,7 +469,7 @@
                                 <tr>
                                     <td></td>
                                     <td>
-                                        <label class="btn-group dropup"><input id="btn3" type="submit" name="submit-btn"
+                                        <label class="btn-group dropup"><input id="btn3" type="button" name="submit-btn"
                                                                                value="保存" class="btn btn-default js-ajax-submit" /></label>
                                         <label class="btn-group dropup"><input type="reset" name="reset-btn" value="重置" class="btn btn-default" /></label>
                                     </td>
@@ -507,7 +507,7 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <label class="btn-group dropup"><input id="btn4" type="submit"
+                                            <label class="btn-group dropup"><input id="btn4" type="button"
                                                                                    name="submit-btn"
                                                                                    value="确定保存" class="btn btn-default js-ajax-submit" /></label>
                                         </td>
@@ -524,7 +524,7 @@
 </div>
 <tc_include file="Public:footer"/>
 
-<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
+<!--<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>-->
 
 <script>
     $(function(){
@@ -568,68 +568,12 @@
     $(function(){
         //修改信息
         $('#btn1').click(function () {
-            var url = "{:U("index/edit_post")}";//发送URL
+            var url = "{:U('index/edit_post')}";//发送URL
             var data = $('#form1').serialize();    //序列化表单数据
-
             $.post(url,data,
-//					{
-//						username: encodeURI($('#input_username').val()),//获取值
-//						password: encodeURI($('#input_password').val()),
-//						verify : encodeURI($('#input_verify').val())
-//					},
                     function(data){
                         console.log(data);
-                        //alert(data.info);
-                        if(data.status==1){
-                            noty({
-                                text:data.info,
-                                type:'success',
-                                layout:'center',
-                                callback:{
-                                    onClose:function(){
-                                        if (data.referer) {
-                                            location.href = data.referer;
-                                            return;
-                                        }
-
-                                        if(refresh || refresh==undefined){
-                                            reloadPage(window);
-                                        }
-                                    }
-                                }
-                            });
-
-                        }else{
-                            noty({text: data.info,
-                                type:'error',
-                                layout:'center',
-                                callback:{
-                                    onClose:function(){
-                                        if (data.referer) {
-                                            location.href = data.referer;
-                                        }
-                                    }
-                                }
-                            });
-
-                        }
-                    })
-
-        });
-        //上传头像
-        $('.save-pic').click(function () {
-            var url = "{:U('Index/cropImg')}";//发送URL
-            var data = $('#pic').serialize();    //序列化表单数据
-
-            $.post(url,data,
-//					{
-//						username: encodeURI($('#input_username').val()),//获取值
-//						password: encodeURI($('#input_password').val()),
-//						verify : encodeURI($('#input_verify').val())
-//					},
-                    function(data){
-                        console.log(data);
-                        //alert(data.info);
+                        alert(data.info);
                         if(data.status==1){
                             noty({
                                 text:data.info,
@@ -862,7 +806,53 @@
                     }else{
                         //由于GD库裁剪gif图片很慢，所以长时间显示弹出框
                         $.ThinkBox.success('图片处理中，请稍候……',{'delayClose':30000});
-                        $('#pic').submit();
+
+
+
+
+                            var url = "{:U('Index/cropImg')}";//发送URL
+                            var data = $('#pic').serialize();    //序列化表单数据
+
+                            $.post(url,data,
+                                    function(data){
+                                        console.log(data);
+                                        //alert(data.info);
+                                        if(data.status==1){
+                                            noty({
+                                                text:data.info,
+                                                type:'success',
+                                                layout:'center',
+                                                callback:{
+                                                    onClose:function(){
+                                                        if (data.referer) {
+                                                            location.href = data.referer;
+                                                            return;
+                                                        }
+
+                                                        if(refresh || refresh==undefined){
+                                                            reloadPage(window);
+                                                        }
+                                                    }
+                                                }
+                                            });
+
+                                        }else{
+                                            noty({text: data.info,
+                                                type:'error',
+                                                layout:'center',
+                                                callback:{
+                                                    onClose:function(){
+                                                        if (data.referer) {
+                                                            location.href = data.referer;
+                                                        }
+                                                    }
+                                                }
+                                            });
+
+                                        }
+                                    })
+
+
                     }
                 });
                 //重新上传,清空裁剪参数

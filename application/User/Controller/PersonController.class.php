@@ -27,9 +27,14 @@ class PersonController extends HomebaseController{
             //登录状态
             $u_id=session('user')['id'];
             if ($u_id){
-                $avatar = $this->user->where("id={$u_id}")->select();
+                $avatar = $this->user->where("id={$u_id}")->find();
                 $this->assign('login',$avatar);
             }
+            //未读消息
+            $m = M('message');//实例化
+            $email = session('user')['user_email'];
+            $rec_count = $m->where("email='".$email."' and status=0")->count();
+            $this->assign('news_count',$rec_count);//模版赋值
         }
 
     }
@@ -49,14 +54,15 @@ class PersonController extends HomebaseController{
     //提交留言
     function guest_post(){
         $guest = M("guestbook");
-        $gu['host_id'] = I('get.id');  //获取主人ID
+        $id= I('get.id');
+        $gu['host_id'] = $id;  //获取主人ID
         $gu['guest_id'] = session('user')['id'];//留言人ID
         $gu['guest_name'] = session('user')['user_nicename'];
         $gu['time'] = date('Y-m-d h:i:s',time());
         $gu['content'] = I('post.content');
         $result = $guest->add($gu);
         if($result){
-            $this->success("留言成功");
+            $this->success("留言成功",U('person/guest',array('id'=>$id)));
         }else{
             $this->error("留言失败");
         }
