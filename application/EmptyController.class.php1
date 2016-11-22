@@ -1,9 +1,0 @@
-<?php
-namespace Controller\Controller;
-use Common\Controller\HomebaseController;
-class EmptyController extends HomebaseController{
-    public function index(){
-        echo "没有方法";
-    }
-   
-}

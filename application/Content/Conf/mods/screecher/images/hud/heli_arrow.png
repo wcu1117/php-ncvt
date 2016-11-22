@@ -1,6 +1,0 @@
-﻿/*
-Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
-For licensing, see LICENSE.html or http://ckeditor.com/license
-*/
-
-CKEDITOR.dialog.add('link',function(a){var b=CKEDITOR.plugins.link,c=function(){var F=this.getDialog(),G=F.getContentElement('target','popupFeatures'),H=F.getContentElement('target','linkTargetName'),I=this.getValue();if(!G||!H)return;G=G.getElement();G.hide();H.setValue('');switch(I){case 'frame':H.setLabel(a.lang.link.targetFrameName);H.getElement().show();break;case 'popup':G.show();H.setLabel(a.lang.link.targetPopupName);H.getElement().show();break;default:H.setValue(I);H.getElement().hide();break;}},d=function(){var F=this.getDialog(),G=['urlOptions','
