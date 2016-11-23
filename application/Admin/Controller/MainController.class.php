@@ -14,7 +14,9 @@ class MainController extends AdminbaseController {
         //初始化数据显示到首页
         $user = M("users");
         $users = $user->where("user_type=2")->count();
-        $this->assign('user',$users);//注册用户
+        $this->assign('user',$users);//注册用户数量
+        $u = $user->where("user_type=2")->order("id desc")->limit(5)->select();
+        $this->assign('u',$u);
         //帖子总数
         $post = M("posts");
         $posts = $post->count();

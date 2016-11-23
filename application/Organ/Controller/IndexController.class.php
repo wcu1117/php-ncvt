@@ -9,7 +9,7 @@ class IndexController extends HomebaseController  {
     protected $guest1;
     protected $posts;
     function _initialize() {
-        $this->check_login();
+//        $this->check_login();
         $u_id=session('user')['id'];
         if ($u_id){
             $user = M("users");
@@ -17,43 +17,58 @@ class IndexController extends HomebaseController  {
             $this->assign('login',$avatar);
         }
         //实例化
-        $this->guest1 = M('guestbook');
-        $this->posts = M('posts');
-        //留言
-        $book_count = $this->guest1->where("host_id={$u_id}")->count();
-        $this->assign('count',$book_count);
-        //帖子
-        $post_count = $this->posts->where("post_author={$u_id}")->count();
-        $this->assign('post_count',$post_count);
-        //帖子回复
-        $reply = M("post_reply");
-        $re_count = $reply->where("post_author={$u_id}")->count();
-        $this->assign('re_count',$re_count);
 
-        //未读消息
-        $m = M('message');//实例化
-        $email = session('user')['user_email'];
-        $rec_count = $m->where("email='".$email."' and status=0")->count();
-        $this->assign('news_count',$rec_count);//模版赋值
     }
     //登录
 	public function index() {
-		$id=session('user')['id'];
 
-		$users_model=M("Users");
-
-		$user=$users_model->where(array("id"=>$id))->find();
-        $contact = M("contact");
-        $con = $contact->where(array("user_id"=>$id))->find();
-
-		if(empty($user)){
-			$this->error("查无此人！");
-		}
-		//var_dump($user);
-		$this->assign('user',$user);
-		$this->assign('con',$con);
 		$this->display(":index");
 
+    }
+    //创建社团
+    function create(){
+        $this->check_login();
+        $this->display(":create");
+    }
+    function add(){
+        //获取登录状态
+        $this->check_login();
+        $u_id=session('user')['id'];
+        if ($u_id){
+            $user = M("users");
+            $avatar = $user->where("id={$u_id}")->find();
+            $this->assign('login',$avatar);
+        }
+        //实例化模型
+        $organ = M("organ");
+        //获取提交的数据
+        if(IS_POST){
+            $insert = I("post.");//获取所有提交数据
+
+            //接收图片
+            if(isset($_FILES)){
+                var_dump($_FILES);
+                echo $_FILES['organ_logo']['name'].'aa';
+                $path = "./Data/upload/organ/".mt_rand(1,100).time().'.jpg';//定义保存路径
+                if(move_uploaded_file($_FILES['organ_logo']['tmp_name'],$path)){
+                    $insert['organ_logo'] = $path;//取到当前路径文件名
+                }
+            }
+
+            //拼接标签
+            $insert['organ_tag'] = implode('-',$insert['organ_tag']);
+            $insert['organ_create'] = date("Y-m-d H:i:s",time());   //创建时间
+
+            //插入数据
+            $result = $organ->add($insert);
+            var_dump($result);
+            if($result){
+                $this->success("申请已发送，等待审核");
+            }else{
+                $this->error("申请失败，请刷新后填写");
+            }
+
+        }
     }
     //活动详细页
     function active(){
@@ -70,6 +85,6 @@ class IndexController extends HomebaseController  {
     //社团里发表内容等
     function release(){
         $this->display(":release");
-    }
 
+    }
 }
