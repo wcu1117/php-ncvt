@@ -10,6 +10,19 @@ class MainController extends AdminbaseController {
     	$mysql= M()->query("select VERSION() as version");
     	$mysql=$mysql[0]['version'];
     	$mysql=empty($mysql)?L('UNKNOWN'):$mysql;
+
+        //初始化数据显示到首页
+        $user = M("users");
+        $users = $user->where("user_type=2")->count();
+        $this->assign('user',$users);//注册用户
+        //帖子总数
+        $post = M("posts");
+        $posts = $post->count();
+        $this->assign('post',$posts);
+        //社团数量
+        $organ = M("organ");
+        $or = $organ->count();
+        $this->assign('organ',$or);
     	
     	//server infomaions
     	$info = array(

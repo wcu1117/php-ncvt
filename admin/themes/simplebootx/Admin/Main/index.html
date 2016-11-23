@@ -1,4 +1,5 @@
 <admintpl file="header" />
+<link href="__PUBLIC__/simpleboot/css/app.css" rel="stylesheet">
 <style>
 .home_info li em {
 	float: left;
@@ -11,8 +12,86 @@ li {
 </style>
 </head>
 <body>
+
+
 	<div class="wrap">
-		<div id="home_toptip"></div>
+		<section class="panel panel-default">
+			<div class="row m-l-none m-r-none bg-light lter">
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x text-info">
+                                </i>
+                                <i class="fa fa-male fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="">
+                                <span class="h3 block m-t-xs">
+                                    <strong>
+                                        <?php echo $user?>
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							注册用户
+						</small>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x text-warning">
+                                </i>
+                                <i class="fa  fa-edit (alias) fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="">
+                                <span class="h3 block m-t-xs">
+                                    <strong id="bugs">
+                                        {$post}
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							论坛帖子
+						</small>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x text-info2">
+                                </i>
+                                <i class="fa fa-futbol-o fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="">
+                                <span class="h3 block m-t-xs">
+                                    <strong id="bugs">
+                                        {$organ}
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							注册社团
+						</small>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x icon-muted">
+                                </i>
+                                <i class="fa fa-clock-o fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="#">
+                                <span class="h3 block m-t-xs">
+                                    <strong>
+                                        <?php echo date( "H:i") ?>
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							目前时间
+						</small>
+					</a>
+				</div>
+			</div>
+		</section>
+		<div id="home_toptip" style="width: 60%;float: left;">
 		<h4 class="well">{:L('SYSTEM_NOTIFICATIONS')}</h4>
 		<div class="home_info">
 			<ul id="thinkcmf_notices">
@@ -34,6 +113,12 @@ li {
 				<li><em>前端开发</em> <a href="" target="_blank">农</a></li>
 				<li><em>后端开发</em> <a href="http://www.thinkcmf.com" target="_blank">庞</a></li>
 			</ul>
+		</div>
+	</div>
+		<div style="float: left;width: 30%; padding: 10px;margin-bottom: 20px;margin-left: 50px;">
+			<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=55" style="border:solid 1px
+			#7ec8ea" width="380" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+
 		</div>
 
 	</div>
