@@ -1,4 +1,9 @@
 <admintpl file="header" />
+<link href="__PUBLIC__/simpleboot/css/app.css" rel="stylesheet">
+<link href="__PUBLIC__/simpleboot/css/munu.css" rel="stylesheet">
+<link href="__PUBLIC__/simpleboot/css/amazeui.css" rel="stylesheet">
+<link href="__PUBLIC__/simpleboot/css/core.css" rel="stylesheet">
+<link href="__PUBLIC__/simpleboot/css/component.css" rel="stylesheet">
 <style>
 .home_info li em {
 	float: left;
@@ -11,14 +16,202 @@ li {
 </style>
 </head>
 <body>
+
+
 	<div class="wrap">
-		<div id="home_toptip"></div>
-		<h4 class="well">{:L('SYSTEM_NOTIFICATIONS')}</h4>
-		<div class="home_info">
-			<ul id="thinkcmf_notices">
-				<li><img src="__TMPL__Public/assets/images/loading.gif"style="vertical-align: middle;" /><span style="display: inline-block; vertical-align: middle;">加载中...</span></li>
-			</ul>
-		</div>
+		<section class="panel panel-default">
+			<div class="row m-l-none m-r-none bg-light lter">
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x text-info">
+                                </i>
+                                <i class="fa fa-male fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="">
+                                <span class="h3 block m-t-xs">
+                                    <strong>
+                                        <?php echo $user?>
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							注册用户
+						</small>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x text-warning">
+                                </i>
+                                <i class="fa  fa-edit (alias) fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="">
+                                <span class="h3 block m-t-xs">
+                                    <strong id="bugs">
+                                        {$post}
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							论坛帖子
+						</small>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x text-info2">
+                                </i>
+                                <i class="fa fa-futbol-o fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="">
+                                <span class="h3 block m-t-xs">
+                                    <strong id="bugs">
+                                        {$organ}
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							注册社团
+						</small>
+					</a>
+				</div>
+				<div class="col-sm-6 col-md-3 padder-v b-r b-light lt">
+                            <span class="fa-stack fa-2x pull-left m-r-sm">
+                                <i class="fa fa-circle fa-stack-2x icon-muted">
+                                </i>
+                                <i class="fa fa-clock-o fa-stack-1x text-white">
+                                </i>
+                            </span>
+					<a class="clear" href="#">
+                                <span class="h3 block m-t-xs">
+                                    <strong>
+                                        <?php echo date( "H:i") ?>
+                                    </strong>
+                                </span>
+						<small class="text-muted text-uc">
+							目前时间
+						</small>
+					</a>
+				</div>
+			</div>
+		</section>
+
+			<div class="am-g">
+				<!-- col start -->
+				<div class="am-u-md-4">
+					<div class="card-box">
+						<h4 class="header-title m-t-0 m-b-30">最新用户</h4>
+						<div class="inbox-widget nicescroll" style="height: 315px; overflow: hidden; outline: none;"
+							 tabindex="5000">
+							<foreach name="u" item="user">
+								<php>
+									$time = strtotime($user['create_time']);
+									$times = date('H:i',$time);
+								</php>
+								<a href="#">
+									<div class="inbox-item">
+										<div class="inbox-item-img"><notempty name="user['avatar']"><img
+												src="{$user['avatar']}_30.jpg" class="img-circle" alt=""><else/><img
+												src="/cmf/themes/simplebootx/Public/images/headicon_30.png"
+												class="img-circle" alt=""></notempty></div>
+										<p class="inbox-item-author">{$user.user_nicename}</p>
+										<p class="inbox-item-text">初来乍到，请多关照。</p>
+										<p class="inbox-item-date"><?php echo $times?></p>
+									</div>
+								</a>
+							</foreach>
+
+
+						</div>
+					</div>
+				</div>
+				<!-- col end -->
+
+				<!-- col 活动 -->
+				<div class="am-u-md-8">
+					<div class="card-box">
+						<h4 class="header-title m-t-0 m-b-30">最新活动</h4>
+						<div class="am-scrollable-horizontal am-text-ms" style="font-family: '微软雅黑';">
+							<table class="am-table   am-text-nowrap">
+								<thead>
+								<tr>
+									<th>#</th>
+									<th>活动名称</th>
+									<th>开始时间</th>
+									<th>结束时间</th>
+									<th>状态</th>
+									<th>负责人</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>1</td>
+									<td>Adminto Admin v1</td>
+									<td>01/01/2016</td>
+									<td>26/04/2016</td>
+									<td><span class="label label-danger">已发布</span></td>
+									<td>Coderthemes</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Adminto Frontend v1</td>
+									<td>01/01/2016</td>
+									<td>26/04/2016</td>
+									<td><span class="label label-success">已发布</span></td>
+									<td>Adminto admin</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Adminto Admin v1.1</td>
+									<td>01/05/2016</td>
+									<td>10/05/2016</td>
+									<td><span class="label label-pink">未开展</span></td>
+									<td>Coderthemes</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>Adminto Frontend v1.1</td>
+									<td>01/01/2016</td>
+									<td>31/05/2016</td>
+									<td><span class="label label-purple">进行中</span>
+									</td>
+									<td>Adminto admin</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>Adminto Admin v1.3</td>
+									<td>01/01/2016</td>
+									<td>31/05/2016</td>
+									<td><span class="label label-warning">即将开始</span></td>
+									<td>Coderthemes</td>
+								</tr>
+
+								<tr>
+									<td>6</td>
+									<td>Adminto Admin v1.3</td>
+									<td>01/01/2016</td>
+									<td>31/05/2016</td>
+									<td><span class="label label-primary">即将开始</span></td>
+									<td>Adminto admin</td>
+								</tr>
+
+								<tr>
+									<td>7</td>
+									<td>Adminto Admin v1.3</td>
+									<td>01/01/2016</td>
+									<td>31/05/2016</td>
+									<td><span class="label label-primary">即将开始</span></td>
+									<td>Adminto admin</td>
+								</tr>
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- col end -->
+			</div>
+
 		<h4 class="well">{:L('SYSTEM_INFORMATIONS')}</h4>
 		<div class="home_info">
 			<ul>
@@ -30,52 +223,14 @@ li {
 		<h4 class="well">{:L('INITIATE_TEAM')}</h4>
 		<div class="home_info" id="home_devteam">
 			<ul>
-				<li><em>ThinkCMF</em> <a href="http://www.thinkcmf.com" target="_blank">www.thinkcmf.com</a></li>
-				<li><em>核心开发者</em> <span>老猫,Sam,Tuolaji,Codefans,睡不醒的猪,小夏,Powerless</span></li>
-				<li><em>{:L('TEAM_MEMBERS')}</em> <span>老猫,Sam,Tuolaji,Smile,Codefans,睡不醒的猪,Jack,日本那只猫</span></li>
-				<li><em>{:L('CONTACT_EMAIL')}</em> <span>cmf@simplewind.net</span></li>
-			</ul>
-		</div>
-		<h4 class="well">{:L('CONTRIBUTORS')}</h4>
-		<div class="">
-			<ul class="inline" style="margin-left: 25px;">
-				<li>Kin Ho</li>
-				<li><a href="http://wzx.thinkcmf.com" target="_blank">Powerless</a></li>
-				<li>Jess</li>
-				<li>木兰情</li>
-				<li><a href="http://www.91freeweb.com/" target="_blank">Labulaka</a></li>
-				<li><a href="http://www.syousoft.com/" target="_blank">WelKinVan</a></li>
-				<li><a href="http://blog.sina.com.cn/u/1918098881" target="_blank">Jeson</a></li>
-				<li>Yim</li>
-				<li><a href="http://www.jamlee.cn/" target="_blank">Jamlee</a></li>
-				<li><a>香香咸蛋黄</a></li>
-				<li><a>小夏</a></li>
-				<li><a href="http://www.xdmeng.com" target="_blank">小凯</a></li>
-				<li><a href="https://www.devmsg.com" target="_blank">Co</a></li>
-				<li><a href="http://www.rainfer.cn" target="_blank">Rainfer</a></li>
+				<li><em>UI设计</em> <a href="" target="_blank">杨</a></li>
+				<li><em>前端开发</em> <a href="" target="_blank">农</a></li>
+				<li><em>后端开发</em> <a href="http://www.thinkcmf.com" target="_blank">庞</a></li>
 			</ul>
 		</div>
 	</div>
-	<script src="__PUBLIC__/js/common.js"></script>
-	<script>
-		//获取官方通知
-		$.getJSON("http://www.thinkcmf.com/service/sms_jsonp.php?lang={$Think.LANG_SET}&v={$Think.THINKCMF_VERSION}&callback=?",
-		function(data) {
-			var tpl = '<li><em class="title"></em><span class="content"></span></li>';
-			var $thinkcmf_notices = $("#thinkcmf_notices");
-			$thinkcmf_notices.empty();
-			if (data.length > 0) {
-				$.each(data, function(i, n) {
-					var $tpl = $(tpl);
-					$(".title", $tpl).html(n.title);
-					$(".content", $tpl).html(n.content);
-					$thinkcmf_notices.append($tpl);
-				});
-			} else {
-				$thinkcmf_notices.append("<li>^_^,{:L('NO_NOTICE')}~~</li>");
-			}
 
-		});
-	</script>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
 </body>
 </html>

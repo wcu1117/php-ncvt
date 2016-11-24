@@ -4,8 +4,6 @@
 	<div class="wrap js-check-wrap">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="javascript:;">{:L('PORTAL_ADMINPOST_INDEX')}</a></li>
-			<li><a href="{:U('Indexadmin/add',array('term'=>empty($term['term_id'])?'':$term['term_id']))}"
-				   target="_self">{:L('PORTAL_ADMINPOST_ADD')}</a></li>
 		</ul>
 		<form class="well form-search" method="post" action="{:U('AdminPost/index')}">
 			分类： 
@@ -55,7 +53,7 @@
 						<th width="70">{:L('ACTIONS')}</th>
 					</tr>
 				</thead>
-				<foreach name="posts" item="vo">
+				<foreach name="post" item="vo">
 				<tr>
 					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}" title="ID:{$vo.id}"></td>
 					<notempty name="term">
@@ -121,8 +119,9 @@
 						</notempty>
 					</td>
 					<td>
-						<a href="{:U('AdminPost/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a> | 
-						<a href="{:U('AdminPost/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						<a href="{:U('portal/AdminPost/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a> |
+						<a href="{:U('indexadmin/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L
+							('DELETE')}</a>
 					</td>
 				</tr>
 				</foreach>
@@ -144,22 +143,6 @@
 					</tr>
 				</tfoot>
 			</table>
-			<div class="table-actions">
-				<notempty name="term">
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/listorders')}">{:L('SORT')}</button>
-				</notempty>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/check',array('check'=>1))}" data-subcheck="true">审核</button>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/check',array('uncheck'=>1))}" data-subcheck="true">取消审核</button>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/top',array('top'=>1))}" data-subcheck="true">置顶</button>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/top',array('untop'=>1))}" data-subcheck="true">取消置顶</button>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/recommend',array('recommend'=>1))}" data-subcheck="true">推荐</button>
-				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/recommend',array('unrecommend'=>1))}" data-subcheck="true">取消推荐</button>
-				<notempty name="term">
-					<button class="btn btn-primary btn-small js-articles-move" type="button">批量移动</button>
-				</notempty>
-				<button class="btn btn-primary btn-small js-articles-copy" type="button">批量复制</button>
-				<button class="btn btn-danger btn-small js-ajax-submit" type="submit" data-action="{:U('AdminPost/delete')}" data-subcheck="true" data-msg="你确定删除吗？">{:L('DELETE')}</button>
-			</div>
 			<div class="pagination">{$page}</div>
 		</form>
 	</div>
