@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>创建社团|分享大一点的学生们的社团生活</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="__TMPL__public/bootstrap-3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="__TMPL__public/css/style.css">
+<link rel="stylesheet" href="__TMPL__public/css/st.css">
+<!-- <link rel="stylesheet" href="css/school.css"> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="container-fluid">
+<header id="site-header" class="container-fluid">
+    <div class="container bgColor-white">
+        <hgroup><a href="index.html"><h1 id="site-log" class="col-md-4 marginTop-20px">高校社团汇</h1></a></hgroup>
+        <div class="hd-right col-md-6 fr pr0">
+            <ul class="info-nav container-fluid">
+                <li class="u-log">
+                    <a href="javasrcpt:;" data-toggle="modal" data-target="#myModal">登录</a>
+                    <!-- 弹出登录框 -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                            <h4 class="modal-title" id="myModalLabel">登录框</h4>
+                          </div>
+                          <div class="modal-body">
+                            <form role="form">
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">帐号：</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                              </div>
+                              <div class="form-group">
+                                <label for="exampleInputPassword1">密码：</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                              </div>
+                              <button type="submit" class="btn btn-default">点击登录</button>
+                              <span class="marginLeft-10px u-reg">还没有帐号?<a href="javasrcpt:;">点击注册</a></span>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li class="u-reg"><a href="javasrcpt:;">注册分享社团快乐时光</a></li>
+                <li class="col-md-3 textalignC fr ncvt-box">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                    走进南职<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="http://www.ncvt.net/" target="_blank">学校官网</a></li>
+                        <li><a href="http://www.ncvt.net/jxglxt.htm" target="_blank">教务管理系统</a></li>
+                        <li><a href="http://crp.ncvt.net/login.portal" target="_blank">数字化校园</a></li>
+                        <!-- <li class="divider"></li> -->
+                        <li><a href="http://tsg.ncvt.net/" target="_blank">图书馆</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="search-box container-fluid">
+                <li class="clearfix">
+                    <form action="" method="post">
+                        <input type="text" name="search-con" class="search-con" placeholder="社团\活动\论坛">
+                        <input type="submit" name="search-btn" class="search-btn" value="提交">
+                    </form>
+                </li>
+                <li class="fr"></li>
+            </ul>
+        </div>
+        <div class="hd-left col-md-1 fr marginTop-20px">
+            <a href="http://www.weather.com.cn/weather/101300101.shtml" target="_blank">南宁天气</a>
+        </div>
+    </div>
+    <nav class="site-nav container">
+        <h2 class="hidden">导航</h2>
+        <ul>
+            <li class="col-md-2"><img src="images/schoolNews-icon.png" alt="" /><br /><a href="school.html">校园动态</a></li>
+            <li class="col-md-2"><img src="images/st-icon.png" alt="" /><br /><a href="st.html">社团中心</a></li>
+            <li class="col-md-2"><img src="images/forum-icon.png" alt="" /><br /><a href="forum.html">论坛互动</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/stzw.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+            <li class="col-md-2"><img src="images/myst-icon.png" alt="" /><br /><a href="javasrcpt:;">我的社团</a></li>
+        </ul>
+    </nav>
+</header>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>创建社团</li>
+            </ul>
+        </nav>
+        <section class="st-box st-add container-fluid">
+            <h2 class="hd">填写创建信息<a href="st.html" style="font-size: .5em;position: relative;bottom: 0; right: 0; padding-left: 20px; vertical-align: middle;">浏览社团列表>></a></h2>
+            <div class="table-responsive">
+            <form action="" method="post">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>社团名称:</td>
+                            <td><input type="" name="" class="form-control" /></td>
+                        </tr>
+                        <tr>
+                            <td>社团所属:</td>
+                            <td>
+                                <select class="form-control">
+                                    <option>校级</option>
+                                    <option>艺工学院</option>
+                                    <option>信工学院</option>
+                                    <option>建工学院</option>
+                                    <option>国际学院</option>
+                                    <option>财经学院</option>
+                                    <option>商学院</option>
+                                    <option>自由社团</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>社团头像:</td>
+                            <td><input type="file" name="" /></td>
+                        </tr>
+                        <tr>
+                            <td class="v-alignTop">社团简介:</td>
+                            <td><textarea rows="6" class="form-control" placeholder="请输入社团简介"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>申请创建人:</td>
+                            <td><input type="" name="" class="form-control" value="bigYing" disabled /></td>
+                        </tr>
+                        <tr>
+                            <td>社团口号:</td>
+                            <td style="width:560px;"><input type="" name="" class="form-control" /></td>
+                        </tr>
+                        <tr>
+                            <td>社团标签:</td>
+                            <td class="st-tag">
+                                <label class="item active">体育<input type="checkbox" name="st-tag0" checked="true" /></label>
+                                <label class="item">学术<input type="checkbox" name="st-tag1" /></label>
+                                <label class="item">文娱<input type="checkbox" name="st-tag2" /></label>
+                                <label class="item">游戏<input type="checkbox" name="st-tag3" /></label>
+                                <label class="item">公益<input type="checkbox" name="st-tag4" /></label>
+                                <label class="item">其它<input type="checkbox" name="st-tag5" /></label>
+                                <p class="tip hidden" style="position:absolute; color: red;font-size: .8em; margin: 10px 0;">*至少选择 1 类型。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td><label class="btn-group dropup marginTop-20px"><input type="submit" name="submit-btn" value="点击提交申请    " class="btn btn-default"></label></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+            </div>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<footer id="site-footer" class="container-fluid">
+    <div class="container textalignC">
+        <p class="slogan col-md-6">和TA一起分享you“大一点的学生Young时代”的社团生活吧！</p>
+    </div>
+    <div class="container-fluid bgWhite">
+        <div class="container">
+            <ul class="info-nav fl clearfix">
+                <li><a href="javasrcpt:;">关于我们</a></li>
+                <li><a href="javasrcpt:;">待定..</a></li>
+            </ul>
+            <p class="fr copyright">Copyright(C) NCVT P-N-Y 毕业设计作品. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        //多选框 社团标签
+        $("td.st-tag input:checkbox").click(function(){
+
+            var st_tagLength = $(".st-tag input:checkbox:checked");
+            if(st_tagLength.length == 0){ $(".st-tag .tip").removeClass("hidden");}else{$(".st-tag .tip").addClass("hidden");
+            };
+
+            $("td.st-tag input:checkbox:checked").parent().addClass("active");
+            $("td.st-tag input:checkbox:not(:checked)").parent().removeClass("active");
+        }); 
+    })
+</script>
+</body>
+</html>
