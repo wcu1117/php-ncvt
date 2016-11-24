@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+
+<title>创建社团|分享大一点的学生们的社团生活</title>
+<tc_include file="Organ:head"/>
+    <style type="text/css">
+        #pic{
+            width:100px;
+            height:100px;
+            border-radius:50% ;
+            margin:20px auto;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body class="container-fluid">
+<tc_include file="Public:nav"/>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>创建社团</li>
+            </ul>
+        </nav>
+        <section class="st-box st-add container-fluid">
+            <h2 class="hd">填写创建信息<a href="st.html" style="font-size: .5em;position: relative;bottom: 0; right: 0; padding-left: 20px; vertical-align: middle;">浏览社团列表>></a></h2>
+            <div class="table-responsive">
+            <form id="forms" method="post"  enctype="multipart/form-data">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>社团名称:</td>
+                            <td><input type="text" name="organ_name" class="form-control" /></td>
+                        </tr>
+                        <tr>
+                            <td>社团所属:</td>
+                            <td>
+                                <select class="form-control" name="organ_type">
+                                    <option>校级</option>
+                                    <option>艺工学院</option>
+                                    <option>信工学院</option>
+                                    <option>建工学院</option>
+                                    <option>国际学院</option>
+                                    <option>财经学院</option>
+                                    <option>商学院</option>
+                                    <option>自由社团</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>社团头像:</td>
+                            <td>
+                            <img id="pic" src="" >
+                            <input id="upload" accept="image/*" name="organ_logo" type="file" style="display: none"/>
+                            <!--<input id="upload1"  type="hidden">-->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="v-alignTop">社团简介:</td>
+                            <td><textarea rows="6" class="form-control" name="organ_content"
+                                          placeholder="请输入社团简介"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>申请创建人:</td>
+                            <td><input type="text" id="er" name="organ_er" class="form-control"
+                                       value="{$login.user_name}" disabled/></td>
+                        </tr>
+                        <tr>
+                            <td>社团口号:</td>
+                            <td style="width:560px;"><input type="" name="organ_slogan" class="form-control" /></td>
+                        </tr>
+                        <tr>
+                            <td>社团标签:</td>
+                            <td class="st-tag">
+                                <label class="item active">体育
+                                    <input type="checkbox" name="organ_tag[]" checked="true" value="体育"/></label>
+                                <label class="item">学术<input type="checkbox" name="organ_tag[]"  value="学术" /></label>
+                                <label class="item">文娱<input type="checkbox" name="organ_tag[]" value="文娱"/></label>
+                                <label class="item">游戏<input type="checkbox" name="organ_tag[]"  value="游戏"/></label>
+                                <label class="item">公益<input type="checkbox" name="organ_tag[]" value="公益"/></label>
+                                <label class="item">其它<input type="checkbox" name="organ_tag[]" value="其他"/></label>
+                                <p class="tip hidden" style="position:absolute; color: red;font-size: .8em; margin: 10px 0;">*至少选择 1 类型。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td><label class="btn-group dropup marginTop-20px"><input type="button" id="btn"
+                                                                                      value="点击提交申请"
+                                                                                      class="btn btn-default"></label></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+            </div>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<tc_include file="Public:footer"/>
+<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        //多选框 社团标签
+        $("td.st-tag input:checkbox").click(function(){
+
+            var st_tagLength = $(".st-tag input:checkbox:checked");
+            if(st_tagLength.length == 0){ $(".st-tag .tip").removeClass("hidden");}else{$(".st-tag .tip").addClass("hidden");
+            };
+
+            $("td.st-tag input:checkbox:checked").parent().addClass("active");
+            $("td.st-tag input:checkbox:not(:checked)").parent().removeClass("active");
+        }); 
+    })
+</script>
+<!--获取图片显示-->
+<script type="text/javascript">
+    function getObjectURL(file) {
+        var url = null ;
+        if (window.createObjectURL!=undefined) { // basic
+            url = window.createObjectURL(file) ;
+        } else if (window.URL!=undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        } else if (window.webkitURL!=undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+
+    $(function() {
+        $("#pic").click(function () {
+            $("#upload").click();               //隐藏了input:file样式后，点击头像就可以本地上传
+            $("#upload").on("change",function(){
+                var objUrl = getObjectURL(this.files[0]) ;  //获取图片的路径，该路径不是图片在本地的路径
+                if (objUrl) {
+                    $("#pic").attr("src", objUrl) ;      //将图片路径存入src中，显示出图片
+                    //$("#upload1").attr("value",objUrl);
+                }
+            });
+        });
+    });
+
+</script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+<!--ajax-->
+<script type="text/javascript">
+    $(function(){
+        $('#btn').click(function () {
+            $("#er").attr("disabled",false);
+            var url = "{:U('index/add')}";//发送URL
+           // var data = $('#forms').serialize();    //序列化表单数据
+            var form = new FormData(document.getElementById("forms"));
+            $.ajax({
+                url:url,
+                type:"post",
+                data:form,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(data);
+                    //alert(data.info);
+                    if(data.status==1){
+                        noty({
+                            text:data.info,
+                            type:'success',
+                            layout:'center',
+                            callback:{
+                                onClose:function(){
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                        return;
+                                    }
+
+                                    if(refresh || refresh==undefined){
+                                        reloadPage(window);
+                                    }
+                                }
+                            }
+                        });
+
+                    }else {
+                        noty({
+                            text: data.info,
+                            type: 'error',
+                            layout: 'center',
+                            callback: {
+                                onClose: function () {
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                },
+                error:function(e){
+                    alert("错误！！");
+                }
+            });
+
+        })
+
+    })
+
+
+</script>
+
+
+
+</body>
+</html>
