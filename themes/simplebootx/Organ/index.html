@@ -19,7 +19,7 @@
             </ul>
         </nav>
         <section class="st-box container-fluid mt0">
-            <h2 class="hd">共找到 <strong class="st-number">95</strong> 个社团</h2>
+            <h2 class="hd">共找到 <strong class="st-number">{$count}</strong> 个社团</h2>
             <nav class="clearfix">
                 <ul class="st-classTag clearfix">
                     <li><a href="javasrcpt:;" class="active">全部</a></li>
@@ -46,53 +46,42 @@
             </nav>
             <section class="bd">
                 <ul>
-                    <li>
-                        <article class="st-item">
-                            <aside class="fr col-md-2">
-                                <address class="display-ib"><a href="javasrcpt:;">黑钦王</a></address>
-                                <p class="createTime marginTop-10px">创建于<time datetime="2003-10-1">2003-10-1</time></p>
-                                <button class="btn btn-primary" type="button">
-                                  <span class="badge">0</span> 申请加入+ 
-                                </button>
-                            </aside>
-                            <header class="st-logo fl col-md-2"><a href="javascript:;" style="background-image:
-                            url('themes/simplebootx/public/images/main_slider1.jpg');"></a></header>
-                            <div class="st-info overflowH">
-                                <h4><a href="javascript:;" class="st-name">南朝街舞社</a></h4>
-                                <p>南宁职业技术学院校级社团“南朝街舞社”介是大撒旦阿什顿阿什顿阿萨那句话交换机回家离开基金几乎涵盖莫可究诘就机回家离开基金几乎涵盖莫可机回家离开基金几乎涵盖莫可新活动发新活动发。</p>
-                                <p class="new-event"><a href="javascript:;">[2016-11-4] 校南朝街舞社在美食餐厅举办XX街舞交流会</a></p>
-                                <footer class="st-tag">
-                                    <ul>
-                                        <li><a href="javasrcpt:;">运动</a></li>
-                                        <li><a href="javasrcpt:;">娱乐</a></li>
-                                    </ul>
-                                </footer>
-                            </div>
-                        </article>
-                    </li>
-                    <li>
-                        <article class="st-item">
-                            <aside class="fr col-md-2">
-                                <address class="display-ib"><a href="javasrcpt:;">黑钦王</a></address>
-                                <p class="createTime marginTop-10px">创建于<time datetime="2003-10-1">2003-10-1</time></p>
-                                <button class="btn btn-primary" type="button">
-                                  <span class="badge">0</span> 申请加入+ 
-                                </button>
-                            </aside>
-                            <header class="st-logo fl col-md-2"><a href="javascript:;" style="background-image: url('themes/simplebootx/public/images/main_slider1.jpg');"></a></header>
-                            <div class="st-info overflowH">
-                                <h4><a href="javascript:;" class="st-name">南朝街舞社</a></h4>
-                                <p>南宁职业技术学院校级社团“南朝街舞社”介是大撒旦阿什顿阿什顿阿萨那句话交换机回家离开基金几乎涵盖莫可究诘就机回家离开基金几乎涵盖莫可机回家离开基金几乎涵盖莫可新活动发新活动发。</p>
-                                <p class="new-event"><a href="javascript:;">[2016-11-4] 校南朝街舞社在美食餐厅举办XX街舞交流会</a></p>
-                                <footer class="st-tag">
-                                    <ul>
-                                        <li><a href="javasrcpt:;">运动</a></li>
-                                        <li><a href="javasrcpt:;">娱乐</a></li>
-                                    </ul>
-                                </footer>
-                            </div>
-                        </article>
-                    </li>
+                    <foreach name="organ" item="or">
+                        <li>
+                            <article class="st-item">
+                                <aside class="fr col-md-2">
+                                    <address class="display-ib"><a href="javasrcpt:;">{$or.organ_er}</a></address>
+                                    <php>
+                                        $time = strtotime($or['organ_create']);
+                                        $time = date('Y-m-d',$time);
+                                    </php>
+                                    <p class="createTime marginTop-10px">创建于
+                                        <time datetime=""><?php echo $time?></time></p>
+                                    <button class="btn btn-primary" type="button">
+                                        <span class="badge">0</span> 申请加入+
+                                    </button>
+                                </aside>
+                                <header class="st-logo fl col-md-2"><a href="javascript:;" style="background-image:
+                            url('{$or.organ_logo}');"></a></header>
+                                <div class="st-info overflowH">
+                                    <h4><a href="javascript:;" class="st-name">{$or.organ_name}</a></h4>
+                                    <p>{$or.organ_content}</p>
+                                    <p class="new-event"><a href="javascript:;">[2016-11-4] 校南朝街舞社在美食餐厅举办XX街舞交流会</a></p>
+                                    <footer class="st-tag">
+                                        <ul>
+                                            <php>$arr = explode('-',$or['organ_tag']);
+                                            </php>
+                                            <foreach name="arr" item="a">
+                                                <li><a href="javasrcpt:;">{$a}</a></li>
+                                            </foreach>
+
+                                        </ul>
+                                    </footer>
+                                </div>
+                            </article>
+                        </li>
+                    </foreach>
+
                 </ul>
             </section>
             <footer class="st-footer">

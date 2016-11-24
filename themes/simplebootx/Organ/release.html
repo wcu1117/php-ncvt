@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+
 <title>发布内容管理|分享大一点的学生们的社团生活</title>
-    <tc_include file="Organ:head"/>
-<style type="text/css">
+<tc_include file="Organ:head"/>
+    <link rel="stylesheet" href="__TMPL__public/css/jquery-ui.min.css">
+    <style type="text/css">
     #edui1_imagescale,
     #edui1_imagescale_cover,
     .edui-editor-imagescale { display: none !important; }
-    
+    .edui-default .edui-editor { border-radius: 0 !important; z-index: 9 !important; }
 </style>
 </head>
 <body class="container-fluid">
@@ -28,20 +30,23 @@
         <section class="st-box st-index container-fluid ">
             <article class="st-main col-md-9 pl0">
                 <div class="st-hdInfo">
-                   <header class="st-logo fl col-md-2">
-                       <a href="javascript:;" style="background-image: url('images/main_slider1.jpg');"></a>
-                       <a href="javascript:0;" class="st-btn">申请加入+</a>
-                   </header>
-                   <div class="st-info border0 overflowH">
-                       <h4 class="mt0"><a href="javascript:;" class="st-name">南朝街舞社</a></h4>
-                       <p>南宁职业技术学院校级社团“南朝街舞社”介是大撒旦阿什顿阿什顿阿萨那句话交换机回家离开基金几乎涵盖莫可究诘就机回家离开基金几乎涵盖莫可机回家离开基金几乎涵盖莫可新活动发新活动发。</p>
-                       <p class="mb0">社团宗旨：战胜一切困难，夺取一切先机！</p>
-                       <p>负责人：<a href="javascript:0;">bigYang</a></p>
-                       <ul class="st-tag">
-                           <li><a href="javasrcpt:;">运动</a></li>
-                           <li><a href="javasrcpt:;">娱乐</a></li>
-                       </ul>
-                   </div>
+                    <header class="st-logo fl col-md-2">
+                        <a href="javascript:;" style="background-image: url('{$or.organ_logo}');"></a>
+                        <a href="javascript:0;" class="st-btn">申请加入+</a>
+                    </header>
+                    <div class="st-info border0 overflowH">
+                        <h4 class="mt0"><a href="javascript:;" class="st-name">{$or.organ_name}</a></h4>
+                        <p>{$or.organ_content}</p>
+                        <p class="mb0">{$or.organ_slogan}</p>
+                        <p>负责人：<a href="javascript:0;">{$or.organ_er}</a></p>
+                        <ul class="st-tag">
+                            <php>$arr = explode('-',$or['organ_tag']);
+                            </php>
+                            <foreach name="arr" item="a">
+                                <li><a href="javasrcpt:;">{$a}</a></li>
+                            </foreach>
+                        </ul>
+                    </div>
                 </div>
                 <section class="st-moreInfo marginTop-10px">
                     <nav class="nav pr">
@@ -49,7 +54,7 @@
                             <li class="item"><a href="st-index.html">社团动态</a></li>
                             <li class="item"><a href="st-event.html">社团活动</a></li>
                             <li class="item"><a href="st-member.html">成员列表</a></li>
-                            <li class="item pr"><a href="st-member.html" class="active">+发布内容</a></li>
+                            <li class="item"><a href="st-post.html" class="active">+发布内容</a></li>
                         </ul>
                     </nav>
                     <section class="st-memberlist st-post">
@@ -57,32 +62,35 @@
                             <h4 class="hidden">社团活动</h4>
                             <nav class="nav">
                                 <ul>
-                                    <li class="item "><a href="javascript:0;" class="active">+发布动态</a></li>
-                                    <li class="item"><a href="javascript:0;">+发布通知</a></li>
-                                    <li class="item"><a href="st-editorEvent.html">+发布活动</a></li>
+                                    <li class="item post-newTag active"><a href="javascript:0;">+发布动态</a></li>
+                                    <li class="item post-noticeTag"><a href="javascript:0;" >+发布通知</a></li>
+                                    <li class="item"><a href="{:U('index/active_post',array('id'=>$or['organ_id']))}">+发布活动</a></li>
                                 </ul>
                             </nav>
                         </header>
                         <div class="con member-box pr padding15px">
-                            <!-- <textarea name="post-news" id="post-news" rows="6"></textarea> -->
-                            <textarea rows="30  " id="container" name="content" class="edit-con"></textarea>
+                        <form action="{:U('index/new_post',array('id'=>$or['organ_id']))}" method="post" name="post-new" id="post-newForm">
+                            <script type="text/plain" name="new_content" id="post-news" ></script>
                             <div class="conBottom">
-                                <button id="submit-btn" class="borderL0">发表</button>
-                                <button href="javascript:void(0);" id="upImg-btn" onclick="upImage();">上传图片</button>
-                                <footer class="fr">
-                                    <p class="textalignR pr15px mb0" style="height: 31px;line-height: 31px;">还可以输入: <span> 35 字</span></p>
-                                </footer>
+                                <button type="submit" name="postNew-btn" class="submit-btn">发表</button>
+                                <button type="button" href="javascript:void(0);" id="upImg-btn" onclick="upImage();">上传图片</button>
                             </div>
                             <!-- 隐藏的内容 -->
                             <script type="text/plain" id="upload_ue" class="hidden"></script>
                             <!-- 图片预览 -->
-                            <div id="preview" class="pr width100"></div>                   
+                            <div id="preview"></div>
+                        </form>
                         </div>
-                        <div class="con member-box pr hidden padding15px">
-                            <textarea name="post-news" id="" cols="30" rows="6"></textarea>
-                            <footer>
-                                <p class="textalignR pr15px">部门人数: <span> 35 人</span></p>
-                            </footer>
+                        <div class="con member-box prpadding15px hidden">
+                        <form action="{:U('index/info_post',array('id'=>$or['organ_id']))}" method="post" name="post-notice" id="post-noticeForm">
+                            <label class="notice-title"><span style="vertical-align: text-top;" class="display-ib">
+                                标题：</span><input type="text" name="info_title" id="notice-title" placeholder="请输入标题"
+                            /></label>
+                            <textarea name="info_content" id="post-notice" rows="5" class="borderB0" ></textarea>
+                            <div class="conBottom">
+                                <button type="submit" name="postNotice-btn" class="submit-btn" class="borderL0">发表</button>
+                            </div>
+                        </form>
                         </div>
                     </section>
                 </section>
@@ -90,7 +98,7 @@
             <aside class="st-side col-md-3 padding0">
                 <section class="st-notice rightBox marginBottom-10px">
                     <header class="hd clearfix">
-                       <h5>社团公告</h5> 
+                        <h5>社团公告</h5>
                     </header>
                     <div class="notice-con">
                         <ul>
@@ -100,6 +108,16 @@
                             <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
                             <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
                         </ul>
+                    </div>
+                    <!-- 公告内容弹窗 -->
+                    <div id="notice" class="popupBox hidden">
+                        <h3 class="mt0">标题</h3>
+                        <address class="display-ib margin0"><a href="javascript:;">作者</a></address> 发布于
+                        <time class="post-tiem" datetime="2014-09-18 23:54">2014-09-18 23:54</time>
+                        <hr />
+                        <div class="con">
+                            内容
+                        </div>
                     </div>
                 </section>
                 <section class="st-count rightBox marginBottom-10px">
@@ -138,7 +156,7 @@
                                    <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
+                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>
@@ -149,7 +167,7 @@
                                    <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
+                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>
@@ -160,7 +178,7 @@
                                    <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
+                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>
@@ -171,7 +189,7 @@
                                    <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
+                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>
@@ -185,14 +203,70 @@
 </div>
 <tc_include file="Public:footer"/>
 <script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__public/js/jquery-ui.min.js"></script>
 <script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
 <!-- 配置文件 -->
 <script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
 <script>
+    $(function(){
+        //选项卡
+        var u_navTag_btn = $('.st-memberlist .nav>ul').children('li:lt(2)');
+        var sectionBox = $('.st-memberlist').children('div');
+        for (var i = 0; i < u_navTag_btn.length; i++) {
+            u_navTag_btn[i].index = i;
+            u_navTag_btn[i].onclick = function(){
+                for (var i = 0; i < u_navTag_btn.length; i++) {
+                    $(u_navTag_btn[i]).removeClass("active");
+                    $(sectionBox[i]).addClass("hidden");
+                }
+                $(this).addClass("active");
+                $(sectionBox[this.index]).removeClass("hidden");
+            }
+        }
+
+        //加入社团弹出框
+        $( ".st-btn").click(function(event) {
+            var $st_id = $(this).attr("data-stid");
+            var $post_stId = $("#dialog input[name='st-id']").attr("value",$st_id);
+            $( "#dialog" ).dialog({
+                width: 500,
+                modal: true,  //开启遮蔽层
+                dialogClass: "hd",
+                title: "填写申请信息",
+                buttons: [  //设置按钮
+                    {
+                        text: "确定提交",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    },
+                    {
+                        text: "取消",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+            // event.preventDefault();
+        });
+        //通知内容
+        $(' .notice-con li a').click(function(){
+            $("#notice").removeClass("hidden");
+            $( "#notice" ).dialog({
+                width: 650,
+                modal: true,
+                dialogClass: "hd",
+                title: "公告内容",
+            });
+        })
+    })
+</script>
+<script>
     //实例化编辑器 
-    var ue = UE.getEditor('container',{
+    var ue = UE.getEditor('post-news',{
         toolbars: [
             [
             // 'source',   //源代码
@@ -236,8 +310,6 @@
         //设置最小高度
         // ue.setHeight(330);
     });
-</script>
-<script type="text/javascript">
     //重新实例化一个编辑器，防止在上面的editor编辑器中显示上传的图片或者文件
     var _editor = UE.getEditor('upload_ue');
     _editor.ready(function () {
@@ -247,16 +319,17 @@
         _editor.hide();
         //侦听图片上传
         _editor.addListener('beforeInsertImage', function (t, arg) {
-            //将地址赋值给相应的input
-            $("#picture").attr("value", arg[0].src);
+            //
 
-            //图片预览
+            //获取地址 图片预览
             var test = new Array();
             for (var i = arg.length - 1; i >= 0; i--) {
-                test[i]= "<div class='item'><a style='background-image:url("+arg[i].src+")'></a></div>";
+                test[i]= "<div class='item'><a style='background-image:url("+arg[i].src+")'></a><input type='hidden' name='img"+i+"' value='"+arg[i].src+"' /></div>";
             }
-            $("#preview").html(test);
-            
+            console.log(test.length);
+            if(test.length > 0){
+                $("#preview").html(test).show(0);
+            }
         })
     });
     //弹出图片上传的对话框

@@ -3,6 +3,14 @@
 <head>
 <title>活动发布|分享大一点的学生们的社团生活</title>
     <tc_include file="Organ:head"/>
+    <style type="text/css">
+        #pic{
+            width:250px;
+            height:200px;
+            margin:20px auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -19,82 +27,66 @@
                 <li>发布活动</li>
             </ul> 
         </nav>
+        <form id="forms" method="post">
         <section class="st-box st-index st-push container-fluid  ">
             <aside class="st-side push-left col-md-3 padding0">
                 <header class="hd">
                     <h2 class="margin0">活动发布</h2>
                 </header>
                 <div>
-                <form action="" method="post">
+
                     <div class="add-banner">
-                        <a href="javasrcpt:0;" class="edit-img" data-toggle="modal" data-target="#up_edit-img" style="background-image: url('images/banner1.jpg');">点击就送</a>
-                        <p class="tip">建议尺寸1125*450，请勿上传超过5M的图片</p>
+                        <p>单击下方上传相关活动图片</p>
+                        <img id="pic" src="" >
+                        <input id="upload" accept="image/*" name="act_image" type="file" style="display: none"/>
+
+                        <p class="tip">单击上方建议尺寸1125*450，请勿上传超过5M的图片</p>
                         <!-- 弹出登录框 在此设置 input= files 传图片 -->
-                        <div class="modal fade" id="up_edit-img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                <h4 class="modal-title" id="myModalLabel">上传活动Banner</h4>
-                              </div>
-                              <div class="modal-body">
-                                  <div class="up_left">
-                                    <label class="file-btn"> <input type="file" name="up_img" /> </label>
-                                    <p class="tip">*为了更好地显示活动，建议活动banner尺寸为1125*450，大小为<2M.</p>
-                                  </div>
-                                  <div class="up_right">
-                                      <div class="banner" style="background-image:url(images/active_banner.png);"></div>
-                                  </div>
-                                  <a  id="banner-subBtn" class="btn btn-default " role="button">开始上传</a>
-                              </div>
-                            </div>
-                          </div>
-                        </div> 
-                    </div>
+                        </div>
                     <div class="event-principal pt0 pb0 display-ib">
                         <span>主要负责人：</span>
                         <div class="display-ib">
-                            <select class="form-control" name="event-principal">
-                                <option>艾特黑钦王</option>
+                            <select class="form-control" name="act_er">
+                                <option>{$login.user_nicename}</option>
                             </select>
                         </div>
                     </div>
                     <div class="push-type pr">
                         <span>活动类型：</span>
                         <div>
-                            <label class="item active">体育<input type="checkbox" name="push-type0" checked="true" /></label>
-                            <label class="item">学术<input type="checkbox" name="push-type1" /></label>
-                            <label class="item">文娱<input type="checkbox" name="push-type2" /></label>
-                            <label class="item">游戏<input type="checkbox" name="push-type3" /></label>
-                            <label class="item">公益<input type="checkbox" name="push-type4" /></label>
-                            <label class="item">其它<input type="checkbox" name="push-type5" /></label>
+                            <label class="item active">体育<input type="checkbox" name="act_tag[]" checked="true" value="体育"/></label>
+                            <label class="item">学术<input type="checkbox" name="act_tag[]" value="学术" /></label>
+                            <label class="item">文娱<input type="checkbox" name="act_tag[]" value="文娱"/></label>
+                            <label class="item">游戏<input type="checkbox" name="act_tag[]" value="游戏"/></label>
+                            <label class="item">公益<input type="checkbox" name="act_tag[]" value="公益"/></label>
+                            <label class="item">其它<input type="checkbox" name="act_tag[]" value="其他"/></label>
                         </div>
                         <p class="tip hidden" style="position: absolute;bottom:0;color: red;font-size: .8em; margin: 10px 0;">*至少选择 1 类型。</p>
                     </div>
                     <div class="apply-condition">
                         <span>设置报名信息：</span>
                         <div>
-                            <label class="item active">此活动需报名审核<input type="checkbox" name="condition_1" checked="true"></label>
+                            <label class="item active">此活动需报名审核<input type="checkbox" checked="true"></label>
                         </div>
                     </div>
                     <div class="width100 textalignL marginTB-15px">
-                        <input type="submit" name="submit-btn" value="发布" class="submit-btn" />
+                        <input type="button" id="btn" name="submit-btn" value="发布" class="submit-btn" />
                         <input type="submit" name="view-btn" value="预览" class="view-btn" />
                     </div>
                 </div>
             </aside>
             <article class="st-main push-right col-md-9">
                 <header class="marginBottom-20px">
-                    <h3><input type="text" name="push-title" class="push-title" placeholder="请输入标题" /></h3>
+                    <h3><input type="text" name="act_name" class="push-title" placeholder="请输入标题" /></h3>
                 </header>
                 <div class="push-info overflowH">
                     <p class="input-start pr marginBottom-20px">
                         <span class="fl">时间：</span>
-                        <input type="text" id="push-tiem" name="push-tiem" placeholder readonly="true" class="" />
+                        <input type="text" id="push-tiem" name="act_starttime" placeholder readonly="true" class="" />
                     </p>
                     <p class="input-location pr marginBottom-20px">
                         <span class="fl">地点：</span>
-                        <input type="text" name="input-location" placeholder  class="" style="font-style: italic;" />
+                        <input type="text" name="act_place" placeholder  class="" style="font-style: italic;" />
                     </p>
                     <p class="input-pusher pr marginBottom-20px">
                         <span>主办方：</span>
@@ -102,15 +94,16 @@
                     </p>
                     <p class="input-end pr marginBottom-20px">
                         <span>报名截止：</span>
-                        <input type="text" name="input-end" id="input-end" placeholder readonly="true" class="" />
+                        <input type="text" name="act_deadlline" id="input-end" placeholder readonly="true" class="" />
                     </p>
                 </div>
                 <div class="push-con marginTop-20px pr15px">
-                    <textarea rows="30  " id="container" name="content" class="edit-con"></textarea>
+                    <script id="container" name="act_content" type="text/plain"></script>
+                    <input type="hidden" id="hidden" name="act111">
                 </div>
             </article>
-            </form>
         </section>
+        </form>
     </div>
     <div class="container-fluid fooetrBg"></div>
 </div>
@@ -119,7 +112,98 @@
 <script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
 <script src="__TMPL__public/bootstrap-3.3.0/js/moment.min.js"></script>
 <script src="__TMPL__public/bootstrap-3.3.0/js/daterangepicker.js"></script>
-<!-- 配置文件 -->
+<!--获取图片显示-->
+<script type="text/javascript">
+    function getObjectURL(file) {
+        var url = null ;
+        if (window.createObjectURL!=undefined) { // basic
+            url = window.createObjectURL(file) ;
+        } else if (window.URL!=undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        } else if (window.webkitURL!=undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+
+    $(function() {
+        $("#pic").click(function () {
+            $("#upload").click();               //隐藏了input:file样式后，点击头像就可以本地上传
+            $("#upload").on("change",function(){
+                var objUrl = getObjectURL(this.files[0]) ;  //获取图片的路径，该路径不是图片在本地的路径
+                if (objUrl) {
+                    $("#pic").attr("src", objUrl) ;      //将图片路径存入src中，显示出图片
+                    //$("#upload1").attr("value",objUrl);
+                }
+            });
+        });
+    });
+
+</script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+<!--ajax-->
+<script type="text/javascript">
+    $(function(){
+        $('#btn').click(function () {
+            $("#er").attr("disabled",false);
+            var url = "{:U('index/active_add',array('id'=>$id))}";//发送URL
+            // var data = $('#forms').serialize();    //序列化表单数据
+            var form = new FormData(document.getElementById("forms"));
+            $.ajax({
+                url:url,
+                type:"post",
+                data:form,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(data);
+                    //alert(data.info);
+                    if(data.status==1){
+                        noty({
+                            text:data.info,
+                            type:'success',
+                            layout:'center',
+                            callback:{
+                                onClose:function(){
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                        return;
+                                    }
+
+                                    if(refresh || refresh==undefined){
+                                        reloadPage(window);
+                                    }
+                                }
+                            }
+                        });
+
+                    }else {
+                        noty({
+                            text: data.info,
+                            type: 'error',
+                            layout: 'center',
+                            callback: {
+                                onClose: function () {
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                },
+                error:function(e){
+                    alert("错误！！");
+                }
+            });
+
+        })
+
+    })
+
+
+</script>
+    <!-- 配置文件 -->
 <script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.all.min.js"></script>
@@ -241,7 +325,7 @@
             }
         });
         
-        //实例化编辑器 
+        //实例化编辑器
         var ue = UE.getEditor('container',{
             toolbars: [
                 [
@@ -274,7 +358,7 @@
                 ]
             ],
             autoFloatEnabled : true,
-            wordCount: false,
+            wordCount: true,
             enableContextMenu: true,
             autoHeightEnabled: false,
             initialFrameHeight: 330,

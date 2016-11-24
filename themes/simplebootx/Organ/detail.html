@@ -3,6 +3,7 @@
 <head>
 <title>社团主页|分享大一点的学生们的社团生活</title>
 <tc_include file="Organ:head"/>
+    <link rel="stylesheet" href="__TMPL__public/css/jquery-ui.min.css">
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -16,24 +17,27 @@
                 <li>></li>
                 <li>社团列表</li>
                 <li>></li>
-                <li>南朝街舞社</li>
+                <li>{$or.organ_name}</li>
             </ul> 
         </nav>
         <section class="st-box st-index container-fluid ">
             <article class="st-main col-md-9 pl0">
                 <div class="st-hdInfo">
                    <header class="st-logo fl col-md-2">
-                       <a href="javascript:;" style="background-image: url('images/main_slider1.jpg');"></a>
+                       <a href="javascript:;" style="background-image: url('{$or.organ_logo}');"></a>
                        <a href="javascript:0;" class="st-btn">申请加入+</a>
                    </header>
                    <div class="st-info border0 overflowH">
-                       <h4 class="mt0"><a href="javascript:;" class="st-name">南朝街舞社</a></h4>
-                       <p>南宁职业技术学院校级社团“南朝街舞社”介是大撒旦阿什顿阿什顿阿萨那句话交换机回家离开基金几乎涵盖莫可究诘就机回家离开基金几乎涵盖莫可机回家离开基金几乎涵盖莫可新活动发新活动发。</p>
-                       <p class="mb0">社团宗旨：战胜一切困难，夺取一切先机！</p>
-                       <p>负责人：<a href="javascript:0;">bigYang</a></p>
+                       <h4 class="mt0"><a href="javascript:;" class="st-name">{$or.organ_name}</a></h4>
+                       <p>{$or.organ_content}</p>
+                       <p class="mb0">{$or.organ_slogan}</p>
+                       <p>负责人：<a href="javascript:0;">{$or.organ_er}</a></p>
                        <ul class="st-tag">
-                           <li><a href="javasrcpt:;">运动</a></li>
-                           <li><a href="javasrcpt:;">娱乐</a></li>
+                           <php>$arr = explode('-',$or['organ_tag']);
+                           </php>
+                           <foreach name="arr" item="a">
+                               <li><a href="javasrcpt:;">{$a}</a></li>
+                           </foreach>
                        </ul>
                    </div>
                 </div>
@@ -43,7 +47,9 @@
                             <li class="item"><a href="javascript:void(0);" class="active">社团动态</a></li>
                             <li class="item"><a href="javascript:void(0);">社团活动</a></li>
                             <li class="item"><a href="javascript:void(0);">成员列表</a></li>
-                            <li class="item fr"><a href="st-member.html">+ 发布内容</a></li>
+                            <li
+                                    class="item fr"><a href="{:U('index/release',array('id'=>$or['organ_id']))}">+
+                                发布内容</a></li>
                         </ul>
                         <div class="bottom-bgColor clearfix">
                             
@@ -124,6 +130,50 @@
 
                     <section class="st-eventlist hidden">
                         <h4 class="hidden">社团活动</h4>
+                        <div class="con">
+                            <article class="item">
+                                <dl class="clearfix pr">
+                                    <dt class="hd clearfix fl"><a href="javascript:0;"  style="background-image: url('images/main_slider1.jpg');"></a></dt>
+                                    <dd class="bd clearfix st-info">
+                                        <h4 class="event-title"><a href="javascript:0;">活动标题</a></h4>
+                                        <div>
+                                            <p class="mb0"><span>时间：</span>2015年06月10日 08:00--2018年06月01日 08:00</p>
+                                            <p class="mb0"><span>地点：</span>酒仙桥中路18号</p>
+                                            <p class="mb0"><span>主办：</span>南宁职业技术学院</p>
+                                            <p><span>负责人：</span><a href="javascript:0;">bigYANG</a></p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </article>
+                            <article class="item">
+                                <dl class="clearfix pr">
+                                    <dt class="hd clearfix fl"><a href="javascript:0;"  style="background-image: url('images/main_slider1.jpg');"></a></dt>
+                                    <dd class="bd clearfix st-info">
+                                        <h4 class="event-title"><a href="javascript:0;">活动标题</a></h4>
+                                        <div>
+                                            <p class="mb0"><span>时间：</span>2015年06月10日 08:00--2018年06月01日 08:00</p>
+                                            <p class="mb0"><span>地点：</span>酒仙桥中路18号</p>
+                                            <p class="mb0"><span>主办：</span>南宁职业技术学院</p>
+                                            <p><span>负责人：</span><a href="javascript:0;">bigYANG</a></p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </article>
+                            <article class="item">
+                                <dl class="clearfix pr">
+                                    <dt class="hd clearfix fl"><a href="javascript:0;"  style="background-image: url('images/main_slider1.jpg');"></a></dt>
+                                    <dd class="bd clearfix st-info">
+                                        <h4 class="event-title"><a href="javascript:0;">活动标题</a></h4>
+                                        <div>
+                                            <p class="mb0"><span>时间：</span>2015年06月10日 08:00--2018年06月01日 08:00</p>
+                                            <p class="mb0"><span>地点：</span>酒仙桥中路18号</p>
+                                            <p class="mb0"><span>主办：</span>南宁职业技术学院</p>
+                                            <p><span>负责人：</span><a href="javascript:0;">bigYANG</a></p>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </article>
+                        </div>
                     </section>
                     <section class="st-memberlist hidden">
                         <header class="bottom-bgColor clearfix">
@@ -197,7 +247,7 @@
             <aside class="st-side col-md-3 padding0">
                 <section class="st-notice rightBox marginBottom-10px">
                     <header class="hd clearfix">
-                       <h5>社团公告</h5> 
+                        <h5>社团公告</h5>
                     </header>
                     <div class="notice-con">
                         <ul>
@@ -207,6 +257,16 @@
                             <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
                             <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
                         </ul>
+                    </div>
+                    <!-- 公告内容弹窗 -->
+                    <div id="notice" class="popupBox hidden">
+                        <h3 class="mt0">标题</h3>
+                        <address class="display-ib margin0"><a href="javascript:;">作者</a></address> 发布于
+                        <time class="post-tiem" datetime="2014-09-18 23:54">2014-09-18 23:54</time>
+                        <hr />
+                        <div class="con">
+                            内容
+                        </div>
                     </div>
                 </section>
                 <section class="st-count rightBox marginBottom-10px">
@@ -291,7 +351,24 @@
     <div class="container-fluid fooetrBg"></div>
 </div>
 <tc_include file="Public:footer"/>
+<!-- 申请加入社团按钮 -->
+<div id="dialog">
+    <form action="" method="post">
+        <input type="hidden" name="st-id">
+        <div class="marginBottom-10px">
+            <span>申请部门：</span>
+            <select>
+                <option>宣传部门</option>Ò
+            </select>
+        </div>
+        <div>
+            <p>自我介绍（或申请理由）：</p>
+            <textarea rows="6" style="width: 100%; max-width: 100%; padding: 5px 8px;"></textarea>
+        </div>
+    </form>
+</div>
 <script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__public/js/jquery-ui.min.js"></script>
 <script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
 <script>
     $(function(){
@@ -305,7 +382,44 @@
             }
         });
 
-    });
+        //加入社团弹出框
+        $( ".st-btn").click(function(event) {
+            var $st_id = $(this).attr("data-stid");
+            var $post_stId = $("#dialog input[name='st-id']").attr("value",$st_id);
+            $( "#dialog" ).dialog({
+                width: 500,
+                modal: true,  //开启遮蔽层
+                dialogClass: "hd",
+                title: "填写申请信息",
+                buttons: [  //设置按钮
+                    {
+                        text: "确定提交",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    },
+                    {
+                        text: "取消",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+            // event.preventDefault();
+        });
+
+        //通知内容
+        $(' .notice-con li a').click(function(){
+            $("#notice").removeClass("hidden");
+            $( "#notice" ).dialog({
+                width: 650,
+                modal: true,
+                dialogClass: "hd",
+                title: "公告内容",
+            });
+        })
+    })
 </script>
 <script>
     //用户中心选项卡
@@ -319,8 +433,6 @@
                 u_navTag_btn[i].className = "";//清空所有的类属性
                 $(sectionBox[i]).addClass("hidden");//全部设置为隐藏
             }
-            console.log(i);
-            console.log(this.index);
             this.className = "active";//当前为活动
             $(sectionBox[this.index]).removeClass("hidden");//把隐藏移除
         }

@@ -94,7 +94,7 @@
     margin-bottom: -1px;
 }
 .st-order {
-    border-bottom: 1px solid rgba(205, 205, 205, 0.28);
+    border-bottom: 1px solid rgba(205, 205, 205, 0.28); 
     padding-bottom: 10px;
 }
 .st-order, .st-eventOrder { margin: 10px 10px; }
@@ -111,6 +111,7 @@
 }
 
 /*社团主页*/
+.st-hdInfo .st-logo { width: 22%; }
 .st-index .st-logo>a {
     -webkit-border-radius: 5%;
     -moz-border-radius: 5%;
@@ -469,7 +470,33 @@
     font-size: .8em;
 }
 
+/*社团活动列表页*/
+.st-eventlist .item {
+    margin: 25px 10px;
+    border: 3px solid #cdcdcd;
 
+    border-radius: 5px;
+}
+.st-eventlist .item .hd {
+    position: absolute;
+    width: 36%;
+    min-height: 100%;
+    margin-right: 3%;
+    padding-top: 24.333%;
+}
+.st-eventlist .item .hd>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute; top: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.st-eventlist .item .bd { 
+    margin-left: 36%;
+    padding: 10px 20px; 
+}
 /*活动详情*/
 .st-eventPage .st-main>div {
     border: 1px solid #cdcdcd;
@@ -485,7 +512,8 @@
     padding-top: 56%;
     border-radius: 0;
 }
-.event-hd .event-title { font-size: 1.8em; height: 2em; }
+.event-hd .event-title,
+.st-eventlist .bd .event-title { font-size: 1.8em; height: 2em; overflow: hidden; }
 .event-hd .st-btn {
     display: inline-block;
     padding: .2em 1em;
@@ -503,7 +531,9 @@
 .event-count .count-list li{
     display: table-cell;
 }
-.st-main .hd { 
+.st-main .event-count .hd,
+.st-main .event-con .hd,
+.st-main .event-con + footer .hd { 
     display: inline-block;
     font-weight: 700;
     width: 100%;
@@ -710,7 +740,7 @@ input[name="push-title"]:-ms-input-placeholder {
 } 
 /*申请加入*/
 .ui-dialog .ui-dialog-buttonpane button { padding: 3px 5px; }
-.ui-dialog .ui-dialog-content { padding: 15px;}
+.ui-dialog .ui-dialog-content { padding: 15px; max-height: 380px !important;}
 
 /*编辑器样式*/
 .edui-for-preview { float: right; }
@@ -738,10 +768,9 @@ input[name="push-title"]:-ms-input-placeholder {
 .st-add .table td > textarea { width: 480px; }
 #more-count .table { overflow-y: auto; }
 #more-count .table tr>th{
-    background-color: rgba(205, 205, 205, 0.27);
+    background-color: rgba(205, 205, 20 5, 0.27);
     border-bottom-color: rgba(221, 221, 221, 0.27);
 }
 #more-count .table tbody { height: 415px; }
 #more-count .table tbody>tr { border-top: 1px dashed #cdcdcd; }
 #more-count .table tbody>tr>td { padding: 10px; }
-
