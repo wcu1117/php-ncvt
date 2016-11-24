@@ -44,30 +44,41 @@ class IndexController extends HomebaseController  {
         //获取提交的数据
         if(IS_POST){
             $insert = I("post.");//获取所有提交数据
-
             //接收图片
             if(isset($_FILES)){
-                var_dump($_FILES);
-                echo $_FILES['organ_logo']['name'].'aa';
+                //var_dump($_FILES);
+                //echo $_FILES['organ_logo']['name'].'aa';
                 $path = "./Data/upload/organ/".mt_rand(1,100).time().'.jpg';//定义保存路径
                 if(move_uploaded_file($_FILES['organ_logo']['tmp_name'],$path)){
                     $insert['organ_logo'] = $path;//取到当前路径文件名
+                    //$this->ajaxReturn(array('filepath'=>$path,'status'=>1,'message'=>'success'));
                 }
             }
-
             //拼接标签
             $insert['organ_tag'] = implode('-',$insert['organ_tag']);
             $insert['organ_create'] = date("Y-m-d H:i:s",time());   //创建时间
 
             //插入数据
             $result = $organ->add($insert);
-            var_dump($result);
+            //var_dump($insert);
             if($result){
-                $this->success("申请已发送，等待审核");
+                $this->success("申请已发送，等待审核",U('index/index'),0);
             }else{
-                $this->error("申请失败，请刷新后填写");
+                $this->error("申请失败，请刷新后填写",U('index/add'));
             }
 
+        }
+    }
+    function upload(){
+        //接收图片
+        if(isset($_FILES)){
+            //var_dump($_FILES);
+            //echo $_FILES['organ_logo']['name'].'aa';
+            $path = "./Data/upload/organ/".mt_rand(1,100).time().'.jpg';//定义保存路径
+            if(move_uploaded_file($_FILES['organ_logo']['tmp_name'],$path)){
+                //$insert['organ_logo'] = $path;//取到当前路径文件名
+                $this->ajaxReturn(array('filepath'=>$path,'status'=>1,'message'=>'success'));
+            }
         }
     }
     //活动详细页
