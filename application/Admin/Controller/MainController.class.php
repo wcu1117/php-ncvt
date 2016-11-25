@@ -25,7 +25,10 @@ class MainController extends AdminbaseController {
         $organ = M("organ");
         $or = $organ->count();
         $this->assign('organ',$or);
-    	
+    	//活动
+        $act = M('organ_act');
+        $a = $act->order("act_id desc")->limit(7)->select();
+        $this->assign("act",$a);
     	//server infomaions
     	$info = array(
     			L('OPERATING_SYSTEM') => PHP_OS,

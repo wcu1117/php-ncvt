@@ -7,21 +7,29 @@ class PersonController extends HomebaseController{
     protected $users;
     protected $guest1;
     protected $posts;
+    protected $name;
     function _initialize() {
 
         $this->user = M("users");   //实例化模型
         $this->guest1 = M('guestbook');
         $this->posts = M('posts');
-        $this->id = i("get.id");
+        //判断传过来的是ID还是name
+        $this->id = I("get.id");
+        if(I('get.name')){
+            $this->name = I('get.name');
+            $this->id = $this->user->where("user_nicename='".$this->name."'")->getField('id',true);
+        }
+        //var_dump($this->id);
         if($this->id){
+            //获取传过来的ID，直接赋值
             $this->users = $this->user->join("cmf_education on cmf_users.id=cmf_education.user_id")->join("cmf_contact on cmf_users.id=cmf_contact.user_id")
-                ->where("cmf_users.id={$this->id}")->find();
+                ->where("cmf_users.id={$this->id[0]}")->find();
             $this->assign('user',$this->users);
             //留言
-            $book_count = $this->guest1->where("host_id={$this->id}")->count();
+            $book_count = $this->guest1->where("host_id={$this->id[0]}")->count();
             $this->assign('count',$book_count);
             //帖子
-            $post_count = $this->posts->where("post_author={$this->id}")->count();
+            $post_count = $this->posts->where("post_author={$this->id[0]}")->count();
             $this->assign('post_count',$post_count);
 
             //登录状态
@@ -70,12 +78,12 @@ class PersonController extends HomebaseController{
     //论坛
     function forum(){
         //帖子
-        $post_count = $this->posts->where("post_author={$this->id}")->select();
+        $post_count = $this->posts->where("post_author={$this->id[0]}")->select();
         $this->assign('post',$post_count);
         //回帖
         $reply = M("post_reply");
         $reply = $reply->join("cmf_posts on cmf_post_reply.post_id = cmf_posts.id")->where
-        ("cmf_post_reply.post_author={$this->id}")
+        ("cmf_post_reply.post_author={$this->id[0]}")
             ->select();
         $this->assign('reply',$reply);
         $this->display("myforum");

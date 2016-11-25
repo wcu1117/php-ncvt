@@ -147,7 +147,7 @@ class IndexController extends HomebaseController  {
         $post = M('posts');
         $avatar = $path.$name;
         $result = $user->where(array('id'=>$id))->setField("avatar",$avatar);
-        $posts = $post->where(array('post_author'=>$id))->setField("avatar",$avatar);
+        $post = $post->where(array('post_author'=>$id))->setField("avatar",$avatar);
         if($result){
             $this->success("上传头像成功",U("index/index",array('id'=>$id)));
         }else{

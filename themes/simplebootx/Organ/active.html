@@ -16,7 +16,7 @@
                 <li>></li>
                 <li>社团列表</li>
                 <li>></li>
-                <li>南朝街舞社</li>
+                <li>{$or.organ_name}</li>
             </ul> 
         </nav>
         <section class="st-box st-index st-eventPage container-fluid ">
@@ -24,16 +24,19 @@
                 <div class="bgColor-white clearfix">
                     <header class="event-hd col-md-12">
                         <div class="st-logo col-md-6 pl0">
-                            <a href="javascript:;" style="background-image: url('images/main_slider1.jpg');"></a>
+                            <a href="javascript:;" style="background-image: url('{$act.act_image}');"></a>
                         </div>
                         <div class="st-info border0 overflowH">
-                            <h4 class="mt0 event-title">南朝街舞社</h4>
-                            <p class="mb0">2015年06月10日 08:00--2018年06月01日 08:00</p>
-                            <p class="mb0">酒仙桥中路18号</p>
-                            <p>主要负责人：BeiHaiXiong</p>
+                            <h4 class="mt0 event-title">{$or.organ_name}</h4>
+                            <p class="mb0">{$act.starttime}</p>
+                            <p class="mb0">{$act.act_place}</p>
+                            <p>主要负责人：{$act.act_er}</p>
                             <ul class="st-tag">
-                                <li><a href="javasrcpt:;">运动</a></li>
-                                <li><a href="javasrcpt:;">娱乐</a></li>
+                                <php>$arr = explode('-',$or['organ_tag']);
+                                </php>
+                                <foreach name="arr" item="a">
+                                    <li><a href="javasrcpt:;">{$a}</a></li>
+                                </foreach>
                             </ul>
                             <a href="javascript:0;" class="st-btn">报名参加</a>
                         </div>
@@ -59,7 +62,7 @@
                     </section>
                     <section class="event-con col-md-12 marginTop-10px">
                         <h5 class="hd">活动介绍</h5>
-                        <div></div>
+                        <div>{$act.act_content}</div>
                     </section>
                     <footer class="col-md-12 marginTop-20px">
                         <section class="clearfix reply-con eventReply-list">

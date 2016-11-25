@@ -73,6 +73,17 @@ class IndexController extends HomebaseController  {
 
     //活动详细页
     function active(){
+        $id= I('get.actid');
+        //输出活动列表
+        $act = M('organ_act');
+        $a = $act->where("act_id={$id}")->find();
+        //var_dump($a);
+        $this->assign('act',$a);
+        //输出社团
+        $or_id = $a['organ_id'];
+        $or = $this->organ->where("organ_id={$or_id}")->find();
+        //var_dump($or);
+        $this->assign("or",$or);    //输出社团
         $this->display(":active");
     }
     //社团的详细页面
@@ -80,6 +91,18 @@ class IndexController extends HomebaseController  {
         $id = I('get.id');//获取社团ID
         $or = $this->organ->where("organ_id={$id}")->find();
         $this->assign("or",$or);    //输出社团
+        //输出动态
+        $news = M("organ_news");
+        $new = $news->where("organ_id={$id}")->select();
+        $this->assign('news',$new);//赋值模版
+        //输出活动列表
+        $act = M('organ_act');
+        $a = $act->where("organ_id={$id}")->select();
+        $this->assign('act',$a);
+        //公告
+        $info = M("organ_info");
+        $i = $info->where("organ_id ={$id}")->select();
+        $this->assign('info',$i);
 
         $this->display(":detail");
     }
@@ -104,6 +127,7 @@ class IndexController extends HomebaseController  {
             }
             //拼接标签
             $act['act_tag'] = implode('-',$act['act_tag']);
+            $act['act_conetn'] = htmlspecialchars_decode($act['act_conetn']);
             $act['organ_id'] = $id;
             //$act['act_starttime'] = date("Y-m-d H:i:s",time());   //创建时间
 
@@ -133,7 +157,7 @@ class IndexController extends HomebaseController  {
         $news['news_author'] = session('user')['user_nicename'];
         $news['news_time'] = date('Y-m-d H:i:s',time());
         $news['new_image'] = I('post.img0');
-        $news['news_content'] = I('post.new_content');
+        $news['news_content'] = htmlspecialchars_decode(I('post.new_content'));
         $new = M('organ_news');
         //var_dump($news);
         $result = $new->add($news);

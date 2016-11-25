@@ -60,119 +60,77 @@
                         <h4 class="hidden">社团动态</h4>
                         <div class="con">
                             <ul>
-                                <li>
-                                    <div class="main-con"><span><a href="javascript:0;">黑钦王</a> 发布了# </span>志愿者，我们一直在找你#西南大学青年志愿者联合会第二届干事初试第二天选拔即将结束，今天作为初试的最后一天，面试新生们使出浑身解数，展现自己的能力与热爱公益、投身志愿的决心！参加了初试的学弟学妹们，相信你们都棒棒哒！祝你们取的好成绩~
-                                    <p class="img-con">
-                                        <a href=javascript:0;><img src="images/banner1.jpg" alt="" /></a>
-                                    </p></div>
-                                    <footer class="con-bottom clearfix" class="pr">
-                                        <p class="clearfix"><time class="post-tiem fl" datetime="2014-09-18 23:54">2014-09-18 23:54</time><span class="fr reply-btn">回复</span><span class="reply-number fr">评论条数(0)</span></p>
-                                        <section class="clearfix reply-con hidden">
-                                            <div class="marginTB-15px">
-                                                <p>我来评几句:</p>
-                                                <form action="" method="post">
-                                                    <textarea rows="3" name="editor-reply" class="width100 editor-con" placeholder="回复内容"></textarea>
-                                                    <label class="submit-btn"><input type="submit" name="submit-btn" value="发表" /></label>
-                                                </form>
-                                            </div>
-                                            <article class="clearfix item">
-                                                <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo" /></h5>
-                                                <div class="clearfix overflowH">
-                                                    <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
-                                                    <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
+                                <foreach name="news" item="new">
+                                    <li>
+                                        <div class="main-con"><span><a
+                                                href="{:U('user/person/index',array('name'=>$new['news_author']))}">
+                                            {$new.news_author}</a> 发布了#
+                                        </span>{$new.news_content}
+                                            <p class="img-con">
+                                                <a href=javascript:0;><img src="{$new.new_image}" alt="" /></a>
+                                            </p></div>
+                                        <footer class="con-bottom clearfix" class="pr">
+                                            <p class="clearfix"><time class="post-tiem fl"
+                                                                      datetime="{$new.news_time}">{$new.news_time
+                                                }</time><span class="fr reply-btn">回复</span><span class="reply-number fr">评论条数(0)</span></p>
+                                            <section class="clearfix reply-con hidden">
+                                                <div class="marginTB-15px">
+                                                    <p>我来评几句:</p>
+                                                    <form action="" method="post">
+                                                        <textarea rows="3" name="editor-reply" class="width100 editor-con" placeholder="回复内容"></textarea>
+                                                        <label class="submit-btn"><input type="submit" name="submit-btn" value="发表" /></label>
+                                                    </form>
                                                 </div>
-                                            </article>
-                                            <article class="clearfix item">
-                                                <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo" /></h5>
-                                                <div class="clearfix overflowH">
-                                                    <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
-                                                    <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
-                                                </div>
-                                            </article>
-                                        </section>
-                                    </footer>
-                                </li>
-                                <li>
-                                    <div class="main-con"><span><a href="javascript:0;">黑钦王</a> 发布了# </span>志愿者，我们一直在找你#西南大学青年志愿者联合会第二届干事初试第二天选拔即将结束，今天作为初试的最后一天，面试新生们使出浑身解数，展现自己的能力与热爱公益、投身志愿的决心！参加了初试的学弟学妹们，相信你们都棒棒哒！祝你们取的好成绩~
-                                    <p class="img-con">
-                                        <a href=javascript:0;><img src="images/banner1.jpg" alt="" /></a>
-                                    </p></div>
-                                    <footer class="con-bottom clearfix" class="pr">
-                                        <p class="clearfix"><time class="post-tiem fl" datetime="2014-09-18 23:54">2014-09-18 23:54</time><span class="fr reply-btn">回复</span><span class="reply-number fr">评论条数(0)</span></p>
-                                        <section class="clearfix reply-con hidden">
-                                            <div class="marginTB-15px">
-                                                <p>我来评几句:</p>
-                                                <form action="" method="post">
-                                                    <textarea rows="3" name="editor-reply" class="width100 editor-con" placeholder="回复内容"></textarea>
-                                                    <label class="submit-btn"><input type="submit" name="submit-btn" value="发表" /></label>
-                                                </form>
-                                            </div>
-                                            <article class="clearfix item">
-                                                <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo" /></h5>
-                                                <div class="clearfix overflowH">
-                                                    <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
-                                                    <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
-                                                </div>
-                                            </article>
-                                            <article class="clearfix item">
-                                                <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo" /></h5>
-                                                <div class="clearfix overflowH">
-                                                    <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
-                                                    <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
-                                                </div>
-                                            </article>
-                                        </section>
-                                    </footer>
-                                </li>
+                                                <article class="clearfix item">
+                                                    <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo" /></h5>
+                                                    <div class="clearfix overflowH">
+                                                        <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
+                                                        <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
+                                                    </div>
+                                                </article>
+                                                <article class="clearfix item">
+                                                    <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo" /></h5>
+                                                    <div class="clearfix overflowH">
+                                                        <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
+                                                        <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
+                                                    </div>
+                                                </article>
+                                            </section>
+                                        </footer>
+                                    </li>
+                                </foreach>
+
                             </ul>
                         </div>
                     </section>
-
+                    <!--活动列表-->
                     <section class="st-eventlist hidden">
                         <h4 class="hidden">社团活动</h4>
                         <div class="con">
-                            <article class="item">
-                                <dl class="clearfix pr">
-                                    <dt class="hd clearfix fl"><a href="javascript:0;"  style="background-image: url('images/main_slider1.jpg');"></a></dt>
-                                    <dd class="bd clearfix st-info">
-                                        <h4 class="event-title"><a href="javascript:0;">活动标题</a></h4>
-                                        <div>
-                                            <p class="mb0"><span>时间：</span>2015年06月10日 08:00--2018年06月01日 08:00</p>
-                                            <p class="mb0"><span>地点：</span>酒仙桥中路18号</p>
-                                            <p class="mb0"><span>主办：</span>南宁职业技术学院</p>
-                                            <p><span>负责人：</span><a href="javascript:0;">bigYANG</a></p>
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </article>
-                            <article class="item">
-                                <dl class="clearfix pr">
-                                    <dt class="hd clearfix fl"><a href="javascript:0;"  style="background-image: url('images/main_slider1.jpg');"></a></dt>
-                                    <dd class="bd clearfix st-info">
-                                        <h4 class="event-title"><a href="javascript:0;">活动标题</a></h4>
-                                        <div>
-                                            <p class="mb0"><span>时间：</span>2015年06月10日 08:00--2018年06月01日 08:00</p>
-                                            <p class="mb0"><span>地点：</span>酒仙桥中路18号</p>
-                                            <p class="mb0"><span>主办：</span>南宁职业技术学院</p>
-                                            <p><span>负责人：</span><a href="javascript:0;">bigYANG</a></p>
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </article>
-                            <article class="item">
-                                <dl class="clearfix pr">
-                                    <dt class="hd clearfix fl"><a href="javascript:0;"  style="background-image: url('images/main_slider1.jpg');"></a></dt>
-                                    <dd class="bd clearfix st-info">
-                                        <h4 class="event-title"><a href="javascript:0;">活动标题</a></h4>
-                                        <div>
-                                            <p class="mb0"><span>时间：</span>2015年06月10日 08:00--2018年06月01日 08:00</p>
-                                            <p class="mb0"><span>地点：</span>酒仙桥中路18号</p>
-                                            <p class="mb0"><span>主办：</span>南宁职业技术学院</p>
-                                            <p><span>负责人：</span><a href="javascript:0;">bigYANG</a></p>
-                                        </div>
-                                    </dd>
-                                </dl>
-                            </article>
+                            <foreach name="act" item="a">
+                                <article class="item">
+                                    <dl class="clearfix pr">
+                                        <dt class="hd clearfix fl"><a href="javascript:0;"  style="background-image:
+                                        url('{$a.act_image}');"></a></dt>
+                                        <dd class="bd clearfix st-info">
+                                            <h4
+                                                    class="event-title"><a
+                                                    href="{:U('index/active',array('actid'=>$a['act_id']))}">{$a
+                                                .act_name}</a></h4>
+                                            <div>
+                                                <p class="mb0"><span>时间：</span>{$a.act_starttime}</p>
+                                                <p class="mb0"><span>地点：</span>{$a.act_place}</p>
+                                                <p class="mb0"><span>主办：</span>南宁职业技术学院</p>
+                                                <p><span>负责人：</span><a
+                                                        href="{:U('user/person/index',array('name'=>$a['act_er']))}">{$a
+                                                    .act_er}</a></p>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </article>
+                            </foreach>
+
+
                         </div>
                     </section>
                     <section class="st-memberlist hidden">
@@ -251,23 +209,25 @@
                     </header>
                     <div class="notice-con">
                         <ul>
-                            <li><span style="color: #999;">[8-19]</span> <a href="javascript:0;">于18号下午在二教召开第10次会议</a></li>
-                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
-                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
-                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
-                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
+                            <foreach name="info" item="i">
+                                <li style="list-style: none;"><span style="color: #999;">[{$i.info_time}]</span><a
+                                        href="javascript:0;">
+                                    {$i.info_title}</a></li>
+                                <!-- 公告内容弹窗 -->
+                                <div id="notice" class="popupBox hidden">
+                                    <h3 class="mt0">{$i.info_title}</h3>
+                                    <address
+                                            class="display-ib margin0"><a href="javascript:;">{$i.info_author}</a></address> 发布于
+                                    <time class="post-tiem" datetime="2014-09-18 23:54">{$i.info_time}</time>
+                                    <hr />
+                                    <div class="con">
+                                        {$i.info_content}
+                                    </div>
+                                </div>
+                            </foreach>
                         </ul>
                     </div>
-                    <!-- 公告内容弹窗 -->
-                    <div id="notice" class="popupBox hidden">
-                        <h3 class="mt0">标题</h3>
-                        <address class="display-ib margin0"><a href="javascript:;">作者</a></address> 发布于
-                        <time class="post-tiem" datetime="2014-09-18 23:54">2014-09-18 23:54</time>
-                        <hr />
-                        <div class="con">
-                            内容
-                        </div>
-                    </div>
+
                 </section>
                 <section class="st-count rightBox marginBottom-10px">
                     <h5 class="hidden">社团附属信息</h5>
