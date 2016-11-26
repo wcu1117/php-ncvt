@@ -147,5 +147,63 @@
     <div class="container-fluid fooetrBg"></div>
 </div>
 <tc_include file="Public:footer"/>
+<!-- ajax -->
+<script src="__PUBLIC__/js/jquery.js"></script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $('#btn').click(function () {
+            var url = "{:U('user/login/dologin')}";//发送URL
+            var data = $('#forms').serialize();    //序列化表单数据
+
+            $.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
+
+    })
+</script>
 </body>
 </html>

@@ -87,6 +87,11 @@ a:hover{
     background: no-repeat url(../images/ncvt.png);
     background-size: contain;
 }
+.col-md{
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
 .hd-left{
     width: 7.222%;
     height: 80px;
@@ -95,8 +100,10 @@ a:hover{
     color: #333;
     font-size: 700;
     text-align: center;
-    background: no-repeat url("../images/wether_bg.png") top center #f0f0f0;
+    background: no-repeat url("../images/scan.jpg") top center #f0f0f0;
+    background-size: 100%;
 }
+
 .hd-left>a{ color: inherit; font-size: 12px; }
 .hd-left:after{
     content: "";
@@ -104,7 +111,7 @@ a:hover{
     width: 100%;
     position: absolute; bottom: 0;
     height: 20px;
-    background: no-repeat url('../images/wether_under.png') center center  #3094c2;
+    /*background: no-repeat url('../images/wether_under.png') center center  #3094c2;*/
 }
 .info-nav, .search-box{ height: 50px; line-height: 50px; }
 .info-nav li { 
@@ -146,7 +153,7 @@ a:hover{
     text-indent: -99em;
     border:none;
     background-color: #fff;
-    background: no-repeat url("../images/serch_btn.png") center ;
+    /*background: no-repeat url("../images/serch_btn.png") center ;*/
 }
 
 /*公共头部*/

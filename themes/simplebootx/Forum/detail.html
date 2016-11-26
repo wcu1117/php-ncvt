@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>帖子文章内容|分享大一点的学生们的社团生活</title>
     <!--对话框的样式-->
-    <link href="__PUBLIC__/simpleboot/themes/{:C('SP_ADMIN_STYLE')}/theme.min.css" rel="stylesheet">
     <link href="__PUBLIC__/js/artDialog/skins/default.css" rel="stylesheet" />
     <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="__TMPL__Public/css/style.css">
@@ -31,6 +31,9 @@
         .pic-list li {
             margin-bottom: 5px;
         }
+        .form-actions { background-color: #dde4e6;border-top: 0; text-align: center; -webkit-border-radius: 3px;-moz-border-radius: 3px; border-radius: 3px;}
+
+
     </style>
     <script type="text/html" id="photos-item-wrapper">
         <li id="savedimage{id}">
@@ -124,10 +127,6 @@
                         $arr1 = $arr['thumb'];
                         $arr2 = $arr['photo'];
                     </php>
-                        <foreach name="arr1" item="img">
-                            <img style="width: 80px;" src="./data/upload/{$img}" alt=""/>
-
-                        </foreach>
 
 
                         <foreach name="arr2" item="img2">
@@ -177,7 +176,7 @@
                         $arr2 = $arr['photo'];
                     </php>
                     <foreach name="arr2" item="img2">
-                        <img src="./data/upload/{$img2.url}" align="{$img2.alt}"/>
+                        <img style="width: 100%;" src="./data/upload/{$img2.url}" align="{$img2.alt}"/>
                     </foreach>
 
                     <ul class="reply-btn">
@@ -219,15 +218,7 @@
         <footer class="con-footer">
             <nav class="textalignC">
                 <ul class="pagination">
-                    <li class="prev"><a href="javascript:;">&laquo;</a></li>
-                    <li class="active"><a href="javascript:;">1</a></li>
-                    <li><a href="javascript:;">2</a></li>
-                    <li><a href="javascript:;">3</a></li>
-                    <li><a href="javascript:;">4</a></li>
-                    <li><a href="javascript:;">5</a></li>
-                    <li class="disabled"><span>...</span></li>
-                    <li><a href="javascript:;">48</a></li>
-                    <li class="next"><a href="javascript:;">&raquo;</a></li>
+                    {$page}
                 </ul>
             </nav>
         </footer>
@@ -249,7 +240,7 @@
                                 <th style="width: 50px;">相册图集</th>
                                 <td>
                                     <ul id="photos" class="pic-list unstyled"></ul>
-                                    <a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" class="btn btn-small">选择图片</a>
+                                    <a href="javascript:upload_multi_image('图片上传','#photos','photos-item-wrapper');" style="font-size:30px;">选择图片</a>
                                 </td>
                             </tr>
                                 <input type="hidden" name="reply_time"
@@ -261,7 +252,7 @@
 
                 </div>
                 <div class="form-actions" style="text-align: center;">
-                    <a class="btn" id="btn" type="submit">提交</a>
+                    <a class="btn" id="btn1" type="submit">提交</a>
                     <a class="btn" href="javascript:history.back(-1);">返回</a>
                 </div>
         </form>
@@ -287,6 +278,60 @@
 <script type="text/javascript">
     $(function(){
         $('#btn').click(function () {
+            var url = "{:U('user/login/dologin')}";//发送URL
+            var data = $('#forms').serialize();    //序列化表单数据
+
+            $.post(url,data,
+//					{
+//						username: encodeURI($('#input_username').val()),//获取值
+//						password: encodeURI($('#input_password').val()),
+//						verify : encodeURI($('#input_verify').val())
+//					},
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
+
+    })
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('#btn1').click(function () {
             var url = "{:U('Index/reply_post')}";//发送URL
             var data = $('#forms').serialize();    //序列化表单数据
 

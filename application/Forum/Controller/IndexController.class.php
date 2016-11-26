@@ -61,7 +61,6 @@ class IndexController extends HomebaseController{
                 }
             }
             //缩略图获取
-            $_POST['smeta']['thumb'] = sp_asset_relative_url($_POST['smeta']['thumb']);
             //var_dump($_POST['smeta']);
             $_POST['post']['post_date']=date("Y-m-d H:i:s",time());
             $_POST['post']['post_author']=get_current_admin_id() ? get_current_admin_id() : 'anyone';
@@ -99,14 +98,21 @@ class IndexController extends HomebaseController{
         $this->assign("ed",$ed);
 
         //回复信息
+        //设置下分页
+        $count = $this->reply->where("post_id={$id}")->count();//总数
+        $page = $this->page($count,2);
+
         $reply = $this->user->join('cmf_post_reply ON cmf_post_reply.post_author = cmf_users.id')->join
         ("cmf_education on
          cmf_users.id = cmf_education.user_id")
             ->where
-        ("cmf_post_reply.post_id =".$id)
+        ("cmf_post_reply.post_id =".$id)->order("cmf_post_reply.reply_id asc")->limit($page->firstRow . ',' .
+                $page->listRows)
             ->select();
         //var_dump($reply);
         $this->assign('reply',$reply);
+        $show = $page->show("Admin");// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
 
         $small_r = $this->small_reply->select();//楼中楼
         $this->assign('small',$small_r);//模版输出
