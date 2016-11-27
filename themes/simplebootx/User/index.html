@@ -228,7 +228,8 @@
                                     <tr class="u-setNmae">
                                         <td>昵称：</td>
                                         <td>
-                                            <input type="text" name="user_nicename" value="{$user.user_nicename}"
+                                            <input type="text" id="nicename" name="user_nicename"
+                                                   value="{$user.user_nicename}"
                                                    class="form-control" disabled/><span>*</span>
 
                                         </td>
@@ -568,6 +569,7 @@
     $(function(){
         //修改信息
         $('#btn1').click(function () {
+            $("#nicename").attr('disabled',false);
             var url = "{:U('index/edit_post')}";//发送URL
             var data = $('#form1').serialize();    //序列化表单数据
             $.post(url,data,

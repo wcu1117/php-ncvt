@@ -3853,6 +3853,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     border-bottom-color: #fff;
   }
 }
+
 .tab-content > .tab-pane {
   display: none;
   visibility: hidden;
