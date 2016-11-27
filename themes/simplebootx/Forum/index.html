@@ -102,8 +102,7 @@
                             <article class="item clearfix">
                                 <h4 class="article-title display-ib"><a href="javasrcpt:;" class="option">[{$vo
                                     .post_type}]</a><a
-                                        href="{:U('Index/detail',array('id'=>$vo['id']))}">{$vo.post_title
-                                    }</a></h4>
+                                        href="{:U('Index/detail',array('id'=>$vo['id']))}">{$vo.post_title}</a></h4>
                                 <a href="javascript:;"class="fl u-photo"><notempty name="vo.avatar"><img
                                         src="{$vo.avatar}_30.jpg"/><else/><img
                                         src="./themes/simplebootx/public/images/headicon_30.png"/></notempty></a>
@@ -132,13 +131,10 @@
             <div>
                 <h3>热帖排行</h3>
                 <ul>
-                    <li><a href="javascript:;">严禁无关话题灌水及相应处罚规定</a></li>
-                    <li><a href="javascript:;">华硕T100TA笔记本怎么实现U盘启动_U教授</a></li>
-                    <li><a href="javascript:;">论坛买的羽绒服从哪查询物流信息</a></li>
-                    <li><a href="javascript:;">感觉自己好丑不想要了</a></li>
-                    <li><a href="javascript:;">问一下，你们有这种情况吗</a></li>
-                    <li><a href="javascript:;">谁有我的流量多</a></li>
-                    <li><a href="javascript:;">西山之行！</a></li>
+                    <volist name="posts" id="vo" offset="0" length="5">
+                        <li><a href="{:U('Index/detail',array('id'=>$vo['id']))}">{$vo.post_title}</a></li>
+                    </volist>
+
                 </ul>
             </div>
             </aside>

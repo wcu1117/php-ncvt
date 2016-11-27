@@ -29,4 +29,14 @@ class IndexadminController extends AdminbaseController {
         $this->display(":verify");
     }
 
+    //删除
+    function delete(){
+        $id = I('get.id');
+        $organ = M("organ");
+        $result = $organ->where("organ_id={$id}")->delete();
+        if($result){
+            $this->success('删除成功');
+        }
+    }
+
 }

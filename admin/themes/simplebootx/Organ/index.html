@@ -29,8 +29,9 @@
 					<th>{$vo.count}</th>
 					<th>{$vo.count}</th>
 					<td>
-						<a href="{:U('Termadmin/edit',array('id'=>$vo['term_id']))}">{:L('EDIT')}</a> |
-						<a href="{:U('Termadmin/delete',array('id'=>$vo['term_id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						<a href="{:U('indexadmin/edit',array('id'=>$vo['organ_id']))}">{:L('EDIT')}</a> |
+						<a href="{:U('indexadmin/delete',array('id'=>$vo['organ_id']))}" class="js-ajax-delete">{:L
+							('DELETE')}</a>
 					</td>
 				</tr>
 				</foreach>
