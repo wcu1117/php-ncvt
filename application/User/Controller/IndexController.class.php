@@ -161,24 +161,7 @@ class IndexController extends HomebaseController  {
         $id=session('user')['id'];//用户ID
         $ed = M("education");//实例化表
 
-        //把用户ID插入到信息表去
-        $field = $ed->getField('user_id',true);//取出当前表中的字段
-        //判断是否有相同的字节
-        if($field != null){
-            for($i=0;$i<=count($field);$i++){
-                //echo $field[$i].'for';
-                if($field[$i] == $id)
-                    break;
-                while($i == count($field) || count($field) == 0){
-                    $education['user_id'] = $id;
-                    $ed->add($education);//添加用户ID
-                    break;
-                }
-            }
-        }else{
-            $education['user_id'] = $id;
-            $ed->add($education);//添加用户ID
-        }
+
 
 
             $education = I("post.");
@@ -196,24 +179,7 @@ class IndexController extends HomebaseController  {
         $id=session('user')['id'];//用户ID
         $ed = M("contact");//实例化表
 
-        //把用户ID插入到信息表去
-        $field = $ed->getField('user_id',true);//取出当前表中的字段
-        //判断是否有相同的字节
-        if($field != null){
-            for($i=0;$i<=count($field);$i++){
-                //echo $field[$i].'for';
-                if($field[$i] == $id)
-                    break;
-                while($i == count($field) || count($field) == 0){
-                    $education['user_id'] = $id;
-                    $ed->add($education);//添加用户ID
-                    break;
-                }
-            }
-        }else{
-            $education['user_id'] = $id;
-            $ed->add($education);//添加用户ID
-        }
+
         $education = I("post.");
         $result = $ed->where("user_id={$id}")->save($education);
         if($result){

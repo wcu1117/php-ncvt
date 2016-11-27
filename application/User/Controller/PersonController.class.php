@@ -9,22 +9,36 @@ class PersonController extends HomebaseController{
     protected $posts;
     protected $name;
     function _initialize() {
-
         $this->user = M("users");   //实例化模型
         $this->guest1 = M('guestbook');
         $this->posts = M('posts');
+        //输出用户
+        $u_id=session('user')['id'];
+        if ($u_id){
+            $avatar = $this->user->where("id={$u_id}")->find();
+            $this->assign('login',$avatar);
+        }
+
         //判断传过来的是ID还是name
         $this->id = I("get.id");
-        if(I('get.name')){
-            $this->name = I('get.name');
-            $this->id = $this->user->where("user_nicename='".$this->name."'")->getField('id',true);
-        }
-        //var_dump($this->id);
-        if($this->id){
-            //获取传过来的ID，直接赋值
-            $this->users = $this->user->join("cmf_education on cmf_users.id=cmf_education.user_id")->join("cmf_contact on cmf_users.id=cmf_contact.user_id")
+        $this->name = I('get.name');
+        if($this->name) {
+
+            $this->id = $this->user->where("user_nicename='" . $this->name . "'")->getField('id', true);
+            $use = $this->user->join("cmf_education on cmf_users.id=cmf_education.user_id")->join("cmf_contact on 
+            cmf_users.id=cmf_contact.user_id")
                 ->where("cmf_users.id={$this->id[0]}")->find();
-            $this->assign('user',$this->users);
+            //var_dump($use);
+            $this->assign('user', $use);
+
+        }elseif($this->id){
+            $use = $this->user->join("cmf_education on cmf_users.id=cmf_education.user_id")->join("cmf_contact on 
+            cmf_users.id=cmf_contact.user_id")
+                ->where("cmf_users.id={$this->id}")->find();
+            $this->assign('user',$use);
+        }else{
+                $this->error('当前账户已被注销');
+            }
             //留言
             $book_count = $this->guest1->where("host_id={$this->id[0]}")->count();
             $this->assign('count',$book_count);
@@ -33,21 +47,19 @@ class PersonController extends HomebaseController{
             $this->assign('post_count',$post_count);
 
             //登录状态
-            $u_id=session('user')['id'];
-            if ($u_id){
-                $avatar = $this->user->where("id={$u_id}")->find();
-                $this->assign('login',$avatar);
-            }
+
             //未读消息
             $m = M('message');//实例化
             $email = session('user')['user_email'];
             $rec_count = $m->where("email='".$email."' and status=0")->count();
             $this->assign('news_count',$rec_count);//模版赋值
-        }
+
 
     }
 
     function index(){
+
+
         $this->display();
     }
 

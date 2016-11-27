@@ -53,7 +53,7 @@ class IndexadminController extends AdminbaseController{
                 //$data1['image'] = &$data['image'];
                 $result = $this->news->add($data1);
                 if ($result) {
-                    //$this->success("添加成功！",U('Indexadmin/index'));
+                    $this->success("添加成功！",U('Indexadmin/index'));
                 } else {
                     $this->error("添加失败！");
                 }

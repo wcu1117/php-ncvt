@@ -100,7 +100,7 @@ class IndexController extends HomebaseController{
         //回复信息
         //设置下分页
         $count = $this->reply->where("post_id={$id}")->count();//总数
-        $page = $this->page($count,2);
+        $page = $this->page($count,10);
 
         $reply = $this->user->join('cmf_post_reply ON cmf_post_reply.post_author = cmf_users.id')->join
         ("cmf_education on

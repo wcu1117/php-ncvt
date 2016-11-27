@@ -164,24 +164,9 @@ class LoginController extends HomebaseController {
             $this->error('用户名中包含'.$stripChar.'等非法字符！');
         }
 
-// 	    $banned_usernames=explode(",", sp_get_cmf_settings("banned_usernames"));
-
-// 	    if(in_array($username, $banned_usernames)){
-// 	        $this->error("此用户名禁止使用！");
-// 	    }
-
         $where['user_login']=$username;
         $where['user_email']=$email;
         $where['_logic'] = 'OR';
-//
-//        $ucenter_syn=C("UCENTER_ENABLED");
-//        $uc_checkemail=1;
-//        $uc_checkusername=1;
-//        if($ucenter_syn){
-//            include UC_CLIENT_ROOT."client.php";
-//            $uc_checkemail=uc_user_checkemail($email);
-//            $uc_checkusername=uc_user_checkname($username);
-//        }
 
         $users_model=M("Users");
         $result = $users_model->where($where)->count();
@@ -189,14 +174,7 @@ class LoginController extends HomebaseController {
             $this->error("用户名或者该邮箱已经存在！");
         }else{
             $uc_register=true;
-//            if($ucenter_syn){
-//
-//                $uc_uid=uc_user_register($username,$password,$email);
-//                //exit($uc_uid);
-//                if($uc_uid<0){
-//                    $uc_register=false;
-//                }
-//            }
+
             if($uc_register){
                 $need_email_active=C("SP_MEMBER_EMAIL_ACTIVE");
                 $data=array(
@@ -214,16 +192,16 @@ class LoginController extends HomebaseController {
                 if($rst){
                     //注册成功页面跳转
                     $data['id']=$rst;
-                    //session('user',$data);
-
-                    //发送激活邮件
-//                    if($need_email_active){
-//                        $this->_send_to_active();
-//                        session('user',null);
-//                        $this->success("注册成功，激活后才能使用！",U("user/login/index"));
-//                    }else {
+                    session('user',$data);
+                    //var_dump(session('user'));
+                    //把用户ID写进关联表
+                    $id['user_id'] = session('user')['id'];
+                    $edu = M("education");
+                    $edu->add($id);
+                    $con = M('contact');
+                    $con->add($id);
                     $this->success("注册成功！",__ROOT__."/");
-//                    }
+
 
                 }else{
                     $this->error("注册失败！",U("user/register/index"));

@@ -3,6 +3,7 @@
 <head>
 <title>活动页|分享大一点的学生们的社团生活</title>
     <tc_include file="Organ:head"/>
+    <link rel="stylesheet" href="__TMPL__public/css/jquery-ui.min.css">
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -27,8 +28,8 @@
                             <a href="javascript:;" style="background-image: url('{$act.act_image}');"></a>
                         </div>
                         <div class="st-info border0 overflowH">
-                            <h4 class="mt0 event-title">{$or.organ_name}</h4>
-                            <p class="mb0">{$act.starttime}</p>
+                            <h4 class="mt0 event-title">{$act.act_name}</h4>
+                            <p class="mb0">{$act.act_starttime}</p>
                             <p class="mb0">{$act.act_place}</p>
                             <p>主要负责人：{$act.act_er}</p>
                             <ul class="st-tag">
@@ -68,25 +69,30 @@
                         <section class="clearfix reply-con eventReply-list">
                             <h6 class="hd">活动评论</h6>
                             <div class="marginBottom-10px">
-                                <form action="" method="post">
-                                    <textarea rows="4" name="editor-reply" class="width100 editor-con" placeholder="回复内容"></textarea>
+                                <form action="{:U('index/comment',array('id'=>$act['act_id'],'flag'=>'act'))}"
+                                      method="post">
+                                    <textarea rows="4" name="comm_content" class="width100 editor-con"
+                                              placeholder="回复内容"></textarea>
+                                    <input type="hidden" name="comm_author" value="{$login.user_nicename}">
+                                    <input type="hidden" name="comm_avatar" value="{$login.avatar}">
                                     <label class="submit-btn"><input type="submit" name="submit-btn" value="发表"></label>
                                 </form>
                             </div>
-                            <article class="clearfix item">
-                                <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo"></h5>
-                                <div class="clearfix overflowH">
-                                    <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
-                                    <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
-                                </div>
-                            </article>
-                            <article class="clearfix item">
-                                <h5 class="fl margin0"><img src="images/08_avatar_small.jpg" class="u-photo"></h5>
-                                <div class="clearfix overflowH">
-                                    <h6 class="margin0 reply-name"><a href="javascript:0;">黑钦王</a><time class="post-tiem fr" datetime="2014-09-18 23:54">2014-09-18 23:54</time></h6>
-                                    <p class="reply-p">错了三处也无所谓，反正语文老师退休了，也没人给你批改作业了！网民放长假啦！</p>
-                                </div>
-                            </article>
+                            <foreach name="comm" item="co">
+                                <article class="clearfix item">
+                                    <h5 class="fl margin0"><notempty name="co['comm_avatar']"><img
+                                            src="{$login['avatar']}_30.jpg" class="u-photo"/><else/><img
+                                            src="/cmf/themes/simplebootx/Public/images/headicon_30.png" class="u-photo"/></notempty></h5>
+                                    <div class="clearfix overflowH">
+                                        <h6 class="margin0 reply-name"><a
+                                                href="{:U('user/person/index',array('name'=>$co['comm_author']))}">{$co.comm_author
+                                            }</a><time class="post-tiem fr" datetime="2014-09-18 23:54">{$co
+                                            .comm_time}</time></h6>
+                                        <p class="reply-p">{$co.comm_content}</p>
+                                    </div>
+                                </article>
+                            </foreach>
+
                         </section>
                     </footer>
                 </div>
@@ -103,8 +109,8 @@
                        </ul>
                     </header>
                     <div class="textalignC">
-                        <a href="javascript:0;" class="st-logo" style="background-image: url('images/main_slider1.jpg');"></a>
-                        <p class="marginTop-10px">主办方：南宁职业技术学院</p>
+                        <a href="javascript:0;" class="st-logo" style="background-image: url('{$or.organ_logo}');"></a>
+                        <p class="marginTop-10px">主办方：{$or.organ_name}</p>
                     </div>
                 </section>
                 <section class="st-count rightBox marginBottom-10px">
@@ -114,7 +120,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <p>18</p>
+                                        <p>{$act_count}</p>
                                         活动
                                     </td>
                                     <td>
@@ -136,68 +142,25 @@
                     </header>
                     <div class="notice-con">
                         <ul>
-                            <li><span style="color: #999;">[8-19]</span> <a href="javascript:0;">于18号下午在二教召开第10次会议</a></li>
-                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
-                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
-                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
-                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
+                            <foreach name="info" item="i">
+                                <li style="list-style: none;"><span style="color: #999;">[{$i.info_time}]</span><a
+                                        href="javascript:0;">
+                                    {$i.info_title}</a></li>
+                                <!-- 公告内容弹窗 -->
+                                <div id="notice" class="popupBox hidden">
+                                    <h3 class="mt0">{$i.info_title}</h3>
+                                    <address
+                                            class="display-ib margin0"><a href="javascript:;">{$i.info_author}</a></address> 发布于
+                                    <time class="post-tiem" datetime="2014-09-18 23:54">{$i.info_time}</time>
+                                    <hr />
+                                    <div class="con">
+                                        {$i.info_content}
+                                    </div>
+                                </div>
+                            </foreach>
                         </ul>
                     </div>
                 </section>
-                <!-- 后留，具体考虑 -->
-                <!-- <section class="st-ranking rightBox">
-                    <header class="hd clearfix">
-                        <h5>社团排行榜</h5>
-                    </header>
-                    <div class="pt0">
-                        <ul>
-                            <li class="borderT0">
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
-                                <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
-                                   <p class="mb0">
-                                       <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
-                                   </p> 
-                                </div>
-                            </li>
-                            <li>
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
-                                <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
-                                   <p class="mb0">
-                                       <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
-                                   </p> 
-                                </div>
-                            </li>
-                            <li>
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
-                                <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
-                                   <p class="mb0">
-                                       <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
-                                   </p> 
-                                </div>
-                            </li>
-                            <li>
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
-                                <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
-                                   <p class="mb0">
-                                       <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn">申请加入+</a>
-                                   </p> 
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </section> -->
             </aside>
         </section>
     </div>
@@ -205,7 +168,59 @@
 </div>
 <tc_include file="Public:footer"/>
 <script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__public/js/jquery-ui.min.js"></script>
 <script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        //回复评论
+        $('.reply-btn').click(function(){
+            var reply_con = $(this).parent().next();
+            if(reply_con.is(':visible') == false){
+                reply_con.removeClass('hidden');
+            }else{
+                reply_con.addClass('hidden');
+            }
+        });
+
+        //加入社团弹出框
+        $( ".st-btn").click(function(event) {
+            var $st_id = $(this).attr("data-stid");
+            var $post_stId = $("#dialog input[name='st-id']").attr("value",$st_id);
+            $( "#dialog" ).dialog({
+                width: 500,
+                modal: true,  //开启遮蔽层
+                dialogClass: "hd",
+                title: "填写申请信息",
+                buttons: [  //设置按钮
+                    {
+                        text: "确定提交",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    },
+                    {
+                        text: "取消",
+                        click: function() {
+                            $( this ).dialog( "close" );
+                        }
+                    }
+                ]
+            });
+            // event.preventDefault();
+        });
+
+        //通知内容
+        $(' .notice-con li a').click(function(){
+            $("#notice").removeClass("hidden");
+            $( "#notice" ).dialog({
+                width: 650,
+                modal: true,
+                dialogClass: "hd",
+                title: "公告内容",
+            });
+        })
+    })
+</script>
 <!-- 配置文件 -->
 <script type="text/javascript" src="__PUBLIC__/js/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
@@ -221,6 +236,61 @@
                 reply_con.addClass('hidden');
             }
         })
+    })
+</script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $('.btn').click(function () {
+            var url = "{:U('user/login/dologin')}";//发送URL
+            var data = $('#forms').serialize();    //序列化表单数据
+
+            $.post(url,{
+                        //username: encodeURI($('#input_username').val()),//获取值
+                        // password: encodeURI($('#input_password').val()),
+                        //verify : encodeURI($('#input_verify').val())
+                    },
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
+
     })
 </script>
 </body>

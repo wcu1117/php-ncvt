@@ -18,16 +18,32 @@ class IndexController extends HomebaseController  {
             $avatar = $user->where("id={$u_id}")->find();
             $this->assign('login',$avatar);
         }
+        //未读消息
+        $m = M('message');//实例化
+        $email = session('user')['user_email'];
+        $rec_count = $m->where("email='".$email."' and status=0")->count();
+        $this->assign('news_count',$rec_count);//模版赋值
         $this->organ = M("organ");//实例化
 
     }
     //登录
 	public function index() {
 
-        $or = $this->organ->where("organ_status=1")->select();
         $count = $this->organ->where("organ_status=1")->count();
+        //分页
+        $page = $this->page($count,10);
+        $or = $this->organ->where("organ_status=1")->order("organ_id desc")->limit($page->firstRow . ',' .
+            $page->listRows)
+            ->select();
+        $show = $page->show("Admin");// 分页显示输出
+        $this->assign('page',$show);// 赋值分页输出
+
         $this->assign('organ',$or);
         $this->assign('count',$count);
+        //联表查询活动
+        $a = M("organ_act");
+        $act = $a->order("act_id desc")->select();
+        $this->assign('act',$act);
 		$this->display(":index");
 
     }
@@ -84,8 +100,24 @@ class IndexController extends HomebaseController  {
         $or = $this->organ->where("organ_id={$or_id}")->find();
         //var_dump($or);
         $this->assign("or",$or);    //输出社团
+
+        //输出数量，活动。人数，排名
+        $act_count = $act->where("organ_id={$or_id}")->count();
+        $this->assign('act_count',$act_count);
+
+        //公告
+        $info = M("organ_info");
+        $i = $info->where("organ_id ={$or_id}")->select();
+        $this->assign('info',$i);
+        //输出评论
+        $comm = M("organ_comm");
+        $comm = $comm->where("comm_post_id={$id} and comm_select='act'")->select();
+        $this->assign("comm",$comm);
+
+        //输出模版
         $this->display(":active");
     }
+
     //社团的详细页面
     function detail(){
         $id = I('get.id');//获取社团ID
@@ -106,6 +138,28 @@ class IndexController extends HomebaseController  {
 
         $this->display(":detail");
     }
+
+    //添加评论
+    function comment(){
+        $this->check_login();
+        $id = I('get.id');//获取当前的活动活动动态ID
+        $flag = I("get.flag");//判断是活动还是动态
+        $comm = M("organ_comm");//实例化
+        if($flag == 'act'){
+            //活动
+            $act = I('post.');
+            $act['comm_time'] = date('Y-m-d H:i:s',time());
+            $act['comm_select'] = $flag;
+            $act['comm_post_id'] = $id;
+            $result = $comm->add($act);
+            if($result){
+                $this->success("评论成功");
+            }
+        }else{
+
+        }
+    }
+
     //社团发布大的活动
     function active_post(){
         $this->check_login();//判断登录

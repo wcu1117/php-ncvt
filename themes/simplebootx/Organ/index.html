@@ -65,10 +65,17 @@
                             url('{$or.organ_logo}');"></a></header>
                                 <div class="st-info overflowH">
                                     <h4><a href="{:U('index/detail',array('id'=>$or['organ_id']))}"
-                                           class="st-name">{$or.organ_name
-                                        }</a></h4>
+                                           class="st-name">{$or.organ_name}</a></h4>
                                     <p>{$or.organ_content}</p>
-                                    <p class="new-event"><a href="javascript:;">[2016-11-4] 校南朝街舞社在美食餐厅举办XX街舞交流会</a></p>
+                                    <foreach name="act" item="a">
+                                        <if condition="$a['organ_id'] eq $or['organ_id']">
+                                            <volist name="act" id="a" offset="1" length="1">
+                                                <p class="new-event"><a href="{:U('index/active',array('actid'=>$a['act_id']))}">[{$a.act_starttime}] {$a.act_name}</a></p>
+
+                                            </volist>
+                                        <else/>
+                                        </if>
+                                    </foreach>
                                     <footer class="st-tag">
                                         <ul>
                                             <php>$arr = explode('-',$or['organ_tag']);
@@ -89,15 +96,7 @@
             <footer class="st-footer">
                 <nav class="textalignC">
                     <ul class="pagination">
-                        <li class="prev"><a href="javascript:;">&laquo;</a></li>
-                        <li class="active"><a href="javascript:;">1</a></li>
-                        <li><a href="javascript:;">2</a></li>
-                        <li><a href="javascript:;">3</a></li>
-                        <li><a href="javascript:;">4</a></li>
-                        <li><a href="javascript:;">5</a></li>
-                        <li class="disabled"><span>...</span></li>
-                        <li><a href="javascript:;">48</a></li>
-                        <li class="next"><a href="javascript:;">&raquo;</a></li>
+                        {$page}
                     </ul>
                 </nav>
             </footer>
@@ -108,5 +107,61 @@
 <tc_include file="Public:footer"/>
 <script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
 <script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $('.btn').click(function () {
+            var url = "{:U('user/login/dologin')}";//发送URL
+            var data = $('#forms').serialize();    //序列化表单数据
+
+            $.post(url,{
+                        //username: encodeURI($('#input_username').val()),//获取值
+                        // password: encodeURI($('#input_password').val()),
+                        //verify : encodeURI($('#input_verify').val())
+                    },
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
+
+    })
+</script>
+
 </body>
 </html>

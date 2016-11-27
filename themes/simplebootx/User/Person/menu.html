@@ -1,7 +1,9 @@
 <aside class="u-side col-md-2">
     <header>
         <h3 class="u-myName">
-            <img src="{$user.avatar}_100.jpg" alt="" />
+            <notempty name="co['comm_avatar']"><img
+                    src="{$login['avatar']}_30.jpg" /><else/><img
+                    src="/cmf/themes/simplebootx/Public/images/headicon_128.png"/></notempty>
             <p class="u-name">{$user.user_nicename}</p>
         </h3>
     </header>
