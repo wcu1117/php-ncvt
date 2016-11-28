@@ -3,7 +3,7 @@
 <head>
 <title>活动页|分享大一点的学生们的社团生活</title>
     <tc_include file="Organ:head"/>
-    <link rel="stylesheet" href="__TMPL__public/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="__TMPL__Public/css/jquery-ui.min.css">
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -39,7 +39,13 @@
                                     <li><a href="javasrcpt:;">{$a}</a></li>
                                 </foreach>
                             </ul>
-                            <a href="javascript:0;" class="st-btn">报名参加</a>
+                            <!--简历一个隐藏提交表单用来申请加入活动-->
+                            <form id="joins" method="post">
+                                <input name="mem_act_id" type="hidden" value="{$act.act_id}">
+                                <input name="mem_user_name" type="hidden" value="{$login.user_nicename}">
+                                <button id="stbtn" type="button" class="st-btn">报名参加</button>
+                            </form>
+
                         </div>
                     </header>
                     <section class="event-count col-md-12 marginTop-10px">
@@ -82,7 +88,7 @@
                                 <article class="clearfix item">
                                     <h5 class="fl margin0"><notempty name="co['comm_avatar']"><img
                                             src="{$login['avatar']}_30.jpg" class="u-photo"/><else/><img
-                                            src="/cmf/themes/simplebootx/Public/images/headicon_30.png" class="u-photo"/></notempty></h5>
+                                            src="/themes/simplebootx/Public/images/headicon_30.png" class="u-photo"/></notempty></h5>
                                     <div class="clearfix overflowH">
                                         <h6 class="margin0 reply-name"><a
                                                 href="{:U('user/person/index',array('name'=>$co['comm_author']))}">{$co.comm_author
@@ -166,10 +172,11 @@
     </div>
     <div class="container-fluid fooetrBg"></div>
 </div>
+
 <tc_include file="Public:footer"/>
-<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
-<script src="__TMPL__public/js/jquery-ui.min.js"></script>
-<script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__Public/js/jquery-ui.min.js"></script>
+<script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
 <script>
     $(function(){
         //回复评论
@@ -183,31 +190,7 @@
         });
 
         //加入社团弹出框
-        $( ".st-btn").click(function(event) {
-            var $st_id = $(this).attr("data-stid");
-            var $post_stId = $("#dialog input[name='st-id']").attr("value",$st_id);
-            $( "#dialog" ).dialog({
-                width: 500,
-                modal: true,  //开启遮蔽层
-                dialogClass: "hd",
-                title: "填写申请信息",
-                buttons: [  //设置按钮
-                    {
-                        text: "确定提交",
-                        click: function() {
-                            $( this ).dialog( "close" );
-                        }
-                    },
-                    {
-                        text: "取消",
-                        click: function() {
-                            $( this ).dialog( "close" );
-                        }
-                    }
-                ]
-            });
-            // event.preventDefault();
-        });
+
 
         //通知内容
         $(' .notice-con li a').click(function(){
@@ -242,7 +225,7 @@
 
 <script type="text/javascript">
     $(function(){
-        $('.btn').click(function () {
+        $('#btn').click(function () {
             var url = "{:U('user/login/dologin')}";//发送URL
             var data = $('#forms').serialize();    //序列化表单数据
 
@@ -251,6 +234,53 @@
                         // password: encodeURI($('#input_password').val()),
                         //verify : encodeURI($('#input_verify').val())
                     },
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
+
+    });
+    $(function(){
+        $('#stbtn').click(function () {
+            var url = "{:U('index/joins')}";//发送URL
+            var data = $('#joins').serialize();    //序列化表单数据
+
+            $.post(url,data,
                     function(data){
                         console.log(data);
                         //alert(data.info);

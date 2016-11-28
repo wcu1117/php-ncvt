@@ -50,16 +50,18 @@
                         <li>
                             <article class="st-item">
                                 <aside class="fr col-md-2">
-                                    <address class="display-ib"><a href="javasrcpt:;">{$or.organ_er}</a></address>
+                                    <address class="display-ib"><a
+                                            href="{:U('user/person/index',array('name'=>$or['organ_er']))}">{$or
+                                        .organ_er}</a></address>
                                     <php>
                                         $time = strtotime($or['organ_create']);
                                         $time = date('Y-m-d',$time);
                                     </php>
                                     <p class="createTime marginTop-10px">创建于
                                         <time datetime=""><?php echo $time?></time></p>
-                                    <button class="btn btn-primary" type="button">
-                                        <span class="badge">0</span> 申请加入+
-                                    </button>
+                                    <a class="btn btn-primary" href="{:U('index/detail',array('id'=>$or['organ_id']))}">
+                                        <span class="badge">0</span> 点击查看
+                                    </a>
                                 </aside>
                                 <header class="st-logo fl col-md-2"><a href="{:U('index/detail',array('id'=>$or['organ_id']))}" style="background-image:
                             url('{$or.organ_logo}');"></a></header>
@@ -105,8 +107,8 @@
     <div class="container-fluid fooetrBg"></div>
 </div>
 <tc_include file="Public:footer"/>
-<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
-<script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
 <script src="__PUBLIC__/js/noty/noty.js"></script>
 
 <script type="text/javascript">
@@ -115,11 +117,7 @@
             var url = "{:U('user/login/dologin')}";//发送URL
             var data = $('#forms').serialize();    //序列化表单数据
 
-            $.post(url,{
-                        //username: encodeURI($('#input_username').val()),//获取值
-                        // password: encodeURI($('#input_password').val()),
-                        //verify : encodeURI($('#input_verify').val())
-                    },
+            $.post(url,data,
                     function(data){
                         console.log(data);
                         //alert(data.info);

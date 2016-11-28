@@ -12,24 +12,27 @@
 			<table class="table table-hover table-bordered table-list">
 				<thead>
 					<tr>
-						<th width="50">{:L('SORT')}</th>
 						<th width="50">ID</th>
 						<th>社团名称</th>
-						<th>社团活动</th>
-						<th>社团人数</th>
+						<th>社团简介</th>
+						<th>社团口号</th>
+						<th>社团类型</th>
 						<th>社团状态</th>
+						<th>操作</th>
 					</tr>
 				</thead>
 				<tbody>
 				<foreach name="data" item="vo">
 				<tr>
-					<th width="50">{$vo.listorder}</th>
-					<th width="50">{$vo.term_id}</th>
-					<th>{$vo.name}</th>
-					<th>{$vo.count}</th>
+					<th width="50">{$vo.organ_id}</th>
+					<th>{$vo.organ_name}</th>
+					<th>{$vo.organ_content}</th>
+					<th>{$vo.organ_slogan}</th>
+					<th>{$vo.organ_tag}</th>
+					<th>未审核</th>
 					<td>
-						<a href="{:U('Termadmin/edit',array('id'=>$vo['term_id']))}">{:L('EDIT')}</a> |
-						<a href="{:U('Termadmin/delete',array('id'=>$vo['term_id']))}" class="js-ajax-delete">{:L('DELETE')}</a>
+						<a href="{:U('indexadmin/allow',array('id'=>$vo['organ_id']))}">通过</a> |
+						<a href="#" class="js-ajax-delete">驳回</a>
 					</td>
 				</tr>
 				</foreach>

@@ -32,7 +32,7 @@ class IndexadminController extends AdminbaseController{
             $upload->saveName = array('uniqid','');
             $upload->subName = array('date','Ymd');
             //$upload->saveRule = "unique";//这个是改变图片名称的，可同时改变多张图片的名称，实现图片的不同名 这样也就不会出现覆盖的现象了。
-            $upload->rootPath = './Data/';  //跟路径
+            $upload->rootPath = './data/';  //跟路径
             $upload->savePath = 'upload/news/';
             $info = $upload->upload(); //取得成功上传的文件信息
             if(!$info){
@@ -82,7 +82,7 @@ class IndexadminController extends AdminbaseController{
             $upload->exts = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
             $upload->saveName = array('uniqid','');
             $upload->subName = array('date','Ymd');
-            $upload->rootPath = './Data/';  //跟路径
+            $upload->rootPath = './data/';  //跟路径
             $upload->savePath = 'upload/news/';
             $info = $upload->upload(); //取得成功上传的文件信息
             if(!$info){

@@ -3,6 +3,7 @@
 <head>
 <title>社团主页|分享大一点的学生们的社团生活</title>
 <tc_include file="Organ:head"/>
+    <link rel="stylesheet" href="__TMPL__Public/css/jquery-ui.min.css">
 </head>
 <body class="container-fluid">
 <tc_include file="Public:nav"/>
@@ -30,7 +31,7 @@
                        <h4 class="mt0"><a href="javascript:;" class="st-name">{$or.organ_name}</a></h4>
                        <p>{$or.organ_content}</p>
                        <p class="mb0">{$or.organ_slogan}</p>
-                       <p>负责人：<a href="javascript:0;">{$or.organ_er}</a></p>
+                       <p>负责人：<a href="{:U('user/person/index',array('name'=>$or['organ_er']))}">{$or.organ_er}</a></p>
                        <ul class="st-tag">
                            <php>$arr = explode('-',$or['organ_tag']);
                            </php>
@@ -235,7 +236,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <p>18</p>
+                                        <p>{$act_count}</p>
                                         活动
                                     </td>
                                     <td>
@@ -312,23 +313,28 @@
 <tc_include file="Public:footer"/>
 <!-- 申请加入社团按钮 -->
 <div id="dialog">
-    <form action="" method="post">
+    <form id="apply" method="post">
         <input type="hidden" name="st-id">
+        <input type="hidden" name="apply_organ_id" value="{$or.organ_id}">
+        <input type="hidden" name="apply_author" value="{$login.user_nicename}">
         <div class="marginBottom-10px">
             <span>申请部门：</span>
-            <select>
-                <option>宣传部门</option>Ò
+            <select name="apply_sec">
+                <option>宣传部门</option>
+                <option>组织部门</option>
+                <option>外联部门</option>
+                <option>策划部门</option>
             </select>
         </div>
         <div>
             <p>自我介绍（或申请理由）：</p>
-            <textarea rows="6" style="width: 100%; max-width: 100%; padding: 5px 8px;"></textarea>
+            <textarea rows="6" name="apply_content" style="width: 100%; max-width: 100%; padding: 5px 8px;"></textarea>
         </div>
     </form>
 </div>
-<script src="__TMPL__public/js/jquery-1.11.1.min.js"></script>
-<script src="__TMPL__public/js/jquery-ui.min.js"></script>
-<script src="__TMPL__public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__Public/js/jquery-ui.min.js"></script>
+<script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
 <script>
     $(function(){
         //回复评论
@@ -352,9 +358,50 @@
                 title: "填写申请信息",
                 buttons: [  //设置按钮
                     {
+                        id:"subs",
                         text: "确定提交",
                         click: function() {
-                            $( this ).dialog( "close" );
+                            var url = "{:U('index/apply')}";//发送URL
+                            var data = $('#apply').serialize();    //序列化表单数据
+
+                            $.post(url,data,
+                                    function(data){
+                                        console.log(data);
+                                        //alert(data.info);
+                                        if(data.status==1){
+                                            noty({
+                                                text:data.info,
+                                                type:'success',
+                                                layout:'center',
+                                                callback:{
+                                                    onClose:function(){
+                                                        if (data.referer) {
+                                                            location.href = data.referer;
+                                                            return;
+                                                        }
+
+                                                        if(refresh || refresh==undefined){
+                                                            reloadPage(window);
+                                                        }
+                                                    }
+                                                }
+                                            });
+
+                                        }else{
+                                            noty({text: data.info,
+                                                type:'error',
+                                                layout:'center',
+                                                callback:{
+                                                    onClose:function(){
+                                                        if (data.referer) {
+                                                            location.href = data.referer;
+                                                        }
+                                                    }
+                                                }
+                                            });
+
+                                        }
+                                    })
                         }
                     },
                     {
@@ -396,6 +443,62 @@
             $(sectionBox[this.index]).removeClass("hidden");//把隐藏移除
         }
     }
+</script>
+
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $('#btn').click(function () {
+            var url = "{:U('user/login/dologin')}";//发送URL
+            var data = $('#forms').serialize();    //序列化表单数据
+
+            $.post(url,{
+                        //username: encodeURI($('#input_username').val()),//获取值
+                        // password: encodeURI($('#input_password').val()),
+                        //verify : encodeURI($('#input_verify').val())
+                    },
+                    function(data){
+                        console.log(data);
+                        //alert(data.info);
+                        if(data.status==1){
+                            noty({
+                                text:data.info,
+                                type:'success',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                            return;
+                                        }
+
+                                        if(refresh || refresh==undefined){
+                                            reloadPage(window);
+                                        }
+                                    }
+                                }
+                            });
+
+                        }else{
+                            noty({text: data.info,
+                                type:'error',
+                                layout:'center',
+                                callback:{
+                                    onClose:function(){
+                                        if (data.referer) {
+                                            location.href = data.referer;
+                                        }
+                                    }
+                                }
+                            });
+
+                        }
+                    })
+
+        })
+
+    })
 </script>
 </body>
 </html>

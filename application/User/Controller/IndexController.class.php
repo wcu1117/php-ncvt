@@ -50,6 +50,7 @@ class IndexController extends HomebaseController  {
 		if(empty($user)){
 			$this->error("查无此人！");
 		}
+
 		//var_dump($user);
 		$this->assign('user',$user);
 		$this->assign('con',$con);
@@ -125,7 +126,7 @@ class IndexController extends HomebaseController  {
         }
 
         //头像目录地址
-        $path = './Data/upload/avatar/';
+        $path = './data/upload/avatar/';
         //要保存的图片
         $real_path = $path.'1.jpg';
         //临时图片地址

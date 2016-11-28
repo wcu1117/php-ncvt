@@ -65,7 +65,7 @@ class IndexController extends HomebaseController  {
             if(isset($_FILES)){
                 //var_dump($_FILES);
                 //echo $_FILES['organ_logo']['name'].'aa';
-                $path = "./Data/upload/organ/".mt_rand(1,100).time().'.jpg';//定义保存路径
+                $path = "./data/upload/organ/".mt_rand(1,100).time().'.jpg';//定义保存路径
                 if(move_uploaded_file($_FILES['organ_logo']['tmp_name'],$path)){
                     $insert['organ_logo'] = $path;//取到当前路径文件名
                     //$this->ajaxReturn(array('filepath'=>$path,'status'=>1,'message'=>'success'));
@@ -135,8 +135,26 @@ class IndexController extends HomebaseController  {
         $info = M("organ_info");
         $i = $info->where("organ_id ={$id}")->select();
         $this->assign('info',$i);
+        //输出数量，活动。人数，排名
+        $act_count = $act->where("organ_id={$id}")->count();
+        $this->assign('act_count',$act_count);
 
         $this->display(":detail");
+    }
+
+    //申请加入社团
+    function apply(){
+        $this->check_login();
+        $app = M("organ_apply");
+        $info = I("post.");
+        $id = $info['apply_organ_id'];
+        $info['apply_time'] = date('Y-m-d H:i:s',time());
+        //var_dump($info);
+        $res = $app->add($info);
+        if($res){
+            $this->success("申请已发送，请等待管理员审核",U('index/detail',array('id'=>$id)),0);
+        }
+        $this->error("申请发送失败，请刷新后申请",U('index/detail'),0);
     }
 
     //添加评论
@@ -173,7 +191,7 @@ class IndexController extends HomebaseController  {
             $act = I("post.");//获取所有提交数据
             //接收图片
             if(isset($_FILES)){
-                $path = "./Data/upload/organ/".mt_rand(1,100).time().'.jpg';//定义保存路径
+                $path = "./data/upload/organ/".mt_rand(1,100).time().'.jpg';//定义保存路径
                 if(move_uploaded_file($_FILES['act_image']['tmp_name'],$path)){
                     $act['act_image'] = $path;//取到当前路径文件名
                     //$this->ajaxReturn(array('filepath'=>$path,'status'=>1,'message'=>'success'));
@@ -197,6 +215,24 @@ class IndexController extends HomebaseController  {
 
         }
     }
+
+    //申请加入活动,只有社团成员才能加入
+    function joins(){
+        $this->check_login();//检查登录状态
+        $act = I('post.');
+        $username = $act['mem_user_name'];
+        //var_dump($act);
+        $mem = M('organ_mem');
+        $res = $mem->where("mem_user_name = '".$username."'")->setField('mem_act_id',$act['act_id']);
+        if($res){
+            $this->success('报名成功',U('index/active',array('actid'=>$act['act_id'])),0);
+        }else{
+            $this->error('请先申请加入社团',U('index/index'),0);
+        }
+
+    }
+
+
     //社团里发表内容等
     function release(){
         $this->check_login();//判断登录
