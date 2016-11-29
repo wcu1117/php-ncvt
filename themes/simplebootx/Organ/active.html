@@ -49,27 +49,22 @@
                         </div>
                     </header>
                     <section class="event-count col-md-12 marginTop-10px">
-                        <h5 class="hd"><a href="javascript:0;" class="fr more-count">查看所有参与者</a>已参加总共有 0 人</h5>
+                        <h5 class="hd"><a href="javascript:void(0);" class="fr more-count">查看所有参与者</a>已参加总共有 0 人</h5>
                         <div class="count-list">
                             <ul>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
-                                <li><a href="javascript:0;"><img src="images/08_avatar_small.jpg" alt="" /></a></li>
+                                <foreach name="mem" item="m">
+                                    <li><a href="{:U('user/person/index',array('name'=>$m['user_nicename']))}"><img
+                                            src="{$m.avatar}" alt="" /></a></li>
+
+                                </foreach>
                             </ul>
                             <hr />
                         </div>
                     </section>
                     <section class="event-con col-md-12 marginTop-10px">
                         <h5 class="hd">活动介绍</h5>
-                        <div>{$act.act_content}</div>
+                        <php>$content = htmlspecialchars_decode($act['act_content']);</php>
+                        <div>{$content}</div>
                     </section>
                     <footer class="col-md-12 marginTop-20px">
                         <section class="clearfix reply-con eventReply-list">
@@ -108,14 +103,14 @@
                     <header class="clearfix hidden">
                        <h5>所属社团</h5>
                        <ul>
-                           <li><a href="javascript:0;"></a></li>
-                           <li><a href="javascript:0;"></a></li>
-                           <li><a href="javascript:0;"></a></li>
-                           <li><a href="javascript:0;"></a></li>
+                           <li><a href="javascript:void(0);"></a></li>
+                           <li><a href="javascript:void(0);"></a></li>
+                           <li><a href="javascript:void(0);"></a></li>
+                           <li><a href="javascript:void(0);"></a></li>
                        </ul>
                     </header>
                     <div class="textalignC">
-                        <a href="javascript:0;" class="st-logo" style="background-image: url('{$or.organ_logo}');"></a>
+                        <a href="javascript:void(0);" class="st-logo" style="background-image: url('{$or.organ_logo}');"></a>
                         <p class="marginTop-10px">主办方：{$or.organ_name}</p>
                     </div>
                 </section>
@@ -150,7 +145,7 @@
                         <ul>
                             <foreach name="info" item="i">
                                 <li style="list-style: none;"><span style="color: #999;">[{$i.info_time}]</span><a
-                                        href="javascript:0;">
+                                        href="javascript:void(0);">
                                     {$i.info_title}</a></li>
                                 <!-- 公告内容弹窗 -->
                                 <div id="notice" class="popupBox hidden">

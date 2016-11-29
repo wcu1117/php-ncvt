@@ -60,41 +60,15 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td class="table-num1"><a href="javascript:void(0);">南朝街舞社</a></td>
-                            <td class="table-num2">98人</td>
-                            <td class="table-num3"><span>校级</span></td>
-                            <td class="table-num4">宣传部</td>
-                            <td class="table-num5"><i>2014-11-10</i></td>
-                          </tr>
-                          <tr>
-                            <td class="table-num1"><a href="javascript:void(0);">启明影视协会</a></td>
-                            <td class="table-num2">98人</td>
-                            <td class="table-num3">信工学院</td>
-                            <td class="table-num4">宣传部</td>
-                            <td class="table-num5"><i>2014-11-10</i></td>
-                          </tr>
-                          <tr>
-                            <td class="table-num1"><a href="javascript:void(0);">启明影视协会</a></td>
-                            <td class="table-num2">98人</td>
-                            <td class="table-num3">商学院</td>
-                            <td class="table-num4">宣传部</td>
-                            <td class="table-num5"><i>2014-11-10</i></td>
-                          </tr>
-                          <tr>
-                            <td class="table-num1"><a href="javascript:void(0);">启明影视协会</a></td>
-                            <td class="table-num2">98人</td>
-                            <td class="table-num3">建工学院</td>
-                            <td class="table-num4">宣传部</td>
-                            <td class="table-num5"><i>2014-11-10</i></td>
-                          </tr>
-                          <tr>
-                            <td class="table-num1"><a href="javascript:void(0);">启明影视协会</a></td>
-                            <td class="table-num2">98人</td>
-                            <td class="table-num3">艺工学院</td>
-                            <td class="table-num4">宣传部</td>
-                            <td class="table-num5"><i>2014-11-10</i></td>
-                          </tr>
+                        <foreach name="join" item="jo">
+                            <tr>
+                                <td class="table-num1"><a href="javascript:void(0);">{$jo.organ_name}</a></td>
+                                <td class="table-num2">98人</td>
+                                <td class="table-num3"><span>{$jo.organ_type}</span></td>
+                                <td class="table-num4">{$jo.mem_sec}</td>
+                                <td class="table-num5"><i>{$jo.mem_time}</i></td>
+                            </tr>
+                        </foreach>
                         </tbody>
                       </table>
                       <footer>
@@ -122,10 +96,17 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <td class="table-num1"><a href="javascript:void(0);" class="td-name">南朝街舞社</a></td>
-                            <td class="table-num1">宣传部长</td>
-                            <td class="table-num3"><span>校级</span></td>
-                            <td class="table-num5"><i>2014-11-10</i></td>
+                              <foreach name="list" item="ls">
+                                  <td
+                                          class="table-num1"><a
+                                          href="{:U('organ/index/manage',array('oid'=>$ls['organ_id']))}"
+                                                                class="td-name">{$ls
+                                      .organ_name}</a></td>
+                                  <td class="table-num1">创建人</td>
+                                  <td class="table-num3"><span>{$ls.organ_type}</span></td>
+                                  <td class="table-num5"><i>{$ls.organ_create}</i></td>
+                              </foreach>
+
                           </tr>
                         </tbody>
                       </table>

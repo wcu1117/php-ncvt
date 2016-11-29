@@ -37,6 +37,17 @@ class MenuController extends HomebaseController{
         $email = session('user')['user_email'];
         $rec_count = $m->where("email='".$email."' and status=0")->count();
         $this->assign('news_count',$rec_count);//模版赋值
+
+        //社团的
+        $or = M("organ");
+        $username = session('user')['user_nicename'];//获取当前用户
+        $organ_count = $or->where("organ_er='".$username."'")->count();//由我创建的
+        $this->assign("or_count",$organ_count);
+        //我加入的社团
+        $mem = M('organ_mem');
+        $join_count = $mem->join("cmf_organ on cmf_organ_mem.mem_organ_id = cmf_organ.organ_id")->where("cmf_organ_mem
+        .mem_user_name='".$username."'")->count();
+        $this->assign('join_count',$join_count);
     }
     function index(){
         $this->display("index/index");
@@ -94,6 +105,16 @@ class MenuController extends HomebaseController{
     }
     //社团
     function organize(){
+        $or = M("organ");
+        // 我创建的社团
+        $username = session('user')['user_nicename'];//获取当前用户
+        $list = $or->where("organ_er='".$username."'")->select();
+        $this->assign('list',$list);
+        //我加入的社团
+        $mem = M('organ_mem');
+        $join = $mem->join("cmf_organ on cmf_organ_mem.mem_organ_id = cmf_organ.organ_id")->where("cmf_organ_mem
+        .mem_user_name='".$username."'")->select();
+        $this->assign('join',$join);
         $this->display(":myorganize");
     }
 

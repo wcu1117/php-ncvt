@@ -36,6 +36,17 @@ class IndexController extends HomebaseController  {
         $email = session('user')['user_email'];
         $rec_count = $m->where("email='".$email."' and status=0")->count();
         $this->assign('news_count',$rec_count);//模版赋值
+
+        //社团的
+        $or = M("organ");
+        $username = session('user')['user_nicename'];//获取当前用户
+        $organ_count = $or->where("organ_er='".$username."'")->count();//由我创建的
+        $this->assign("or_count",$organ_count);
+        //我加入的社团
+        $mem = M('organ_mem');
+        $join_count = $mem->join("cmf_organ on cmf_organ_mem.mem_organ_id = cmf_organ.organ_id")->where("cmf_organ_mem
+        .mem_user_name='".$username."'")->count();
+        $this->assign('join_count',$join_count);
     }
     //登录
 	public function index() {

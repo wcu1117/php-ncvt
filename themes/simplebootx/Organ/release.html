@@ -32,13 +32,13 @@
                 <div class="st-hdInfo">
                     <header class="st-logo fl col-md-2">
                         <a href="javascript:;" style="background-image: url('{$or.organ_logo}');"></a>
-                        <a href="javascript:0;" class="st-btn">申请加入+</a>
+                        <a href="javascript:void(0);" class="st-btn">申请加入+</a>
                     </header>
                     <div class="st-info border0 overflowH">
                         <h4 class="mt0"><a href="javascript:;" class="st-name">{$or.organ_name}</a></h4>
                         <p>{$or.organ_content}</p>
                         <p class="mb0">{$or.organ_slogan}</p>
-                        <p>负责人：<a href="javascript:0;">{$or.organ_er}</a></p>
+                        <p>负责人：<a href="javascript:void(0);">{$or.organ_er}</a></p>
                         <ul class="st-tag">
                             <php>$arr = explode('-',$or['organ_tag']);
                             </php>
@@ -51,10 +51,10 @@
                 <section class="st-moreInfo marginTop-10px">
                     <nav class="nav pr">
                         <ul style="margin-bottom: -1px;">
-                            <li class="item"><a href="st-index.html">社团动态</a></li>
-                            <li class="item"><a href="st-event.html">社团活动</a></li>
-                            <li class="item"><a href="st-member.html">成员列表</a></li>
-                            <li class="item"><a href="st-post.html" class="active">+发布内容</a></li>
+                            <li class="item"><a href="{:U('index/detail',array(id=>$or['organ_id']))}">社团动态</a></li>
+                            <li class="item"><a href="{:U('index/detail',array(id=>$or['organ_id']))}">社团活动</a></li>
+                            <li class="item"><a href="{:U('index/detail',array(id=>$or['organ_id']))}">成员列表</a></li>
+                            <li class="item"><a href="#" class="active">+发布内容</a></li>
                         </ul>
                     </nav>
                     <section class="st-memberlist st-post">
@@ -62,8 +62,8 @@
                             <h4 class="hidden">社团活动</h4>
                             <nav class="nav">
                                 <ul>
-                                    <li class="item post-newTag active"><a href="javascript:0;">+发布动态</a></li>
-                                    <li class="item post-noticeTag"><a href="javascript:0;" >+发布通知</a></li>
+                                    <li class="item post-newTag active"><a href="javascript:void(0);">+发布动态</a></li>
+                                    <li class="item post-noticeTag"><a href="javascript:void(0);" >+发布通知</a></li>
                                     <li class="item"><a href="{:U('index/active_post',array('id'=>$or['organ_id']))}">+发布活动</a></li>
                                 </ul>
                             </nav>
@@ -102,11 +102,11 @@
                     </header>
                     <div class="notice-con">
                         <ul>
-                            <li><span style="color: #999;">[8-19]</span> <a href="javascript:0;">于18号下午在二教召开第10次会议</a></li>
-                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
-                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
-                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:0;">请各个部门的部长做好统计</a></li>
-                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:0;">宣传部的同学请散场后留下</a></li>
+                            <li><span style="color: #999;">[8-19]</span> <a href="javascript:void(0);">于18号下午在二教召开第10次会议</a></li>
+                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:void(0);">请各个部门的部长做好统计</a></li>
+                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:void(0);">宣传部的同学请散场后留下</a></li>
+                            <li><span style="color: #999;">[10-22]</span> <a href="javascript:void(0);">请各个部门的部长做好统计</a></li>
+                            <li><span style="color: #999;">[5-20]</span> <a href="javascript:void(0);">宣传部的同学请散场后留下</a></li>
                         </ul>
                     </div>
                     <!-- 公告内容弹窗 -->
@@ -150,46 +150,46 @@
                     <div class="pt0">
                         <ul>
                             <li class="borderT0">
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
+                                <a href="javascript:void(0);" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
                                 <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
+                                   <h6 class="margin0"><a href="javascript:void(0);" class="st-rankingName">劲草文学社</a></h6>
+                                   <p class="st-director">负责人: <a href="javascript:void(0);">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
+                                       <a href="javascript:void(0);" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
+                                <a href="javascript:void(0);" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
                                 <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
+                                   <h6 class="margin0"><a href="javascript:void(0);" class="st-rankingName">劲草文学社</a></h6>
+                                   <p class="st-director">负责人: <a href="javascript:void(0);">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
+                                       <a href="javascript:void(0);" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
+                                <a href="javascript:void(0);" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
                                 <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
+                                   <h6 class="margin0"><a href="javascript:void(0);" class="st-rankingName">劲草文学社</a></h6>
+                                   <p class="st-director">负责人: <a href="javascript:void(0);">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
+                                       <a href="javascript:void(0);" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>
                             <li>
-                                <a href="javascript:0;" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
+                                <a href="javascript:void(0);" style="background-image: url(images/main_slider4.jpg);" class="st-rankingLogo"></a>
                                 <div class="overflowH">
-                                   <h6 class="margin0"><a href="javascript:0;" class="st-rankingName">劲草文学社</a></h6>
-                                   <p class="st-director">负责人: <a href="javascript:0;">黑钦州的王</a></p>
+                                   <h6 class="margin0"><a href="javascript:void(0);" class="st-rankingName">劲草文学社</a></h6>
+                                   <p class="st-director">负责人: <a href="javascript:void(0);">黑钦州的王</a></p>
                                    <p class="mb0">
                                        <span>130 人</span>
-                                       <a href="javascript:0;" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
+                                       <a href="javascript:void(0);" class="moreJoin-btn st-btn" data-stid="">申请加入+</a>
                                    </p> 
                                 </div>
                             </li>

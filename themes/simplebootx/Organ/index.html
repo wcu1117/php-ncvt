@@ -71,12 +71,10 @@
                                     <p>{$or.organ_content}</p>
                                     <foreach name="act" item="a">
                                         <if condition="$a['organ_id'] eq $or['organ_id']">
-                                            <volist name="act" id="a" offset="1" length="1">
                                                 <p class="new-event"><a href="{:U('index/active',array('actid'=>$a['act_id']))}">[{$a.act_starttime}] {$a.act_name}</a></p>
-
-                                            </volist>
-                                        <else/>
+                                            <php>break;</php>
                                         </if>
+
                                     </foreach>
                                     <footer class="st-tag">
                                         <ul>
