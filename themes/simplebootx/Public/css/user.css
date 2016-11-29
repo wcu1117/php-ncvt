@@ -2,12 +2,13 @@
 
 /*侧边栏*/
 .u-side{
-    border-right: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-right: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
     background-color: #fff;
     padding-bottom: 20px;
-
+    
     border-radius: 5px;
+    box-shadow: 0px 1px 8px rgba(205, 205, 205, 0.54);
 }
 .u-myName { margin-top: 10px; }
 .u-name {
@@ -24,13 +25,16 @@
 }
 
 /*main右侧*/
+.get-sectionBox { padding-right: 0; }
 .u-setInfo, .u-myPassw,
 .u-main .conBox {
     background-color: #fff;
-    border: 1px solid #cdcdcd;
+    border: 1px solid rgb(221, 221, 221);
     min-height: 492px; 
     /*475px*/
     padding-top: 20px;
+
+    box-shadow: 0px 1px 8px rgba(205, 205, 205, 0.54);
 }
 .u-setInfo { min-height: 515px; }
 .u-setInfo .nav-pills {margin-bottom: 15px; }
@@ -170,3 +174,180 @@
     width: 360px;
     height: 150px;
 }
+
+
+/*设置社团*/
+.u-stAdmin .u-side { padding-bottom: 10px; }
+.u-stAdmin .u-myName img {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 50%;
+}
+.u-stAdmin .side-nav li{
+    font-size: 1.2em;
+    margin: 10px auto;
+    text-align: center;
+}
+.u-stAdmin li span.glyphicon {
+    font-size: .9em;
+}
+.u-stAdmin .side-nav li a { color: inherit; }
+.u-stAdmin .u-stBox .u-hd {
+    font-size: 1.3em;
+    margin: 0;
+    padding: 15px;
+    border: 1px solid rgb(221, 221, 221);
+    border-bottom: none;
+    background-color: rgb(241, 241, 241);
+
+    box-shadow: 0px 1px 8px rgba(205, 205, 205, 0.54);
+}
+.u-setSt .conBox .table>tbody>tr { border: none; }
+.u-setSt .conBox .table td:first-child { width: 10% !important; max-width: 100%; min-width: auto; }
+/*部门管理*/
+.u-setSt .branch_con .hd {
+    margin: 0;
+    padding: 10px;
+    background-color: rgb(241, 241, 241);
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: 0px 1px 8px rgba(205, 205, 205, 0.54);
+}
+.u-setSt #add_branch {
+    border: 1px solid #cdcdcd;
+    border-radius: 8px;
+    padding: 4px 10px;
+    margin-top: -5px;
+    cursor: pointer;
+    background-color: #186ec5;
+    color: #fff;
+}
+.u-setSt .activeInput{
+    position: absolute;
+    top: 1px; 
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    max-width: 100%;
+    width: 100%;
+    padding: .2em 1.2em;
+    text-align: center;
+}
+.u-setSt .activeInput + .fontClose{
+    color:rgba(255, 255, 255, 0);
+}
+.u-setSt .branch_list{
+    padding: 20px;
+    border: 1px solid rgb(221, 221, 221);
+    box-shadow: 0px 1px 8px rgba(205, 205, 205, 0.54);
+}
+.u-setSt .branch_list .btn-group button{
+    min-width: 80px;
+    min-height: 27.59px;
+    padding: .2em 1em;
+    border: 1px solid #cdcdcd;
+    background-color: rgba(241, 241, 241, .8);
+
+    border-radius: 15px;
+    box-shadow: 0px 1px 8px rgba(205, 205, 205, 0.54);
+}
+.u-setSt .branch_list .btn-group button:hover {
+    background-color: rgba(220, 220, 220, .7);
+}
+.u-setSt .branch_list .btn-group { margin-left: 20px; }
+.u-setSt .branch_list .btn-group:first-child { margin-left: 0; }
+.u-setSt .branch_list .dropdown-menu {
+    text-align: center;
+    width: 100%;
+    min-width: auto;
+    font-size: .9em;
+}
+.u-setSt .branch_list .dropdown-menu a { font-size: inherit; padding: 3px 10px; }
+.u-setSt .up_summaryName { max-width: 100%; }
+.u-setSt .modal-header{
+    padding: 5px 10px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: rgb(241, 241, 241);
+    font-weight: 700;
+
+    border-radius: 5px;
+}
+.u-setSt .modal-sm {
+    margin-top: 210px;
+}
+
+/*活动管理*/
+.u-setEvent .u-main .conBox { padding: 30px 40px; }
+.u-setEvent .item {
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    padding: 20px 20px 0;
+    box-shadow: 0 2px 3px 1px rgba(0,0,0,.1);
+}
+
+.u-setEvent .item .hd {
+    position: relative;
+    width: 28%;
+    min-height: 100%;
+    margin-right: 3%;
+}
+.u-setEvent .item .hd>a {
+    display: block;
+    width: 100%;
+    padding-top: 58%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.u-setEvent .item .bd {
+    margin-left: 28%;
+    padding: 5px 30px 0 20px;
+}
+.u-setEvent .item .bd>h4 {
+    font-size: 1.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.u-setEvent .item .bd p { color: #888; }
+.u-setEvent .side-info {
+    position: absolute;
+    text-align: right;
+    right: 0; bottom: 0;
+}
+.u-setEvent .item .act-pag {
+    position: relative;
+    display: block;
+    clear: both;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 30px;
+}
+.act-pag .more-countDown .table,
+.u-setMember .conBox .table {
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+}
+.act-pag .more-countDown .table th,
+.u-setMember .conBox .table th { text-align: center !important; }
+.act-pag .more-countDown .table td,
+.u-setMember .conBox .table td { font-size: .95em; text-align: center !important; }
+.act-pag .more-countDown .table>tbody>tr { border: 1px dashed rgba(212, 209, 209, 0.25);}
+.more-countDown .glyphicon-cog {
+    color: #888;
+    cursor: pointer;
+}
+.more-countDown .glyphicon-cog:hover { color: #666; }
+.more-countDown .btn-group .dropdown-menu,
+.u-setMember .conBox .table .btn-group .dropdown-menu{
+    min-width: auto;
+    left: auto;
+    right: 0;
+    font-size: .9em;
+}
+.more-countDown .btn-group .dropdown-menu>li>a { font-size: inherit; }
+.more-countDown .table .even_enrolFalseBtn,
+.u-setMember .conBox .table .even_enrolFalseBtn { color: #fb7f79; font-weight: 700; }
+.even-infoTop .btn-group.open .dropdown-toggle { box-shadow: none; }
+
+/*社团成员管理*/
+/*.u-setMember */

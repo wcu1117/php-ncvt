@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>社团后台管理中心-成员管理|分享大一点的学生们的社团生活</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="__TMPL__Public/js/jquery-ui-1.12.1.custom/jquery-ui.min.css">
+<link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="__TMPL__Public/css/style.css">
+<link rel="stylesheet" href="__TMPL__Public/css/user.css">
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="css/school.css"> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body class="container-fluid">
+<tc_include file="Public:nav"/>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>社团后台管理中心</li>
+                <li>></li>
+                <li>成员管理</li>
+            </ul>
+        </nav>
+        <section class="user-con u-setMember u-stAdmin container-fluid">
+            <div class="marginBottom-10px col-md-12 padding0">
+                <a href="{:U('user/index/index')}">返回个人中心</a>
+                <span class="fr pr15px"><a href="javascript:void(0);">@北海XIONG</a> | 职务</span>
+            </div>
+            <aside class="u-side col-md-2">
+                <header>
+                    <h3 class="u-myName textalignC">
+                        <img src="{$or.organ_logo}" style="width: 100px;height: 100px;" />
+                        <p class="u-name">{$or.organ_name}</p>
+                    </h3>
+                </header>
+                <hr /> 
+                <ul class="side-nav">
+                    <li class="active"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <a href="{:U('index/manage',array('oid'=>$or['organ_id']))}">社团设置</a></li>
+                    <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a>成员管理</a></li>
+                    <li><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <a href="{:U('index/mg_active',array('oid'=>$or['organ_id']))}">活动管理</a></li>
+                </ul>
+            </aside>
+            <article class="u-main get-sectionBox col-md-10">
+                <div class="u-stBox">
+                    <h3 class="u-hd ">社团成员管理</h3>
+                    <div class="conBox">
+
+                            <!-- 当前成员的id -->
+                            <input type="hidden" name="" />
+                            <table class="table table-hover ">
+                                <thead>
+                                  <tr>
+                                    <th >姓名</th>
+                                    <th>学号</th>
+                                    <th>年级</th>
+                                    <th>所在部门</th>
+                                    <th>职务</th>
+                                    <th>入驻状态</th>
+                                    <th>申请时间</th>
+                                    <th>操作</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                <foreach name="mem" item="m">
+                                    <form id="mem{$m.mem_id}" method="post">
+                                        <tr>
+                                            <td><a href="{:U('user/person/index',array('name'=>$m['mem_user_name']))}"
+                                                   class="td-name">{$m.mem_user_name}</a></td>
+                                            <td ><span>{$m.school_id}</span></td>
+                                            <td>{$m.enter}级</td>
+                                            <td><span>{$m.mem_sec}</span></td>
+                                            <td>
+                                                <select>
+                                                    <notempty name="m.mem_position">
+                                                        <option>{$m['mem_position']}</option>
+                                                    </notempty>
+                                                    <option>部长</option>
+
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <if condition="$m.mem_status eq 0">
+                                                    <strong style="color: red">未审核</strong>
+                                                    <else/>
+                                                    <strong style="color: blue">审核通过</strong>
+                                                </if>
+
+
+                                            </td>
+                                            <td><i>{$m.mem_time}</i></td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <span class="dropdown-toggle fontClose glyphicon glyphicon-cog" data-toggle="dropdown" aria-expanded="false"></span>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="javascript:void(0);"
+                                                               onclick="ok({$m.mem_id},{$m.mem_organ_id})"
+                                                               class="even_enrolTrueBtn">
+                                                            审核通过</a></li>
+                                                        <li><a href="javascript:void(0);"
+                                                               id="over" class="even_enrolFalseBtn">取消审核</a></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                </foreach>
+
+
+
+                                </tbody>
+                            </table>
+                    </div>
+                </div>
+                <footer class="st-footer">
+                    <nav class="textalignC">
+                        <ul class="pagination">
+                            {$page}
+                        </ul>
+                    </nav>
+                </footer>
+            </article>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<tc_include file="Public:footer"/>
+<script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__Public/js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        //查看参与活动的所有人员
+        $('.more-count').click(function(){
+            var $thisDownCon= $(this).parents('.even-infoTop').next().children('.more-countDown');
+            if($thisDownCon.is(":visible")){
+                $thisDownCon.slideUp(); }else{ $thisDownCon.slideDown();
+            }
+        })
+    })
+</script>
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+
+<script type="text/javascript">
+    function ok(i,j){
+        var url = "{:U('index/access')}";//发送URL
+        $.post(url,{
+                    id:i,//获取值
+                   oid:j,
+                },
+                function(data){
+                    console.log(data);
+                    //alert(data.info);
+                    if(data.status==1){
+                        noty({
+                            text:data.info,
+                            type:'success',
+                            layout:'center',
+                            callback:{
+                                onClose:function(){
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                        return;
+                                    }
+
+                                    if(refresh || refresh==undefined){
+                                        reloadPage(window);
+                                    }
+                                }
+                            }
+                        });
+
+                    }else{
+                        noty({text: data.info,
+                            type:'error',
+                            layout:'center',
+                            callback:{
+                                onClose:function(){
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                    }
+                                }
+                            }
+                        });
+
+                    }
+                })
+    }
+    $(function(){
+        $('#ok1').click(function () {
+
+            var data = $('#forms').serialize();    //序列化表单数据
+
+
+
+        })
+
+    });
+</script>
+</body>
+</html>

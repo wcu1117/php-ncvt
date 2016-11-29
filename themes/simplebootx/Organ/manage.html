@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>设置管理社团|分享大一点的学生们的社团生活</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="__TMPL__Public/bootstrap-3.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="__TMPL__Public/css/style.css">
+<link rel="stylesheet" href="__TMPL__Public/css/user.css">
+    <link href="__TMPL__Public/assets/simpleboot/font-awesome/4.4.0/css/font-awesome.min.css"  rel="stylesheet" type="text/css">
+
+    <!-- <link rel="stylesheet" href="css/school.css"> -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <style type="text/css">
+        #pic{
+            width:100px;
+            height:100px;
+            border-radius:50% ;
+            margin:20px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+<tc_include file="Public:nav"/>
+<div id="site-main" class="container-fluid">
+    <div class="box-bgImg"></div>
+    <div class="container">
+        <nav class="meunPage">
+            <h2 class="display-n">当前位置</h2>
+            <ul>
+                <li>首页</li>
+                <li>></li>
+                <li>社团后台管理中心</li>
+            </ul>
+        </nav>
+        <section class="user-con u-setSt u-stAdmin container-fluid">
+            <div class="marginBottom-10px col-md-12 padding0">
+                <a href="{:U('user/index/index')}">返回个人中心</a>
+                <span class="fr pr15px"><a href="javascript:void(0);">@北海XIONG</a> | 职务</span>
+            </div>
+            <aside class="u-side col-md-2">
+                <header>
+                    <h3 class="u-myName textalignC">
+                        <img src="{$or.organ_logo}" style="width: 100px;height: 100px;" />
+                        <p class="u-name">{$or.organ_name}</p>
+                    </h3>
+                </header>
+                <hr /> 
+                <ul class="side-nav">
+                    <li class="active"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <a>社团设置</a></li>
+                    <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a
+                            href="{:U('index/mg_member',array('oid'=>$or['organ_id']))}">成员管理</a></li>
+                    <li><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <a
+                            href="{:U('index/mg_active',array('oid'=>$or['organ_id']))}">活动管理</a></li>
+                </ul>
+            </aside>
+            <article class="u-main get-sectionBox col-md-10">
+                <div class="u-stBox">
+                    <h3 class="u-hd ">社团设置</h3>
+                    <div class="conBox pt0">
+                    <form id="forms" method="post">
+                        <table class="table  marginTop-20px">
+                            <tbody>
+                                <tr>
+                                    <td>LOGO</td>
+                                    <td>
+                                        <img id="pic" src="" >
+                                        <input id="upload" accept="image/*" name="organ_logo" type="file" style="display: none"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>所属</td>
+                                    <td>
+                                        <select name="organ_type" class="up_xy form-control">
+                                            <notempty
+                                                    name="$or['organ_type']"><option>{$or['organ_type']}</option></notempty>
+                                            <option>校级</option>
+                                            <option>信息学院</option>
+                                            <option>财经学院</option>
+                                            <option>商学院</option>
+                                            <option>国际学院</option>
+                                            <option>建工学院</option>
+                                            <option>艺工学院</option>
+                                            <option>旅游学院</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="v-alignTop">部门管理</td>
+                                    <td>
+                                        <div class="branch_con">
+                                            <h5 class="hd">部门列表
+                                                <strong id="add_branch" class="fr" data-toggle="modal" data-target=".bs-example-modal-sm">+ 新增部门</strong>
+                                                <div id="add_branch_edit" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog modal-sm">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                                          <h4 class="modal-title" id="mySmallModalLabel">新增部门</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <label>名称 <input type="text" id="up_summaryName" class="form-control width100"></label>
+                                                        </div>
+                                                        <div class="modal-footer textalignC">
+                                                          <button type="button" class="btn btn-primary" id="up_summaryBtn">添加</button>
+                                                          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                            </h5>
+                                            <div class="branch_list">
+                                                <notempty name="sec">
+                                                    <foreach name="sec" item="s">
+                                                    <div class="btn-group"><input type="hidden" name="sec_name[]"
+                                                                                  value="{$s.sec_name}"><button
+                                                            type="button" class="dropdown-toggle" data-toggle="dropdown">{$s.sec_name}</button><ul class="dropdown-menu" role="menu"><li><a href="javascript:void(0);" class="edit">编辑名称</a></li><li><a href="javascript:void(0);" style="color: #fb7f79; font-weight: 700;" class="removeDom">删除部门</a></li> </ul></div>
+                                                </foreach>
+                                                    <else/>
+                                                    <p style="color: #ccc; font-size: 1.4em;" class="tip mb0">暂时没有添加部门</p>
+
+                                                </notempty>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>社团宗旨</td>
+                                    <td>
+                                        <input type="text" name="organ_slogan" class="form-control"
+                                               value="{$or.organ_slogan}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="v-alignTop" >社团简介</td>
+                                    <td>
+                                        <textarea name="organ_content" id="up_summary" cols="30" rows="3"
+                                                  class="form-control" style="width: 460px;">{$or.organ_content}</textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td> </td>
+                                    <td>
+                                        <label class="btn-group dropup"><input type="button" id="btn" name="submit-btn"
+                                                                               value="确定设置" class="btn btn-default"></label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <div class="container-fluid fooetrBg"></div>
+</div>
+<tc_include file="Public:footer"/>
+<script src="__TMPL__Public/js/jquery-1.11.1.min.js"></script>
+<script src="__TMPL__Public/bootstrap-3.3.0/js/bootstrap.min.js"></script>
+<script>
+  $(function(){
+
+    // 左侧
+    $(".u-setSt .u-box .hd").click(function(e){
+        if($(this).next().is(':visible')){
+            $(this).next().slideUp();
+            return false;
+        }else{
+            $(this).next().slideDown();
+        }
+    });
+
+   
+    //管理部门
+    var $tipCon = $('.branch_list').html();     //获取原始值
+    $('#up_summaryBtn').click(function(){
+        //遍历查看是否已存在部门
+        var Sname = $('#up_summaryName').val();
+        function ifSummary(Sname){
+            var $arry = $('.branch_list input');
+            for(var i=0; i<$arry.length; i++){
+                if($arry[i].value === Sname ){ return false; }
+            }
+        }
+        var $summary_name = $('#up_summaryName');
+        if( $summary_name.val().length == 0){
+            alert("请输入名称");
+        }else if(ifSummary(Sname) == false){
+            alert("该部门已存在");
+            $summary_name.val("");
+        }else{
+            var $str =
+                    '<div class="btn-group"><input type="hidden" name="sec_name[]" value="'+$summary_name.val()+'"><button type="button" class="dropdown-toggle" data-toggle="dropdown">'+$summary_name.val()+'</button><ul class="dropdown-menu" role="menu"><li><a href="javascript:void(0);" class="edit">编辑名称</a></li><li><a href="javascript:void(0);" style="color: #fb7f79; font-weight: 700;" class="removeDom">删除部门</a></li> </ul></div>';
+            $('.branch_list').append($str).children("p").remove();
+            $str = "";
+            $('#add_branch_edit').modal('hide');
+
+            //提交后恢复input默认值
+            $summary_name.val("");
+        }
+    });
+
+    //编辑
+    $('body').on('click','a.edit',function(){
+        $(this).parents('.btn-group').find('input')
+            .attr("type","text")
+            .addClass("activeInput")
+            .focus()
+            .next().addClass("fontClose");
+    });
+    //离开焦点的时候
+    $('body').on('blur','.branch_list .btn-group input',function(){
+        var $thisVal = $(this).val();
+        if($thisVal.length == 0){
+           $(this).focus();
+        }else{
+            $(this).removeClass("activeInput")
+            .attr({ type : "hidden", value : $thisVal })
+            .next("button").text($thisVal);
+        }
+    });
+    //删除
+    $('body').on('click','a.removeDom',function(){
+        $(this).parents('.btn-group').remove();
+
+        if($('.branch_list').html() == false){
+            $('.branch_list').append($tipCon);
+        }
+        
+    });
+    
+
+
+  })
+</script>
+<!--获取图片显示-->
+<script type="text/javascript">
+    function getObjectURL(file) {
+        var url = null ;
+        if (window.createObjectURL!=undefined) { // basic
+            url = window.createObjectURL(file) ;
+        } else if (window.URL!=undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file) ;
+        } else if (window.webkitURL!=undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file) ;
+        }
+        return url ;
+    }
+
+    $(function() {
+        $("#pic").click(function () {
+            $("#upload").click();               //隐藏了input:file样式后，点击头像就可以本地上传
+            $("#upload").on("change",function(){
+                var objUrl = getObjectURL(this.files[0]) ;  //获取图片的路径，该路径不是图片在本地的路径
+                if (objUrl) {
+                    $("#pic").attr("src", objUrl) ;      //将图片路径存入src中，显示出图片
+                    //$("#upload1").attr("value",objUrl);
+                }
+            });
+        });
+    });
+
+</script>
+
+<script src="__PUBLIC__/js/noty/noty.js"></script>
+<!--ajax-->
+<script type="text/javascript">
+    $(function(){
+        $('#btn').click(function () {
+            var url = "{:U('index/manage_post',array('oid'=>$or['organ_id']))}";//发送URL
+            // var data = $('#forms').serialize();    //序列化表单数据
+            var form = new FormData(document.getElementById("forms"));
+            $.ajax({
+                url:url,
+                type:"post",
+                data:form,
+                processData:false,
+                contentType:false,
+                success:function(data){
+                    console.log(data);
+                    //alert(data.info);
+                    if(data.status==1){
+                        noty({
+                            text:data.info,
+                            type:'success',
+                            layout:'center',
+                            callback:{
+                                onClose:function(){
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                        return;
+                                    }
+
+                                    if(refresh || refresh==undefined){
+                                        reloadPage(window);
+                                    }
+                                }
+                            }
+                        });
+
+                    }else {
+                        noty({
+                            text: data.info,
+                            type: 'error',
+                            layout: 'center',
+                            callback: {
+                                onClose: function () {
+                                    if (data.referer) {
+                                        location.href = data.referer;
+                                    }
+                                }
+                            }
+                        });
+                    }
+                },
+                error:function(e){
+                    alert("错误！！");
+                }
+            });
+
+        })
+
+    })
+
+
+</script>
+</body>
+</html>
