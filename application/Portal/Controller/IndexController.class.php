@@ -48,7 +48,19 @@ class IndexController extends HomebaseController {
         $news=M('news');
         $new=$news->order("id desc")->limit(0,6)->select();
         $this->assign('news',$new);
-    	$this->display(":index");
+
+        //活动
+        $act = M("organ_act");
+        $a = $act->order("act_id desc")->limit(8)->select();
+        $this->assign("act",$a);
+
+        //社团
+        $or = M('organ');
+        $organ=$or->order("organ_id desc")->limit(6)->select();
+        $this->assign("organ",$organ);
+
+
+        $this->display(":index");
     }
 
     public function test()

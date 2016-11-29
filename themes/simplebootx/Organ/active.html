@@ -49,12 +49,13 @@
                         </div>
                     </header>
                     <section class="event-count col-md-12 marginTop-10px">
-                        <h5 class="hd"><a href="javascript:void(0);" class="fr more-count">查看所有参与者</a>已参加总共有 0 人</h5>
+                        <h5 class="hd"><a href="javascript:void(0);" class="fr more-count">查看所有参与者</a>已参加总共有
+                            <notempty name="mem_count">{$mem_count}<else/>0</notempty> 人</h5>
                         <div class="count-list">
                             <ul>
                                 <foreach name="mem" item="m">
                                     <li><a href="{:U('user/person/index',array('name'=>$m['user_nicename']))}"><img
-                                            src="{$m.avatar}" alt="" /></a></li>
+                                            src="{$m.avatar}_30.jpg" style="width:30px;height: 30px;" alt="" /></a></li>
 
                                 </foreach>
                             </ul>
@@ -83,7 +84,7 @@
                                 <article class="clearfix item">
                                     <h5 class="fl margin0"><notempty name="co['comm_avatar']"><img
                                             src="{$login['avatar']}_30.jpg" class="u-photo"/><else/><img
-                                            src="/themes/simplebootx/Public/images/headicon_30.png" class="u-photo"/></notempty></h5>
+                                            src="/cmf/themes/simplebootx/Public/images/headicon_30.png" class="u-photo"/></notempty></h5>
                                     <div class="clearfix overflowH">
                                         <h6 class="margin0 reply-name"><a
                                                 href="{:U('user/person/index',array('name'=>$co['comm_author']))}">{$co.comm_author

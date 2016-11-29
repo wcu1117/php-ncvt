@@ -103,6 +103,9 @@ class IndexController extends HomebaseController  {
         $this->assign("or",$or);    //输出社团
         //输出参加人员
         $mem = M('organ_mem');
+        $mem_count = $mem->where("mem_act_id={$id}")->count();//人数
+        $this->assign("mem_count",$mem_count);
+
         $mems = $mem->join("cmf_users on cmf_organ_mem.mem_user_name=cmf_users.user_nicename")->where
         ("cmf_organ_mem.mem_organ_id={$or_id}")->select();
         $this->assign('mem',$mems);
@@ -211,15 +214,10 @@ class IndexController extends HomebaseController  {
             //拼接标签
             $act['act_tag'] = implode('-',$act['act_tag']);
             $act['act_content'] = htmlspecialchars_decode($act['act_content']);
-            var_dump($act['act_content']);
-            var_dump($content);
             $act['organ_id'] = $id;
-            //$act['act_starttime'] = date("Y-m-d H:i:s",time());   //创建时间
-
             //实例化数据库。插入数据
             $a = M("organ_act");
             $result = $a->add($act);
-            var_dump($act);
             if($result){
                 $this->success("活动已发布",U('index/detail',array('id'=>$id)),0);
             }else{

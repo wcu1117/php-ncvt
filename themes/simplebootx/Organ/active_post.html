@@ -27,7 +27,7 @@
                 <li>发布活动</li>
             </ul> 
         </nav>
-        <form id="forms" method="post">
+        <form id="formss" method="post">
         <section class="st-box st-index st-push container-fluid  ">
             <aside class="st-side push-left col-md-3 padding0">
                 <header class="hd">
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                     <div class="width100 textalignL marginTB-15px">
-                        <input type="button" id="btn" name="submit-btn" value="发布" class="submit-btn" />
+                        <input type="button" id="btns" name="submit-btn" value="发布" class="submit-btn" />
                         <input type="submit" name="view-btn" value="预览" class="view-btn" />
                     </div>
                 </div>
@@ -144,11 +144,11 @@
 <!--ajax-->
 <script type="text/javascript">
     $(function(){
-        $('#btn').click(function () {
+        $('#btns').click(function () {
             $("#er").attr("disabled",false);
             var url = "{:U('index/active_add',array('id'=>$id))}";//发送URL
             // var data = $('#forms').serialize();    //序列化表单数据
-            var form = new FormData(document.getElementById("forms"));
+            var form = new FormData(document.getElementById("formss"));
             $.ajax({
                 url:url,
                 type:"post",

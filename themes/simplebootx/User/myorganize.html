@@ -95,8 +95,9 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+
                               <foreach name="list" item="ls">
+                          <tr>
                                   <td
                                           class="table-num1"><a
                                           href="{:U('organ/index/manage',array('oid'=>$ls['organ_id']))}"
@@ -105,9 +106,10 @@
                                   <td class="table-num1">创建人</td>
                                   <td class="table-num3"><span>{$ls.organ_type}</span></td>
                                   <td class="table-num5"><i>{$ls.organ_create}</i></td>
+                          </tr>
                               </foreach>
 
-                          </tr>
+
                         </tbody>
                       </table>
                       <footer>

@@ -150,10 +150,11 @@ class IndexController extends HomebaseController{
     }
 
     function small_reply_post(){
+            $this->check_login();
             $reply['reply_id'] = I('get.id');  //获取当前回复ID
             $post_id = I('get.post_id');  //获取朱帖子ID
             $reply['post_content'] = I('post.post_content');
-            $reply['post_author'] =get_current_admin_id() ? get_current_admin_id() : 0;
+            $reply['post_author'] =session('user')['user_nicename'];
             $reply['reply_time'] = date("Y-m-d H:i:s",time());
             //var_dump($reply);
             $result = $this->small_reply->add($reply);

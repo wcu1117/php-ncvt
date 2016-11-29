@@ -135,9 +135,9 @@
 
 
                 </div>
-                <ul class="reply-btn">
-                    <li><a href="javascript:;">回复</a></li>
-                </ul>
+                <!--<ul class="reply-btn">-->
+                    <!--<li><a href="javascript:;">回复</a></li>-->
+                <!--</ul>-->
             </section>
         </article>
 
@@ -179,37 +179,39 @@
                         <img style="width: 100%;" src="./data/upload/{$img2.url}" align="{$img2.alt}"/>
                     </foreach>
 
-                    <ul class="reply-btn">
+                    <!--<ul class="reply-btn">-->
 
-                        <li>
-                            <a
-                                    href="javascript:reply({$reply.reply_id},{$post.id},'{:U(\"index/small_reply_post\",array(\'id\'=>$reply[\'reply_id\'],\'post_id\'=>$post[\'id\']))}');">回复
-                        </a>
-                        </li>
-                    </ul>
-                    <section class="reply-box container-fluid">
-                        <foreach name="small" item="sma">
+                        <!--<li>-->
+                            <!--<a-->
+                                    <!--href="javascript:reply({$reply.reply_id},{$post.id},'{:U(\"index/small_reply_post\",array(\'id\'=>$reply[\'reply_id\'],\'post_id\'=>$post[\'id\']))}');">回复-->
+                        <!--</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                    <!--<section class="reply-box container-fluid">-->
+                        <!--<foreach name="small" item="sma">-->
 
-                        <if condition="$sma['reply_id'] eq $reply['reply_id']">
-                            <assign name="ss" value="$sma"/>
-                            <div class="reply-con" id="replybox{$reply.reply_id}">
+                        <!--<if condition="$sma['reply_id'] eq $reply['reply_id']">-->
+                            <!--<assign name="ss" value="$sma"/>-->
+                            <!--<div class="reply-con" id="replybox{$reply.reply_id}">-->
 
-                                    <article class="item clearfix">
-                                        <header class="container-fluid pr">
-                                            <h4 class="mt0"><a href="javascript:;" class="u-photo"><img src="images/08_avatar_middle.jpg" alt="" /></a> <a href="javascript:;" class="u-name">黑钦王</a></h4>
-                                            <time datetime="2016-10-25 01:20" class="fr post-tiem" style="color:
-                                            #909090">{$sma.reply_time}</time>
-                                        </header>
-                                        <div>
-                                            {$sma.post_content}
-                                        </div>
-                                    </article>
-                            </div>
-                        </if>
+                                    <!--<article class="item clearfix">-->
+                                        <!--<header class="container-fluid pr">-->
+                                            <!--<h4 class="mt0"><a href="javascript:;" class="u-photo"><img-->
+                                                    <!--src="images/08_avatar_middle.jpg" alt="" /></a> <a-->
+                                                    <!--href="javascript:;" class="u-name">{$sma.post_author}</a></h4>-->
+                                            <!--<time datetime="2016-10-25 01:20" class="fr post-tiem" style="color:-->
+                                            <!--#909090">{$sma.reply_time}</time>-->
+                                        <!--</header>-->
+                                        <!--<div>-->
+                                            <!--{$sma.post_content}-->
+                                        <!--</div>-->
+                                    <!--</article>-->
+                            <!--</div>-->
+                        <!--</if>-->
 
-                        </foreach>
+                        <!--</foreach>-->
 
-                    </section>
+                    <!--</section>-->
                 </div>
             </section>
         </article>
